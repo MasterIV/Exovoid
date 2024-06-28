@@ -1,10 +1,26 @@
 {
-  "Int": {
-    "name": "Intelligence",
-    "description": "BlaBla"
+  "CON": {
+    "name": "Constitution",
+    "description": "Describes the overall health and toughness, allowing them to survive even in harsh conditions."
   },
-  "Str": {
+  "STR": {
     "name": "Strength",
-    "description": "BlaBla"
+    "description": "The brute physical strength of the character, allowing them lift heavier loads or strike with more force."
+  },
+  "AGI": {
+    "name": "Agility",
+    "description": "The general speed, reaction and fine motor skills of the character."
+  },
+  "INT": {
+    "name": "Intelligence",
+    "description": "The ability of logical thinking, memory, analysis and solving complex problems."
+  },
+  "PER": {
+    "name": "Personality",
+    "description": "Describing the charisma, social skills and personal self reflection."
+  },
+  "COO": {
+    "name": "Coolness",
+    "description": "The character’s ability to sort problems through clever improvisation, intuition, or keeping a cool head and remaining unfazed in stressful situation."
   }
 }
