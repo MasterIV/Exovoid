@@ -17,7 +17,7 @@
       "botch"
     ]
   },
-  "attribute": {
+  "aptitude": {
     "sides": 20,
     "symbols": [
       "success",
@@ -30,7 +30,7 @@
       "complication"
     ]
   },
-  "skill": {
+  "expertise": {
     "sides": 20,
     "symbols": [
       ["success", "trigger"],
@@ -46,6 +46,22 @@
       "trigger",
       "trigger",
       "trigger"
+    ]
+  },
+  "injury": {
+    "sides": 20,
+    "symbols": [
+      "wound",
+      "wound",
+      "wound",
+      "wound",
+      "minion",
+      "minion",
+      "minion",
+      "minion",
+      "minion",
+      "cyberware",
+      "adrenaline"
     ]
   }
 }
