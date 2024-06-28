@@ -1,0 +1,51 @@
+{
+  "default": {
+    "sides": 20,
+    "symbols": [
+      ["success", "explosive"],
+      ["success", "explosive"],
+      ["success", "explosive"],
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "trigger",
+      "xp",
+      "complication",
+      "botch"
+    ]
+  },
+  "attribute": {
+    "sides": 20,
+    "symbols": [
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "trigger",
+      "complication"
+    ]
+  },
+  "skill": {
+    "sides": 20,
+    "symbols": [
+      ["success", "trigger"],
+      ["success", "trigger"],
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "success",
+      "trigger",
+      "trigger",
+      "trigger"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "Int": {
+    "name": "Intelligence",
+    "description": "BlaBla"
+  },
+  "Str": {
+    "name": "Strength",
+    "description": "BlaBla"
+  }
+}

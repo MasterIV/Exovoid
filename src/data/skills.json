@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Foo",
+    "attributes": ["Str", "Int"],
+    "description": "Lorem Ipsum"
+  },
+  {
+    "name": "Bar",
+    "attributes": ["Str", "Int"],
+    "description": "Lorem Ipsum"
+  }
+]
