@@ -3,9 +3,11 @@ import axios from "axios";
 import Markdown from "react-markdown";
 
 interface ChapterProps {
-    url: string
+    title: string;
+    url: string;
+    columns?: boolean;
 }
-export default function({url}: ChapterProps) {
+export default function({url, title, columns = true}: ChapterProps) {
     const [text, setText] = useState("");
 
     useEffect(() => {
@@ -14,9 +16,12 @@ export default function({url}: ChapterProps) {
             .then(res => setText(res.data));
     });
 
+    const className: string = columns ? "chapter" : "";
+
     return (
         <div>
-            <Markdown>{text}</Markdown>
+            <h2>{title}</h2>
+            <Markdown className={className}>{text}</Markdown>
         </div>
     );
 }
