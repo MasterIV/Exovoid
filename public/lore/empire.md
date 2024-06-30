@@ -67,11 +67,13 @@ But if in doubt, the Galactics have the last say.
   They often have sleek, metallic exteriors with complex sensor arrays and weapon systems.
   The Nexus form a collective that lacks traditional culture but has a deep sense of purpose in maintaining galactic stability.
   Limit contact to biological species including trade as interactions are often difficult due to their incomprehension of biological illogics and inefficiency.
+  Due to their unpredictable, AI-driven nature, they are viewed with great suspicion from other races, and the Rhinwa keep a close eye on their operations.
 - **Sylvarin:**
   Elf-like humanoids, known for their ethereal beauty and advanced technology.
   Tall, slender, and ethereal in appearance, with a somewhat humanoid form.
   They have light skin tones with a slight luminescence, and hair that often appears silver or gold.
   Sylvarin culture is artistic and philosophical, with a deep appreciation for beauty and aesthetics.
+  They have an insatiable thirst for unusual experiences, and they oftentimes neglect their own health and safety to pursue those.
 
 **Vassal Races:**
 - **Humans:** 
@@ -90,7 +92,7 @@ But if in doubt, the Galactics have the last say.
   They often communicate by using their bioluminescence in complex light patterns.
   The Dravari have webbed limbs and gills, capable of living both underwater and on land.
   Their skin is soft and partly transparent, making them prone to injury.
-- **Xelari:** 
+- **Xelar:** 
   Peaceful scientists and explorers, contributing to the Empire's knowledge and technological advancements.
   They have a humanoid appearance with large heads and a crystalline structure embedded into their forehead.
   The Xelari hold the most Galactic Patents beside the Galactics.
