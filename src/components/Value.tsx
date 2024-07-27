@@ -21,7 +21,7 @@ export default function Value({
     return <ButtonGroup variant="contained">
         <Button onClick={() => onChange(name, value - 1)}><RemoveIcon fontSize="small"/></Button>
         <TextField
-            id={'skill-' + name}
+            id={name}
             label={label}
             value={value}
             onChange={e => onChange(name, Number(e.target.value))}

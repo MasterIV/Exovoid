@@ -14,4 +14,14 @@ code {
 
 .chapter {
   column-count: 2;
+  text-align: justify;
+}
+
+.avatar {
+  border: 1px solid #CCC;
+  height: 180px;
+  border-radius: 5px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
