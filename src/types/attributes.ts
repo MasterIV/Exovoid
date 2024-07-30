@@ -5,4 +5,5 @@ export default interface AttributeType {
     INT?:number;
     PER?:number;
     COO?:number;
+    EDU?:number;
 }

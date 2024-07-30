@@ -15,6 +15,10 @@
     "name": "Intelligence",
     "description": "The ability of logical thinking, memory, analysis and solving complex problems."
   },
+  "EDU": {
+    "name": "Education",
+    "description": "Book smart."
+  },
   "PER": {
     "name": "Personality",
     "description": "Describing the charisma, social skills and personal self reflection."

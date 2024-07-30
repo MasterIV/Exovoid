@@ -6,7 +6,11 @@ import CombatPage from "./pages/Combat";
 import InventoryPage from "./pages/Inventory";
 
 function App() {
-    const [stats, setStats] = React.useState({attributes: {}, skills: {}});
+    const [stats, setStats] = React.useState({
+        attributes: {INT:3, STR:3, COO:3, CON:3, AGI:3, EDU:3, PER:3},
+        skills: {}
+    });
+
     const [tab, setTab] = React.useState(0);
 
     const onChange = useCallback((name: string, value: any) => {

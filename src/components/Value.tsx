@@ -16,7 +16,7 @@ export default function Value({
     value,
     onChange,
     label = "Value",
-    width = 100
+    width = 90
 }: ValueProps) {
     return <ButtonGroup variant="contained">
         <Button onClick={() => onChange(name, value - 1)}><RemoveIcon fontSize="small"/></Button>
