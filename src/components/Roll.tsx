@@ -25,10 +25,10 @@ interface DicePoolProps {
 }
 
 export function DicePool(props: DicePoolProps) {
-    return (<React.Fragment>
+    return (<div className='dice-pool'>
         {Object.keys(dice).map(d => {
             const key = d as keyof typeof props;
-            return props[key] ? <DiceCounter type={d} count={props[key]} /> : null;
+            return props[key] ? <DiceCounter type={d} count={props[key] || 0} /> : null;
         })}
-    </React.Fragment>)
+    </div>)
 }

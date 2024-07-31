@@ -1,12 +1,16 @@
 import React, {useCallback} from 'react';
-import {Box, Container, Grid, Tab, Tabs} from "@mui/material";
+import {Box, Container, Tab, Tabs} from "@mui/material";
 import CharacterPage from "./pages/Character";
 import LorePage from "./pages/Lore";
 import CombatPage from "./pages/Combat";
 import InventoryPage from "./pages/Inventory";
+import TalentPage from "./pages/Talents";
 
 function App() {
     const [stats, setStats] = React.useState({
+        exp: 0,
+        currentHealth: 0,
+        currentEdge: 0,
         attributes: {INT:3, STR:3, COO:3, CON:3, AGI:3, EDU:3, PER:3},
         skills: {}
     });
@@ -24,6 +28,7 @@ function App() {
     const tabs = [
         {name: "Character", content: <CharacterPage stats={stats} onChange={onChange}/>},
         {name: "Combat", content: <CombatPage />},
+        {name: "Talents", content: <TalentPage />},
         {name: "Inventory", content: <InventoryPage />},
         {name: "Lore", content: <LorePage />},
     ];

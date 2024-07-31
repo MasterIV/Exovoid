@@ -1,3 +1,20 @@
+# todo
+
+ - combat
+   - initiative bar
+   - weapons (use/reload)
+   - armors
+   - injuries
+ - networking
+   - account + login
+   - table creation + selection
+   - character change persistence
+   - rolling + popup
+   - syncing life and ap
+ - gm mode
+   - generate npc
+   - combat controls
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

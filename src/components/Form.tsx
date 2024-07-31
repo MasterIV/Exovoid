@@ -1,5 +1,5 @@
 import {Button, ButtonProps, TextField} from "@mui/material";
-import {OutlinedTextFieldProps, TextFieldProps} from "@mui/material/TextField/TextField";
+import {OutlinedTextFieldProps} from "@mui/material/TextField/TextField";
 
 interface TextInputProps extends Omit<OutlinedTextFieldProps, 'onChange' | 'variant'> {
     name: string,

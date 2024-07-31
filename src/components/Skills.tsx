@@ -1,21 +1,21 @@
 import {
     Chip,
     Grid,
-    Paper, Stack,
+    Paper,
+    Stack,
     Table,
     TableBody,
     TableCell,
     TableContainer,
     TableHead,
-    TableRow,
-    Typography
+    TableRow
 } from "@mui/material";
 import skillDefinition from "../data/skills.json";
 import Value from "./Value";
 import {Btn} from "./Form";
 import React from "react";
 import AttributeType from "../types/attributes";
-import {DiceCounter, DicePool} from "./Roll";
+import {DicePool} from "./Roll";
 import calculatePool from "../logic/calculatePool";
 
 interface SkillsProps {
