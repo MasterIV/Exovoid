@@ -17,7 +17,7 @@
   },
   "EDU": {
     "name": "Education",
-    "description": "Book smart."
+    "description": "This attribute reflects the overall education, life experiences and available knowledge, and their ability to draw inspiration from those."
   },
   "PER": {
     "name": "Personality",

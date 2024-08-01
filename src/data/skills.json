@@ -1,7 +1,7 @@
 [
   {
     "name": "Acrobatics",
-    "attributes": ["AGI"],
+    "attributes": ["AGI", "STR"],
     "description": "The character’s ability to balance, jump elegantly or make acrobatic maneuvers."
   },
   {
@@ -26,7 +26,7 @@
   },
   {
     "name": "Defense",
-    "attributes": ["AGI"],
+    "attributes": ["AGI", "CON"],
     "description": "This describes the characters ability to defend themselves from harm, by dodging, parrying or blocking."
   },
   {
@@ -38,6 +38,11 @@
     "name": "Firearms",
     "attributes": ["AGI", "COO"],
     "description": "A firearms expert knows how to modify or repair a gun, and how to use it with great accuracy."
+  },
+  {
+    "name": "Gunnery",
+    "attributes": ["AGI", "INT"],
+    "description": "A gunner operates the stationary weapons that are mounted on fortresses, vehicles or even star ships."
   },
   {
     "name": "Heavy Weapons",
@@ -56,7 +61,7 @@
   },
   {
     "name": "Medicine",
-    "attributes": ["INT"],
+    "attributes": ["EDU", "COO"],
     "description": "Doctors are crucial to find the right treatment for any kind of wound, illness or poison. They can also help install cybernetic modifications."
   },
   {
@@ -71,17 +76,17 @@
   },
   {
     "name": "Politics",
-    "attributes": ["INT", "PER"],
+    "attributes": ["EDU", "PER"],
     "description": "With this skill a character may know important figures, but also how to negotiate political intricate situations or how to behave to belong to upper classes."
   },
   {
     "name": "Science",
-    "attributes": ["INT"],
+    "attributes": ["INT", "EDU"],
     "description": "A scientifically inclined character has a great understanding of math, chemistry, physics and similar fields. They may be able to device a blueprint to modify a given piece of equipment."
   },
   {
     "name": "Sensors",
-    "attributes": ["INT"],
+    "attributes": ["INT", "EDU"],
     "description": "Thanks to this skill, a character can use and read the sensory data from various devices, including drones."
   },
   {
@@ -91,7 +96,7 @@
   },
   {
     "name": "Streetwise",
-    "attributes": ["INT"],
+    "attributes": ["INT", "PER"],
     "description": "With this skill, a character may know their way around a city, where to find certain contacts or even black markets."
   },
   {
@@ -101,12 +106,12 @@
   },
   {
     "name": "Tech",
-    "attributes": ["INT"],
+    "attributes": ["INT", "AGI"],
     "description": "An engineer can create, modify or repair pieces of equipment, or assess their general state."
   },
   {
     "name": "Xenology",
-    "attributes": ["INT"],
+    "attributes": ["INT", "EDU"],
     "description": "A xeno scientist knows about the demeanor of various alien species, the nuances of their language and politics."
   },
   {
