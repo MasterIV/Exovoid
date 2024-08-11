@@ -1,5 +1,5 @@
 import AccountType from "../types/account";
-import fs from "node:fs";
+import * as fs from "fs";
 import {validateName} from "./validate";
 import CharacterType from "../types/character";
 import {createSalt, hashPassword} from "./password";

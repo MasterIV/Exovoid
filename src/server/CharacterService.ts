@@ -1,7 +1,7 @@
 import CharacterType from "../types/character";
 import AccountType from "../types/account";
-import uuid from 'uuid';
-import fs from "node:fs";
+import * as uuid from 'uuid';
+import * as fs from "fs";
 
 export default class CharacterService {
     load(account: AccountType, id: string) : CharacterType {

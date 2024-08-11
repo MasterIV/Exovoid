@@ -1,5 +1,5 @@
 import {validateName} from "./validate";
-import fs from "node:fs";
+import * as fs from "fs";
 import {createSalt, hashPassword} from "./password";
 
 interface TableData {
