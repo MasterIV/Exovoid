@@ -1,24 +1,15 @@
 import React, {useCallback} from "react";
 import Attributes from "../components/Attributes";
 import {Grid, Paper, Typography} from "@mui/material";
-import AttributeType from "../types/attributes";
 import {Btn, TextInput} from "../components/Form";
 import Skills from "../components/Skills";
 import Value from "../components/Value";
 import {DicePool} from "../components/Roll";
+import CharacterType from "../types/character";
 
 interface CharacterPageProps {
     onChange: (name: string, value: any) => void;
-    stats: {
-        name?: string;
-        description?: string;
-        image?: string;
-        attributes: AttributeType;
-        skills: {[key:string]: number};
-        currentHealth: number;
-        currentEdge: number;
-        exp: number;
-    }
+    stats: CharacterType
 }
 
 const derivedStyles: React.CSSProperties = {

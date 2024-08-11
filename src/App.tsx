@@ -5,9 +5,10 @@ import LorePage from "./pages/Lore";
 import CombatPage from "./pages/Combat";
 import InventoryPage from "./pages/Inventory";
 import TalentPage from "./pages/Talents";
+import CharacterType from "./types/character";
 
 function App() {
-    const [stats, setStats] = React.useState({
+    const [stats, setStats] = React.useState<CharacterType>({
         exp: 0,
         currentHealth: 0,
         currentEdge: 0,
