@@ -26,3 +26,6 @@ yarn-debug.log*
 yarn-error.log*
 
 /temp
+/chars
+/tables
+/accounts

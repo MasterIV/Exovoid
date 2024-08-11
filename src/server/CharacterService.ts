@@ -2,6 +2,7 @@ import CharacterType from "../types/character";
 import AccountType from "../types/account";
 import * as uuid from 'uuid';
 import * as fs from "fs";
+import defaults from "../data/character.json";
 
 export default class CharacterService {
     load(account: AccountType, id: string) : CharacterType {
@@ -10,7 +11,7 @@ export default class CharacterService {
         if(!account.tables.map(t => t.id).includes(id))
             throw new Error("Character not found!");
 
-        const content = fs.readFileSync(`accounts/${id}.json`);
+        const content = fs.readFileSync(`chars/${id}.json`);
         if(!content) throw new Error("Character not found!");
 
         return JSON.parse(content.toString()) as CharacterType;
@@ -18,14 +19,10 @@ export default class CharacterService {
 
     create(name: string, table: string) : CharacterType  {
         const character: CharacterType = {
+            ...defaults,
             id: uuid.v4(),
             name: name,
             table: table,
-            attributes: {},
-            skills: {},
-            currentEdge: 0,
-            currentHealth: 0,
-            exp: 0,
         }
 
         this.save(character);
@@ -35,7 +32,7 @@ export default class CharacterService {
 
     save(character: CharacterType) {
         fs.writeFileSync(
-            `accounts/${character.id}.json`,
+            `chars/${character.id}.json`,
             JSON.stringify(character, null, 2));
     }
 }

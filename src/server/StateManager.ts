@@ -2,6 +2,7 @@ import {ClientSocket} from "../types/server";
 import AccountService from "./AccountService";
 import CharacterService from "./CharacterService";
 import TableService from "./TableService";
+import CharacterType from "../types/character";
 
 export default class StateManager {
     private accountService: AccountService;
@@ -52,19 +53,25 @@ export default class StateManager {
 
         socket.on("join", this.wrapHandler(socket, (id) => {
             if (!socket.data.account) throw new Error("Login required!");
-            socket.data.character = this.characterService.load(socket.data.account, id);
-            this.registerGameHandlers(socket);
-            socket.emit("character", socket.data.character);
+            const character = this.characterService.load(socket.data.account, id);
+            this.selectCharacter(socket, character);
         }));
 
         socket.on("create", this.wrapHandler(socket, (name, table, password) => {
             if (!socket.data.account) throw new Error("Login required!");
             this.tableService.check(table, password);
-            socket.data.character = this.characterService.create(name, table);
-            this.accountService.add(socket.data.account, socket.data.character);
-            this.registerGameHandlers(socket);
-            socket.emit("character", socket.data.character);
+            const character = this.characterService.create(name, table);
+            this.accountService.add(socket.data.account, character);
+            this.selectCharacter(socket, character);
         }));
+    }
+
+    private selectCharacter(socket: ClientSocket, character: CharacterType) : void {
+        socket.data.character = character;
+        socket.rooms.forEach(r => socket.leave(r));
+        socket.join(socket.data.character.table);
+        this.registerGameHandlers(socket);
+        socket.emit("character", socket.data.character);
     }
 
     registerGameHandlers(socket: ClientSocket) {

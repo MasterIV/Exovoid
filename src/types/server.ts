@@ -1,6 +1,7 @@
 import AccountType from "./account";
 import CharacterType from "./character";
 import {Socket} from "socket.io";
+import {Socket as Client} from "socket.io-client";
 import {DefaultEventsMap} from "socket.io/dist/typed-events";
 
 export interface ClientEvents {
@@ -20,9 +21,10 @@ export interface ServerEvents {
     error: (message: string) => void;
 }
 
-export interface SocketData  {
+export interface SocketData {
     account?: AccountType,
     character?: CharacterType,
 }
 
 export type ClientSocket = Socket<ClientEvents, ServerEvents, DefaultEventsMap, SocketData>;
+export type ServerSocket = Client<ServerEvents, ClientEvents>;

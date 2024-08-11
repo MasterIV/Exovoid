@@ -1,0 +1,10 @@
+{
+  "id": "1",
+  "name": "John Doe",
+  "table": "test",
+  "attributes": {"INT":3, "STR":3, "COO":3, "CON":3, "AGI":3, "EDU":3, "PER":3},
+  "skills": {},
+  "currentEdge": 0,
+  "currentHealth": 0,
+  "exp": 0
+}
