@@ -74,3 +74,16 @@ code {
   padding: 5px 10px;
   margin: auto;
 }
+
+.rollResult {
+  padding: 6px;
+  width: 200px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.resultArea {
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}

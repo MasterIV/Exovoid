@@ -17,14 +17,16 @@ import React from "react";
 import AttributeType from "../types/attributes";
 import {DicePool} from "./Roll";
 import calculatePool from "../logic/calculatePool";
+import {DicePoolType} from "../types/dice";
 
 interface SkillsProps {
     onChange: (name: string, value: number) => void;
+    onRoll: (pool: DicePoolType) => void;
     attributes: AttributeType,
     skills: { [key: string]: number },
 }
 
-export default function Skills({skills, attributes, onChange}: SkillsProps) {
+export default function Skills({skills, attributes, onChange, onRoll}: SkillsProps) {
     const half = Math.ceil(skillDefinition.length / 2);
     const definitions = [skillDefinition.slice(0, half), skillDefinition.slice(half)];
 
@@ -47,6 +49,7 @@ export default function Skills({skills, attributes, onChange}: SkillsProps) {
                                     .map(a => attributes[a as keyof typeof attributes] || 0)
                                     .reduce((a, b) => a + b, 0);
                                 const avg = Math.ceil(sum / s.attributes.length);
+                                const pool = calculatePool(avg, skills[s.name] || 0);
 
                                 return (<TableRow>
                                     <TableCell>
@@ -57,8 +60,8 @@ export default function Skills({skills, attributes, onChange}: SkillsProps) {
                                         {s.attributes.map(a => (
                                             <Chip label={`${a}: ${attributes[a as keyof typeof attributes]}`}/>))}
                                     </Stack></TableCell>
-                                    <TableCell><Btn fullWidth>
-                                        <DicePool {...calculatePool(avg, skills[s.name] || 0)} />
+                                    <TableCell><Btn onClick={() => onRoll(pool)} fullWidth>
+                                        <DicePool {...pool} />
                                     </Btn></TableCell>
                                 </TableRow>);
                             })}

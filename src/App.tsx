@@ -29,9 +29,13 @@ function App() {
     const [account, setAccount] = useState<AccountType|null>(null);
     const [error, setError] = useState<string>("");
 
-    socket.removeAllListeners();
+    socket.removeAllListeners("character");
     socket.on("character", data => setCharacter(data));
+
+    socket.removeAllListeners("account");
     socket.on("account", data => setAccount(data));
+
+    socket.removeAllListeners("error");
     socket.on("error", data => setError(data));
 
     if(!account)
@@ -47,7 +51,7 @@ function App() {
             onJoin={(id) => {setError(""); socket.emit("join", id);}}
             onCreate={(name, table, pw) => {setError(""); socket.emit("create", name, table, pw);}} />;
 
-    return <Game character={character} onChange={changeCharacter} />;
+    return <Game socket={socket} character={character} onChange={changeCharacter} />;
 }
 
 export default App;

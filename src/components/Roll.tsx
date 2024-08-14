@@ -1,5 +1,6 @@
 import React from "react";
 import dice from '../data/dice.json';
+import {DicePoolType} from "../types/dice";
 
 interface RollProps {
 
@@ -17,12 +18,7 @@ export function DiceCounter({type, count}: DiceCounterProps) {
     return (<div className={`dice small ${type}`}>{count}</div>)
 }
 
-interface DicePoolProps {
-    default?: number;
-    aptitude?: number;
-    expertise?: number;
-    injury?: number;
-}
+interface DicePoolProps extends DicePoolType {}
 
 export function DicePool(props: DicePoolProps) {
     return (<div className='dice-pool'>

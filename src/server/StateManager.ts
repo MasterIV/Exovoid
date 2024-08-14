@@ -3,16 +3,19 @@ import AccountService from "./AccountService";
 import CharacterService from "./CharacterService";
 import TableService from "./TableService";
 import CharacterType from "../types/character";
+import GameService from "./GameService";
 
 export default class StateManager {
     private accountService: AccountService;
     private characterService: CharacterService;
     private tableService: TableService;
+    private gameService: GameService;
 
     constructor() {
         this.accountService = new AccountService();
         this.characterService = new CharacterService();
         this.tableService = new TableService();
+        this.gameService = new GameService();
     }
 
     private wrapHandler<Args extends any[]>(
@@ -77,8 +80,12 @@ export default class StateManager {
     registerGameHandlers(socket: ClientSocket) {
         socket.removeAllListeners();
 
-        socket.on("join", this.wrapHandler(socket, (id) => {
-
+        socket.on("roll", this.wrapHandler(socket, (pool, metadata = {}) => {
+            if (!socket.data.character) throw new Error("Character required!");
+            console.log("Rolling:", socket.data.character.name, pool);
+            metadata['player'] = socket.data.character.name;
+            const result = this.gameService.roll(pool);
+            socket.to(socket.data.character.table).emit("roll", result, metadata);
         }));
     }
 }

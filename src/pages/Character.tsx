@@ -6,9 +6,11 @@ import Skills from "../components/Skills";
 import Value from "../components/Value";
 import {DicePool} from "../components/Roll";
 import CharacterType from "../types/character";
+import {DicePoolType} from "../types/dice";
 
 interface CharacterPageProps {
     onChange: (name: string, value: any) => void;
+    onRoll: (pool: DicePoolType) => void;
     stats: CharacterType
 }
 
@@ -20,7 +22,7 @@ const derivedStyles: React.CSSProperties = {
     padding: 5,
 };
 
-export default function CharacterPage({stats, onChange} : CharacterPageProps) {
+export default function CharacterPage({stats, onChange, onRoll} : CharacterPageProps) {
     const {
         attributes,
         skills,
@@ -49,7 +51,9 @@ export default function CharacterPage({stats, onChange} : CharacterPageProps) {
 
     const maxHealth = 8 + CON;
     const maxEdge = Math.ceil(4 + COO / 2);
+
     const vigilance = Math.ceil(3 + (INT+COO) / 3);
+    const vigilancePool: DicePoolType = {default: 1, aptitude: vigilance};
 
     return (<Grid container spacing={2} margin={1} direction="column">
         <Grid item container spacing={2} >
@@ -79,15 +83,15 @@ export default function CharacterPage({stats, onChange} : CharacterPageProps) {
                     <Value name='exp' width={128} label='Exp' value={exp} onChange={onChange} />
                 </Grid>
                 <Grid item textAlign='right'>
-                    <Btn fullWidth className='roll-btn'>
+                    <Btn fullWidth className='roll-btn' onClick={() => onRoll(vigilancePool)}>
                         Vigilance
-                        <DicePool default={1} aptitude={vigilance} />
+                        <DicePool {...vigilancePool} />
                     </Btn>
                 </Grid>
             </Grid>
         </Grid>
 
         <Attributes onChange={changeAttribute} values={attributes} />
-        <Skills onChange={changeSkill} attributes={attributes} skills={skills} />
+        <Skills onChange={changeSkill} attributes={attributes} skills={skills} onRoll={onRoll} />
     </Grid>);
 }
