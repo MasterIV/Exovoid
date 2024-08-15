@@ -44,6 +44,12 @@ export default class StateManager {
             socket.emit("account", socket.data.account);
         }));
 
+        socket.on("relogin", this.wrapHandler(socket, (name, token) => {
+            socket.data.account = this.accountService.relogin(name, token);
+            this.registerTableSelectionHandlers(socket);
+            socket.emit("account", socket.data.account);
+        }));
+
         socket.on("register", this.wrapHandler(socket, (name, password) => {
             socket.data.account = this.accountService.register(name, password);
             this.registerTableSelectionHandlers(socket);

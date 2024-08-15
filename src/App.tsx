@@ -20,6 +20,11 @@ const characterDefaults: CharacterType = {
     skills: {}
 };
 
+const accountName = localStorage.getItem('account.name');
+const accountToken = localStorage.getItem('account.token');
+if(accountName && accountToken)
+    socket.on("connect", () => socket.emit("relogin", accountName, accountToken));
+
 function App() {
     const [character, setCharacter] = useState<CharacterType|null>(null);
     const changeCharacter = useCallback((name: string, value: any) => {
@@ -33,7 +38,11 @@ function App() {
     socket.on("character", data => setCharacter(data));
 
     socket.removeAllListeners("account");
-    socket.on("account", data => setAccount(data));
+    socket.on("account", data => {
+        localStorage.setItem('account.name', data.name);
+        localStorage.setItem('account.token', data.token);
+        setAccount(data)
+    });
 
     socket.removeAllListeners("error");
     socket.on("error", data => setError(data));

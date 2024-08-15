@@ -2,7 +2,7 @@
 
 Next Tasks:
 
-- rolling
+- rolling: popup
 - save character changes
 - collection
 

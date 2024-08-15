@@ -10,6 +10,7 @@ type Metadata = Record<string, any>
 export interface ClientEvents {
     // Stage: Authentication
     login: (name: string, password: string) => void;
+    relogin: (name: string, token: string) => void;
     register: (name: string, password: string) => void;
     // Stage: Table Selection
     join: (id: string) => void;

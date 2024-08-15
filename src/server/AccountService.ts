@@ -15,6 +15,22 @@ export default class AccountService {
         if(account.hash !== hashPassword(password, account.salt))
             throw new Error("Invalid Credentials!");
 
+        account.token = createSalt();
+        this.saveAccount(account);
+
+        return account;
+    }
+
+    relogin(name: string, token: string) : AccountType  {
+        validateName(name);
+
+        const content = fs.readFileSync(`accounts/${name}.json`);
+        if(!content) throw new Error("Account not found!");
+
+        const account = JSON.parse(content.toString()) as AccountType;
+        if(account.token !== token)
+            throw new Error("Invalid Token!");
+
         return account;
     }
 
@@ -25,7 +41,8 @@ export default class AccountService {
             throw new Error("Name not available!");
 
         const salt = createSalt();
-        const account: AccountType = {name, salt, hash: hashPassword(password, salt), tables: []};
+        const token = createSalt();
+        const account: AccountType = {name, salt, token, hash: hashPassword(password, salt), tables: []};
         this.saveAccount(account);
 
         return account;
