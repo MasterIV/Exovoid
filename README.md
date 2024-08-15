@@ -3,7 +3,6 @@
 Next Tasks:
 
 - rolling: popup
-- save character changes
 - collection
 
 Overall:
@@ -13,10 +12,11 @@ Overall:
    - weapons (use/reload)
    - armors
    - injuries
+ - inventory
  - networking
-   - character change persistence
    - rolling + popup
    - syncing life and ap
+   - logut
  - gm mode
    - generate npc
    - combat controls

@@ -17,6 +17,7 @@ export interface ClientEvents {
     create: (name: string, table: string, password: string) => void;
     // Stage Game
     roll: (pool:DicePoolType, metadata?: Metadata) => void;
+    save: (data: CharacterType) => void;
 }
 
 export interface ServerEvents {

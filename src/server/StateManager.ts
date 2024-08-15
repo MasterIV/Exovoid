@@ -93,5 +93,12 @@ export default class StateManager {
             const result = this.gameService.roll(pool);
             socket.to(socket.data.character.table).emit("roll", result, metadata);
         }));
+
+        socket.on("save", this.wrapHandler(socket, (data) => {
+            if (!socket.data.character || socket.data.character.id !== data.id)
+                throw new Error("Invalid character!");
+            console.log("Saving changes on: " + data.name);
+            this.characterService.save(data);
+        }));
     }
 }

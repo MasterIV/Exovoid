@@ -25,10 +25,18 @@ const accountToken = localStorage.getItem('account.token');
 if(accountName && accountToken)
     socket.on("connect", () => socket.emit("relogin", accountName, accountToken));
 
+let updateTimer: any = null;
+
 function App() {
     const [character, setCharacter] = useState<CharacterType|null>(null);
     const changeCharacter = useCallback((name: string, value: any) => {
-        if(character) setCharacter({...character, [name]: value});
+        if(character) {
+            const updated = {...character, [name]: value};
+            setCharacter(updated);
+
+            if(updateTimer) clearTimeout(updateTimer);
+            updateTimer = setTimeout(() => socket.emit("save", updated), 5000);
+        }
     }, [character]);
 
     const [account, setAccount] = useState<AccountType|null>(null);
