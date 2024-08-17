@@ -3,13 +3,6 @@ import AccountType from "./types/account";
 import {Alert, Paper, Stack} from "@mui/material";
 import {Btn, TextInput} from "./components/Form";
 
-const styles= {
-    margin: 'auto',
-    padding: 3,
-    marginTop: 10,
-    width: 600
-}
-
 interface TablesProps {
     error?: string;
     account: AccountType;
@@ -34,13 +27,13 @@ function Tables({account, onJoin, onCreate, error}: TablesProps) {
     }
 
     return <React.Fragment>
-        {account.tables.length > 0 && <Paper sx={styles}>
+        {account.tables.length > 0 && <Paper className="paperSmall">
             <Stack spacing={2}>
                 {account.tables.map(table => <Btn key={table.id} onClick={() => onJoin(table.id)}>{table.name}: {table.character}</Btn>)}
             </Stack>
         </Paper>}
 
-        <Paper sx={styles}>
+        <Paper className="paperSmall">
             <Stack spacing={2}>
                 {(data.error || error) && <Alert severity="error">{error || data.error}</Alert>}
                 <TextInput label="Table Name" name="table" values={data} onChange={onChange} />

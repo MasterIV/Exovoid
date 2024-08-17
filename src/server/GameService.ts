@@ -11,13 +11,15 @@ export default class GameService {
             for(let amount = pool[type as keyof typeof pool] || 0; amount > 0; amount--) {
                 const d = dice[type as keyof typeof dice];
                 let symbols: string[];
+                let exploded = false;
 
                 do {
                     const rnd = Math.floor(Math.random() * d.sides);
                     const r = rnd < d.symbols.length ? d.symbols[rnd] : [];
 
                     symbols = Array.isArray(r) ? r : [r];
-                    result.push({type, symbols});
+                    result.push({type, symbols, exploded});
+                    exploded = true;
                 } while(symbols.includes("explosive"));
             }
         });

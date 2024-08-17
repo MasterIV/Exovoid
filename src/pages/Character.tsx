@@ -10,7 +10,7 @@ import {DicePoolType} from "../types/dice";
 
 interface CharacterPageProps {
     onChange: (name: string, value: any) => void;
-    onRoll: (skill: number, attribute: number, modifier?: number) => void;
+    onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
     stats: CharacterType
 }
 
@@ -88,7 +88,7 @@ export default function CharacterPage({stats, onChange, onRoll}: CharacterPagePr
                     <Value name='exp' width={128} label='Exp' value={exp} onChange={onChange}/>
                 </Grid>
                 <Grid item textAlign='right'>
-                    <Btn fullWidth className='roll-btn' onClick={() => onRoll(vigilance, 0)}>
+                    <Btn fullWidth className='roll-btn' onClick={() => onRoll(vigilance, 0, 0, {skill: "Vigilance"})}>
                         Vigilance
                         <DicePool {...vigilancePool} />
                     </Btn>

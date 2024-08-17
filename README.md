@@ -2,8 +2,8 @@
 
 Next Tasks:
 
-- rolling: popup
 - collection
+- roll summary popup
 
 Overall:
 

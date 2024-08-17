@@ -22,18 +22,12 @@ interface RollConfig {
     attribute: number;
     skill: number;
     modifier: number;
-}
-
-const modalStyles = {
-    margin: 'auto',
-    padding: 3,
-    marginTop: 10,
-    width: 400
+    metadata?: Record<string, any>;
 }
 
 function Game({character, onChange}: GameProps) {
     const [roll, setRoll] = useState<RollConfig>({
-        show: false, attribute: 0, skill: 0, modifier: 0
+        show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}
     });
 
     const [tab, setTab] = React.useState(0);
@@ -41,16 +35,17 @@ function Game({character, onChange}: GameProps) {
         setTab(newValue);
     }, []);
 
-    const resetRoll = useCallback(() => setRoll({show: false, attribute: 0, skill: 0, modifier: 0}), []);
-    const changeRoll = useCallback((skill: number, attribute: number, modifier = 0) => setRoll({
+    const resetRoll = useCallback(() => setRoll({show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}}), []);
+    const changeRoll = useCallback((skill: number, attribute: number, modifier = 0, metadata?: Record<string, any>) => setRoll({
         show: true,
         skill,
         attribute,
-        modifier
+        modifier,
+        metadata
     }), []);
 
     const onRoll = () => {
-        socket.emit("roll", calculatePool(roll.attribute, roll.skill, roll.modifier));
+        socket.emit("roll", calculatePool(roll.attribute, roll.skill, roll.modifier), roll.metadata);
         resetRoll();
     }
 
@@ -66,7 +61,7 @@ function Game({character, onChange}: GameProps) {
         <RollResult/>
 
         <Modal open={roll.show} onClose={resetRoll}>
-            <Paper sx={modalStyles}>
+            <Paper className="paperSmall">
                 <Stack spacing={3} textAlign="center">
                     <TextInput label="Modifier" type="number" name="modifier" values={roll}
                                onChange={(k, v) => setRoll({...roll, [k]: Number(v)})}/>

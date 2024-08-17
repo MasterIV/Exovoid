@@ -8,4 +8,5 @@ export interface DicePoolType {
 export type DiceResultType = {
     type: string;
     symbols: string[];
+    exploded?: boolean;
 }[];

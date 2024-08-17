@@ -2,13 +2,6 @@ import React, {useState} from 'react';
 import {Alert, Paper, Stack} from "@mui/material";
 import {Btn, TextInput} from "./components/Form";
 
-const styles= {
-    margin: 'auto',
-    padding: 3,
-    marginTop: 10,
-    width: 400
-}
-
 interface LoginData {
     name?: string;
     pw?: string;
@@ -37,7 +30,7 @@ function Login({onLogin, onRegister, error}: LoginProps) {
         onRegister(data.name, data.pw);
     }
 
-    return <Paper sx={styles}>
+    return <Paper className="paperSmall">
         <Stack spacing={2}>
             {(data.error || error) && <Alert severity="error">{error || data.error}</Alert>}
             <TextInput label="Name" name="name" values={data} onChange={onChange} />
