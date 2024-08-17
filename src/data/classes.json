@@ -1,0 +1,28 @@
+[
+   {
+    "name": "Space Marine",
+    "description": "The Space Marine is the elite soldier, equipped with advanced armor and weaponry designed for combat in zero-g, confined environments, like space ships and stations. Trained for boarding actions, they excel in heavy combat and can withstand the rigors of space warfare.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 2.000 Credits.",
+      "Combat-Ready Space Suit.",
+      "Cybernetics worth 2.000 Credits.",
+      "10 Assets."
+    ],
+    "attributes": ["CON", "STR"],
+    "skills": {
+      "Zero-G": 3,
+      "Firearms": 2,
+      "Melee": 2,
+      "Defense": 2,
+      "Survival": 1
+    },
+    "talents": {
+      "0": ["Zero-G Finesse", "Rush In", "Second Skin"],
+      "1": ["Martial Artist", "Lockpicker"],
+      "2": ["Point Blank", "Combat Clarity"],
+      "3": ["Riposte", "Defensive Posture"],
+      "5": ["Alertness", "Tactical Advance"],
+      "6": ["Exploit Weakspot", "Iron Skin"]
+    }
+  }
+]
