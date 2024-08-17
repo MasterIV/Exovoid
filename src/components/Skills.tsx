@@ -21,7 +21,7 @@ import {DicePoolType} from "../types/dice";
 
 interface SkillsProps {
     onChange: (name: string, value: number) => void;
-    onRoll: (pool: DicePoolType) => void;
+    onRoll: (skill: number, attribute: number, modifier?: number) => void;
     attributes: AttributeType,
     skills: { [key: string]: number },
 }
@@ -60,7 +60,7 @@ export default function Skills({skills, attributes, onChange, onRoll}: SkillsPro
                                         {s.attributes.map(a => (
                                             <Chip label={`${a}: ${attributes[a as keyof typeof attributes]}`}/>))}
                                     </Stack></TableCell>
-                                    <TableCell><Btn onClick={() => onRoll(pool)} fullWidth>
+                                    <TableCell><Btn onClick={() => onRoll(avg, skills[s.name] || 0)} fullWidth>
                                         <DicePool {...pool} />
                                     </Btn></TableCell>
                                 </TableRow>);

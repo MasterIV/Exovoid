@@ -4,9 +4,10 @@ import {DicePoolType, DiceResultType} from "../types/dice";
 import {ServerSocket} from "../types/server";
 import * as uuid from 'uuid';
 import {Paper} from "@mui/material";
+import socket from "../socket";
 
 interface RollResultProps {
-    socket: ServerSocket;
+
 }
 
 interface RollEntry {
@@ -28,7 +29,7 @@ function summarize(result: DiceResultType): Record<string, number> {
     return summary;
 }
 
-export function RollResult({socket}: RollResultProps) {
+export function RollResult({}: RollResultProps) {
     const [rolls, setRolls] = useState<RollEntry[]>([]);
 
     socket.removeAllListeners("roll")
