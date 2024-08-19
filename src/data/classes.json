@@ -1,12 +1,11 @@
 [
    {
     "name": "Space Marine",
-    "description": "The Space Marine is the elite soldier, equipped with advanced armor and weaponry designed for combat in zero-g, confined environments, like space ships and stations. Trained for boarding actions, they excel in heavy combat and can withstand the rigors of space warfare.",
+    "description": "The Space Marine is an elite soldier, equipped with advanced armor and weaponry designed for combat in zero-g, confined environments, like space ships and stations. Trained for boarding actions, they excel in heavy combat and can withstand the rigors of space warfare.",
     "equipment": [
-      "Weapons (incl. Mods) worth 2.000 Credits.",
-      "Combat-Ready Space Suit.",
-      "Cybernetics worth 2.000 Credits.",
-      "10 Assets."
+      "Weapons (incl. Mods) worth 250 Credits.",
+      "Armor (incl. Mods) worth 10.000 Credits.",
+      "Cybernetics worth 1.000 Credits."
     ],
     "attributes": ["CON", "STR"],
     "skills": {
@@ -17,12 +16,514 @@
       "Survival": 1
     },
     "talents": {
-      "0": ["Zero-G Finesse", "Rush In", "Second Skin"],
+      "0": ["Zero-G Finesse", "Impenetrable Shell", "Second Skin"],
       "1": ["Martial Artist", "Lockpicker"],
       "2": ["Point Blank", "Combat Clarity"],
       "3": ["Riposte", "Defensive Posture"],
       "5": ["Alertness", "Tactical Advance"],
       "6": ["Exploit Weakspot", "Iron Skin"]
+    }
+  },
+  {
+    "name": "Infantry",
+    "description": "Infantry soldiers are the backbone of any military force, versatile and adaptable. They are well-trained in a variety of weapons and tactics, capable of holding the line in ground battles, urban warfare, or planetary invasions. Infantry can adapt to many combat situations and provide essential support in larger operations.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 2.000 Credits.",
+      "Military-Grade Combat Suit and mods worth 400 Credits.",
+      "Cybernetics worth 2.000 Credits.",
+      "10 Assets."
+    ],
+    "attributes": ["COO", "AGI"],
+    "skills": {
+      "Firearms": 4,
+      "Heavy Weapons": 2,
+      "Athletics": 2,
+      "Survival": 1,
+      "Melee": 1
+    },
+    "talents": {
+      "0": ["Recoil Control", "Pull Together", "Directional Explosives"],
+      "1": ["Far Shot", "Cover Ducking"],
+      "2": ["Quick Reload", "Sprinter"],
+      "3": ["Cyberadaption Training", "Tough As Nails"],
+      "5": ["Effective Demolition", "Trigger Discipline"],
+      "6": ["Embracing Chaos", "Speed Trigger"]
+    }
+  },
+  {
+    "name": "Field Medic",
+    "description": "The Field Medic is a crucial support class, skilled in battlefield medicine and emergency surgery. They can stabilize wounded comrades and treat injuries in the field. Field Medics keep their team alive in the most dangerous situations, making them indispensable in prolonged engagements.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 500 Credits.",
+      "Medi Suit and mods worth 400 Credits.",
+      "Engram Reader and medicine items worth 400 Credits.",
+      "15 Assets."
+    ],
+    "attributes": ["INT", "AGI"],
+    "skills": {
+      "Medicine": 4,
+      "Survival": 2,
+      "Tech": 2,
+      "Empathy": 1,
+      "Defense": 1
+    },
+    "talents": {
+      "0": ["Field Doctor", "Sprinter", "Third Wind"],
+      "1": ["Efficient Treatment", "Trigger Discipline"],
+      "2": ["Juiced Up", "Steady Aim"],
+      "3": ["Reanimation", "Evasive"],
+      "5": ["Precision Traume", "Drug Expert"],
+      "6": ["Self-Treatment", "Lethal Attacks"]
+    }
+  },
+  {
+    "name": "Scientist",
+    "description": "Scientists are the intellectual powerhouses of the group, possessing deep knowledge in various scientific fields such as biology, chemistry, physics, and xenology. They can analyze data, conduct experiments, and apply scientific principles to solve complex problems, often providing innovative solutions to technical challenges.",
+    "equipment": [
+      "Regular items worth 2000 Credits.",
+      "Regular Home with Lab or Workshop.",
+      "Servitor Drone.",
+      "15 Assets."
+    ],
+    "attributes": ["EDU", "INT"],
+    "skills": {
+      "Science": 4,
+      "Tech": 2,
+      "Computers": 2,
+      "Xenology": 2
+    },
+    "talents": {
+      "0": ["Anatomical Insight", "Linguist", "Drug Manufacturing"],
+      "1": ["Anticipation", "Xeno Engineer"],
+      "2": ["Sterilization", "Flight Tracking"],
+      "3": ["Surgeon", "Irreproducible Prototype"],
+      "5": ["Reboot Shield Matrix", "Stroke Of Genius"],
+      "6": ["Wonder Doctor", "Phantom Scan"]
+    }
+  },
+  {
+    "name": "Agent",
+    "description": "Agents are masters of stealth, deception, and infiltration. Trained in espionage, covert operations, and close-quarters combat, they excel in missions that require subtlety and precision. Agents are the go-to class for intelligence gathering, sabotage, and high-stakes undercover operations.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 1000 Credits.",
+      "Civilian Combat Suit and mods worth 400 Credits.",
+      "Espionage items worth 2000 Credits.",
+      "Cybernetics worth 1000 Credits.",
+	  "10 Assets"
+    ],
+    "attributes": ["COO", "PER"],
+    "skills": {
+      "Infiltration": 3,
+      "Con Arts": 2,
+      "Firearms": 2,
+      "Investigation": 2,
+	  "Skullduggery": 1
+    },
+    "talents": {
+      "0": ["Lockpicker", "Far Shot", "Spy"],
+      "1": ["Linguist", "Concealment"],
+      "2": ["Breath In, Exhale, Fire", "Mirror"],
+      "3": ["White Lies", "Relentless Pursuit"],
+      "5": ["Assassin", "Efficient Subroutines"],
+      "6": ["Vanish", "Danger Sense"]
+    }
+  },
+  {
+    "name": "Hacker",
+    "description": "Hackers are experts in digital warfare, capable of breaching security systems, manipulating data, and taking control of enemy technology. Whether it’s disabling security grids or turning enemy drones against their owners, Hackers play a critical role in modern warfare by controlling the digital battlefield.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 500 Credits.",
+      "Hacking items worth 1000 Credits.",
+      "Cybernetics worth 2000 Credits.",
+	  "15 Assets"
+    ],
+    "attributes": ["INT", "INT"],
+    "skills": {
+      "Computers": 4,
+      "Tech": 3,
+      "Skulduggery": 2,
+      "Infiltration": 1
+    },
+    "talents": {
+      "0": ["Fasthack", "Efficient Subroutines", "Concealment"],
+      "1": ["Phishing Network", "Living Shadow"],
+      "2": ["System Redundancies", "Tinkerer"],
+      "3": ["Monitoring", "Cybersecurity Specialist"],
+      "5": ["System Hardening", "Synergetic Installation"],
+      "6": ["Overload", "Biofeedback Shock"]
+    }
+  },
+  {
+    "name": "Celebrity",
+    "description": "The Celebrity is a master of influence and charisma, using their fame and public image to sway opinions, rally support, or manipulate social situations. Whether as a diplomat, spokesperson, or socialite, they can open doors that others cannot and sway the masses with their presence.",
+    "equipment": [
+      "Luxury Home.",
+      "Servitor Drone.",
+      "Hover Car.",
+	  "15 Assets"
+    ],
+    "attributes": ["PER", "COO"],
+    "skills": {
+      "Con Arts": 4,
+      "Politics": 2,
+      "Empathy": 2,
+      "Streetwise": 2
+    },
+    "talents": {
+      "0": ["Inheritance", "First Impression", "Motivational Speech"],
+      "1": ["Connections", "Seducer"],
+      "2": ["Cash Flow", "Galaxy-Wide Fans"],
+      "3": ["Haggler", "Grip On Life"],
+      "5": ["White Lies", "Mob Of Fans"],
+      "6": ["Notorious Liar", "Quick Witted"]
+    }
+  },
+  {
+    "name": "Smuggler",
+    "description": "Smugglers are resourceful and cunning, specializing in the transport of illicit goods across borders and through blockades. They excel in evasion, negotiation, and black market dealings, making them invaluable for acquiring rare items or navigating the criminal underworld.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 500 Credits.",
+      "Any vehicles / space ships worth 10 Assets (including upgrades or modules).",
+	  "20 Assets"
+    ],
+    "attributes": ["COO", "PER"],
+    "skills": {
+      "Pilot": 3,
+      "Skullduggery": 3,
+      "Streetwise": 2,
+      "Con Arts": 2
+    },
+    "talents": {
+      "0": ["Connections", "Concealed Approach", "Unpredictable Aim"],
+      "1": ["Thug Language", "Effective Navigation"],
+      "2": ["Evasive Positioning", "Point Blank"],
+      "3": ["Secret Stash", "Concealment"],
+      "5": ["Vehicle Specialization", "Danger Sense"],
+      "6": ["Experimental Upgrade", "Dual Wield"]
+    }
+  },
+  {
+    "name": "Enforcer",
+    "description": "The Enforcer is a heavy-hitting combatant skilled in enforcing the law (or breaking it). They are the muscle of the group, adept at intimidation, melee combat, and handling high-risk confrontations. Enforcers excel at maintaining order or imposing their will through sheer physical presence.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 1000 Credits.",
+      "Motorcycle or Urban Car.",
+	  "Any one armor (incl. Mods) worth 1000 Credits.",
+	  "Cybernetics worth 3000 Credits.",
+	  "8 Assets."
+    ],
+    "attributes": ["STR", "CON"],
+    "skills": {
+      "Melee": 4,
+      "Defense": 2,
+      "Command": 2,
+      "Survival": 2
+    },
+    "talents": {
+      "0": ["Will To Survive", "Intimidation", "Charge"],
+      "1": ["Unkillable Beast", "Riposte"],
+      "2": ["Malfunction Resilience", "Heavy Blow"],
+      "3": ["Sweep", "Weapon Mastery"],
+      "5": ["Quick Recovery", "Dual Wield"],
+      "6": ["Cyberadaption Training", "Lethal Attacks"]
+    }
+  },
+  {
+    "name": "Commander",
+    "description": "Commanders are natural leaders and strategists, capable of coordinating complex operations and inspiring their troops. They excel in tactical planning, resource management, and battlefield command, often turning the tide of battle through decisive leadership.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 1000 Credits.",
+      "Any one armor (incl. Mods) worth 1000 Credits.",
+	  "Any vehicles / space ships (incl. modules) worth 15 Assets.",
+	  "5 Assets."
+    ],
+    "attributes": ["COO", "PER"],
+    "skills": {
+      "Command": 4,
+      "Politics": 2,
+      "Firearms": 2,
+      "Defense": 1,
+	  "Sensors": 1
+    },
+    "talents": {
+      "0": ["Tactical Commander", "Tactical Advance", "Helping Hand"],
+      "1": ["Combat Clarity", "Pull Together"],
+      "2": ["Quick Witted", "Air Of Authority"],
+      "3": ["Demand Obedience", "Call Target"],
+      "5": ["Field Doctor", "Danger Sense"],
+      "6": ["Trigger Discipline", "Anticipation"]
+    }
+  },
+  {
+    "name": "Navy",
+    "description": "Navy personnel are specialists in space vessel operations, including navigation, ship-to-ship combat, and fleet management. They excel in commanding or operating spacecraft, making them essential for spaceborne missions, from exploration to combat.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 500 Credits.",
+      "Combat-Ready Space Suit.",
+	  "30 Assets for space ships / modules."
+    ],
+    "attributes": ["AGI", "INT"],
+    "skills": {
+      "Gunnery": 3,
+      "Pilot": 3,
+      "Sensors": 2,
+      "Tech": 2
+    },
+    "talents": {
+      "0": ["Specialized Gunner", "Astrogation", "Fighter Piloting"],
+      "1": ["Zero-G Finesse", "Brace For Impact"],
+      "2": ["Combat Docking", "Weakspot Analysis"],
+      "3": ["Point Defense", "Flight Tracking"],
+      "5": ["Expert Jury-Rigger", "Tactical Commander"],
+      "6": ["Sub-System Targeting", "Rank and File"]
+    }
+  },
+  {
+    "name": "Pirate",
+    "description": "Pirates are ruthless and opportunistic, thriving in lawless regions of space. They excel in raiding, plundering, and ship boarding operations. Pirates are adaptable fighters who use unconventional tactics and underhanded methods to achieve their goals, often motivated by profit.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 500 Credits.",
+      "Small Space Station.",
+	  "20 Assets for space ships / modules."
+    ],
+    "attributes": ["AGI", "COO"],
+    "skills": {
+      "Firearms": 2,
+      "Gunnery": 2,
+      "Infiltration": 2,
+      "Pilot": 2,
+	  "Streetwise": 2
+    },
+    "talents": {
+      "0": ["Salvager", "Combat Docking", "Thug Language"],
+      "1": ["Intimidation", "Lockpicker"],
+      "2": ["Fighter Piloting", "Point Blank"],
+      "3": ["Monkey Patch", "Concealed Approach"],
+      "5": ["Emergency Evasion", "Unpredictable Aim"],
+      "6": ["Sub-System Targeting", "Grand Theft Ship"]
+    }
+  },
+  {
+    "name": "Engineer",
+    "description": "Engineers are the technical experts, capable of building, repairing, and modifying equipment, vehicles, and starships. They excel at keeping technology operational and can often find creative solutions to mechanical or electronic problems, making them indispensable in the field.",
+    "equipment": [
+      "One weapon or armor (incl. mods) worth 5000 Credits.",
+      "Crafting items worth 1000 Credits.",
+	  "8 Assets."
+    ],
+    "attributes": ["INT", "AGI"],
+    "skills": {
+      "Tech": 4,
+      "Science": 2,
+      "Computers": 2,
+      "Sensors": 2
+    },
+    "talents": {
+      "0": ["Tinkerer", "Cybernetic Maintenance", "Gun Nut"],
+      "1": ["Salvager", "Perfected Ship Care"],
+      "2": ["Experimental Upgrade", "Drone Fixer"],
+      "3": ["Expert Jury-Rigger", "Big Boom"],
+      "5": ["Irreproducible Prototype", "Multi-Rigger"],
+      "6": ["Master Of Improvisation", "Cybersecurity Specialist"]
+    }
+  },
+  {
+    "name": "Drone Rigger",
+    "description": "Drone Riggers specialize in controlling and deploying drones for various purposes, including reconnaissance, combat, and support roles. They excel at multitasking and can coordinate multiple drones simultaneously, providing a significant tactical advantage.",
+    "equipment": [
+      "VR Headset.",
+      "Tier-1 Cyberdeck.",
+	  "Cybernetics worth 2000 Credits.",
+	  "Drones worth 5000 Credits.",
+	  "5 Assets."
+    ],
+    "attributes": ["AGI", "INT"],
+    "skills": {
+      "Tech": 3,
+      "Pilot": 3,
+      "Computers": 2,
+      "Gunnery": 2
+    },
+    "talents": {
+      "0": ["Gun Nut", "Living Shadow", "Drone Fixer"],
+      "1": ["Spy", "Gamer Mindset"],
+      "2": ["Vehicle Specialization", "Custom Model"],
+      "3": ["Monitoring", "Unpredictable Aim"],
+      "5": ["Disposable Drone Army", "System Hardening"],
+      "6": ["Linked Control", "Minion Master"]
+    }
+  },
+  {
+    "name": "Explorer",
+    "description": "Explorers are adventurers and pioneers, skilled in survival, navigation, and the discovery of new worlds or ancient ruins. They excel at surviving in harsh environments, mapping unknown territories, and uncovering hidden secrets, making them ideal for missions into the unknown.",
+    "equipment": [
+      "40 Assets for space ships / modules.",
+      "Survival items worth 500 Credits."
+    ],
+    "attributes": ["EDU", "CON"],
+    "skills": {
+      "Survival": 3,
+      "Xenology": 2,
+      "Investigation": 2,
+      "Zero-G": 2,
+	  "Pilot": 1
+    },
+    "talents": {
+      "0": ["Climber", "Self-Treatment", "Astrogation"],
+      "1": ["Linguist", "Chart Comprehension"],
+      "2": ["Will To Survive", "Quick Witted"],
+      "3": ["Disposable Drone Army", "Falling Techniques"],
+      "5": ["Tracker", "Xeno Engineer"],
+      "6": ["Effective Navigation", "Sample Collector"]
+    }
+  },
+  {
+    "name": "Detective",
+    "description": "Detectives are masters of investigation and deduction, skilled at uncovering hidden truths, solving mysteries, and tracking down criminals. They excel in gathering clues, interrogating suspects, and piecing together complex cases, often acting as the moral compass of the group.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 500 Credits.",
+      "Regular items worth 1000 Credits.",
+      "Cybernetics worth 2000 Credits.",
+      "Simple Home + Regular Home.",
+      "10 Assets."
+    ],
+    "attributes": ["PER", "COO"],
+    "skills": {
+      "Investigation": 3,
+      "Empathy": 2,
+      "Con Arts": 2,
+      "Firearms": 2,
+	  "Streetwise": 1
+    },
+    "talents": {
+      "0": ["Tracker", "Intimidation", "Spy"],
+      "1": ["Fasthack", "Thug Language"],
+      "2": ["Danger Sense", "Master Detective"],
+      "3": ["Relentless Pursuit", "Blend In"],
+      "5": ["Demand Obedience", "Notorious Liar"],
+      "6": ["Blackmail", "Martial Artist"]
+    }
+  },
+  {
+    "name": "Criminal",
+    "description": "Criminals are underworld operatives who excel in illegal activities such as theft, smuggling, and black-market dealings. They are resourceful and cunning, often using their connections and street smarts to get what they want, making them useful for missions that require a less-than-legal approach.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 1000 Credits.",
+      "Regular items worth 500 Credits.",
+      "Cybernetics worth 2000 Credits.",
+      "2000 illicit credits as cash on hand (cannot be spent during character generation).",
+      "10 Assets."
+    ],
+    "attributes": ["CON", "COO"],
+    "skills": {
+      "Skullduggery": 3,
+      "Streetwise": 3,
+      "Firearms": 2,
+      "Infiltration": 2
+    },
+    "talents": {
+      "0": ["Martial Artist", "Living Shadow", "Blend In"],
+      "1": ["Recoil Control", "Assassin"],
+      "2": ["Lurking Death", "Concealment"],
+      "3": ["Flurry", "Tough As Nails"],
+      "5": ["Ripper", "Grip On Life"],
+      "6": ["Killer Instincts", "Police Handler"]
+    }
+  },
+  {
+    "name": "Tactical Enhanced Forces",
+    "description": "Members of the TEF are heavily augmented combatants who have integrated advanced cybernetics into their bodies, enhancing their physical and combat abilities. They excel in brutal combat and can take on roles that would be impossible for unaugmented humans, often at the cost of their humanity.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 500 Credits.",
+      "Cybernetics worth 12.000 Credits."
+    ],
+    "attributes": ["AGI", "CON"],
+    "skills": {
+      "Melee": 4,
+      "Defense": 3,
+      "Tech": 2,
+      "Athletics": 1
+    },
+    "talents": {
+      "0": ["Cybernetic Maintenance", "Drug Expert", "Iron Wall"],
+      "1": ["Self-Treatment", "Cyberadaption Training"],
+      "2": ["Malfunction Resilience", "Alertness"],
+      "3": ["Evasive", "Unkillable Beast"],
+      "5": ["Synergetic Installation", "Cybernetic Overload"],
+      "6": ["Dual Wield", "Rush In"]
+    }
+  },
+  {
+    "name": "Trader",
+    "description": "Traders are savvy merchants and negotiators who excel in commerce, barter, and resource management. They are skilled at acquiring goods, striking deals, and managing trade routes, making them vital for maintaining supplies and turning a profit in the galaxy’s markets.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 250 Credits.",
+      "Common space station or 40 Assets for space ships / modules."
+    ],
+    "attributes": ["EDU", "PER"],
+    "skills": {
+      "Streetwise": 3,
+      "Con Arts": 3,
+      "Empathy": 2,
+      "Politics": 2
+    },
+    "talents": {
+      "0": ["Vehicle Specialization", "Connections", "Haggler"],
+      "1": ["Astrogation", "Permit Collection"],
+      "2": ["First Impression", "Linguist"],
+      "3": ["Stock Broker", "Cash Flow"],
+      "5": ["Experimental Upgrade", "White Lies"],
+      "6": ["Merchant's Guild", "Space Port Owner"]
+    }
+  },
+  {
+    "name": "Diplomat",
+    "description": "Diplomats are skilled negotiators and political operators, specializing in forging alliances, brokering peace, and navigating complex political landscapes. They excel in social interactions and can defuse conflicts or manipulate events in their favor through words alone.",
+    "equipment": [
+      "Simulant Drone or 2 Servitor drones.",
+      "Luxury Home.",
+      "10 Assets."
+    ],
+    "attributes": ["PER", "EDU"],
+    "skills": {
+      "Politics": 4,
+      "Empathy": 2,
+      "Con Arts": 2,
+      "Command": 2
+    },
+    "talents": {
+      "0": ["Diplomatic Immunity", "Permit Collection", "Police Handler"],
+      "1": ["Motivational Speech", "Linguist"],
+      "2": ["Cash Flow", "First Impression"],
+      "3": ["Personal Protection", "White Lies"],
+      "5": ["Air Of Authority", "Seducer"],
+      "6": ["Blackmail", "Mind Reader"]
+    }
+  },
+  {
+    "name": "Bounty Hunter",
+    "description": "Bounty Hunters are relentless trackers and skilled combatants who specialize in capturing or eliminating targets for a price. They excel in pursuit, combat, and survival, often taking on the most dangerous missions for the right reward.",
+    "equipment": [
+      "Weapons (incl. Mods) worth 1000 Credits.",
+      "Space Suit.",
+      "Simple Home.",
+      "20 Assets for vehicles or space ships / modules."
+    ],
+    "attributes": ["AGI", "INT"],
+    "skills": {
+      "Firearms": 3,
+      "Pilot": 2,
+      "Infiltration": 2,
+      "Investigation": 2,
+      "Survival": 1
+    },
+    "talents": {
+      "0": ["Tracker", "Bountyhunter's Guild", "Far Shot"],
+      "1": ["Assassin", "Breath In, Exhale, Fire"],
+      "2": ["Relentless Pursuit", "Third Wind"],
+      "3": ["Iron Skin", "Gun Nut"],
+      "5": ["Trigger Discipline", "Tinkerer"],
+      "6": ["Perimeter Scan", "Gamer Mindset"]
     }
   }
 ]
