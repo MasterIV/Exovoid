@@ -30,20 +30,20 @@ function App() {
         onError(setError);
     }, []);
 
-    if(!account)
-        return <Login
-            error={error}
-            onLogin={(name, pw) => {setError(""); socket.emit("login", name, pw);}}
-            onRegister={(name, pw) => {setError(""); socket.emit("register", name, pw);}} />;
+    if(character)
+        return <Game character={character} onChange={changeCharacter} />;
 
-    if(!character)
+    if(account)
         return <Tables
             error={error}
             account={account}
             onJoin={(id) => {setError(""); socket.emit("join", id);}}
             onCreate={(name, table, pw) => {setError(""); socket.emit("create", name, table, pw);}} />;
 
-    return <Game character={character} onChange={changeCharacter} />;
+    return <Login
+            error={error}
+            onLogin={(name, pw) => {setError(""); socket.emit("login", name, pw);}}
+            onRegister={(name, pw) => {setError(""); socket.emit("register", name, pw);}} />;
 }
 
 export default App;

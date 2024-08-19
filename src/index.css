@@ -139,3 +139,9 @@ code {
 .paperLarge {
   width: 600px
 }
+
+.talent {
+  margin: 4px 0;
+  padding: 6px 8px;
+  background-color: #333 !important;
+}

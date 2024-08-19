@@ -2,6 +2,8 @@ import {io} from "socket.io-client";
 import {ServerSocket} from "./types/server";
 import AccountType from "./types/account";
 import CharacterType from "./types/character";
+import defaults from "./data/character.json";
+
 const socket: ServerSocket = io();
 
 const accountName = localStorage.getItem('account.name');
@@ -11,10 +13,9 @@ if(accountName && accountToken)
 
 export const onCharacterChange = (setCharacter: (data: CharacterType) => void) => {
     socket.removeAllListeners("character");
-    socket.on("character", data => {
-        console.log("character");
-        setCharacter(data)
-    });
+    socket.on("character", setCharacter);
+    // Load some dummy data if we don't have a backend running
+    socket.on("connect_error", () => setCharacter(defaults));
 }
 
 export const onAccountChange = (setAccount: (data: AccountType) => void) => {
@@ -28,7 +29,7 @@ export const onAccountChange = (setAccount: (data: AccountType) => void) => {
 
 export const onError = (setError: (data: string) => void) => {
     socket.removeAllListeners("error");
-    socket.on("error", data => setError(data));
+    socket.on("error", setError);
 }
 
 

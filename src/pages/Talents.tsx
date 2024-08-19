@@ -1,9 +1,16 @@
 import React from "react";
-import Profession from "../components/Profession";
+import {Career} from "../components/Career";
+import careers  from "../data/classes.json";
+import {Grid} from "@mui/material";
+import CharacterType from "../types/character";
 
 interface TalentPageProps {
-
+    onChange: (name: string, value: any) => void;
+    stats: CharacterType
 }
+
 export default function TalentPage({} : TalentPageProps) {
-    return <Profession name='Solider' />;
+    return (<Grid container spacing={2} margin={1} direction="column">
+        {careers.map(c => <Grid item><Career {...c}/></Grid>)}
+    </Grid>);
 }
