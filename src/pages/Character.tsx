@@ -11,7 +11,8 @@ import {DicePoolType} from "../types/dice";
 interface CharacterPageProps {
     onChange: (name: string, value: any) => void;
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
-    stats: CharacterType
+    stats: CharacterType;
+    locked?: boolean;
 }
 
 const derivedStyles: React.CSSProperties = {
@@ -22,7 +23,7 @@ const derivedStyles: React.CSSProperties = {
     padding: 5,
 };
 
-export default function CharacterPage({stats, onChange, onRoll}: CharacterPageProps) {
+export default function CharacterPage({stats, onChange, onRoll, locked=false}: CharacterPageProps) {
     const {
         attributes,
         skills,
@@ -96,7 +97,7 @@ export default function CharacterPage({stats, onChange, onRoll}: CharacterPagePr
             </Grid>
         </Grid>
 
-        <Attributes onChange={changeAttribute} values={attributes}/>
-        <Skills onChange={changeSkill} attributes={attributes} skills={skills} onRoll={onRoll}/>
+        <Attributes locked={locked} onChange={changeAttribute} values={attributes}/>
+        <Skills locked={locked} onChange={changeSkill} attributes={attributes} skills={skills} onRoll={onRoll}/>
     </Grid>);
 }

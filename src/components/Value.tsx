@@ -10,6 +10,7 @@ interface ValueProps {
     label?: string;
     width?: number;
     mask?: string;
+    disabled?: boolean;
 }
 
 export default function Value({
@@ -18,7 +19,8 @@ export default function Value({
     onChange,
     mask,
     label = "Value",
-    width = 90
+    width = 90,
+    disabled = false
 }: ValueProps) {
     const inputProps: InputProps = {};
 
@@ -27,16 +29,17 @@ export default function Value({
     }
 
     return <ButtonGroup variant="contained">
-        <Button onClick={() => onChange(name, value - 1)}><RemoveIcon fontSize="small"/></Button>
+        <Button disabled={disabled} onClick={() => onChange(name, value - 1)}><RemoveIcon fontSize="small"/></Button>
         <TextField
             id={name}
             label={label}
             value={value}
+            disabled={disabled}
             onChange={e => onChange(name, Number(e.target.value))}
             variant="filled"
             sx={{width}}
             InputProps={inputProps}
             size="small"/>
-        <Button onClick={() => onChange(name, value + 1)}><AddIcon fontSize="small"/></Button>
+        <Button disabled={disabled} onClick={() => onChange(name, value + 1)}><AddIcon fontSize="small"/></Button>
     </ButtonGroup>;
 }

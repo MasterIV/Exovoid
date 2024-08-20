@@ -2,7 +2,6 @@ import React from "react";
 import {Grid, Paper, Table, TableBody, TableCell, TableRow, Typography} from "@mui/material";
 import talents from '../data/talents.json';
 
-
 const talentMap: Record<string, string> = {};
 talents.forEach(t => talentMap[t.talent] = t.description);
 
@@ -30,7 +29,7 @@ export function Career({name, description, equipment, skills, attributes, talent
                     <Typography variant={"caption"}>Gain +1 {attributes[1]}</Typography>
                 </Paper>;
             default:
-                return talents[tier].map(t => <Paper className="talent">
+                return talents[tier].map(t => <Paper key={t} className="talent">
                     <Typography fontWeight={"bold"}>{t}</Typography>
                     <Typography variant={"caption"}>{talentMap[t]}</Typography>
                 </Paper>);
@@ -47,29 +46,29 @@ export function Career({name, description, equipment, skills, attributes, talent
             <Typography>{description}</Typography>
         </Grid><Grid xs={4} item>
             <Typography variant="h6">Starting Equip:</Typography>
-            <ul>{equipment.map(e => <li>{e}</li>)}</ul>
+            <ul>{equipment.map(e => <li key={e}>{e}</li>)}</ul>
         </Grid><Grid xs={3} item>
             <Typography variant="h6">Starting Skills:</Typography>
-            <ul>{Object.entries(skills).map(s => <li>{s[0]}: {s[1]}</li>)}</ul>
+            <ul>{Object.entries(skills).map(s => <li key={s[0]}>{s[0]}: {s[1]}</li>)}</ul>
         </Grid>
     </Grid><Grid item>
 
         <Table>
             <TableBody>
                 <TableRow>
-                    {Array(4).fill(0).map((z, i) => <TableCell width={"25%"}>
+                    {Array(4).fill(0).map((z, i) => <TableCell key={i} width={"25%"}>
                         Tier {i}
                     </TableCell>)}
                 </TableRow><TableRow>
-                    {Array(4).fill(0).map((z, i) => <TableCell className="talents">
+                    {Array(4).fill(0).map((z, i) => <TableCell key={i} className="talents">
                         {listTalents(i.toString())}
                     </TableCell>)}
                 </TableRow><TableRow>
-                    {Array(4).fill(0).map((z, i) => <TableCell width={"25%"}>
+                    {Array(4).fill(0).map((z, i) => <TableCell key={i} width={"25%"}>
                         Tier {i + 4}
                     </TableCell>)}
-                </TableRow> <TableRow>
-                    {Array(4).fill(0).map((z, i) => <TableCell className="talents">
+                </TableRow><TableRow>
+                    {Array(4).fill(0).map((z, i) => <TableCell key={i} className="talents">
                         {listTalents((i + 4).toString())}
                     </TableCell>)}
                 </TableRow>

@@ -7,17 +7,18 @@ import AttributeType from "../types/attributes";
 
 interface AttributesProps {
     onChange: (name: string, value: number) => void;
-    values: AttributeType
+    values: AttributeType;
+    locked?: boolean;
 }
 
-export default function Attributes({values, onChange}: AttributesProps) {
+export default function Attributes({values, onChange, locked=false}: AttributesProps) {
     return (<Grid item container spacing={2} justifyContent={"center"}>
         {Object.keys(attributes).map((a: string) => {
             const {name} = attributes[a as keyof typeof attributes];
             const value = values[a as keyof typeof values] || 0;
 
-            return (<Grid item>
-                <Value key={a} name={a} label={name} value={value} onChange={onChange}/>
+            return (<Grid key={a} item>
+                <Value disabled={locked} name={a} label={name} value={value} onChange={onChange}/>
             </Grid>);
         })}
     </Grid>);

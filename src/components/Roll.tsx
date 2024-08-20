@@ -40,7 +40,7 @@ export function DicePool({large = false, ...props}: DicePoolProps) {
     return (<div className={'dice-pool'}>
         {Object.keys(dice).map(d => {
             const key = d as keyof typeof props;
-            return props[key] ? <DiceCounter large={large} type={d} count={props[key] || 0}/> : null;
+            return props[key] ? <DiceCounter key={d} large={large} type={d} count={props[key] || 0}/> : null;
         })}
     </div>)
 }

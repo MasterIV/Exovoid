@@ -22,11 +22,12 @@ import {DicePoolType} from "../types/dice";
 interface SkillsProps {
     onChange: (name: string, value: number) => void;
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
-    attributes: AttributeType,
-    skills: { [key: string]: number },
+    attributes: AttributeType;
+    skills: { [key: string]: number };
+    locked?: boolean;
 }
 
-export default function Skills({skills, attributes, onChange, onRoll}: SkillsProps) {
+export default function Skills({skills, attributes, onChange, onRoll, locked=false}: SkillsProps) {
     const half = Math.ceil(skillDefinition.length / 2);
     const definitions = [skillDefinition.slice(0, half), skillDefinition.slice(half)];
 
@@ -51,14 +52,14 @@ export default function Skills({skills, attributes, onChange, onRoll}: SkillsPro
                                 const avg = Math.ceil(sum / s.attributes.length);
                                 const pool = calculatePool(avg, skills[s.name] || 0);
 
-                                return (<TableRow>
+                                return (<TableRow key={s.name}>
                                     <TableCell>
-                                        <Value key={s.name} name={s.name} label={s.name}
+                                        <Value disabled={locked} name={s.name} label={s.name}
                                                value={skills[s.name] || 0} onChange={onChange}/>
                                     </TableCell>
                                     <TableCell> <Stack direction="row" spacing={1}>
                                         {s.attributes.map(a => (
-                                            <Chip label={`${a}: ${attributes[a as keyof typeof attributes]}`}/>))}
+                                            <Chip key={a} label={`${a}: ${attributes[a as keyof typeof attributes]}`}/>))}
                                     </Stack></TableCell>
                                     <TableCell><Btn onClick={() => onRoll(avg, skills[s.name] || 0, 0, {skill: s.name})} fullWidth>
                                         <DicePool {...pool} />

@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {Box, Container, Modal, Paper, Stack, Tab, Tabs} from "@mui/material";
+import {Box, Checkbox, Container, FormControlLabel, Grid, Modal, Paper, Stack, Tab, Tabs} from "@mui/material";
 import CharacterPage from "./pages/Character";
 import LorePage from "./pages/Lore";
 import CombatPage from "./pages/Combat";
@@ -26,6 +26,7 @@ interface RollConfig {
 }
 
 function Game({character, onChange}: GameProps) {
+    const [locked, setLocked] = useState(false);
     const [roll, setRoll] = useState<RollConfig>({
         show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}
     });
@@ -50,7 +51,7 @@ function Game({character, onChange}: GameProps) {
     }
 
     const tabs = [
-        {name: "Character", content: <CharacterPage stats={character} onChange={onChange} onRoll={changeRoll}/>},
+        {name: "Character", content: <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Combat", content: <CombatPage stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Talents", content: <TalentPage stats={character} onChange={onChange}/>},
         {name: "Inventory", content: <InventoryPage/>},
@@ -71,9 +72,16 @@ function Game({character, onChange}: GameProps) {
             </Paper>
         </Modal>
 
-        <Tabs value={tab} onChange={changeTab}>
-            {tabs.map(tab => (<Tab key={tab.name} label={tab.name}/>))}
-        </Tabs>
+        <Grid container direction="row">
+            <Grid xs={8} item><Tabs value={tab} onChange={changeTab}>
+                {tabs.map(tab => (<Tab key={tab.name} label={tab.name}/>))}
+            </Tabs></Grid>
+
+            <Grid xs={4} textAlign="right" item>
+                <FormControlLabel control={<Checkbox  checked={locked} onChange={e => setLocked(e.target.checked)} />} label="Lock" />
+                <Btn>Logut</Btn>
+            </Grid>
+        </Grid>
 
         <Box>{tabs[tab].content}</Box>
     </Container>);

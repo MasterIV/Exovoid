@@ -11,6 +11,6 @@ interface TalentPageProps {
 
 export default function TalentPage({} : TalentPageProps) {
     return (<Grid container spacing={2} margin={1} direction="column">
-        {careers.map(c => <Grid item><Career {...c}/></Grid>)}
+        {careers.map(c => <Grid key={c.name} item><Career {...c}/></Grid>)}
     </Grid>);
 }

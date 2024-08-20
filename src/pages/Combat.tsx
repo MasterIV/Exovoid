@@ -1,6 +1,8 @@
 import React from "react";
-import {Grid} from "@mui/material";
+import {Grid, Stack} from "@mui/material";
 import CharacterType from "../types/character";
+import {Weapon} from "../components/Weapon";
+import {Btn} from "../components/Form";
 
 interface CombatPageProps {
     onChange: (name: string, value: any) => void;
@@ -9,12 +11,18 @@ interface CombatPageProps {
 }
 
 export default function CombatPage({} : CombatPageProps) {
-    return (<Grid item container spacing={2} margin={1}>
+    return (<Grid container spacing={2} margin={1}>
         <Grid item xs={3}>
             Initiative
         </Grid>
         <Grid item xs={6}>
-            Waffen, Rüstung
+            <Stack spacing={2}>
+                <Weapon />
+                <Weapon />
+                <Weapon />
+                <Btn>Add Weapon</Btn>
+
+            </Stack>
         </Grid>
         <Grid item xs={3}>
             Wunden
