@@ -1,6 +1,6 @@
 import React from "react";
 import dice from '../data/dice.json';
-import {DicePoolType, DiceResultType} from "../types/dice";
+import {DicePoolType} from "../types/dice";
 
 interface RollProps {
 
@@ -18,7 +18,7 @@ interface DiceSymbolProps {
 
 export function DiceSymbol({type, symbols, exploded}: DiceSymbolProps) {
     return (<div className={`dice large ${type} ${exploded && 'exploded'}`}>
-        {symbols.length > 0 && <img src={`/img/symbols/${symbols.join("_")}.png`} width={24} />}
+        {symbols.length > 0 && <img alt={symbols.join("_")} src={`/img/symbols/${symbols.join("_")}.png`} width={24} />}
     </div>)
 }
 
