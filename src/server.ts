@@ -15,9 +15,10 @@ const port = 3080;
 
 console.log('Server started...');
 
-touch( 'accounts');
-touch( 'chars');
-touch('tables');
+touch( 'data');
+touch( 'data/accounts');
+touch( 'data/chars');
+touch('data/tables');
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());

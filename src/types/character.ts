@@ -7,7 +7,7 @@ export default interface CharacterType {
     description?: string;
     image?: string;
     attributes: AttributeType;
-    skills: {[key:string]: number};
+    skills: Record<string, number>;
     currentHealth: number;
     currentEdge: number;
     exp: number;

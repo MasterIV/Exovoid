@@ -2,6 +2,8 @@ import {validateName} from "./validate";
 import * as fs from "fs";
 import {createSalt, hashPassword} from "./password";
 
+const dir = "data/tables"
+
 interface TableData {
     name: string;
     hash: string;
@@ -12,7 +14,7 @@ export default class TableService {
 
     check(table: string, password: string) {
         validateName(table);
-        const file = `tables/${table}.json`;
+        const file = `${dir}/${table}.json`;
 
         if(fs.existsSync(file)) {
             const content = fs.readFileSync(file);

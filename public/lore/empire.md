@@ -12,7 +12,7 @@ The Empire was founded millennia ago by several core species located near the ga
 These species, driven by a desire for stability, security, and resource control, formed a coalition that gradually expanded outward. 
 Through a combination of diplomacy, trade, and military might, the Empire extended its influence across two major arms of the galaxy.
 
-#### III. Structure and Governance
+#### Structure and Governance
 
 **Central Authority:**
 At the heart of the Empire is a council of the most advanced and influential species, often called the "Galactics". 
@@ -54,7 +54,7 @@ These are just a few examples as the actual imperial law might fill a small libr
 entire species dedicated to study, interpretation and resolving disputes. 
 But if in doubt, the Galactics have the last say.
 
-#### IV. Notable Species
+#### Notable Species
 
 **The Galactics:**
 - **Rhinwa:** 
@@ -102,7 +102,7 @@ But if in doubt, the Galactics have the last say.
   Their culture is highly disciplined and martial, with strict codes of conduct and rituals related to warfare and bravery.
   They are organized into clans with long-standing traditions and legacies.
 
-#### VI. Challenges and Conflicts
+#### Challenges and Conflicts
 
 **Internal Strife:**
 The lack of a central Emperor has led to political maneuvering and tension among the ruling factions. 

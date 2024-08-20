@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #111;
+  color: white;
 }
 
 code {
@@ -81,13 +82,6 @@ code {
   background-image: url("img/dice/injury.png");
 }
 
-.talent {
-  width: 200px;
-  text-align: left;
-  padding: 5px 10px;
-  margin: auto;
-}
-
 .rollResult {
   padding: 6px;
   width: 200px;
@@ -140,8 +134,32 @@ code {
   width: 600px
 }
 
+.career {
+  padding: 8px 16px;
+}
+
+/*
+.talents {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  width: 100%;
+}
+
+.talents > div {
+  width: 24%;
+}
+
+*/
+
+.talents {
+  border: 0 !important;
+}
+
 .talent {
-  margin: 4px 0;
+  margin: 6px 0;
   padding: 6px 8px;
   background-color: #333 !important;
 }

@@ -4,11 +4,13 @@ import {validateName} from "./validate";
 import CharacterType from "../types/character";
 import {createSalt, hashPassword} from "./password";
 
+const dir = "data/accounts"
+
 export default class AccountService {
     login(name: string, password: string) : AccountType  {
         validateName(name);
 
-        const content = fs.readFileSync(`accounts/${name}.json`);
+        const content = fs.readFileSync(`${dir}/${name}.json`);
         if(!content) throw new Error("Account not found!");
 
         const account = JSON.parse(content.toString()) as AccountType;
@@ -24,7 +26,7 @@ export default class AccountService {
     relogin(name: string, token: string) : AccountType  {
         validateName(name);
 
-        const content = fs.readFileSync(`accounts/${name}.json`);
+        const content = fs.readFileSync(`${dir}/${name}.json`);
         if(!content) throw new Error("Account not found!");
 
         const account = JSON.parse(content.toString()) as AccountType;
@@ -37,7 +39,7 @@ export default class AccountService {
     register(name: string, password: string) : AccountType {
         validateName(name);
 
-        if(fs.existsSync(`accounts/${name}.json`))
+        if(fs.existsSync(`${dir}/${name}.json`))
             throw new Error("Name not available!");
 
         const salt = createSalt();
@@ -59,6 +61,6 @@ export default class AccountService {
     }
 
     private saveAccount(account: AccountType) {
-        fs.writeFileSync(`accounts/${account.name}.json`, JSON.stringify(account, null, 2));
+        fs.writeFileSync(`${dir}/${account.name}.json`, JSON.stringify(account, null, 2));
     }
 }
