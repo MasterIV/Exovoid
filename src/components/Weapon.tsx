@@ -21,7 +21,6 @@ import Value from "./Value";
 const weaponMap: Record<string, any> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w);
 
-
 interface WeaponProps extends CharacterWeapon {
     onRemove: () => void;
     onChange: (name: string, value: any) => void;

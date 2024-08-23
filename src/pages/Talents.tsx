@@ -1,6 +1,6 @@
 import React from "react";
 import {Career} from "../components/Career";
-import careers  from "../data/classes.json";
+import careers from "../data/classes.json";
 import {Grid} from "@mui/material";
 import CharacterType from "../types/character";
 
@@ -9,8 +9,12 @@ interface TalentPageProps {
     stats: CharacterType
 }
 
-export default function TalentPage({} : TalentPageProps) {
+export default function TalentPage({stats, onChange}: TalentPageProps) {
     return (<Grid container spacing={2} margin={1} direction="column">
-        {careers.map(c => <Grid key={c.name} item><Career {...c}/></Grid>)}
+        {careers.map(c => <Grid key={c.name} item>
+            <Career {...c}
+                    onChange={talents => onChange('talents', talents)}
+                    acquiredTalents={stats.talents || []}/>
+        </Grid>)}
     </Grid>);
 }
