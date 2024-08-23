@@ -21,10 +21,12 @@ export default function Collection({values, component, onChange, ...props}: Coll
     }
 
     const Component = component;
-    return values.map((value, i) => <Component
+    return <>
+        {values.map((value, i) => <Component
         {...props}
         {...value}
         key={value.id}
         onChange={(n:string,v:string) => changeElement(i,n,v)}
-        onRemove={() => removeElement(i)} />);
+        onRemove={() => removeElement(i)} />)}
+    </>;
 }

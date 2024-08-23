@@ -52,7 +52,7 @@ function Game({character, onChange}: GameProps) {
 
     const tabs = [
         {name: "Character", content: <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
-        {name: "Combat", content: <CombatPage stats={character} onChange={onChange} onRoll={changeRoll}/>},
+        {name: "Combat", content: <CombatPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Talents", content: <TalentPage stats={character} onChange={onChange}/>},
         {name: "Inventory", content: <InventoryPage/>},
         {name: "Lore", content: <LorePage/>},

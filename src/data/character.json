@@ -6,5 +6,9 @@
   "skills": {},
   "currentEdge": 0,
   "currentHealth": 0,
-  "exp": 0
+  "exp": 0,
+  "classes": [],
+  "talents": [],
+  "weapons": [],
+  "injuries": []
 }

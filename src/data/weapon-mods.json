@@ -1,0 +1,282 @@
+[
+  {
+    "slot": "Muzzle / Barrel",
+    "name": "Muzzle Compensator",
+    "effects": "Grants the weapon the \"Compensated\" quality. If it already had that quality, further reduce the pool penalty of Full Auto attacks by 1.",
+    "compatible": "Projectile Firearms",
+    "cost": 150,
+    "rarity": 1
+  },
+  {
+    "slot": "Muzzle / Barrel",
+    "name": "Silencer",
+    "effects": "Provides the weapon with the \"Silenced\" quality. If the weapon had the \"Loud\" quality, it loses it instead.",
+    "compatible": "Any",
+    "cost": 200,
+    "rarity": 2
+  },
+  {
+    "slot": "Muzzle / Barrel",
+    "name": "Flash Hider",
+    "effects": "Hides the flash of the weapon's muzzle, making it difficult to detect you at long ranges.",
+    "compatible": "Projectile Firearms",
+    "cost": 100,
+    "rarity": 2
+  },
+  {
+    "slot": "Muzzle / Barrel",
+    "name": "Heavy-Duty Coupler",
+    "effects": "Increases the base damage by 20%, but reduces magazine capacity by 30%.",
+    "compatible": "Laser Firearms",
+    "cost": 120,
+    "rarity": 3
+  },
+  {
+    "slot": "Muzzle / Barrel",
+    "name": "Focus Lense",
+    "effects": "Increases the Penetrating quality by 20%.",
+    "compatible": "Laser Firearms",
+    "cost": 150,
+    "rarity": 3
+  },
+  {
+    "slot": "Muzzle / Barrel",
+    "name": "Heat Ventilation System",
+    "effects": "Allows to use the gun for more than 10 shots in vacuum.",
+    "compatible": "Any",
+    "cost": 250,
+    "rarity": 2
+  },
+  {
+    "slot": "Scopes",
+    "name": "Red Dot Scope",
+    "effects": "Provides Handling (+1) when shooting the weapon at optimal range, but -1 when shooting within maximum range.",
+    "compatible": "Any",
+    "cost": 150,
+    "rarity": 1
+  },
+  {
+    "slot": "Scopes",
+    "name": "Thermal Imaging Scope",
+    "effects": "Provides Handling (+2) when shooting at living creatures, but Handling (-4) when shooting anything else.\nAdditionally, all injury rolls that you cause have 2 less dice.",
+    "compatible": "Any",
+    "cost": 300,
+    "rarity": 3
+  },
+  {
+    "slot": "Scopes",
+    "name": "Night Vision Scope",
+    "effects": "Turns the difficulty increase during darkness into a mere -1 pool modifier, but adds +1 difficulty when using the scope in bright environments.",
+    "compatible": "Any",
+    "cost": 250,
+    "rarity": 3
+  },
+  {
+    "slot": "Scopes",
+    "name": "ACOG 4x Scope",
+    "effects": "Increases all ranges by 50%, but makes you suffer Handling (-1) when shooting within optimal range or under.",
+    "compatible": "Any",
+    "cost": 200,
+    "rarity": 2
+  },
+  {
+    "slot": "Scopes",
+    "name": "Marksman Scope",
+    "effects": "Increases all ranges by 100%, but also increases the lower end of the \"optimal range\" by 20 squares.\nIf the new minimum range is equal to or higher than the upper end of the \"optimal range\", then the upper end simply becomes 10 squares higher than the new minimum.",
+    "compatible": "Any",
+    "cost": 250,
+    "rarity": 2
+  },
+  {
+    "slot": "Scopes",
+    "name": "Smart Targeting Scope",
+    "effects": "Adds a -2 pool penalty to any attempts to actively dodge your attacks.",
+    "compatible": "Any",
+    "cost": 350,
+    "rarity": 3
+  },
+  {
+    "slot": "Mechanism",
+    "name": "Fast Trigger Unit",
+    "effects": "The weapon gains the Burst quality equal to 1/5th of the unmodified magazine capacity (to a minimum of 5). It also gains the Full Auto quality equal to three times the weapon's Burst quality.",
+    "compatible": "Any",
+    "cost": 200,
+    "rarity": 2
+  },
+  {
+    "slot": "Mechanism",
+    "name": "Overcharged Plasma Cell",
+    "effects": "Allows you to fire the weapon with a +30% base damage bonus at double the shot amount spent per attack.",
+    "compatible": "Plasma Firearms",
+    "cost": 250,
+    "rarity": 4
+  },
+  {
+    "slot": "Mechanism",
+    "name": "Smartgun Integration",
+    "effects": "So long as the user possesses a smart eye cyberware or an armor with Visual Enhancers, they add Handling (+2).",
+    "compatible": "Any",
+    "cost": 200,
+    "rarity": 3
+  },
+  {
+    "slot": "Mechanism",
+    "name": "AP Chamber",
+    "effects": "Increases the ammo cost by 30%, but the weapon adds Penetrating (+2).",
+    "compatible": "Projectile Firearms",
+    "cost": 250,
+    "rarity": 3
+  },
+  {
+    "slot": "Mechanism",
+    "name": "Waterproof Internals",
+    "effects": "Makes the weapon operable under water and reduces pool penalties when the weapon is wet.",
+    "compatible": "Any",
+    "cost": 50,
+    "rarity": 1
+  },
+  {
+    "slot": "Mechanism",
+    "name": "Extended Frame",
+    "effects": "This mod does not count against the mod limit (but does count against the Mechanism slot), but instead adds +1 mod that can be installed in the gun.",
+    "compatible": "Any",
+    "cost": 120,
+    "rarity": 2
+  },
+  {
+    "slot": "Stock",
+    "name": "Tactical Folding Stock",
+    "effects": "Provides the \"Concealed (3)\" quality. If the weapon already was concealed, reduce the level of the quality by 1 instead.\n\n* Not applicable to especially large firearms like Machineguns, Rocket Launchers or similar.\n* Not applicable to pistols.",
+    "compatible": "Any (except *)",
+    "cost": 50,
+    "rarity": 1
+  },
+  {
+    "slot": "Stock",
+    "name": "Adjustable Combat Stock",
+    "effects": "Provides Handling (+1).\n\n* Not applicable to pistols.",
+    "compatible": "Any (except *)",
+    "cost": 100,
+    "rarity": 1
+  },
+  {
+    "slot": "Stock",
+    "name": "Shock Absorption Stock",
+    "effects": "Grants the weapon the \"Compensated\" quality. If it already had that quality, further reduce the pool penalty of Full Auto attacks by 1.\n\n* Not applicable to pistols.",
+    "compatible": "Any (except *)",
+    "cost": 100,
+    "rarity": 2
+  },
+  {
+    "slot": "Grip",
+    "name": "Ergonomic Grip",
+    "effects": "Provides Handling (+1) on the first attack after switching to a new target.",
+    "compatible": "Any",
+    "cost": 40,
+    "rarity": 1
+  },
+  {
+    "slot": "Grip",
+    "name": "Foregrip",
+    "effects": "Provides Handling (+1) when shooting from out of cover.",
+    "compatible": "Any",
+    "cost": 50,
+    "rarity": 1
+  },
+  {
+    "slot": "Grip",
+    "name": "Precision Grip",
+    "effects": "Provides Handling (+1) when only shooting single rounds (no Burst or Full Auto fire).",
+    "compatible": "Any",
+    "cost": 80,
+    "rarity": 2
+  },
+  {
+    "slot": "Grip",
+    "name": "Shock-Absorption Grip",
+    "effects": "Reduces the total AP cost of Full-Auto attacks by 1.",
+    "compatible": "Any",
+    "cost": 80,
+    "rarity": 2
+  },
+  {
+    "slot": "Magazine / Battery",
+    "name": "High-Cap",
+    "effects": "Increases magazine capacity by 50% (round down).",
+    "compatible": "Any",
+    "cost": 60,
+    "rarity": 1
+  },
+  {
+    "slot": "Magazine / Battery",
+    "name": "Drum / Block",
+    "effects": "Reduces handling by 1, increases reload AP cost by 1, but triples the magazine capacity (increases capacity to a minimum of 15).",
+    "compatible": "Any",
+    "cost": 80,
+    "rarity": 2
+  },
+  {
+    "slot": "Magazine / Battery",
+    "name": "Quick-Reload",
+    "effects": "Reduces the AP cost to reload the weapon by 1 (to a minimum of 1).\nFor shell-based weapon, you can spend twice the AP to load three times the shells.",
+    "compatible": "Any",
+    "cost": 50,
+    "rarity": 1
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Laser Sight",
+    "effects": "Provides a free trigger on every attack after the first against the same target. Having the Laser Sight active makes your position very apparent.",
+    "compatible": "Any",
+    "cost": 60,
+    "rarity": 1
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Digital Laser Sight",
+    "effects": "Same as Laser Sight but without the drawback - you require AR glasses or a smart eye to see your laser.",
+    "compatible": "Any",
+    "cost": 120,
+    "rarity": 2
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Flashlight",
+    "effects": "Illuminates dark areas, but also blinds enemies after aiming at them for the first time (if in a dark area).",
+    "compatible": "Any",
+    "cost": 50,
+    "rarity": 1
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Underbarrel Grenade Launcher",
+    "effects": "Allows to make one shot with the unmodified weapon profile of the Grenade Launcher.\n\n* Can only be attached to firearms that are two-handed, and are neither pistols nor MPs.",
+    "compatible": "Any (except *)",
+    "cost": 250,
+    "rarity": 2
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Bayonet Mount",
+    "effects": "Allows to perform melee attacks with the unmodified weapon profile of a Knife.",
+    "compatible": "Any",
+    "cost": 60,
+    "rarity": 1
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Bipod",
+    "effects": "Can be braced stationary by spending 3 AP. When doing so, the weapon gains Handling (+2).",
+    "compatible": "Any",
+    "cost": 60,
+    "rarity": 1
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Dual Scope Mount",
+    "effects": "Allows the installation of two different scopes that you have to pay separately (including the option of just installing one and keeping the unmodified variant, aka stock sights). The second scope you install doesn't count against your mod limit of the gun.\nIt costs 1 AP to switch between the available sights.",
+    "compatible": "Any",
+    "cost": 80,
+    "rarity": 2
+  }
+]
