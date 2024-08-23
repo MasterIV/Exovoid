@@ -1,0 +1,176 @@
+[
+  {
+    "severity": 1,
+    "poolModifier": 1,
+    "malfunction": "Damaged Thrusters",
+    "result": "Reduce the ship's speed by 1. Stacks."
+  },
+  {
+    "severity": 1,
+    "poolModifier": 1,
+    "malfunction": "Minor Energy Loss",
+    "result": "Reduce the ship's total energy output by 10%. Stacks."
+  },
+  {
+    "severity": 1,
+    "poolModifier": 1,
+    "malfunction": "Targeting System Glitch",
+    "result": "All weapon systems of the ship suffer -1 pool. Stacks"
+  },
+  {
+    "severity": 1,
+    "poolModifier": 1,
+    "malfunction": "Debris",
+    "result": "A random crew member suffers 2d6 damage."
+  },
+  {
+    "severity": 1,
+    "poolModifier": 1,
+    "malfunction": "Janky Controls",
+    "result": "The ship suffers -1 pool on all piloting checks."
+  },
+  {
+    "severity": 1,
+    "poolModifier": 1,
+    "malfunction": "Glitching Ship Internals",
+    "result": "All repair attempts on the ship suffer -1 pool."
+  },
+  {
+    "severity": 1,
+    "poolModifier": 2,
+    "malfunction": "Just A Dent",
+    "result": "No further effects other than the injury pool modifier."
+  },
+  {
+    "severity": 2,
+    "poolModifier": 0,
+    "malfunction": "Energy Conduit Overload",
+    "result": "Lose the ship's base energy production."
+  },
+  {
+    "severity": 2,
+    "poolModifier": 1,
+    "malfunction": "Shield Collapse",
+    "result": "The shield generator stops working until repaired."
+  },
+  {
+    "severity": 2,
+    "poolModifier": 2,
+    "malfunction": "Damaged Antennas",
+    "result": "All Sensor operations suffer -3 pool. Stacks"
+  },
+  {
+    "severity": 2,
+    "poolModifier": 1,
+    "malfunction": "Discharge",
+    "result": "An amount of crew members equal to the bridge size of the ship lose 2d6 health each."
+  },
+  {
+    "severity": 2,
+    "poolModifier": 1,
+    "malfunction": "Computer Malfunction",
+    "result": "The board AI shuts down."
+  },
+  {
+    "severity": 2,
+    "poolModifier": 1,
+    "malfunction": "Weapon Jam",
+    "result": "A random weapon system becomes unoperable until repaired."
+  },
+  {
+    "severity": 2,
+    "poolModifier": 1,
+    "malfunction": "Armor Ablation",
+    "result": "Reduce the primary and secondary soak by 1. Stacks."
+  },
+  {
+    "severity": 3,
+    "poolModifier": 0,
+    "malfunction": "Generator Shutdown",
+    "result": "Deactivate the strongest remaining energy generator."
+  },
+  {
+    "severity": 3,
+    "poolModifier": 1,
+    "malfunction": "Module Damage",
+    "result": "One random module of your ship is unusable until repaired. The GM rolls on all remaining modules and uses their capacity as a weight to determine which module gets hit."
+  },
+  {
+    "severity": 3,
+    "poolModifier": 2,
+    "malfunction": "Radiation Leak",
+    "result": "All crew take 1d6 damage (ignoring armor and soak)."
+  },
+  {
+    "severity": 3,
+    "poolModifier": 1,
+    "malfunction": "Lost Cargo",
+    "result": "25% of the cargo's items are ejected into space, suffering immense damage."
+  },
+  {
+    "severity": 3,
+    "poolModifier": 2,
+    "malfunction": "Fuel Line Rupture",
+    "result": "The ship immediately loses 50% of its remaining fuel."
+  },
+  {
+    "severity": 3,
+    "poolModifier": 2,
+    "malfunction": "Comm System Failure",
+    "result": "Communication systems and electronical warfare become unavailable."
+  },
+  {
+    "severity": 4,
+    "poolModifier": 3,
+    "malfunction": "Hull Breach",
+    "result": "Loss of atmosphere within 1d6 rounds."
+  },
+  {
+    "severity": 4,
+    "poolModifier": 1,
+    "malfunction": "Engine Shutdown",
+    "result": "The ship cannot perform maneuver, dock or evade actions any longer. Since the engine shuts down, artificial gravity is also lost - crew members may have to perform Zero-G checks for specific actions aboard the ship."
+  },
+  {
+    "severity": 4,
+    "poolModifier": 2,
+    "malfunction": "Crew Injury",
+    "result": "A random crew has to perform an injury roll with 8 dice."
+  },
+  {
+    "severity": 4,
+    "poolModifier": 0,
+    "malfunction": "Bridge Compromise",
+    "result": "All bridge crew needs to perform a Survival d4 check. If they fail, they become unconscious. Otherwise they suffer a random severity 2 injury."
+  },
+  {
+    "severity": 4,
+    "poolModifier": 1,
+    "malfunction": "Weapon Loss",
+    "result": "A random weapon system is permanently destroyed - it requires replacement."
+  },
+  {
+    "severity": 4,
+    "poolModifier": 0,
+    "malfunction": "Lost Crew Member",
+    "result": "A random crew member gets ejected into space."
+  },
+  {
+    "severity": 5,
+    "poolModifier": 2,
+    "malfunction": "Total Shutdown",
+    "result": "All systems become unusable, and the ship is drifting dead in space."
+  },
+  {
+    "severity": 6,
+    "poolModifier": 0,
+    "malfunction": "Structural Collapse",
+    "result": "The ship breaks into several pieces, which each section having little to no energy."
+  },
+  {
+    "severity": 7,
+    "poolModifier": 0,
+    "malfunction": "Generator Overload",
+    "result": "The ship explodes in a large fireball."
+  }
+]

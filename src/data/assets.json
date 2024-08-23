@@ -1,0 +1,146 @@
+[
+  {
+    "type": "Place",
+    "asset": "Home, Simple",
+    "assetName": "Simple Home",
+    "description": "A very simple home, for instance a tiny flat in a large city. Enough to store some items or get some rest.",
+    "assetCost": 4,
+    "rarity": 1
+  },
+  {
+    "type": "Place",
+    "asset": "Home, Regular",
+    "assetName": "Regular Home",
+    "description": "A decent home that has one special facility available, like a workshop, science lab or similar.",
+    "assetCost": 10,
+    "rarity": 2
+  },
+  {
+    "type": "Place",
+    "asset": "Home, Luxury",
+    "assetName": "Luxury Home",
+    "description": "A luxury home with many amenities, including a butler (alive or servitor) and security systems.",
+    "assetCost": 30,
+    "rarity": 4
+  },
+  {
+    "type": "Place",
+    "asset": "Space Station, Small",
+    "assetName": "Small Space Station",
+    "description": "A tiny space station, probably more of a hideout carved in an asteroid. It can house a tiny crew of around 5 people to rest and hide, and only dock a single ship.",
+    "assetCost": 35,
+    "rarity": 4
+  },
+  {
+    "type": "Place",
+    "asset": "Space Station, Common",
+    "assetName": "Common Space Station",
+    "description": "A regular space station, mostly used for mining, maintenance or some other specialized use case. It has enough amenities to house up to 50 people.",
+    "assetCost": 120,
+    "rarity": 5
+  },
+  {
+    "type": "Place",
+    "asset": "Space Station, Large",
+    "assetName": "Large Space Station",
+    "description": "A formidable space station that serves as a hub for trade, networking and other services. It can house up to 1000 people.",
+    "assetCost": 750,
+    "rarity": 6
+  },
+  {
+    "type": "Ground Vehicle",
+    "asset": "Urban Car",
+    "assetName": "Aerocruise XR",
+    "description": "Speed: 35 (1 for hex-combat)\nManeuverability: 2\nHull: 8\nArmor Durability: 2\nPassengers: 4\n\nEquipped with an auto-pilot system (5 pool and 2 expertise).",
+    "assetCost": 1,
+    "rarity": 1
+  },
+  {
+    "type": "Ground Vehicle",
+    "asset": "Electric Motorcycle",
+    "assetName": "Voltrider 9",
+    "description": "Speed: 50 (2 for hex-combat)\nManeuverability: 3\nHull: 4\nArmor Durability: 0\nPassengers: 2",
+    "assetCost": 1,
+    "rarity": 1
+  },
+  {
+    "type": "Ground Vehicle",
+    "asset": "All-Terrain Vehicle",
+    "assetName": "Terrahauler",
+    "description": "Speed: 25 (1 for hex-combat)\nManeuverability: 2\nHull: 12\nArmor Durability: 6\nPassengers: 6\n\nEquipped with off-road tires, reducing penalties for uneven ground.",
+    "assetCost": 2,
+    "rarity": 2
+  },
+  {
+    "type": "Ground Vehicle",
+    "asset": "Armored Transport",
+    "assetName": "Thunderstrike GX",
+    "description": "Speed: 20 (1 for hex-combat)\nManeuverability: 1\nHull: 16\nArmor Durability: 12\nPassengers: 8\n\nHas an automatic turret system installed, using the profile of a Machine Gun, it has a pool of 6 with 3 expertise.",
+    "assetCost": 4,
+    "rarity": 3
+  },
+  {
+    "type": "Ground Vehicle",
+    "asset": "Light Hovercraft",
+    "assetName": "Skylance Viper",
+    "description": "Speed: 40 (1 for hex-combat)\nManeuverability: 1\nHull: 6\nArmor Durability: 4\nPassengers: 3\n\nHovers up to 5m above ground.",
+    "assetCost": 2,
+    "rarity": 3
+  },
+  {
+    "type": "Ground Vehicle",
+    "asset": "Combat Mech",
+    "assetName": "Terrawalker Mk-2",
+    "description": "Speed: 8 (0.5 for hex-combat)\nManeuverability: 2\nHull: 15\nArmor Durability: 10\nPassengers: 2\n\nCan have two small space ship weapons installed.",
+    "assetCost": 10,
+    "rarity": 4
+  },
+  {
+    "type": "Atmospheric Vehicle",
+    "asset": "High-Speed Jet",
+    "assetName": "Eaglewing X-5",
+    "description": "Speed: 120 (4 for hex-combat)\nManeuverability: 2\nHull: 12\nArmor Durability: 4\nPassengers: 2\n\nCan have one small space ship weapon installed.",
+    "assetCost": 6,
+    "rarity": 3
+  },
+  {
+    "type": "Atmospheric Vehicle",
+    "asset": "Military Gunship",
+    "assetName": "Stormhawk Mk-II",
+    "description": "Speed: 90 (3 for hex-combat)\nManeuverability: 1\nHull: 18\nArmor Durability: 8\nPassengers: 12 (plus 2 in cockpit)\n\nCan have up to three small space ship weapons installed.",
+    "assetCost": 8,
+    "rarity": 4
+  },
+  {
+    "type": "Atmospheric Vehicle",
+    "asset": "Hovercar",
+    "assetName": "Nimbus C-1",
+    "description": "Speed: 40 (1 for hex-combat)\nManeuverability: 2\nHull: 7\nArmor Durability: 3\nPassengers: 4\n\nFeatures a built-in AI navigation system and emergency auto-landing features.",
+    "assetCost": 4,
+    "rarity": 3
+  },
+  {
+    "type": "Upgrade",
+    "asset": "Vehicle Upgrade: Speed",
+    "assetName": "Speed Upgrade",
+    "description": "Increases the speed by 20% (round down). Can be installed up to two times.",
+    "assetCost": 1,
+    "rarity": 3
+  },
+  {
+    "type": "Upgrade",
+    "asset": "Vehicle Upgrade: Armor",
+    "assetName": "Armor Upgrade",
+    "description": "Provides the vehicle with +1 Primary Soak. Can be installed up to two times.",
+    "assetCost": 1,
+    "rarity": 3
+  },
+  {
+    "type": "Upgrade",
+    "asset": "Vehicle Upgrade: Weapon",
+    "assetName": "Arms Upgrade",
+    "description": "Allows to install a regular firearm that will be fix-mounted in one direction - the weapon has to be paid separately. Can be installed up to two times.",
+    "assetCost": 1,
+    "rarity": 3
+  }
+]
