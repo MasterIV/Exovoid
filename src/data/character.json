@@ -10,5 +10,7 @@
   "classes": [],
   "talents": [],
   "weapons": [],
-  "injuries": []
+  "injuries": [],
+  "inventory": [],
+  "currency": {"assets":  0, "credits":  0}
 }

@@ -7,7 +7,7 @@
     "secondarySoak": 1,
     "qualities": "Concealed",
     "modLimit": 0,
-    "moddingOptions": "-",
+    "moddingOptions": [],
     "specialRules": "",
     "cost": 200,
     "rarity": 0

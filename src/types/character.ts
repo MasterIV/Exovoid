@@ -10,6 +10,13 @@ export interface CharacterWeapon {
     }
 }
 
+export interface InventoryItem {
+    name: string;
+    quantity: number;
+    location: string;
+    notes?: string;
+}
+
 export default interface CharacterType {
     id: string,
     name: string;
@@ -28,4 +35,9 @@ export default interface CharacterType {
     talents: string[];
     weapons: CharacterWeapon[];
     injuries: string[];
+    inventory: InventoryItem[];
+    currency: {
+        assets: number;
+        credits: number;
+    }
 }

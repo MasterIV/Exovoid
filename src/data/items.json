@@ -2,7 +2,7 @@
   {
     "category": "Gadget",
     "item": "Holo Projector",
-    "itemName": "VividCast Holobeam",
+    "name": "VividCast Holobeam",
     "description": "A small, portable device that projects 3D holographic images, useful for displaying maps, blueprints, or decoys.",
     "size": 1,
     "cost": 250,
@@ -11,7 +11,7 @@
   {
     "category": "Gadget",
     "item": "Data Pad",
-    "itemName": "InfoGlide",
+    "name": "InfoGlide",
     "description": "A handheld device for accessing, storing, and transferring data. Can be used to access archives, or communicate remotely.\n\nDevice Integrity: 2\nFirewall: 6\nIC Level: 3\nSignal Range: 10",
     "size": 1,
     "cost": 70,
@@ -20,7 +20,7 @@
   {
     "category": "Gadget",
     "item": "Energy Cell",
-    "itemName": "PowerCore V5",
+    "name": "PowerCore V5",
     "description": "A compact, rechargeable power source used to fuel various gadgets, tools, and small vehicles.",
     "size": 2,
     "cost": 150,
@@ -29,7 +29,7 @@
   {
     "category": "Gadget",
     "item": "Field Scanner",
-    "itemName": "Terrascan Pro",
+    "name": "Terrascan Pro",
     "description": "A portable device that scans the environment for life forms, energy signatures, or chemical compositions wihin a 5km radius. Ideal for exploration and investigation.",
     "size": 2,
     "cost": 350,
@@ -38,7 +38,7 @@
   {
     "category": "Gadget",
     "item": "Plasma Torch",
-    "itemName": "Internatorch",
+    "name": "Internatorch",
     "description": "A high-powered cutting tool that uses plasma to slice through metal and other tough materials. Essential for breaching barriers.",
     "size": 1,
     "cost": 100,
@@ -47,7 +47,7 @@
   {
     "category": "Survival",
     "item": "Portable Shelter",
-    "itemName": "Envirodome Compact",
+    "name": "Envirodome Compact",
     "description": "A collapsible, lightweight shelter that provides protection from the elements and hostile environments. Can be set up quickly in any terrain.",
     "size": 5,
     "cost": 400,
@@ -56,7 +56,7 @@
   {
     "category": "Survival",
     "item": "Atmospheric Filter",
-    "itemName": "AirPurity XT",
+    "name": "AirPurity XT",
     "description": "A breathing apparatus that filters and purifies the air, making it safe to breathe in toxic or low-oxygen environments.",
     "size": 1,
     "cost": 200,
@@ -65,7 +65,7 @@
   {
     "category": "Survival",
     "item": "Ration Pack",
-    "itemName": "Nutripak Sustain",
+    "name": "Nutripak Sustain",
     "description": "Compact, nutrient-rich food supplies designed for long-term storage and consumption during expeditions or emergencies. Each pack sustains for one day.",
     "size": 1,
     "cost": 10,
@@ -74,7 +74,7 @@
   {
     "category": "Survival",
     "item": "Hydration Synthesizer",
-    "itemName": "Hydrasync",
+    "name": "Hydrasync",
     "description": "A portable device that extracts and purifies water from the environment, ensuring a clean and safe water supply in any situation.",
     "size": 2,
     "cost": 120,
@@ -83,7 +83,7 @@
   {
     "category": "Survival",
     "item": "Thermal Blanket",
-    "itemName": "Heatwave Ultra",
+    "name": "Heatwave Ultra",
     "description": "A heat-reflective blanket that provides warmth and insulation in extreme cold conditions. Compact and easy to carry.",
     "size": 1,
     "cost": 20,
@@ -92,7 +92,7 @@
   {
     "category": "Survival",
     "item": "Survival Beacon",
-    "itemName": "Rescuesignal Mk II",
+    "name": "Rescuesignal Mk II",
     "description": "A distress signal device that broadcasts your location to nearby allies or rescue teams. Equipped with a variety of signal modes.",
     "size": 2,
     "cost": 200,
@@ -101,7 +101,7 @@
   {
     "category": "Survival",
     "item": "Grav Boots",
-    "itemName": "G-Force Boots",
+    "name": "G-Force Boots",
     "description": "Boots equipped withgravity technology or magnets, allowing the wearer to traverse difficult terrain, including zero-gravity environments.",
     "size": 2,
     "cost": 150,
@@ -110,7 +110,7 @@
   {
     "category": "Survival",
     "item": "Climbing Gear",
-    "itemName": "AscendTech Climbers",
+    "name": "AscendTech Climbers",
     "description": "Ropes, hooks and other devices to help safely climb buildings or rocks.",
     "size": 2,
     "cost": 120,
@@ -119,7 +119,7 @@
   {
     "category": "Survival",
     "item": "Solar Charger",
-    "itemName": "Sunpower Fold",
+    "name": "Sunpower Fold",
     "description": "A portable solar panel that can charge batteries and devices using sunlight, essential for long-term survival away from civilization.",
     "size": 2,
     "cost": 80,
@@ -128,7 +128,7 @@
   {
     "category": "Medicine",
     "item": "Biofoam Dispenser",
-    "itemName": "Medifoam XT",
+    "name": "Medifoam XT",
     "description": "A medical tool that injects biofoam into wounds to stop bleeding. Requires 4 AP to use.",
     "size": 1,
     "cost": 30,
@@ -137,7 +137,7 @@
   {
     "category": "Medicine",
     "item": "Medigel",
-    "itemName": "HealGel Alpha",
+    "name": "HealGel Alpha",
     "description": "A healing salve that promotes rapid tissue regeneration, effective for treating wounds, burns, and other injuries. Once applied, it provides +4 pool bonus to the nightly regeneration, and regenerates and extra 20% of the maximum health.",
     "size": 1,
     "cost": 20,
@@ -146,7 +146,7 @@
   {
     "category": "Medicine",
     "item": "Stim Pack",
-    "itemName": "Quickboost Inject",
+    "name": "Quickboost Inject",
     "description": "A quick-injection drug (requires 3 AP to use) that boosts physical performance, increasing strength, speed and constitution by +2 for 10 minutes.\n\nAfter that, the user loses 1d6 health (cannot cause an injury roll).",
     "size": 1,
     "cost": 40,
@@ -155,7 +155,7 @@
   {
     "category": "Medicine",
     "item": "Adrenaline Injector",
-    "itemName": "Adrena Max",
+    "name": "Adrena Max",
     "description": "A quick-injection drug (requires 3 AP to use) that either provides +2 AP for 5 minutes, or that wakes up someone who became unconscious.\n\nAfter the 5 Minutes are over, an Injury roll with 5 dice must be made, but the maximum severity suffered is limited to 1.",
     "size": 1,
     "cost": 25,
@@ -164,7 +164,7 @@
   {
     "category": "Medicine",
     "item": "Neuro-Enhancer",
-    "itemName": "Cerebraboost",
+    "name": "Cerebraboost",
     "description": "A cognitive booster in the form of a pill that sharpens mental faculties, improving memory, focus, and problem-solving abilities for a limited time.\nIt takes 5 Minutes for the effects to kick in. The user then gains +1 Intelligence and Education for 6 hours.\n\nWhen the effects wear off, the user suffers the \"Dizzy\" wound.",
     "size": 0,
     "cost": 50,
@@ -173,7 +173,7 @@
   {
     "category": "Medicine",
     "item": "Anti-Viral Serum",
-    "itemName": "Vira Guard",
+    "name": "Vira Guard",
     "description": "A cure for most viruses and infections, providing immunity or relief from symptoms.",
     "size": 1,
     "cost": 35,
@@ -182,7 +182,7 @@
   {
     "category": "Medicine",
     "item": "Pain Nullifier",
-    "itemName": "Nocicept Block",
+    "name": "Nocicept Block",
     "description": "A drug that blocks pain receptors, allowing the user to function normally despite injuries or other debilitating conditions.\nIt takes 5 Minutes for the effects of the pill to kick in. The user then ignores the effects (but not injury pool modifiers) of all severity 1 and 2 wounds for 1d6 hours.\n\nWhen the effects wear off, the user suffers the \"Nausea\" wound and has to make a Survival d2 roll. If failed, they become addicted or suffer withdrawal symptoms.",
     "size": 0,
     "cost": 10,
@@ -191,7 +191,7 @@
   {
     "category": "Medicine",
     "item": "Combat Stims",
-    "itemName": "BattleX Stims",
+    "name": "BattleX Stims",
     "description": "A quick-injection drug (requires 3 AP to use) that increases combat efficiency, boosting reflexes, accuracy, and aggression.\nThe user gains +1 pool bonus to all physical combat related checks, and reduces the pool of their injury checks by 2 (to a Minimum of 0). Lasts for 10 Minutes.\n\nWhen the effects wear off, the user suffers 2d6 damage (ignoring armor).",
     "size": 1,
     "cost": 50,
@@ -200,7 +200,7 @@
   {
     "category": "Medicine",
     "item": "Sleep Regulator",
-    "itemName": "Slumbersync",
+    "name": "Slumbersync",
     "description": "A drug that can either suppress the need for sleep or induce restful sleep, depending on the dosage and application.",
     "size": 0,
     "cost": 20,
@@ -209,7 +209,7 @@
   {
     "category": "Medicine",
     "item": "Hallucinogen",
-    "itemName": "Dreamwave",
+    "name": "Dreamwave",
     "description": "A drug that induces vivid hallucinations, which can be used recreationally or for nefarious purposes, like disorienting an enemy.",
     "size": 0,
     "cost": 15,
@@ -218,7 +218,7 @@
   {
     "category": "Medicine",
     "item": "Medkit",
-    "itemName": "Ares Lifesaver",
+    "name": "Ares Lifesaver",
     "description": "A set of tools and basic supplies to perform first aid or even surgery.",
     "size": 3,
     "cost": 150,
@@ -227,7 +227,7 @@
   {
     "category": "Medicine",
     "item": "Engram Reader",
-    "itemName": "Mindmirror",
+    "name": "Mindmirror",
     "description": "This circular tool can be placed around a person's alive or dead head. Over 5 Minutes it will create a scan to create an engram of their mind, but it will irrevocably destroy the brain in the process. The engram is typically faulty or incomplete, but can be sufficient to be used in a simulation for further questioning.",
     "size": 4,
     "cost": 2400,
@@ -236,7 +236,7 @@
   {
     "category": "Espionage",
     "item": "Infiltration Kit",
-    "itemName": "Shadow-Ops Gear",
+    "name": "Shadow-Ops Gear",
     "description": "A set of tools specifically designed for bypassing security systems, including lockpicks, signal jammers, and data scramblers.",
     "size": 2,
     "cost": 300,
@@ -245,7 +245,7 @@
   {
     "category": "Espionage",
     "item": "MagLock Breaker",
-    "itemName": "Ciphercrack",
+    "name": "Ciphercrack",
     "description": "Once applied to a MagLock, the device requires 1d6 minutes to find the right combination, opening the lock once.",
     "size": 1,
     "cost": 225,
@@ -254,7 +254,7 @@
   {
     "category": "Espionage",
     "item": "Environmental Cloak",
-    "itemName": "Chameleonwrap",
+    "name": "Chameleonwrap",
     "description": "A wearable cloak that adapts to the surrounding environment, providing camouflage. While being stationary or moving cautiously, gain +3 pool to any attempts to stay hidden.",
     "size": 1,
     "cost": 450,
@@ -263,7 +263,7 @@
   {
     "category": "Espionage",
     "item": "Face Shaping Cream",
-    "itemName": "Nanoclone",
+    "name": "Nanoclone",
     "description": "Allows to apply a paste that will change the facial structure into a specific shape, by programming it once through a Data Pad. The cream can be re-used later by mixing it with a solution that costs half the price of the cream itself.",
     "size": 1,
     "cost": 400,
@@ -272,7 +272,7 @@
   {
     "category": "Espionage",
     "item": "Voice Modulator",
-    "itemName": "Vox Morph",
+    "name": "Vox Morph",
     "description": "A device hidden near the throat that alters the user’s voice to mimic others or create entirely new vocal patterns, useful for impersonation or deception.",
     "size": 1,
     "cost": 200,
@@ -281,7 +281,7 @@
   {
     "category": "Espionage",
     "item": "Bug Detector",
-    "itemName": "Scansafe",
+    "name": "Scansafe",
     "description": "A handheld scanner that detects and neutralizes hidden surveillance devices within half a meter of the device, including cameras, microphones, and tracking beacons.",
     "size": 2,
     "cost": 300,
@@ -290,7 +290,7 @@
   {
     "category": "Espionage",
     "item": "Sound Bug",
-    "itemName": "Echoprobe",
+    "name": "Echoprobe",
     "description": "A tiny device that sticks to surfaces and will record and broadcast audio in its surroundings to connected devices. Has a broadcasting range of 250m.",
     "size": 0,
     "cost": 75,
@@ -299,7 +299,7 @@
   {
     "category": "Espionage",
     "item": "Camera Bug",
-    "itemName": "Lensworm",
+    "name": "Lensworm",
     "description": "A small device that can easily be stuck in corners, plants or similar to record video in a fixed angle, broadcasting its signal to connected devices. Has a broadcasting range of 50m.",
     "size": 1,
     "cost": 120,
@@ -308,7 +308,7 @@
   {
     "category": "Espionage",
     "item": "Memory Scrambler",
-    "itemName": "Mindshift Disruptor",
+    "name": "Mindshift Disruptor",
     "description": "A neural device that temporarily erases short-term memories, useful for covering tracks or avoiding interrogation.",
     "size": 2,
     "cost": 1100,
@@ -317,7 +317,7 @@
   {
     "category": "Espionage",
     "item": "Key Copier",
-    "itemName": "Codeclone",
+    "name": "Codeclone",
     "description": "Can copy physical and card-based keys swiftly.",
     "size": 2,
     "cost": 300,
@@ -326,7 +326,7 @@
   {
     "category": "Espionage",
     "item": "Micro-Tracker",
-    "itemName": "Nanotrack",
+    "name": "Nanotrack",
     "description": "A tiny, nearly undetectable transmitter that can be planted on a target to track their movements or relay information. Has a broadcasting range of 10km.",
     "size": 0,
     "cost": 50,
@@ -335,7 +335,7 @@
   {
     "category": "Espionage",
     "item": "White-Noise Generator",
-    "itemName": "Echoshield",
+    "name": "Echoshield",
     "description": "A portable device that emits white noise to mask conversations, preventing eavesdropping and protecting against audio surveillance.",
     "size": 1,
     "cost": 100,
@@ -344,7 +344,7 @@
   {
     "category": "Espionage",
     "item": "Spytool",
-    "itemName": "Spectrascope",
+    "name": "Spectrascope",
     "description": "A compact device that combines high-definition zoom with directional audio capture, allowing you to spy on distant targets and eavesdrop on conversations with precision.",
     "size": 2,
     "cost": 400,
@@ -353,7 +353,7 @@
   {
     "category": "Crafting",
     "item": "3D Printer",
-    "itemName": "PrintForce X1",
+    "name": "PrintForce X1",
     "description": "A portable fabricator that can create physical objects from digital blueprints using various materials. Ideal for crafting custom tools or parts.",
     "size": 4,
     "cost": 300,
@@ -362,7 +362,7 @@
   {
     "category": "Crafting",
     "item": "Component Analyzer",
-    "itemName": "Partdetect",
+    "name": "Partdetect",
     "description": "A handheld device that scans items to identify their components, making it easier to disassemble or reverse-engineer technology.",
     "size": 3,
     "cost": 200,
@@ -371,7 +371,7 @@
   {
     "category": "Crafting",
     "item": "Cybernetic Toolkit",
-    "itemName": "Biomech Set",
+    "name": "Biomech Set",
     "description": "A specialized set of tools for installing, repairing, or upgrading cybernetic implants and prosthetics.",
     "size": 4,
     "cost": 400,
@@ -380,7 +380,7 @@
   {
     "category": "Crafting",
     "item": "Scrap Converter",
-    "itemName": "Recycle Pro",
+    "name": "Recycle Pro",
     "description": "A device that breaks down junk and scrap into usable materials, reducing waste and providing resources for repairs.",
     "size": 5,
     "cost": 500,
@@ -389,7 +389,7 @@
   {
     "category": "Crafting",
     "item": "Multi-Tool",
-    "itemName": "Flexitool 21-in-1",
+    "name": "Flexitool 21-in-1",
     "description": "A versatile tool kit that can transform into different configurations such as a wrench, screwdriver, or laser cutter. Essential for repairs and tinkering.",
     "size": 3,
     "cost": 300,
@@ -398,7 +398,7 @@
   {
     "category": "Crafting",
     "item": "Chemistry Kit",
-    "itemName": "Labpack Synthesis",
+    "name": "Labpack Synthesis",
     "description": "A mini lab consisting of various devices to synthesize components.",
     "size": 5,
     "cost": 450,
@@ -407,7 +407,7 @@
   {
     "category": "Crafting",
     "item": "Spare Ship Parts",
-    "itemName": "Ship-Complement 101",
+    "name": "Ship-Complement 101",
     "description": "Allows one repair attempt on a critically damaged ship part. Is used up with the attempt.",
     "size": 4,
     "cost": 500,
@@ -416,7 +416,7 @@
   {
     "category": "Crafting",
     "item": "Spare Tech Parts",
-    "itemName": "Azerra Fixermould",
+    "name": "Azerra Fixermould",
     "description": "Allows one repair attempt on a damaged firearm or smaller piece of technology. Is used up with the attempt.",
     "size": 2,
     "cost": 50,
@@ -425,7 +425,7 @@
   {
     "category": "Crafting",
     "item": "Armor Repair Kit",
-    "itemName": "Triton Sealgel",
+    "name": "Triton Sealgel",
     "description": "Allows for a Tech d0 check, requiring one hour of time. Each success restores 2 points of durability of the damaged armor. Then the Fixgel is used up.",
     "size": 1,
     "cost": 25,
@@ -434,7 +434,7 @@
   {
     "category": "Everyday",
     "item": "License",
-    "itemName": "A38",
+    "name": "A38",
     "description": "Provides a digital, legal permit to possess one specific weapon or cyberware. This is only relevant for items that fall under military regulations and that can be used offensively.",
     "size": 0,
     "cost": 50,
@@ -443,7 +443,7 @@
   {
     "category": "Everyday",
     "item": "Holo-Communicator",
-    "itemName": "Echolink Holocomm",
+    "name": "Echolink Holocomm",
     "description": "A wrist-mounted or handheld device that allows for real-time holographic communication across vast distances.\n\nDevice Integrity: 2\nFirewall: 6\nIC Level: 3",
     "size": 1,
     "cost": 60,
@@ -452,7 +452,7 @@
   {
     "category": "Everyday",
     "item": "Universal Translator",
-    "itemName": "Lingua-Master 2200",
+    "name": "Lingua-Master 2200",
     "description": "A device that instantly translates spoken or written language, allowing communication with any species or dialect.",
     "size": 1,
     "cost": 180,
@@ -461,7 +461,7 @@
   {
     "category": "Everyday",
     "item": "Credit Chip",
-    "itemName": "Credivault",
+    "name": "Credivault",
     "description": "A digital currency storage device that allows the user to make transactions and store funds securely.",
     "size": 0,
     "cost": 10,
@@ -470,7 +470,7 @@
   {
     "category": "Everyday",
     "item": "VR Headset",
-    "itemName": "Immersi Gear",
+    "name": "Immersi Gear",
     "description": "A device that immerses the user in a virtual environment, useful for entertainment, training, communication or direct drone control.",
     "size": 2,
     "cost": 350,
@@ -479,7 +479,7 @@
   {
     "category": "Everyday",
     "item": "AR Glasses",
-    "itemName": "Overlit",
+    "name": "Overlit",
     "description": "Can display certain virtual overlays, e.g. to make digital ads in front of stores visible, or to read messages on the fly, keeping the hands free.",
     "size": 1,
     "cost": 150,
@@ -488,7 +488,7 @@
   {
     "category": "Hacking",
     "item": "Cyberdeck Tier-1",
-    "itemName": "PhantomLink",
+    "name": "PhantomLink",
     "description": "Device Integrity: 5\nFirewall: 9\nIC Level: 3\nSignal Range: 20\n\nIf others use the \"Locate\" action against you, they need to spend 3 AT instead.",
     "size": 1,
     "cost": 200,
@@ -497,7 +497,7 @@
   {
     "category": "Hacking",
     "item": "Cyberdeck Tier-2",
-    "itemName": "Quantum Splicer",
+    "name": "Quantum Splicer",
     "description": "Device Integrity: 5\nFirewall: 6\nIC Level: 3\nSignal Range: 50\n\nTreat enemy firewalls as if they are 2 points lower.",
     "size": 1,
     "cost": 350,
@@ -506,7 +506,7 @@
   {
     "category": "Hacking",
     "item": "Cyberdeck Tier-3",
-    "itemName": "SpecterNode",
+    "name": "SpecterNode",
     "description": "Device Integrity: 6\nFirewall: 8\nIC Level: 4\nSignal Range: 25\n\nWhenever you use one AT on an enemy system, you get to perform the \"Manipulate File\" option for free.",
     "size": 1,
     "cost": 700,
@@ -515,7 +515,7 @@
   {
     "category": "Hacking",
     "item": "Cyberdeck Tier-4",
-    "itemName": "Overlord Mk-IV",
+    "name": "Overlord Mk-IV",
     "description": "Device Integrity: 8\nFirewall: 7\nIC Level: 4\nSignal Range: 25\n\nThe \"Hijack\" option only costs 2 instead of 3 AT.",
     "size": 2,
     "cost": 1200,
@@ -524,7 +524,7 @@
   {
     "category": "Hacking",
     "item": "Cyberdeck Tier-5",
-    "itemName": "Nexus X-9",
+    "name": "Nexus X-9",
     "description": "Device Integrity: 10\nFirewall: 8\nIC Level: 5\nSignal Range: 15\n\nGain +1 pool bonus when hacking.",
     "size": 2,
     "cost": 2500,
@@ -533,7 +533,7 @@
   {
     "category": "Hacking",
     "item": "Cyberdeck Upgrade: Integrity",
-    "itemName": "Sentinel Core",
+    "name": "Sentinel Core",
     "description": "Grants your cyberdeck +2 integrity.\n\nOnly one upgrade of any type can be installed per deck.",
     "size": 0,
     "cost": 150,
@@ -542,7 +542,7 @@
   {
     "category": "Hacking",
     "item": "Cyberdeck Upgrade: Firewall",
-    "itemName": "Aegis Defender",
+    "name": "Aegis Defender",
     "description": "Grants your cyberdeck +2 firewall.\n\nOnly one upgrade of any type can be installed per deck.",
     "size": 0,
     "cost": 150,
@@ -551,7 +551,7 @@
   {
     "category": "Hacking",
     "item": "Cyberdeck Upgrade: IC",
-    "itemName": "Nemesis Protocol",
+    "name": "Nemesis Protocol",
     "description": "Grants your cyberdeck +1 IC Level.\n\nOnly one upgrade of any type can be installed per deck.",
     "size": 0,
     "cost": 200,

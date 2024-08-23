@@ -2,8 +2,11 @@
 
 Next Tasks:
 
-- collection
-- roll summary popup
+- take damage
+- weapon actions
+- initiative system
+- class selection
+- inventory
 
 Overall:
 
@@ -14,9 +17,8 @@ Overall:
    - injuries
  - inventory
  - networking
-   - rolling + popup
    - syncing life and ap
-   - logut
+   - logout
  - gm mode
    - generate npc
    - combat controls
