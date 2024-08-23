@@ -3,6 +3,7 @@ import {
     Autocomplete,
     Grid,
     Paper,
+    Stack,
     Table,
     TableBody,
     TableCell,
@@ -15,24 +16,26 @@ import {Btn, Dropdown} from "./Form";
 import weapons from '../data/weapons.json';
 import weaponsMods from '../data/weapon-mods.json';
 import {CharacterWeapon} from "../types/character";
+import Value from "./Value";
 
 const weaponMap: Record<string, any> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w);
 
 
 interface WeaponProps extends CharacterWeapon {
+    onRemove: () => void;
     onChange: (name: string, value: any) => void;
     locked?: boolean;
 }
 
 const actions = [
-    {id: "a1", name: "Fire"},
+    {id: "a1", name: "Attack"},
     {id: "a2", name: "Burst"},
     {id: "a3", name: "Full Auto"},
     {id: "a4", name: "Reload"},
 ]
 
-export function Weapon({id, type, ammo, mods, locked, onChange}: WeaponProps) {
+export function Weapon({id, type, ammo, mods, locked, onChange, onRemove}: WeaponProps) {
     const details = weaponMap[type];
     const [data, setData] = useState({
         action: 'a1',
@@ -42,16 +45,23 @@ export function Weapon({id, type, ammo, mods, locked, onChange}: WeaponProps) {
         setData({...data, [name]: value});
     }
 
+    const changeAmmo = (k:string,v:number) => onChange('ammo', {...ammo,[k]: v})
+
     return <Grid item>
         <Paper sx={{p: 2}}>
             <Grid container direction="column" spacing={2}>
                 <Grid item container spacing={2}>
                     <Grid item xs={8}>
-                        <Typography variant="h6">{type}</Typography>
+                        <Typography variant="h6">{type} ({details.type})</Typography>
                     </Grid><Grid item xs={4} textAlign="right">
-                        <Btn color={"error"} disabled={locked}>Remove</Btn>
+                        <Btn color={"error"} disabled={locked} onClick={() => (window.confirm("Remove Weapon?") && onRemove())}>Remove</Btn>
                     </Grid>
                 </Grid>
+
+                {details.magazine > 0 && <Grid item><Stack spacing={2} direction="row">
+                    <Value width={120} label="Rounds Loaded" name="loaded" value={ammo.loaded} onChange={changeAmmo} />
+                    <Value width={120} label="Ammo Reserve" name="reserve" value={ammo.reserve} onChange={changeAmmo} />
+                </Stack></Grid>}
 
                 <Grid item><Table>
                     <TableHead>
@@ -75,11 +85,15 @@ export function Weapon({id, type, ammo, mods, locked, onChange}: WeaponProps) {
                             <TableCell>{details.damageType}</TableCell>
                             <TableCell>{details.range}</TableCell>
                         </TableRow>
+                        <TableRow><TableCell colSpan={7}><strong>Qualities:</strong> {details.qualities}</TableCell></TableRow>
+                        <TableRow><TableCell colSpan={7}><strong>Trigger Options:</strong> {details.triggerOptions}</TableCell></TableRow>
+                        {details.specialRules && <TableRow><TableCell colSpan={7}><strong>Special Rules:</strong> {details.specialRules}</TableCell></TableRow>}
                     </TableBody>
                 </Table></Grid>
                 
                 <Grid item>
                     <Autocomplete multiple
+                                  value={mods}
                                   onChange={(e, v) =>  onChange('mods', v)}
                                   renderInput={(params) => <TextField {...params}  label="Mods" />}
                                   options={weaponsMods.map(m => m.name)} />

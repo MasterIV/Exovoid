@@ -7,6 +7,8 @@ import Value from "../components/Value";
 import {DicePool} from "../components/Roll";
 import CharacterType from "../types/character";
 import {DicePoolType} from "../types/dice";
+import calculateHealth from "../logic/calculateHealth";
+import calculateEdge from "../logic/calculateEdge";
 
 interface CharacterPageProps {
     onChange: (name: string, value: any) => void;
@@ -50,9 +52,6 @@ export default function CharacterPage({stats, onChange, onRoll, locked=false}: C
         if (url) onChange('image', url);
     }, [onChange, image]);
 
-    const maxHealth = 8 + CON;
-    const maxEdge = Math.ceil(4 + COO / 2);
-
     const vigilance = Math.ceil(3 + (INT + COO) / 3);
     const vigilancePool: DicePoolType = {default: 1, aptitude: vigilance};
 
@@ -78,11 +77,11 @@ export default function CharacterPage({stats, onChange, onRoll, locked=false}: C
             </Grid>
             <Grid item container xs={2} spacing={1} direction="column">
                 <Grid item textAlign='right'>
-                    <Value name='currentHealth' width={128} label='Health' mask={` / ${maxHealth}`}
+                    <Value name='currentHealth' width={128} label='Health' mask={` / ${calculateHealth(stats)}`}
                            value={currentHealth} onChange={onChange}/>
                 </Grid>
                 <Grid item textAlign='right'>
-                    <Value name='currentEdge' width={128} label='Edge' mask={` / ${maxEdge}`} value={currentEdge}
+                    <Value name='currentEdge' width={128} label='Edge' mask={` / ${calculateEdge(stats)}`} value={currentEdge}
                            onChange={onChange}/>
                 </Grid>
                 <Grid item textAlign='right'>
