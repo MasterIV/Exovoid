@@ -577,15 +577,6 @@
   },
   {
     "systemType": "Misc",
-    "systemName": "Quantum Entanglement Comms Relay",
-    "capacityCost": 2,
-    "powerRequirement": 2,
-    "description": "Allows to let the ship communicate with no delay with any Quantum network. The data rate is horrendously slow and only allows for voice transmission or simple data.\nIf the power supply is ever disrupted, a new entangled quantum bit needs to be installed at a space station.",
-    "assetCost": 2,
-    "rarity": 4
-  },
-  {
-    "systemType": "Misc",
     "systemName": "Science Lab",
     "capacityCost": 3,
     "powerRequirement": 3,
