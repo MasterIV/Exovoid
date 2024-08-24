@@ -64,9 +64,9 @@ The struggle for technological parity continues, as does the exploration of new 
 By the early 23rd century, the population growth has stabilized with around 16 billion humans inhabiting the planet.
 The increase in population density was balanced by the technological advances that joining the Empire has brought.
 Earth's cities are sprawling, vertical metropolises where towering skyscrapers and subterranean levels create a layered, interconnected environment.
-With the advances in technology humanity was also finally able to put a stop to the climate change and at least stabilize the planet's climate.
-Besides the technological advance and unification of humanity, joining the empire had little influence on the life of the average citizen.
-Life on the planet continues, ignorant of the conflicts broiling in the wider galaxy.
+With the advances in technology humanity was also finally able to put a stop to the climate change and at least stabilize the planet.
+Besides the technological advances and unification of humanity, joining the empire had little influence on the life of the average citizen.
+Life on earth continues, ignorant of the conflicts broiling in the wider galaxy.
 
 ### New Factions
 
