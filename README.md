@@ -7,6 +7,7 @@ Next Tasks:
 - initiative system
 - class selection
 - inventory
+- add & fix lore
 
 Overall:
 

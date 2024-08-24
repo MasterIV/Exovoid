@@ -1,69 +1,70 @@
-### Technologies Used Across the Galaxy
+#### Categorization
 
-#### I. Intergalactic Travel Technologies
+People usually tend to categorize technology into several level or tiers. These are the most commonly used ones:
 
-**1. Wormhole Network:**
-- **Elder Legacy:** The most advanced and efficient method of intergalactic travel, created by the mysterious Elder race. This network consists of stable wormholes connecting distant points in the galaxy, allowing instantaneous travel between them.
-- **Sentinel Regulation:** These ancient machines guard the network and ensure that it is not misused, enforcing strict access controls and monitoring for any threats to galactic peace.
+- **Archaic:** Civilisations that have not yet reached industrialisation and computing basics.
+- **Pre-Warp:** Even though FTL travel isn't actually using Warp-Drives, civilisations that are not capable of FTL flight are usually referred to as pre-warp.
+  This might be due to the fact that pre-ftl simply doesn't sound as catchy.
+- **Interstellar:** Most species humanity has been in contact with as these civilisations are capable of interstellar travel.
+  At this point, development is slightly distorted as the basic technology for interstellar travel is one of the few that is regularly shared with others.
+  Most species keep a tight lid on their technology but FTL is the base for galactic commerce and interaction and therefore the exception.
+  Within this category the actual technologies a species possesses differ widely.
+  It depends what a race puts their focus on and what the culture and science evolve around.
+  This can be warfare, exploration, industry, genetically advancement or whatever one can imagine.
+- **Advanced:** These civilisations have mastered the more advanced concepts of science not only allowing them to develop superior weapons but also a lot of other useful technologies that make space exploration easier.
+  This includes the mastery over gravity, inertia and energy fields.
+  These civilisations aare usually also leading in the fields of genetic engineering and computer systems often capable of merging the two seamlessly.
+  In contrast to previous tiers, there is now hard line and the difference between Interstellar and Advanced civilisations is more of a scale than a binary category.
+- **Super Advanced:** This is basically the elders. A civilisation so advanced that they could shape the galaxy as they pleased.
 
-**2. Warp Drive:**
-- **Common Technology:** Widely used by both the Galactic Empire and the Hegemony, warp drives allow ships to travel faster than light by bending space around them.
-- **Variations:** Different species have developed variations of the warp drive with varying efficiency and speed, but all adhere to the basic principle of creating a warp bubble to traverse vast distances quickly.
+#### Intergalactic Travel Technologies
 
-**3. Hyperdrive:**
-- **Empire’s Standard:** The Galactic Empire primarily uses hyperdrive technology, which involves entering a higher-dimensional space (hyperspace) to bypass normal spacetime constraints.
-- **Navigation Challenges:** Requires precise navigation and advanced computational support to avoid hazards and reach the intended destination accurately.
+**1. Wormhole Network:** 
+The most advanced and efficient method of intergalactic travel, created by the mysterious Elder race. 
+This network consists of stable wormholes connecting distant points in the galaxy, allowing instantaneous travel between them.
+Every couple of centuries there have been shifts in the network, with some wormholes disappearing and others emerging.
+The stable wormholes within the network emerge in regular intervals at specific points.
+The emergence points of a specific wormhole slightly vary within a region.
+Transition through a wormhole is nearly instant.
 
-**4. Slipstream Drive:**
-- **Experimental Technology:** A cutting-edge propulsion method being researched and utilized by a few advanced species. Slipstream drives create temporary conduits in spacetime, allowing for even faster travel than warp or hyperdrives.
-- **Stability Issues:** Still in the experimental stage, with significant risks associated with drive stability and navigational accuracy.
+**2. Jump Drive:**
+Besides the elder wormhole network, ships are usually equipped with jump drives.
+The function similar to the network, also creating wormholes, but on a much smaller scale.
+These drives charge up jump coils which are then used to create a jump wormhole.
+Ships can only bridge a couple of light years, while elder wormholes sometimes span across half the galaxy.
+Depending on how depleted a drive has gotten, it might require a length recharge between jumps.
+It is possible to do multiple short jumps only depleting the capacitors partly ore a big one using the complete charge.
+The formation of stable jump wormholes is impeded by gravity wells or artificially created dampening fields.
+Jump wormholes are the only technology commonly possessed that exceeds the speed of light.
+Only the elders were capable of other feeds that exceeded light speed.
 
-#### II. General Advanced Technologies
+**3. Regular Propulsion:**
+Most pre-warm and early interstellar civilisations use propulsion based on chemical reactions.
+This creates exhaust that is ejected from the craft and creates thrust.
+A more advanced form are ION drives, though they still create exhaust in the form of ionized gas.
+The exhaust makes most of these vessels easy to spot with the right scanning equipment.
+Harder to detect are reactionless drives that utilize the force of gravity to propel ships.
+This technology is mostly seen with advanced civilisations.
+Most species manage to develop artificial gravity for ships before they manage to reach efficiency levels sufficient for propulsion.
+This is also usually preceded with the development of inertia dampening technology which allows ships to perform fast speed and acceleration maneuvers without turning organic crew into meat paste.
 
-**1. Artificial Intelligence:**
-- **Nexus AI:** The most advanced form of AI, represented by the Nexus moon-sized vessels. These AI entities are capable of independent thought and complex decision-making, with a strict logical framework.
-- **Regulated AI:** In both the Empire and the Hegemony, AI development is tightly controlled to prevent incidents similar to the Nexus, with ethical and operational limitations hardcoded.
+#### General Advanced Technologies
 
-**2. Gravity Manipulation:**
-- **Common Use:** Used extensively for starship propulsion, artificial gravity on ships and stations, and various industrial applications.
-- **Empire’s Advantage:** The Empire has refined this technology to create highly efficient and versatile applications, such as inertial dampeners and gravitic shields.
+tbd..
 
-**3. Energy Fields:**
-- **Defensive and Utility:** Energy fields are used for shields, containment fields, and power generation. These fields can protect ships from attacks, contain hazardous materials, and provide clean energy.
-- **Adaptive Shielding:** Advanced species have developed adaptive shielding technology that can dynamically adjust to different types of threats, enhancing defensive capabilities.
+#### Communication and Surveillance
 
-**4. Genetic Engineering:**
-- **Medical and Enhancement:** Genetic engineering is employed for medical purposes, such as curing diseases and enhancing physical and cognitive abilities. It is also used for creating specialized organisms for specific tasks.
-- **Ethical Concerns:** The Empire enforces strict ethical guidelines to prevent abuse, while the Hegemony often pushes the boundaries, resulting in more aggressive and controversial applications.
+Only the elders ar rumored to have possessed communication technology that was not limited to the speed of light.
+All other species in the galaxy are dependent on a network of relay stations and small courier ships with jump drive distributing data between them.
+These courier ships are usually automated drones that self-destruct if they detect a risk of being captured.
+The relay stations are equipped with the highest level of cybersecurity and usually also self-destruct when breached.
 
-**5. Cybernetics:**
-- **Integration and Enhancement:** Cybernetic technology allows for the integration of mechanical and electronic enhancements into biological organisms, providing augmented capabilities.
-- **Zargoth Specialization:** The Zargoth, within the Hegemony, are particularly known for their expertise in cybernetics, often replacing large portions of their biological bodies with cybernetic parts.
+#### Weapons and Defense Technologies
 
-#### III. Communication and Surveillance
-
-**1. Quantum Communication:**
-- **Instantaneous Data Transfer:** Utilizes entangled particles to transmit information instantaneously across vast distances, bypassing the speed of light limitations.
-- **Secure Channels:** Highly secure and resistant to interception, making it the preferred method for critical military and diplomatic communications.
-
-**2. Galactic Networks:**
-- **Information Exchange:** Vast networks of relay stations and satellites facilitate the exchange of information, commerce, and entertainment across the galaxy.
-- **Surveillance Systems:** Both the Empire and the Hegemony maintain extensive surveillance networks to monitor activities within their territories, ensuring compliance with laws and detecting potential threats.
-
-#### IV. Weapons and Defense Technologies
-
-**1. Energy Weapons:**
-- **Lasers and Plasma:** Commonly used in starships and personal weaponry, energy weapons offer high damage output and precision.
-- **Directed Energy:** Advanced directed energy weapons can focus immense power on a target, capable of cutting through shields and armor.
-
-**2. Kinetic Weapons:**
-- **Railguns and Coilguns:** Utilizes electromagnetic forces to launch projectiles at extremely high velocities, providing significant impact damage.
-- **Mass Drivers:** Often used for planetary bombardment or large-scale space battles, mass drivers can launch massive projectiles with devastating effects.
-
-**3. Defensive Systems:**
-- **Shielding Technology:** Energy shields protect against both energy and kinetic attacks, with adaptive shields offering enhanced protection by adjusting to the nature of the threat.
-- **Point Defense Systems:** Automated systems designed to intercept and neutralize incoming threats, such as missiles or smaller ships.
-
-### Conclusion
-
-The galaxy is teeming with advanced technologies that enable its inhabitants to traverse vast distances, communicate instantaneously, and defend themselves against various threats. Each faction, from the Galactic Empire to the Hegemony, leverages these technologies to maintain their power and pursue their objectives. The interplay of these technologies creates a dynamic and complex environment, ripe for exploration and adventure in your sci-fi TTRPG.
+Weapons have a wide range. 
+Low technology races like humans are mostly limited to kinetic weapons like cannons and rail guns.
+More advanced races also make heavy use of different energy weapons.
+This ranges from lasers and masers to more exotic forms like disruptors, which fires intense bolts of energy phased in such a way as to disrupt the molecular cohesion of the target.
+When it comes to the elders, there is no limit on the imagination.
+They were rumored to be capable or rending space-time itself and tore vessels apart from the inside to destroying entire stars.
+But these weapons have been lost in time and if they surface the sentinels make their use highly unpractical.
