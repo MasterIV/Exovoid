@@ -11,6 +11,7 @@ export interface CharacterWeapon {
 }
 
 export interface InventoryItem {
+    id: string;
     name: string;
     quantity: number;
     location: string;

@@ -6,8 +6,7 @@ Next Tasks:
 - weapon actions
 - initiative system
 - class selection
-- inventory
-- add & fix lore
+
 
 Overall:
 

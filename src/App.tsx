@@ -11,15 +11,13 @@ let updateTimer: any = null;
 
 function App() {
     const [character, setCharacter] = useState<CharacterType|null>(null);
-    const changeCharacter = useCallback((name: string, value: any) => {
-        if(character) {
-            const updated = {...character, [name]: value};
-            setCharacter(updated);
-
-            if(updateTimer) clearTimeout(updateTimer);
-            updateTimer = setTimeout(() => socket.emit("save", updated), 5000);
-        }
-    }, [character]);
+    const changeCharacter = useCallback((name: string, value: any) => setCharacter(old => {
+        if(!old) return old;
+        const updated = {...old, [name]: value};
+        if(updateTimer) clearTimeout(updateTimer);
+        updateTimer = setTimeout(() => socket.emit("save", updated), 5000);
+        return updated;
+    }), []);
 
     const [account, setAccount] = useState<AccountType|null>(null);
     const [error, setError] = useState<string>("");

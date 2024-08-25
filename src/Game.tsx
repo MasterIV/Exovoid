@@ -54,7 +54,7 @@ function Game({character, onChange}: GameProps) {
         {name: "Character", content: <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Combat", content: <CombatPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Talents", content: <TalentPage stats={character} onChange={onChange}/>},
-        {name: "Inventory", content: <InventoryPage/>},
+        {name: "Inventory", content: <InventoryPage locked={locked} stats={character} onChange={onChange}/>},
         {name: "Lore", content: <LorePage/>},
     ];
 
