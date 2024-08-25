@@ -202,7 +202,7 @@
     "systemName": "Impact Absorption Array",
     "capacityCost": "Max / 20 + 0.5",
     "powerRequirement": "Cap / 2 + 0.5",
-    "description": "Shield Points = Base Hull / 4\nRegeneration = 25% per round (round up)",
+    "description": "Shield Points = Base Hull / 10 + 4\nRegeneration = 25% per round (round up)",
     "assetCost": "Cap / 2",
     "rarity": 4
   },
