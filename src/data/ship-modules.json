@@ -200,8 +200,8 @@
   {
     "systemType": "Shield Systems",
     "systemName": "Impact Absorption Array",
-    "capacityCost": "Max / 10",
-    "powerRequirement": "Cap / 2",
+    "capacityCost": "Max / 20 + 0.5",
+    "powerRequirement": "Cap / 2 + 0.5",
     "description": "Shield Points = Base Hull / 4\nRegeneration = 25% per round (round up)",
     "assetCost": "Cap / 2",
     "rarity": 4
@@ -209,16 +209,16 @@
   {
     "systemType": "Shield Systems",
     "systemName": "Aegies Defense Grid",
-    "capacityCost": "Max / 8",
+    "capacityCost": "Max / 15 + 5",
     "powerRequirement": "Cap",
     "description": "Shield Points = Base Hull / 2\nRegeneration = 25% per round (round up)",
-    "assetCost": "Cap",
+    "assetCost": "Cap / 1.33",
     "rarity": 5
   },
   {
     "systemType": "Shield Systems",
     "systemName": "Vanguard Shield System",
-    "capacityCost": "Max / 8",
+    "capacityCost": "Max / 10 + 10",
     "powerRequirement": "Cap * 2",
     "description": "Shield Points = Base Hull\nRegeneration = 15% per round (round up)",
     "assetCost": "Cap",
@@ -227,10 +227,10 @@
   {
     "systemType": "Shield Systems",
     "systemName": "Paladin Barrier Network",
-    "capacityCost": "Max / 8",
+    "capacityCost": "Max / 10 + 10",
     "powerRequirement": "Cap * 4",
     "description": "Shield Points = Base Hull * 2\nRegeneration = 10% per round (round up)",
-    "assetCost": "Cap * 2",
+    "assetCost": "Cap * 3",
     "rarity": 7
   },
   {
