@@ -59,7 +59,7 @@ export default function InventoryPage({stats, locked, onChange} : InventoryPageP
     const currency = stats.currency || {assets:0, credits:0};
 
     const changeInventory = useCallback((i:any) => onChange('inventory', i), [onChange]);
-    const changeCurrency = (k: string, v: number) => onChange('inventory', {...currency, [k]: v});
+    const changeCurrency = (k: string, v: number) => onChange('currency', {...currency, [k]: v});
 
     return <Grid container spacing={2} margin={1} direction="column">
 
