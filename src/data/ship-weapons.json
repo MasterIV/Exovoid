@@ -82,7 +82,7 @@
     "capacityCost": 1,
     "powerRequirement": 1,
     "magazine": 1,
-    "reloadAP": "10 (per torpedo)",
+    "reloadAP": 10,
     "attackAP": 5,
     "damage": 20,
     "damageType": "Explosive",

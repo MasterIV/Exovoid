@@ -3,7 +3,7 @@
     "type": "Reflexbooster",
     "name": "ReflexaGen V2",
     "tier": "Alpha",
-    "description": "After determining your Action Points at the beginning of a round, you double them, but you also have to spend twice the amount of AP for all actions.",
+    "description": "Increase your Action Points by +3, but if you have 3 or less Action Points during a round, you cannot perform any actions (but reactions).",
     "cyberImmunityCost": 5,
     "cost": 1000,
     "rarity": 3
@@ -12,16 +12,16 @@
     "type": "Reflexbooster",
     "name": "NeuraBoost XR",
     "tier": "Beta",
-    "description": "To determine your Action Points at the beginning of a round, roll 2d6 and choose one result.",
+    "description": "Increase your Action Points by +2, and to determine your Action Points at the beginning of a round, roll 2d6 and use the better result.",
     "cyberImmunityCost": 6,
-    "cost": 1500,
+    "cost": 3000,
     "rarity": 4
   },
   {
     "type": "Reflexbooster",
     "name": "Velocitec Reflex Enhancer",
     "tier": "Omega",
-    "description": "Increase your Action Points passively by +5.",
+    "description": "Increase your Action Points by +5.",
     "cyberImmunityCost": 8,
     "cost": 7500,
     "rarity": 5
@@ -39,7 +39,7 @@
     "type": "Move By Wire",
     "name": "KinetiDrive Mk IV",
     "tier": "Beta",
-    "description": "As above, and you gain a free trigger on dodges, parries and melee attacks.",
+    "description": "You gain +1 Action Point, +2 Speed and +2 pool bonus when you attempt to dodge or parry. You also gain a free trigger on dodges, parries and melee attacks.",
     "cyberImmunityCost": 12,
     "cost": 6000,
     "rarity": 5
@@ -48,7 +48,7 @@
     "type": "Move By Wire",
     "name": "WireStride 2.1",
     "tier": "Omega",
-    "description": "As above, and you may now attempt to parry ranged attacks if you wield a suitable melee weapon, but can only do so up to two times per round.\n\nA successful Riposte will ricochet the bullets back at any target within range 10 of you, for half the damage.",
+    "description": "You gain +1 Action Point, +2 Speed and +2 pool bonus when you attempt to dodge or parry. You also gain a free trigger on dodges, parries and melee attacks. You may now attempt to parry ranged attacks if you wield a suitable melee weapon, but can only do so up to two times per round. A successful Riposte will ricochet the bullets back at any target within range 10 of you, for half the damage.",
     "cyberImmunityCost": 14,
     "cost": 10000,
     "rarity": 6
@@ -58,7 +58,7 @@
     "name": "Duraskin Aegis",
     "tier": "Alpha",
     "description": "You gain +1 Soak.",
-    "cyberImmunityCost": 6,
+    "cyberImmunityCost": 5,
     "cost": 800,
     "rarity": 3
   },
@@ -66,7 +66,7 @@
     "type": "Dermal Armor",
     "name": "DermalShield D600",
     "tier": "Beta",
-    "description": "You gain +1 Soak and reduce the pool modifier from accumulated injuries by 4 (to a minimum of 0).",
+    "description": "You gain +1 Soak and may discard the first severity 1 injury during each encounter.",
     "cyberImmunityCost": 7,
     "cost": 1200,
     "rarity": 3
@@ -111,7 +111,7 @@
     "type": "Smarteyes",
     "name": "Percepta XR-400",
     "tier": "Beta",
-    "description": "As above, but you can now zoom up to 16x, or even apply filters that go beyond human vision (like thermal, infrared, ultraviolet).",
+    "description": "Allows to record what you see or overlay your vision with certain feeds or visual aids, and you can now zoom up to 16x, or even apply filters that go beyond human vision (like thermal, infrared, ultraviolet).",
     "cyberImmunityCost": 4,
     "cost": 1800,
     "rarity": 3
@@ -138,7 +138,7 @@
     "type": "Skeletal Reinforcement",
     "name": "BoneForge S2",
     "tier": "Beta",
-    "description": "As above, and additionally you become immune to losing your limbs from regular combat-related outcomes.",
+    "description": "Increases your maximum health by +3 and you become immune to losing your limbs from regular combat-related outcomes.",
     "cyberImmunityCost": 4,
     "cost": 1100,
     "rarity": 4
@@ -174,7 +174,7 @@
     "type": "Cybernetic Arm",
     "name": "PowerLimb CX",
     "tier": "Beta",
-    "description": "As above, but you gain +2 Strength with that arm instead.",
+    "description": "Replaces one arm with a visible cybernetic variant. When using that arm, you gain +2 Strength. You may install up to one pistol-sized firearm 1-handed melee weapon or tool that can retract from within the internals - you have to pay for the weapon or tool seperately.",
     "cyberImmunityCost": 7,
     "cost": 2000,
     "rarity": 4
@@ -183,7 +183,7 @@
     "type": "Cybernetic Arm",
     "name": "Armatek Series 7",
     "tier": "Omega",
-    "description": "As above, but the arm is now looking natural, and is nearly impossible to detect as being cybernetic with the naked eye.",
+    "description": "Replaces one arm with a natural looking cybernetic limb that is nearly indetectable as such. When using that arm, you gain +2 Strength. You may install up to one pistol-sized firearm 1-handed melee weapon or tool that can retract from within the internals - you have to pay for the weapon or tool seperately.",
     "cyberImmunityCost": 5,
     "cost": 3500,
     "rarity": 5
@@ -201,7 +201,7 @@
     "type": "Cybernetic Legs",
     "name": "PaceMaster Pro",
     "tier": "Beta",
-    "description": "As above, but another +1 speed.\n\nAdditionally, you can jump twice as high or far as a normal human.",
+    "description": "Replaces both legs with visible cybernetic variants. Grants +3 speed and +2 pool bonus on all physical tests where your legs are heavily involved, mostly running, jumping and landing. Additionally, you can jump twice as high or far as a normal human.",
     "cyberImmunityCost": 9,
     "cost": 2600,
     "rarity": 4
@@ -210,7 +210,7 @@
     "type": "Cybernetic Legs",
     "name": "StriderLeg XT",
     "tier": "Omega",
-    "description": "As above, but the legs are now looking natural, and are nearly impossible to detect as being cybernetic with the naked eye.",
+    "description": "Replaces both legs with natural looking cybernetic limbs that are nearly indetectable as such. Grants +3 speed and +2 pool bonus on all physical tests where your legs are heavily involved, mostly running, jumping and landing. Additionally, you can jump twice as high or far as a normal human.",
     "cyberImmunityCost": 6,
     "cost": 4200,
     "rarity": 5
@@ -246,14 +246,14 @@
     "type": "Internal Cyberdeck",
     "name": "Intruder Mk IV",
     "tier": "Beta",
-    "description": "As above, but you also gain +1 pool bonus on hacking and +20% device integrity.",
+    "description": "A cyberdeck mostly to be used as a Computer or for hacking. You need to choose and separately pay for a cyberdeck model which is then implanted. Detecting such a deck is a difficult task (as they often come out as mere Neural Links in cursory scans). When using an internal Cyberdeck, all hacking attempts gain +1 pool bonus and generate a free trigger. The installed device gains +20% device integrity.",
     "cyberImmunityCost": 6,
     "cost": 2000,
     "rarity": 5
   },
   {
-    "type": "Nano-Healing System",
-    "name": "NanoMend 7.2",
+    "type": "Improved Metabolism",
+    "name": "UltraMend 7.2",
     "tier": "Alpha",
     "description": "You gain +5 pool bonus for your nightly regeneration, and regain 40% instead of just 20% of your health.",
     "cyberImmunityCost": 5,
@@ -261,7 +261,7 @@
     "rarity": 4
   },
   {
-    "type": "Nano-Healing System",
+    "type": "Improved Metabolism",
     "name": "HealSync N500",
     "tier": "Beta",
     "description": "You gain +3 pool bonus for your natural regeneration, but you may roll for it once every 6 hours, even if you don't rest.",
@@ -270,10 +270,10 @@
     "rarity": 5
   },
   {
-    "type": "Nano-Healing System",
-    "name": "Regenix NanoSuite",
+    "type": "Improved Metabolism",
+    "name": "Regenix Suite",
     "tier": "Omega",
-    "description": "As above, but you may roll every hour instead. As a drawback, surgery on you suffers a -4 pool penalty and drugs don't have any effect. You also need to eat twice as much.",
+    "description": "You may perform your natural regeneration every hour instead. As a drawback, surgery on you suffers a -4 pool penalty and drugs don't have any effect. You also need to eat twice as much.",
     "cyberImmunityCost": 5,
     "cost": 6000,
     "rarity": 6
@@ -318,7 +318,7 @@
     "type": "Emotional Regulator",
     "name": "CalmLink ER-3",
     "tier": "Beta",
-    "description": "As above, and grants +1 Coolness.",
+    "description": "Allows you to alter your mood as you wish, including the simulation of drug like effects. In turn, you can hide fear, induce confidence and similar. You gain +1 Coolness and +1 pool bonus for all suitable checks, including social ones like Con Arts or Command.",
     "cyberImmunityCost": 6,
     "cost": 3500,
     "rarity": 4
@@ -345,7 +345,7 @@
     "type": "Skillwire Slot",
     "name": "SkillSlot V3",
     "tier": "Alpha",
-    "description": "Allows you to insert a single chip at any given time. Each chip corresponds to a skill, and puts that skill to level 3 (regardless of your own levels). If your own level in the skill is equal or higher, you gain +1 skill level instead. Changing a chip is an action that costs 5 AP.\n\nChips are sold separately at rarity 4 and 500 Credits each.",
+    "description": "Allows you to insert a single chip at any given time. Each chip corresponds to a skill, and puts that skill to level 3 (regardless of your own levels). If your own level in the skill is equal or higher, you gain +1 pool bonus instead. Changing a chip is an action that costs 5 AP. Chips are sold separately at rarity 4 and 500 Credits each.",
     "cyberImmunityCost": 5,
     "cost": 1300,
     "rarity": 4
@@ -354,7 +354,7 @@
     "type": "Skillwire Slot",
     "name": "AbilityLink AS",
     "tier": "Beta",
-    "description": "As above, but you can install up to two chips at once.",
+    "description": "Allows you to insert up to two chips at any given time. Each chip corresponds to a skill, and puts that skill to level 3 (regardless of your own levels). If your own level in the skill is equal or higher, you gain +1 pool bonus instead. Changing a chip is an action that costs 5 AP. Chips are sold separately at rarity 4 and 500 Credits each.",
     "cyberImmunityCost": 7,
     "cost": 2250,
     "rarity": 4
@@ -363,7 +363,7 @@
     "type": "Skillwire Slot",
     "name": "TalentJack 2.1",
     "tier": "Omega",
-    "description": "As above, and you gain +1 Education.",
+    "description": "You gain +1 Education, and you can insert up to two chips at any given time. Each chip corresponds to a skill, and puts that skill to level 3 (regardless of your own levels). If your own level in the skill is equal or higher, you gain +1 pool bonus instead. Changing a chip is an action that costs 5 AP. Chips are sold separately at rarity 4 and 500 Credits each.",
     "cyberImmunityCost": 7,
     "cost": 4000,
     "rarity": 5
@@ -372,7 +372,7 @@
     "type": "Vacuum Skin",
     "name": "Vacuseal Dermis",
     "tier": "Alpha",
-    "description": "Makes your outer body layer resistant to the effects of the vaccuum for up to 30 Minutes.",
+    "description": "Makes your outer body layer resistant to the effects of the vaccuum for up to 30 Minutes. The skin looks visibly altered and has an alien texture to it.",
     "cyberImmunityCost": 6,
     "cost": 1500,
     "rarity": 4
@@ -381,7 +381,7 @@
     "type": "Vacuum Skin",
     "name": "Starshield Epidermal Layer",
     "tier": "Beta",
-    "description": "Makes your outer body layer resistant to the effects of the vacuum indefinitely.",
+    "description": "Makes your outer body layer resistant to the effects of the vacuum indefinitely. The skin looks visibly altered and has an alien texture to it.",
     "cyberImmunityCost": 7,
     "cost": 2800,
     "rarity": 4
@@ -390,7 +390,7 @@
     "type": "Vacuum Skin",
     "name": "XenoDerm Exo-Layer",
     "tier": "Omega",
-    "description": "As above, and allows you to withstand extreme weather (heat, cold or corrosion) for up to 30 Minutes - you still need to ensure a suitable oxygen intake.",
+    "description": "Makes your outer body layer resistant to the effects of the vacuum indefinitely and allows you to withstand extreme weather (heat, cold or corrosion) for up to 30 Minutes - you still need to ensure a suitable oxygen intake. The skin looks visibly altered and has an alien texture to it.",
     "cyberImmunityCost": 7,
     "cost": 4500,
     "rarity": 5
@@ -408,7 +408,7 @@
     "type": "Pheromone Glands",
     "name": "Pacifier Pixiedust XT",
     "tier": "Beta",
-    "description": "As above, and once per day you can release a cloud of strong pheromones within range 5. You can attempt an Con Arts or Command check, and victims have to pass a Survival or Empathy check with more successes than you. If they fail, they will temporarily follow your request.",
+    "description": "Grants +1 pool bonus to all social checks when trying to manipulate others within range 5. Once per day you can release a cloud of strong pheromones within range 5. You can attempt a Con Arts or Command check, and victims have to pass a Survival or Empathy check with more successes than you - they gain a pool bonus the more ridiculous your demands are. If they fail, they will temporarily follow your request.",
     "cyberImmunityCost": 5,
     "cost": 2500,
     "rarity": 5

@@ -1,6 +1,7 @@
 [
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Pistol",
     "weapon": "Hold Out Pistol",
     "name": "6mm Triton Vanguard",
     "hands": 1,
@@ -9,7 +10,10 @@
     "speed": 3,
     "damage": 6,
     "damageType": "Physical",
-    "qualities": "Concealed (1)",
+    "qualities":
+	{
+		"Concealed": 1
+	},
     "triggerOptions": "Concussing",
     "specialRules": "",
     "modLimit": 2,
@@ -19,7 +23,8 @@
     "range": "2-5-15"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Pistol",
     "weapon": "Hold Out Taser",
     "name": "Starfury Tazer",
     "hands": 1,
@@ -28,7 +33,11 @@
     "speed": 3,
     "damage": 3,
     "damageType": "Electrical",
-    "qualities": "Concealed (1), Silenced",
+    "qualities": 
+	{
+		"Concealed": 1,
+		"Silenced": 1
+	},
     "triggerOptions": "Incapacitating, Stunning",
     "specialRules": "",
     "modLimit": 2,
@@ -38,7 +47,8 @@
     "range": "2-4-6"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Pistol",
     "weapon": "Small Pistol",
     "name": "10mm Akura Infiltrator Mk. 2",
     "hands": 1,
@@ -47,7 +57,11 @@
     "speed": 3,
     "damage": 6,
     "damageType": "Physical",
-    "qualities": "Burst (5), Concealed (2)",
+    "qualities":
+	{
+		"Burst": 5,
+		"Concealed": 2
+	},
     "triggerOptions": "Shredding (1)",
     "specialRules": "",
     "modLimit": 3,
@@ -57,7 +71,8 @@
     "range": "2-8-30"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Pistol",
     "weapon": "Medium Pistol",
     "name": ".45 ACP Xeno Hunter",
     "hands": 1,
@@ -66,7 +81,11 @@
     "speed": 4,
     "damage": 7,
     "damageType": "Physical",
-    "qualities": "Handling (1), Concealed (2)",
+    "qualities": 
+	{
+		"Handling": 1,
+		"Concealed": 2
+	},
     "triggerOptions": "Penetrating (2)",
     "specialRules": "",
     "modLimit": 3,
@@ -76,7 +95,8 @@
     "range": "2-8-35"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Pistol",
     "weapon": "Revolver",
     "name": ".308 Horizons Revolver",
     "hands": 1,
@@ -85,7 +105,10 @@
     "speed": 4,
     "damage": 9,
     "damageType": "Physical",
-    "qualities": "Concealed (2)",
+    "qualities":
+	{
+		"Concealed": 2
+	},
     "triggerOptions": "Lethal (5), Shredding (2)",
     "specialRules": "",
     "modLimit": 2,
@@ -95,7 +118,8 @@
     "range": "2-10-50"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Pistol",
     "weapon": "Heavy Pistol",
     "name": ".50 Callisto Eagle",
     "hands": 2,
@@ -104,7 +128,11 @@
     "speed": 5,
     "damage": 11,
     "damageType": "Physical",
-    "qualities": "Loud, Concealed (2)",
+    "qualities":
+	{
+		"Concealed": 2,
+		"Loud": 1
+	},
     "triggerOptions": "Lethal (5), Knocking, Penetrating (3)",
     "specialRules": "Can be fired in one hand at +1 difficulty.",
     "modLimit": 3,
@@ -114,7 +142,8 @@
     "range": "3-12-80"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Laser Pistol",
     "weapon": "Laser Pistol",
     "name": "2E Nova Sentinel",
     "hands": 1,
@@ -123,7 +152,15 @@
     "speed": 3,
     "damage": 5,
     "damageType": "Laser",
-    "qualities": "Silenced, Handling (2), Burst (6), Compensated, Indiscriminate, Concealed (2)",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Handling": 2,
+		"Burst": 6,
+		"Compensated": 1,
+		"Indiscriminate": 1,
+		"Concealed": 2
+	},
     "triggerOptions": "Penetrating (5), Shredding (1)",
     "specialRules": "",
     "modLimit": 3,
@@ -133,7 +170,8 @@
     "range": "2-25-120"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "MP",
     "weapon": "Small MP",
     "name": ".380 Vega Scorpion",
     "hands": 1,
@@ -142,7 +180,12 @@
     "speed": 4,
     "damage": 6,
     "damageType": "Physical",
-    "qualities": "Burst (6), Full Auto (18), Concealed (2)",
+    "qualities": 
+	{
+		"Burst": 6,
+		"Full Auto": 18,
+		"Concealed": 2
+	},
     "triggerOptions": "Penetrating (2)",
     "specialRules": "Gains \"Compensated\" when used with two hands.",
     "modLimit": 3,
@@ -152,7 +195,8 @@
     "range": "2-8-40"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "MP",
     "weapon": "Medium MP",
     "name": ".45 ACP Callisto Spitter",
     "hands": 1,
@@ -161,7 +205,11 @@
     "speed": 4,
     "damage": 7,
     "damageType": "Physical",
-    "qualities": "Burst (5), Concealed (3)",
+    "qualities":
+	{
+		"Burst": 5,
+		"Concealed": 3
+	},
     "triggerOptions": "Lethal (3)",
     "specialRules": "",
     "modLimit": 4,
@@ -171,7 +219,8 @@
     "range": "2-6-30"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "MP",
     "weapon": "Tactical MP",
     "name": "12mm Akura Tactical MP-9",
     "hands": 2,
@@ -180,7 +229,11 @@
     "speed": 4,
     "damage": 7,
     "damageType": "Physical",
-    "qualities": "Handling (2), Burst (5)",
+    "qualities":
+	{
+		"Handling": 2,
+		"Burst": 5
+	},
     "triggerOptions": "Concussing",
     "specialRules": "",
     "modLimit": 4,
@@ -190,7 +243,8 @@
     "range": "2-15-75"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "MP",
     "weapon": "Self-Defence MP",
     "name": "8mm Bullpup P95",
     "hands": 2,
@@ -199,7 +253,11 @@
     "speed": 4,
     "damage": 6,
     "damageType": "Physical",
-    "qualities": "Compensated, Full Auto (15)",
+    "qualities":
+	{
+		"Compensated": 1,
+		"Full Auto": 15
+	},
     "triggerOptions": "Penetrating (3)",
     "specialRules": "",
     "modLimit": 4,
@@ -209,7 +267,8 @@
     "range": "2-12-50"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Rifle",
     "weapon": "Common Assault Rifle",
     "name": "5.6mm Orion Striker",
     "hands": 2,
@@ -218,7 +277,12 @@
     "speed": 4,
     "damage": 8,
     "damageType": "Physical",
-    "qualities": "Handling (1), Burst (5), Full Auto (15)",
+    "qualities":
+	{
+		"Handling": 1,
+		"Burst": 5,
+		"Full Auto": 15
+	},
     "triggerOptions": "Lethal (4)",
     "specialRules": "",
     "modLimit": 5,
@@ -228,7 +292,8 @@
     "range": "3-20-120"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Rifle",
     "weapon": "Heavy Assault Rifle",
     "name": "7.6mm Azerra Companion",
     "hands": 2,
@@ -237,7 +302,11 @@
     "speed": 4,
     "damage": 9,
     "damageType": "Physical",
-    "qualities": "Loud, Burst (5)",
+    "qualities":
+	{
+		"Loud": 1, 
+		"Burst": 5
+	},
     "triggerOptions": "Lethal (4), Penetrating (3)",
     "specialRules": "",
     "modLimit": 6,
@@ -247,7 +316,8 @@
     "range": "3-20-150"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Laser Rifle",
     "weapon": "Laser Assault Rifle",
     "name": "3E Pulsar Repeater",
     "hands": 2,
@@ -256,7 +326,15 @@
     "speed": 3,
     "damage": 7,
     "damageType": "Laser",
-    "qualities": "Silenced, Handling (3), Burst (10), Full Auto (30), Compensated, Indiscriminate",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Handling": 3,
+		"Burst": 10,
+		"Full Auto": 30,
+		"Compensated": 1,
+		"Indiscriminate": 1
+	},
     "triggerOptions": "Penetrating (6), Shredding (1)",
     "specialRules": "",
     "modLimit": 5,
@@ -266,7 +344,8 @@
     "range": "3-40-200"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Rifle",
     "weapon": "Double Barrelled Shotgun",
     "name": "12-Gauge Nova Breaker",
     "hands": 2,
@@ -275,7 +354,10 @@
     "speed": 5,
     "damage": 14,
     "damageType": "Physical",
-    "qualities": "Loud",
+    "qualities":
+	{
+		"Loud": 1
+	},
     "triggerOptions": "Concussing, Lethal (8), Shredding (3), Knocking",
     "specialRules": "",
     "modLimit": 4,
@@ -285,16 +367,20 @@
     "range": "2-6-15"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Rifle",
     "weapon": "Tactical Shotgun",
     "name": "20-Gauge Orion Tactical",
     "hands": 2,
     "magazine": 7,
-    "reload": "1 (per shell)",
+    "reload": 7,
     "speed": 4,
     "damage": 12,
     "damageType": "Physical",
-    "qualities": "",
+    "qualities":
+	{
+		
+	},
     "triggerOptions": "Lethal (5), Shredding (2), Knocking",
     "specialRules": "",
     "modLimit": 5,
@@ -304,7 +390,8 @@
     "range": "2-6-20"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Rifle",
     "weapon": "Full-Auto Shotgun",
     "name": "20-Gauge Liberator",
     "hands": 2,
@@ -313,7 +400,10 @@
     "speed": 4,
     "damage": 10,
     "damageType": "Physical",
-    "qualities": "Burst (5)",
+    "qualities":
+	{
+		"Burst": 5
+	},
     "triggerOptions": "Lethal (3), Shredding (2), Knocking",
     "specialRules": "",
     "modLimit": 4,
@@ -323,16 +413,20 @@
     "range": "2-6-20"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Rifle",
     "weapon": "Anti-Riot Shotgun",
     "name": "Azerra Rioter",
     "hands": 2,
     "magazine": 6,
-    "reload": "1 (per shell)",
+    "reload": 6,
     "speed": 4,
     "damage": 7,
     "damageType": "Electrical",
-    "qualities": "Handling (1)",
+    "qualities":
+	{
+		"Handling": 1
+	},
     "triggerOptions": "Incapacitating, Concussing, Stunning, Knocking",
     "specialRules": "",
     "modLimit": 4,
@@ -342,7 +436,8 @@
     "range": "2-5-12"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Rifle",
     "weapon": "Marksman Rifle",
     "name": "Viper Precision 20mm",
     "hands": 2,
@@ -351,7 +446,10 @@
     "speed": 4,
     "damage": 9,
     "damageType": "Physical",
-    "qualities": "Handling (1)",
+    "qualities":
+	{
+		"Handling": 1
+	},
     "triggerOptions": "Penetrating (3), Lethal (3)",
     "specialRules": "",
     "modLimit": 6,
@@ -361,7 +459,8 @@
     "range": "8-30-150"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Rifle",
     "weapon": "Sniper Rifle",
     "name": "Widowmaker .408",
     "hands": 2,
@@ -370,7 +469,10 @@
     "speed": 5,
     "damage": 12,
     "damageType": "Physical",
-    "qualities": "Handling (2)",
+    "qualities":
+	{
+		"Handling": 2
+	},
     "triggerOptions": "Penetrating (4), Lethal (4)",
     "specialRules": "",
     "modLimit": 5,
@@ -380,7 +482,8 @@
     "range": "15-80-300"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Rifle",
     "weapon": "Anti-Materiel Rifle",
     "name": "Titan Slayer 50cal",
     "hands": 2,
@@ -389,7 +492,11 @@
     "speed": 6,
     "damage": 15,
     "damageType": "Physical",
-    "qualities": "Handling (1), Destructive (7)",
+    "qualities":
+	{
+		"Handling": 1,
+		"Destructive": 7
+	},
     "triggerOptions": "Penetrating (6), Shredding (4), Lethal (4)",
     "specialRules": "Every trigger spent on the weapon's options is automatically spent on all options at once.",
     "modLimit": 5,
@@ -399,7 +506,8 @@
     "range": "20-120-1000"
   },
   {
-    "type": "Firearms",
+    "skill": "Firearms",
+	"type": "Plasma Rifle",
     "weapon": "Plasma Rifle",
     "name": "Solaris Incinerator",
     "hands": 2,
@@ -408,7 +516,10 @@
     "speed": 4,
     "damage": 10,
     "damageType": "Fire",
-    "qualities": "Burst (4)",
+    "qualities":
+	{
+		"Burst": 4
+	},
     "triggerOptions": "Shredding (5), Burning, Lethal (5), Plasmascorch",
     "specialRules": "",
     "modLimit": 5,
@@ -418,7 +529,8 @@
     "range": "3-30-150"
   },
   {
-    "type": "Heavy Weapons",
+    "skill": "Heavy Weapons",
+	"type": "Heavy Weapon",
     "weapon": "Machine Gun",
     "name": "7.62mm Hellfire MG",
     "hands": 2,
@@ -427,7 +539,14 @@
     "speed": 5,
     "damage": 12,
     "damageType": "Physical",
-    "qualities": "Loud, Burst (8), Full Auto (20), Compensated, Improvised",
+    "qualities":
+	{
+		"Loud": 1,
+		"Burst": 8,
+		"Full Auto": 20,
+		"Compensated": 1,
+		"Improvised": 1
+	},
     "triggerOptions": "Penetrating (3), Shredding (2), Lethal (5), Concussing",
     "specialRules": "Gains Handling (3) when used braced or prone - bracing the weapon requires 3 AP. In that case, it also loses Improvised.",
     "modLimit": 6,
@@ -437,7 +556,8 @@
     "range": "5-20-150"
   },
   {
-    "type": "Heavy Weapons",
+    "skill": "Heavy Weapons",
+	"type": "Heavy Weapon",
     "weapon": "Flame Thrower",
     "name": "Pyroclasm Projector",
     "hands": 2,
@@ -446,7 +566,14 @@
     "speed": 4,
     "damage": 15,
     "damageType": "Fire",
-    "qualities": "Burst (2), Full Auto (4), Compensated, Area (1), Indiscriminate",
+    "qualities":
+	{
+		"Burst": 2,
+		"Full Auto": 4,
+		"Compensated": 1,
+		"Area": 1,
+		"Indiscriminate": 1
+	},
     "triggerOptions": "Burning, Penetrating (5)",
     "specialRules": "When using  Full Auto, the attacks have to happen against different targets / squares that must not be further away than 3 squares from each other.",
     "modLimit": 2,
@@ -456,16 +583,23 @@
     "range": "3-8-15"
   },
   {
-    "type": "Heavy Weapons",
+    "skill": "Heavy Weapons",
+	"type": "Heavy Weapon",
     "weapon": "Grenade Launcher",
     "name": "Thunderstrike GL-6",
     "hands": 2,
     "magazine": 6,
-    "reload": "1 (per shell)",
+    "reload": 6,
     "speed": 4,
     "damage": 12,
     "damageType": "Explosive",
-    "qualities": "Loud, Area (2), Indiscriminate, Destructive (6)",
+    "qualities": 
+	{
+		"Loud": 1,
+		"Area": 2,
+		"Indiscriminate": 1,
+		"Destructive": 6
+	},
     "triggerOptions": "Penetrating (3), Shredding (2), Lethal (3), Concussing, Stunning",
     "specialRules": "Can be loaded with non-lethal grenades, which reduces the damage to 4, and removes the Penetrating, Shredding and Lethal options, while increasing the Area quality to 3 and adding the Incapacitating trigger options",
     "modLimit": 2,
@@ -475,7 +609,8 @@
     "range": "-"
   },
   {
-    "type": "Heavy Weapons",
+    "skill": "Heavy Weapons",
+	"type": "Heavy Weapon",
     "weapon": "Mini-Gun",
     "name": "Devastator 7.62mm Minigun",
     "hands": 2,
@@ -484,7 +619,14 @@
     "speed": 5,
     "damage": 12,
     "damageType": "Physical",
-    "qualities": "Loud, Burst (10), Full Auto (30), Compensated, Improvised",
+    "qualities":
+	{
+		"Loud": 1,
+		"Burst": 10,
+		"Full Auto": 30,
+		"Compensated": 1,
+		"Improvised": 1
+	},
     "triggerOptions": "Penetrating (3), Shredding (4), Lethal (5)",
     "specialRules": "Characters with 6 Strength or more ignore Improvised.",
     "modLimit": 4,
@@ -494,7 +636,8 @@
     "range": "5-20-150"
   },
   {
-    "type": "Heavy Weapons",
+    "skill": "Heavy Weapons",
+	"type": "Plasma Heavy Weapon",
     "weapon": "Plasma Launcher",
     "name": "Vulcan P-12",
     "hands": 2,
@@ -503,7 +646,11 @@
     "speed": 4,
     "damage": 15,
     "damageType": "Fire",
-    "qualities": "Area (4), Indiscriminate",
+    "qualities":
+	{
+		"Area": 4,
+		"Indiscriminate": 1
+	},
     "triggerOptions": "Shredding (5), Burning, Lethal (5), Plasmascorch",
     "specialRules": "",
     "modLimit": 2,
@@ -513,7 +660,8 @@
     "range": "5-20-50"
   },
   {
-    "type": "Heavy Weapons",
+    "skill": "Heavy Weapons",
+	"type": "Heavy Weapon",
     "weapon": "Rocket Launcher",
     "name": "Manticore RL-1",
     "hands": 2,
@@ -522,7 +670,14 @@
     "speed": 6,
     "damage": 15,
     "damageType": "Explosive",
-    "qualities": "Loud, Handling (4), Area (3), Indiscriminate, Destructive (8)",
+    "qualities":
+	{
+		"Loud": 1,
+		"Handling": 4,
+		"Area": 3,
+		"Indiscriminate": 1,
+		"Destructive": 8
+	},
     "triggerOptions": "Penetrating (3), Shredding (4), Lethal (5), Concussing, Stunning",
     "specialRules": "",
     "modLimit": 2,
@@ -532,7 +687,8 @@
     "range": "10-100-200"
   },
   {
-    "type": "Throwing",
+    "skill": "Athletics",
+	"type": "Grenade",
     "weapon": "Flash Grenade",
     "name": "Dazzler Flashbang",
     "hands": 1,
@@ -541,7 +697,14 @@
     "speed": 5,
     "damage": 5,
     "damageType": "Explosive",
-    "qualities": "Concealed (2), Loud, Handling (2), Area (3), Indiscriminate",
+    "qualities":
+	{
+		"Concealed": 2,
+		"Loud": 1,
+		"Handling": 2,
+		"Area": 3,
+		"Indiscriminate": 1
+	},
     "triggerOptions": "Concussing, Stunning",
     "specialRules": "",
     "modLimit": 0,
@@ -551,7 +714,8 @@
     "range": "1-8-12"
   },
   {
-    "type": "Throwing",
+    "skill": "Athletics",
+	"type": "Grenade",
     "weapon": "Frag Grenade",
     "name": "Havoc Frag Grande",
     "hands": 1,
@@ -560,7 +724,13 @@
     "speed": 5,
     "damage": 12,
     "damageType": "Explosive",
-    "qualities": "Concealed (2), Loud, Area (2), Indiscriminate",
+    "qualities":
+	{
+		"Concealed": 2,
+		"Loud": 1,
+		"Area": 2,
+		"Indiscriminate": 1
+	},
     "triggerOptions": "Lethal (4)",
     "specialRules": "",
     "modLimit": 0,
@@ -570,7 +740,8 @@
     "range": "1-8-12"
   },
   {
-    "type": "Throwing",
+    "skill": "Athletics",
+	"type": "Blade",
     "weapon": "Throwing Knife",
     "name": "Phantom Throwing Knife",
     "hands": 1,
@@ -579,7 +750,11 @@
     "speed": 3,
     "damage": 5,
     "damageType": "Physical",
-    "qualities": "Silenced, Concealed (1)",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Concealed": 1
+	},
     "triggerOptions": "Lethal (2)",
     "specialRules": "",
     "modLimit": 0,
@@ -589,7 +764,8 @@
     "range": "1-5-8"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blunt",
     "weapon": "Unarmed",
     "name": "Unarmed Combat",
     "hands": 1,
@@ -598,7 +774,11 @@
     "speed": 3,
     "damage": 2,
     "damageType": "Physical",
-    "qualities": "Silenced, Handling (1)",
+    "qualities": 
+	{
+		"Silenced": 1,
+		"Handling": 1
+	},
     "triggerOptions": "Knocking, Incapacitating, Penetrating (1)",
     "specialRules": "Cannot do a parry against real melee weapons.\nCan be used as a two-handed attack (increasing the heft applied).",
     "modLimit": 0,
@@ -608,7 +788,8 @@
     "range": "1"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blade",
     "weapon": "Knife",
     "name": "Wraith Combat Knife",
     "hands": 1,
@@ -617,7 +798,11 @@
     "speed": 3,
     "damage": 5,
     "damageType": "Physical",
-    "qualities": "Silenced, Concealed (1)",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Concealed": 1
+	},
     "triggerOptions": "Lethal (2)",
     "specialRules": "",
     "modLimit": 0,
@@ -627,7 +812,8 @@
     "range": "1"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blunt",
     "weapon": "Brass Knuckles",
     "name": "Iron Fist Knuckles",
     "hands": 1,
@@ -636,7 +822,11 @@
     "speed": 3,
     "damage": 4,
     "damageType": "Physical",
-    "qualities": "Silenced, Concealed (1)",
+    "qualities": 
+	{
+		"Silenced": 1,
+		"Concealed": 1
+	},
     "triggerOptions": "Stunning, Incapacitating, Knocking",
     "specialRules": "Cannot do a parry against real melee weapons.",
     "modLimit": 0,
@@ -646,7 +836,8 @@
     "range": "1"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blunt",
     "weapon": "Club",
     "name": "Enforcer Club",
     "hands": 1,
@@ -655,7 +846,11 @@
     "speed": 4,
     "damage": 5,
     "damageType": "Physical",
-    "qualities": "Silenced, Concealed (2)",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Concealed": 2
+	},
     "triggerOptions": "Concussing, Incapacitating",
     "specialRules": "",
     "modLimit": 0,
@@ -665,7 +860,8 @@
     "range": "1"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blunt",
     "weapon": "Bat",
     "name": "Titan Sports Bat",
     "hands": 2,
@@ -674,7 +870,11 @@
     "speed": 4,
     "damage": 6,
     "damageType": "Physical",
-    "qualities": "Silenced, Handling (1)",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Handling": 1
+	},
     "triggerOptions": "Lethal (2), Concussing",
     "specialRules": "",
     "modLimit": 0,
@@ -684,7 +884,8 @@
     "range": "1-2"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blunt",
     "weapon": "Stun Baton",
     "name": "Voltguard Stun Baton",
     "hands": 1,
@@ -693,7 +894,11 @@
     "speed": 4,
     "damage": 3,
     "damageType": "Electrical",
-    "qualities": "Silenced, Handling (3)",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Handling": 3
+	},
     "triggerOptions": "Incapacitating, Stunning",
     "specialRules": "",
     "modLimit": 0,
@@ -703,7 +908,8 @@
     "range": "1"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blade",
     "weapon": "Blade",
     "name": "Ekris Warrior Blade",
     "hands": 1,
@@ -712,7 +918,11 @@
     "speed": 4,
     "damage": 5,
     "damageType": "Physical",
-    "qualities": "Silenced, Defensive (1, Melee)",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Defensive (Melee)": 1
+	},
     "triggerOptions": "Lethal (4)",
     "specialRules": "",
     "modLimit": 0,
@@ -722,7 +932,8 @@
     "range": "1"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blade",
     "weapon": "Katana",
     "name": "Ekris Ronin Companion",
     "hands": 2,
@@ -731,7 +942,11 @@
     "speed": 4,
     "damage": 6,
     "damageType": "Physical",
-    "qualities": "Silenced, Defensive (1, Melee)",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Defensive (Melee)": 1
+	},
     "triggerOptions": "Lethal (4)",
     "specialRules": "Can be wielded in one hand, but then it gains the Improvised quality.",
     "modLimit": 0,
@@ -741,7 +956,8 @@
     "range": "1-2"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blade",
     "weapon": "Plasma Blade",
     "name": "Inferno Plasma Pike",
     "hands": 2,
@@ -750,7 +966,10 @@
     "speed": 4,
     "damage": 7,
     "damageType": "Fire",
-    "qualities": "Defensive (1, Melee)",
+    "qualities":
+	{
+		"Defensive (Melee)": 1
+	},
     "triggerOptions": "Penetrating (3), Lethal (5), Shredding (3), Plasmascorch",
     "specialRules": "Requires a Plasma cell that allows the blade to be active for a total of 10 rounds (turning the Blade on and off is near-instantaneous). Replacing the cell costs 40 Credits.",
     "modLimit": 0,
@@ -760,7 +979,8 @@
     "range": "1-2"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blade",
     "weapon": "Spear",
     "name": "Guardsteel Battle Spear",
     "hands": 2,
@@ -769,7 +989,12 @@
     "speed": 4,
     "damage": 6,
     "damageType": "Physical",
-    "qualities": "Silenced, Throwable (2-8 | 15), Defensive (1, Melee)",
+    "qualities":
+	{
+		"Silenced": 1,
+		"Defensive (Melee)": 1,
+		"Throwable (2-8 | 15)": 1
+	},
     "triggerOptions": "Penetrating (2), Lethal (2)",
     "specialRules": "Only applies Heft as if this weapon was 1-handed.",
     "modLimit": 0,
@@ -779,7 +1004,8 @@
     "range": "1-2"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blunt",
     "weapon": "Maul",
     "name": "Thunderstrike Maul",
     "hands": 2,
@@ -788,7 +1014,10 @@
     "speed": 5,
     "damage": 8,
     "damageType": "Physical",
-    "qualities": "Improvised",
+    "qualities":
+	{
+		"Improvised": 1
+	},
     "triggerOptions": "Penetrating (3), Lethal (2), Concussing, Knocking",
     "specialRules": "Characters with 6 Strength or more ignore Improvised.",
     "modLimit": 0,
@@ -798,7 +1027,8 @@
     "range": "1"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Blade",
     "weapon": "War Axe",
     "name": "Ravager War Axe",
     "hands": 2,
@@ -807,7 +1037,10 @@
     "speed": 5,
     "damage": 8,
     "damageType": "Physical",
-    "qualities": "Silenced",
+    "qualities":
+	{
+		"Silenced": 1
+	},
     "triggerOptions": "Lethal (5)",
     "specialRules": "",
     "modLimit": 0,
@@ -817,7 +1050,8 @@
     "range": "1"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Shield",
     "weapon": "Small Shield",
     "name": "Riot Repellant",
     "hands": 1,
@@ -826,7 +1060,10 @@
     "speed": 4,
     "damage": 4,
     "damageType": "Physical",
-    "qualities": "Defensive (1)",
+    "qualities":
+	{
+		"Defensive": 1,
+	},
     "triggerOptions": "Concussing",
     "specialRules": "",
     "modLimit": 0,
@@ -836,7 +1073,8 @@
     "range": "1"
   },
   {
-    "type": "Melee",
+    "skill": "Melee",
+	"type": "Shield",
     "weapon": "Ballistic Shield",
     "name": "Bulwark",
     "hands": 1,
@@ -845,7 +1083,11 @@
     "speed": 5,
     "damage": 4,
     "damageType": "Physical",
-    "qualities": "Defensive (2), -2 Speed",
+    "qualities":
+	{
+		"Defensive": 2,
+		"Speed": -2
+	},
     "triggerOptions": "Stunning, Incapacitating",
     "specialRules": "Adds +1 difficulty to all attacks made due to limited vision.",
     "modLimit": 0,

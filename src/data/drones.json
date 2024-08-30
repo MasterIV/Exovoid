@@ -190,5 +190,21 @@
     "cost": "Drone / 8",
     "assetCost": "Drone / 8",
     "rarity": 4
+  },
+  {
+    "drone": "Drone Upgrade: Specialization",
+    "droneName": "Specialized Routines",
+    "description": "The drone gains +1 expertise for a skill of your choice (so long as it makes sense for its nature). Can be installed up to six times, but only up to twice per individual skill.",
+    "specialRules": "-",
+    "size": "-",
+    "ai": "-",
+    "speed": "-",
+    "hull": "-",
+    "armorDurability": "-",
+    "primarySoak": "-",
+    "secondarySoak": "-",
+    "cost": 500,
+    "assetCost": "-",
+    "rarity": 4
   }
 ]
