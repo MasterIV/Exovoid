@@ -11,6 +11,8 @@ const accountToken = localStorage.getItem('account.token');
 if(accountName && accountToken)
     socket.on("connect", () => socket.emit("relogin", accountName, accountToken));
 
+socket.onAny(console.log);
+
 export const onCharacterChange = (setCharacter: (data: CharacterType) => void) => {
     socket.removeAllListeners("character");
     socket.on("character", setCharacter);

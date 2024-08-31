@@ -13,7 +13,7 @@ interface ValueProps {
     disabled?: boolean;
 }
 
-export default function Value({
+export default React.memo(function Value({
     name,
     value,
     onChange,
@@ -42,4 +42,4 @@ export default function Value({
             size="small"/>
         <Button disabled={disabled} onClick={() => onChange(name, value + 1)}><AddIcon fontSize="small"/></Button>
     </ButtonGroup>;
-}
+});

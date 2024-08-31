@@ -14,10 +14,6 @@ const darkTheme = createTheme({
     },
 });
 
-root.render(
-  <React.StrictMode>
-      <ThemeProvider theme={darkTheme}><App /></ThemeProvider>
-  </React.StrictMode>
-);
+root.render(<ThemeProvider theme={darkTheme}><App /></ThemeProvider>);
 
 

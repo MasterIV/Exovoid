@@ -1,4 +1,5 @@
 import AttributeType from "./attributes";
+import NpcType from "./npc";
 
 export interface CharacterWeapon {
     id: string;
@@ -40,5 +41,7 @@ export default interface CharacterType {
     currency: {
         assets: number;
         credits: number;
-    }
+    };
+
+    npcs?: NpcType[];
 }

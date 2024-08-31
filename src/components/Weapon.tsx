@@ -34,7 +34,7 @@ const actions = [
     {id: "a4", name: "Reload"},
 ]
 
-export function Weapon({id, type, ammo, mods, locked, onChange, onRemove}: WeaponProps) {
+export default React.memo(function Weapon({id, type, ammo, mods, locked, onChange, onRemove}: WeaponProps) {
     const details = weaponMap[type];
     const [data, setData] = useState({
         action: 'a1',
@@ -44,7 +44,7 @@ export function Weapon({id, type, ammo, mods, locked, onChange, onRemove}: Weapo
         setData({...data, [name]: value});
     }
 
-    const changeAmmo = (k:string,v:number) => onChange('ammo', {...ammo,[k]: v})
+    const changeAmmo = (k:string,v:number) => onChange('ammo', {...ammo,[k]: v});
 
     return <Grid item>
         <Paper sx={{p: 2}}>
@@ -121,4 +121,4 @@ export function Weapon({id, type, ammo, mods, locked, onChange, onRemove}: Weapo
             </Grid>
         </Paper>
     </Grid>;
-}
+});

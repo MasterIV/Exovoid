@@ -27,8 +27,10 @@ export default class StateManager {
                 operation(...args);
             } catch (e) {
                 if (typeof e === "string") {
+                    console.log(e);
                     socket.emit("error", e);
                 } else if (e instanceof Error) {
+                    console.log(e.message);
                     socket.emit("error", e.message);
                 }
             }
@@ -99,6 +101,16 @@ export default class StateManager {
                 throw new Error("Invalid character!");
             console.log("Saving changes on: " + data.name);
             this.characterService.save(data);
+        }));
+
+        socket.on("combatant", this.wrapHandler(socket, (data) => {
+            if (!socket.data.character) throw new Error("Invalid character!");
+            socket.to(socket.data.character.table).emit("combatant", data);
+        }));
+
+        socket.on("reset", this.wrapHandler(socket, () => {
+            if (!socket.data.character) throw new Error("Invalid character!");
+            socket.to(socket.data.character.table).emit("reset");
         }));
     }
 }

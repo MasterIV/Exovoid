@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {Box, Checkbox, Container, FormControlLabel, Grid, Modal, Paper, Stack, Tab, Tabs} from "@mui/material";
+import {Alert, Box, Checkbox, Container, FormControlLabel, Grid, Modal, Paper, Stack, Tab, Tabs} from "@mui/material";
 import CharacterPage from "./pages/Character";
 import LorePage from "./pages/Lore";
 import CombatPage from "./pages/Combat";
@@ -11,10 +11,12 @@ import socket from "./socket";
 import {DicePool} from "./components/Roll";
 import calculatePool from "./logic/calculatePool";
 import {Btn, TextInput} from "./components/Form";
+import NpcPage from "./pages/Npc";
 
 interface GameProps {
     character: CharacterType;
     onChange: (name: string, value: any) => void;
+    error?: string;
 }
 
 interface RollConfig {
@@ -25,7 +27,7 @@ interface RollConfig {
     metadata?: Record<string, any>;
 }
 
-function Game({character, onChange}: GameProps) {
+function Game({character, error, onChange}: GameProps) {
     const [locked, setLocked] = useState(false);
     const [roll, setRoll] = useState<RollConfig>({
         show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}
@@ -54,11 +56,14 @@ function Game({character, onChange}: GameProps) {
         {name: "Character", content: <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Combat", content: <CombatPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Talents", content: <TalentPage stats={character} onChange={onChange}/>},
-        {name: "Inventory", content: <InventoryPage locked={locked} stats={character} onChange={onChange}/>},
+        {name: "Inventory", content: <InventoryPage locked={locked} inventory={character.inventory || []} currency={character.currency || {}} onChange={onChange}/>},
+        {name: "Npc", content: <NpcPage npcs={character.npcs || []} onChange={npcs => onChange('npcs', npcs)} />},
         {name: "Lore", content: <LorePage/>},
     ];
 
     return (<Container maxWidth="xl">
+        {(error) && <Alert severity="error">{error}</Alert>}
+
         <RollResult/>
 
         <Modal open={roll.show} onClose={resetRoll}>
@@ -83,7 +88,8 @@ function Game({character, onChange}: GameProps) {
             </Grid>
         </Grid>
 
-        <Box>{tabs[tab].content}</Box>
+        {tabs.map(((t, i) => (<Box key={t.name} display={tab === i ? "block" : "none"}>{t.content}</Box>)))}
+
     </Container>);
 }
 

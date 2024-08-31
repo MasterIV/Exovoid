@@ -7,7 +7,6 @@ Next Tasks:
 - initiative system
 - class selection
 
-
 Overall:
 
  - combat
@@ -15,11 +14,10 @@ Overall:
    - weapons (use/reload)
    - armors
    - injuries
- - inventory
  - networking
    - syncing life and ap
    - logout
- - gm mode
+ - gm modes
    - generate npc
    - combat controls
 

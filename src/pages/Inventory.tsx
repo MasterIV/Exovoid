@@ -12,7 +12,7 @@ import {
     TableRow,
     TextField
 } from "@mui/material";
-import CharacterType, {InventoryItem} from "../types/character";
+import {InventoryItem} from "../types/character";
 import Collection from "../components/Collection";
 import items from '../data/items.json';
 import {Btn, TextInput} from "../components/Form";
@@ -50,14 +50,15 @@ function Item({onChange, onRemove, ...item}: ItemProps) {
 
 interface InventoryPageProps {
     onChange: (name: string, value: any) => void;
-    stats: CharacterType;
     locked?: boolean;
+    inventory: InventoryItem[];
+    currency: {
+        assets: number;
+        credits: number;
+    };
 }
 
-export default function InventoryPage({stats, locked, onChange} : InventoryPageProps) {
-    const inventory = stats.inventory || [];
-    const currency = stats.currency || {assets:0, credits:0};
-
+export default React.memo(function InventoryPage({inventory, currency, locked, onChange} : InventoryPageProps) {
     const changeInventory = useCallback((i:any) => onChange('inventory', i), [onChange]);
     const changeCurrency = (k: string, v: number) => onChange('currency', {...currency, [k]: v});
 
@@ -90,4 +91,4 @@ export default function InventoryPage({stats, locked, onChange} : InventoryPageP
             <Btn onClick={() => changeInventory([...inventory, {...defaults, id: uuid.v4()}])}>Add Item</Btn>
         </Grid>
     </Grid>;
-}
+});

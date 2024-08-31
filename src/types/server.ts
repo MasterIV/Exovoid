@@ -4,6 +4,7 @@ import {Socket as ServerSideSocket} from "socket.io";
 import {Socket as ClientSideSocket} from "socket.io-client";
 import {DefaultEventsMap} from "socket.io/dist/typed-events";
 import {DicePoolType, DiceResultType} from "./dice";
+import {Combatant} from "./combat";
 
 type Metadata = Record<string, any>
 
@@ -16,8 +17,10 @@ export interface ClientEvents {
     join: (id: string) => void;
     create: (name: string, table: string, password: string) => void;
     // Stage Game
-    roll: (pool:DicePoolType, metadata?: Metadata) => void;
+    roll: (pool: DicePoolType, metadata?: Metadata) => void;
     save: (data: CharacterType) => void;
+    combatant: (data: Combatant) => void;
+    reset: () => void;
 }
 
 export interface ServerEvents {
@@ -25,6 +28,8 @@ export interface ServerEvents {
     character: (data: CharacterType) => void;
     roll: (result: DiceResultType, metadata?: Metadata) => void;
     error: (message: string) => void;
+    combatant: (data: Combatant) => void;
+    reset: () => void;
 }
 
 export interface SocketData {

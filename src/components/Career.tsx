@@ -16,7 +16,7 @@ interface CareerProps {
     onChange: (talents: string[]) => void;
 }
 
-export function Career({name, description, equipment, skills, attributes, talents, acquiredTalents, onChange}: CareerProps) {
+export default React.memo(function Career({name, description, equipment, skills, attributes, talents, acquiredTalents, onChange}: CareerProps) {
     const toggleTalent = (t: string) => {
         if(acquiredTalents.includes(t))
             onChange(acquiredTalents.filter(v => v!==t));
@@ -97,4 +97,4 @@ export function Career({name, description, equipment, skills, attributes, talent
 
     </Grid>
     </Grid></Paper>;
-}
+});

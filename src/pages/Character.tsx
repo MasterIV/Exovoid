@@ -9,6 +9,7 @@ import CharacterType from "../types/character";
 import {DicePoolType} from "../types/dice";
 import calculateHealth from "../logic/calculateHealth";
 import calculateEdge from "../logic/calculateEdge";
+import calculateActionPoints from "../logic/calculateActionPoints";
 
 interface CharacterPageProps {
     onChange: (name: string, value: any) => void;
@@ -25,7 +26,7 @@ const derivedStyles: React.CSSProperties = {
     padding: 5,
 };
 
-export default function CharacterPage({stats, onChange, onRoll, locked=false}: CharacterPageProps) {
+export default React.memo(function CharacterPage({stats, onChange, onRoll, locked=false}: CharacterPageProps) {
     const {
         attributes,
         skills,
@@ -68,7 +69,7 @@ export default function CharacterPage({stats, onChange, onRoll, locked=false}: C
                            rows={8}/>
                 <Paper style={derivedStyles}>
                     <Typography align={"center"}>
-                        Action Points {Math.ceil(3 + AGI / 2)},
+                        Action Points {calculateActionPoints(stats)},
                         Speed {Math.ceil(3 + (CON + AGI) / 2)},
                         Heft {Math.ceil(STR / 2)},
                         Cyber-Immunity {CON + STR}
@@ -99,4 +100,4 @@ export default function CharacterPage({stats, onChange, onRoll, locked=false}: C
         <Attributes locked={locked} onChange={changeAttribute} values={attributes}/>
         <Skills locked={locked} onChange={changeSkill} attributes={attributes} skills={skills} onRoll={onRoll}/>
     </Grid>);
-}
+});

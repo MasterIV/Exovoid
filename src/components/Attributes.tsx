@@ -11,7 +11,7 @@ interface AttributesProps {
     locked?: boolean;
 }
 
-export default function Attributes({values, onChange, locked=false}: AttributesProps) {
+export default React.memo(function Attributes({values, onChange, locked=false}: AttributesProps) {
     return (<Grid item container spacing={2} justifyContent={"center"}>
         {Object.keys(attributes).map((a: string) => {
             const {name} = attributes[a as keyof typeof attributes];
@@ -22,4 +22,4 @@ export default function Attributes({values, onChange, locked=false}: AttributesP
             </Grid>);
         })}
     </Grid>);
-}
+});

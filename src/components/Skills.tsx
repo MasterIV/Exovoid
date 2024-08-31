@@ -13,11 +13,10 @@ import {
 import skillDefinition from "../data/skills.json";
 import Value from "./Value";
 import {Btn} from "./Form";
-import React from "react";
 import AttributeType from "../types/attributes";
 import {DicePool} from "./Roll";
 import calculatePool from "../logic/calculatePool";
-import {DicePoolType} from "../types/dice";
+import React from "react";
 
 interface SkillsProps {
     onChange: (name: string, value: number) => void;
@@ -27,10 +26,9 @@ interface SkillsProps {
     locked?: boolean;
 }
 
-export default function Skills({skills, attributes, onChange, onRoll, locked=false}: SkillsProps) {
+export default React.memo(function Skills({skills, attributes, onChange, onRoll, locked=false}: SkillsProps) {
     const half = Math.ceil(skillDefinition.length / 2);
     const definitions = [skillDefinition.slice(0, half), skillDefinition.slice(half)];
-
 
     return (<Grid item container spacing={2}>
         {definitions.map((d, i) => (
@@ -71,5 +69,6 @@ export default function Skills({skills, attributes, onChange, onRoll, locked=fal
                 </TableContainer></Grid>
         ))}
     </Grid>);
-}
+});
+
 

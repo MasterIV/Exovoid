@@ -29,7 +29,7 @@ function App() {
     }, []);
 
     if(character)
-        return <Game character={character} onChange={changeCharacter} />;
+        return <Game error={error} character={character} onChange={changeCharacter} />;
 
     if(account)
         return <Tables

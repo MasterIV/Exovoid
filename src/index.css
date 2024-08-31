@@ -14,11 +14,6 @@ code {
     monospace;
 }
 
-.chapter {
-  column-count: 2;
-  text-align: justify;
-}
-
 .roll-btn {
   font-size: 18px !important;
   font-weight: 400 !important;
@@ -134,25 +129,13 @@ code {
   width: 600px
 }
 
+/* =========================================================== */
+/* ====================== Talents Page ======================= */
+/* =========================================================== */
+
 .career {
   padding: 8px 16px;
 }
-
-/*
-.talents {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 4px;
-  align-items: center;
-  width: 100%;
-}
-
-.talents > div {
-  width: 24%;
-}
-
-*/
 
 .career .talents {
   border: 0;
@@ -170,4 +153,22 @@ code {
 
 .talent.active {
   background: #232;
+}
+
+/* =========================================================== */
+/* ====================== Combat Page ======================== */
+/* =========================================================== */
+
+.combatant {
+  padding: 10px
+}
+
+
+/* =========================================================== */
+/* =================== Lore / Rules Page ===================== */
+/* =========================================================== */
+
+.chapter {
+  column-count: 2;
+  text-align: justify;
 }

@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from "react";
 import {Grid} from "@mui/material";
 import CharacterType from "../types/character";
-import {Weapon} from "../components/Weapon";
+import Weapon from "../components/Weapon";
 import {Btn, Dropdown} from "../components/Form";
 import Collection from "../components/Collection";
 import weapons from '../data/weapons.json';
@@ -11,6 +11,9 @@ import calculateHealth from "../logic/calculateHealth";
 import calculateEdge from "../logic/calculateEdge";
 import Injury from "../components/Injury";
 import injuries from '../data/injuries.json';
+import Initiative from "../components/Initiative";
+import socket from "../socket";
+import {charToCombatant} from "../logic/charToCombatant";
 
 interface CombatPageProps {
     onChange: (name: string, value: any) => void;
@@ -29,7 +32,10 @@ export default function CombatPage({stats, onChange, locked} : CombatPageProps) 
         damage: "",
     })
 
+    const corrections = React.useMemo(() => ({[stats.id]: stats}), [stats.id, stats.currentHealth]);
+    const changeWeapons = useCallback((data: any) => onChange('weapons', data), [onChange]);
     const changeData = useCallback((k: string, v: any) => setData(old => ({...old, [k]: v})), []);
+    const joinCombat = () => socket.emit("combatant", charToCombatant(stats));
 
     const characterWeapons = stats.weapons || [];
     const characterInjuries = stats.injuries || [];
@@ -42,14 +48,18 @@ export default function CombatPage({stats, onChange, locked} : CombatPageProps) 
 
     return (<Grid container spacing={2} margin={1}>
         <Grid item xs={3}>
-            Initiative
+            <Initiative corrections={corrections} >
+                <Grid item container spacing={2}>
+                    <Grid item xs={12}><Btn fullWidth onClick={joinCombat}>Join Combat</Btn></Grid>
+                </Grid>
+            </Initiative>
         </Grid>
         <Grid item container spacing={2} direction="column" xs={6}>
 
                 <Collection
                     locked={locked}
                     values={characterWeapons}
-                    onChange={data => onChange('weapons', data)}
+                    onChange={changeWeapons}
                     component={Weapon} />
 
                 <Grid item container direction="row" spacing={2} alignItems="center">
