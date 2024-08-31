@@ -84,9 +84,20 @@ export function Weapon({id, type, ammo, mods, locked, onChange, onRemove}: Weapo
                             <TableCell>{details.damageType}</TableCell>
                             <TableCell>{details.range}</TableCell>
                         </TableRow>
-                        <TableRow><TableCell colSpan={7}><strong>Qualities:</strong> {details.qualities}</TableCell></TableRow>
-                        <TableRow><TableCell colSpan={7}><strong>Trigger Options:</strong> {details.triggerOptions}</TableCell></TableRow>
-                        {details.specialRules && <TableRow><TableCell colSpan={7}><strong>Special Rules:</strong> {details.specialRules}</TableCell></TableRow>}
+
+                        <TableRow><TableCell colSpan={7}>
+                            <strong>Qualities: </strong>
+                            {Object.entries(details.qualities).map(q => Number(q[1]) > 1 ? `${q[0]}(${q[1]})` : q[0]).join(", ")}
+                        </TableCell></TableRow>
+
+                        <TableRow><TableCell colSpan={7}>
+                            <strong>Trigger Options: </strong>
+                            {details.triggerOptions}
+                        </TableCell></TableRow>
+
+                        {details.specialRules && <TableRow><TableCell colSpan={7}>
+                            <strong>Special Rules:</strong> {details.specialRules}
+                        </TableCell></TableRow>}
                     </TableBody>
                 </Table></Grid>
                 

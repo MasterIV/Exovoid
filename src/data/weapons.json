@@ -1062,7 +1062,7 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Defensive": 1,
+		"Defensive": 1
 	},
     "triggerOptions": "Concussing",
     "specialRules": "",
