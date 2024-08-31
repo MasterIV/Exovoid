@@ -4,6 +4,7 @@ import {Combatant} from "../types/combat";
 import {Grid, Paper} from "@mui/material";
 import {Btn} from "./Form";
 import Value from "./Value";
+import {randomIni} from "../logic/randomIni";
 
 const UPDATE_DELAY = 2000;
 const timers: Record<string, number> = {};
@@ -87,13 +88,13 @@ export default function Initiative({corrections, children}: InitiativeProps) {
     const resetCombatant = () => window.confirm("Reset Combat?") && socket.emit("reset");
     const newRound = () => {
         updatedCombatants(combatants, corrections).forEach(c => {
-            c.currentAp += c.maxAp;
+            c.currentAp += c.maxAp + randomIni();
             socket.emit("combatant", c);
         });
     }
 
     const ini = updatedCombatants(combatants, corrections);
-    ini.sort((a, b) => a.currentAp - b.currentAp);
+    ini.sort((a, b) => b.currentAp - a.currentAp);
 
     return <Grid container direction={"column"} spacing={2}>
         {ini.map(c => <Fighter {...c} onChange={changeAp} key={c.id}/>)}

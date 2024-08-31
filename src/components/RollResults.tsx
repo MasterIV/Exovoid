@@ -43,17 +43,20 @@ export function RollResult({}: RollResultProps) {
     });
 
     return <div className="resultArea">
-        {rolls.map(roll => <Paper className="rollResult" onClick={() => setDetails(roll)}>
-            <strong>{roll.metadata['player']}: {roll.metadata['skill']}</strong>
-            {Object.keys(roll.summary).map(s => <div>{s}: {roll.summary[s]}</div>)}
+        {rolls.map(roll => <Paper key={roll.id} className="rollResult" onClick={() => setDetails(roll)}>
+            <strong>{roll.metadata['npc'] || roll.metadata['player']}: {roll.metadata['skill']}</strong>
+            {Object.keys(roll.summary).map(((s) => <div key={roll.id+"-"+s}>{s}: {roll.summary[s]}</div>))}
         </Paper>)}
 
 
         <Modal open={details !== null} onClose={() => setDetails(null)}>
             <Paper className="paperLarge">
-                <Typography variant={"h4"} textAlign={"center"}>{details?.metadata['player']}: {details?.metadata['skill']}</Typography>
-                <div className=" rollDetails">
-                    {details?.result.map(r => <DiceSymbol type={r.type} symbols={r.symbols} exploded={r.exploded} />)}
+                <Typography variant={"h4"} textAlign={"center"}>
+                    {details?.metadata['npc'] || details?.metadata['player']}: {details?.metadata['skill']}
+                </Typography>
+
+                <div className="rollDetails">
+                    {details?.result.map((r, i) => <DiceSymbol key={i} type={r.type} symbols={r.symbols} exploded={r.exploded} />)}
                 </div>
             </Paper>
         </Modal>

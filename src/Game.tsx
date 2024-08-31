@@ -52,12 +52,14 @@ function Game({character, error, onChange}: GameProps) {
         resetRoll();
     }
 
+    const changeNpc = React.useCallback((npcs: object[]) => onChange('npcs', npcs), [onChange]);
+
     const tabs = [
         {name: "Character", content: <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Combat", content: <CombatPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Talents", content: <TalentPage stats={character} onChange={onChange}/>},
         {name: "Inventory", content: <InventoryPage locked={locked} inventory={character.inventory || []} currency={character.currency || {}} onChange={onChange}/>},
-        {name: "Npc", content: <NpcPage npcs={character.npcs || []} onChange={npcs => onChange('npcs', npcs)} />},
+        {name: "Npc", content: <NpcPage npcs={character.npcs || []} onChange={changeNpc} onRoll={changeRoll} />},
         {name: "Lore", content: <LorePage/>},
     ];
 

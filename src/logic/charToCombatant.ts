@@ -1,16 +1,15 @@
 import CharacterType from "../types/character";
 import {Combatant} from "../types/combat";
 import calculateActionPoints from "./calculateActionPoints";
-import calculateHealth from "./calculateHealth";
+import {randomIni} from "./randomIni";
 
-export function charToCombatant(stats: CharacterType) : Combatant {
+export default function charToCombatant(stats: CharacterType) : Combatant {
     return {
         id: stats.id,
         name: stats.name,
-        currentAp: calculateActionPoints(stats),
+        currentAp: calculateActionPoints(stats) + randomIni(),
         currentHealth: stats.currentHealth || 0,
         injuries: stats.injuries,
         maxAp: calculateActionPoints(stats),
-        maxHealth: calculateHealth(stats)
     }
 }

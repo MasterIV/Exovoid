@@ -20,11 +20,11 @@ touch( 'data/accounts');
 touch( 'data/chars');
 touch('data/tables');
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '..', 'build')));
 app.use(express.json());
 
 app.get(/\w*/, function (req: Request, res:Response) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname,'..', 'build', 'index.html'));
 });
 
 io.on("connection", socket => {

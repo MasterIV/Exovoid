@@ -3,7 +3,6 @@ export interface Combatant {
     name: string;
     maxAp: number;
     currentAp: number;
-    maxHealth: number;
     currentHealth: number;
     injuries: string[];
 }

@@ -13,7 +13,7 @@ import Injury from "../components/Injury";
 import injuries from '../data/injuries.json';
 import Initiative from "../components/Initiative";
 import socket from "../socket";
-import {charToCombatant} from "../logic/charToCombatant";
+import charToCombatant from "../logic/charToCombatant";
 
 interface CombatPageProps {
     onChange: (name: string, value: any) => void;
