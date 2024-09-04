@@ -42,7 +42,7 @@
       "Melee": 1
     },
     "talents": {
-      "0": ["Recoil Control", "Pull Together", "Directional Explosives"],
+      "0": ["Recoil Control", "Pull Together", "Directional Explosions"],
       "1": ["Far Shot", "Cover Ducking"],
       "2": ["Quick Reload", "Sprinter"],
       "3": ["Cyberadaption Training", "Tough As Nails"],
