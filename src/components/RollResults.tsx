@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {DiceResultType} from "../types/dice";
 import * as uuid from 'uuid';
 import {Modal, Paper, Typography} from "@mui/material";
@@ -16,7 +16,7 @@ interface RollEntry {
     metadata: Record<string, any>;
 }
 
-function summarize(result: DiceResultType): Record<string, number> {
+export function summarize(result: DiceResultType): Record<string, number> {
     const summary: Record<string, number> = {};
 
     result
@@ -32,22 +32,23 @@ export function RollResult({}: RollResultProps) {
     const [rolls, setRolls] = useState<RollEntry[]>([]);
     const [details, setDetails] = useState<RollEntry|null>(null);
 
-    socket.removeAllListeners("roll")
-    socket.on("roll", (result, metadata) => {
-        setRolls([{
-            id: uuid.v4(),
-            summary: summarize(result),
-            result,
-            metadata: metadata || {},
-        }, ...rolls])
-    });
+    useEffect(() => {
+        socket.removeAllListeners("roll");
+        socket.on("roll", (result, metadata) => {
+            setRolls(old => [{
+                id: uuid.v4(),
+                summary: summarize(result),
+                result,
+                metadata: metadata || {},
+            }, ...old])
+        });
+    }, []);
 
     return <div className="resultArea">
         {rolls.map(roll => <Paper key={roll.id} className="rollResult" onClick={() => setDetails(roll)}>
             <strong>{roll.metadata['npc'] || roll.metadata['player']}: {roll.metadata['skill']}</strong>
             {Object.keys(roll.summary).map(((s) => <div key={roll.id+"-"+s}>{s}: {roll.summary[s]}</div>))}
         </Paper>)}
-
 
         <Modal open={details !== null} onClose={() => setDetails(null)}>
             <Paper className="paperLarge">

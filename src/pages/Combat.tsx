@@ -9,11 +9,10 @@ import * as uuid from 'uuid';
 import Value from "../components/Value";
 import calculateHealth from "../logic/calculateHealth";
 import calculateEdge from "../logic/calculateEdge";
-import Injury from "../components/Injury";
-import injuries from '../data/injuries.json';
 import Initiative from "../components/Initiative";
 import socket from "../socket";
 import charToCombatant from "../logic/charToCombatant";
+import Injuries from "../components/Injuries";
 
 interface CombatPageProps {
     onChange: (name: string, value: any) => void;
@@ -21,9 +20,6 @@ interface CombatPageProps {
     stats: CharacterType;
     locked?: boolean;
 }
-
-const injuryMap: Record<string, any> = {}
-injuries.forEach(i => injuryMap[i.name] = i);
 
 export default function CombatPage({stats, onChange, locked} : CombatPageProps) {
     const [data,setData] = useState({
@@ -38,13 +34,15 @@ export default function CombatPage({stats, onChange, locked} : CombatPageProps) 
     const joinCombat = () => socket.emit("combatant", charToCombatant(stats));
 
     const characterWeapons = stats.weapons || [];
-    const characterInjuries = stats.injuries || [];
     const addWeapon = () => onChange('weapons', [...characterWeapons, {
         id: uuid.v4(),
         type: data.weapon,
         mods: [],
         ammo: {loaded: 0, reserve: 0}
     }])
+
+    const changeHealth = useCallback((hp: number) => onChange('currentHealth', hp), [onChange]);
+    const changeInjuries = useCallback((i: string[]) => onChange('injuries', i), [onChange]);
 
     return (<Grid container spacing={2} margin={1}>
         <Grid item xs={3}>
@@ -84,16 +82,11 @@ export default function CombatPage({stats, onChange, locked} : CombatPageProps) 
                        onChange={onChange}/>
             </Grid>
 
-            <Collection
-                values={characterInjuries.map(i => injuryMap[i])}
-                // @ts-ignore
-                onChange={data => onChange('injuries', data.map(i => i.name))}
-                component={Injury} />
-
-
-            <Grid item>
-                <Btn fullWidth>Take Damage</Btn>
-            </Grid>
+            <Injuries
+                injuries={stats.injuries || []}
+                health={stats.currentHealth}
+                changeHealth={changeHealth}
+                changeInjuries={changeInjuries}  />
         </Grid>
     </Grid>);
 }
