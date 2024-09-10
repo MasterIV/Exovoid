@@ -1,9 +1,14 @@
 import React from "react";
 import {Grid, Paper, Table, TableBody, TableCell, TableRow, Typography} from "@mui/material";
 import talents from '../data/talents.json';
+import {Btn} from "./Form";
 
 const talentMap: Record<string, string> = {};
 talents.forEach(t => talentMap[t.talent] = t.description);
+
+export function getCareerTalents(name: string, talents: Record<string, string[]>) : string[] {
+    return [...Object.values(talents).flat(), name+":attribute1", name+":attribute2"];
+}
 
 interface CareerProps {
     name: string;
@@ -13,10 +18,12 @@ interface CareerProps {
     skills: Record<string, any>;
     talents: Record<string, string[]>;
     acquiredTalents: string[];
+    locked?: boolean;
     onChange: (talents: string[]) => void;
+    onRemove: (name: string) => void;
 }
 
-export default React.memo(function Career({name, description, equipment, skills, attributes, talents, acquiredTalents, onChange}: CareerProps) {
+export default React.memo(function Career({name, description, equipment, skills, attributes, talents, acquiredTalents, onChange, onRemove, locked}: CareerProps) {
     const toggleTalent = (t: string) => {
         if(acquiredTalents.includes(t))
             onChange(acquiredTalents.filter(v => v!==t));
@@ -47,12 +54,13 @@ export default React.memo(function Career({name, description, equipment, skills,
         }
     }
 
-    const classTalents = [...Object.values(talents).flat(), name+":attribute1", name+":attribute2"]
+    const classTalents = getCareerTalents(name, talents)
         .filter(t => acquiredTalents.includes(t))
         .length;
 
     return <Paper className="career"><Grid container spacing={2} direction={"column"}>
         <Grid item>
+            <Btn style={{float: "right"}} disabled={locked} color="error" onClick={() => window.confirm("Remove class?") && onRemove(name)}>Remove</Btn>
             <Typography variant={"h5"}>{name}</Typography>
         </Grid><Grid container item direction={"row"} spacing={2}>
         <Grid xs={5} item>

@@ -57,7 +57,7 @@ function Game({character, error, onChange}: GameProps) {
     const tabs = [
         {name: "Character", content: <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Combat", content: <CombatPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
-        {name: "Talents", content: <TalentPage stats={character} onChange={onChange}/>},
+        {name: "Talents", content: <TalentPage locked={locked} stats={character} onChange={onChange}/>},
         {name: "Inventory", content: <InventoryPage locked={locked} inventory={character.inventory || []} currency={character.currency} onChange={onChange}/>},
         {name: "Npc", content: <NpcPage npcs={character.npcs || []} onChange={changeNpc} onRoll={changeRoll} />},
         {name: "Lore", content: <LorePage/>},
@@ -86,11 +86,11 @@ function Game({character, error, onChange}: GameProps) {
 
             <Grid xs={4} textAlign="right" item>
                 <FormControlLabel control={<Checkbox  checked={locked} onChange={e => setLocked(e.target.checked)} />} label="Lock" />
-                <Btn>Logut</Btn>
+                <Btn>Logout</Btn>
             </Grid>
         </Grid>
 
-        {tabs.map(((t, i) => (<Box key={t.name} display={tab === i ? "block" : "none"}>{t.content}</Box>)))}
+        {tabs.map(((t, i) => (<Box key={t.name} display={tab === i ? "flex" : "none"}>{t.content}</Box>)))}
 
     </Container>);
 }

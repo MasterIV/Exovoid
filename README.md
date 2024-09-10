@@ -2,10 +2,8 @@
 
 Next Tasks:
 
-- take damage
+- take damage (npc)
 - weapon actions
-- initiative system
-- class selection
 
 Overall:
 
