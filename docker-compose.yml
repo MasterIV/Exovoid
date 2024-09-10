@@ -1,0 +1,15 @@
+version: "2"
+services:
+  node:
+    image: "node:latest"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    expose:
+      - "3080"
+    ports: # use if it is necessary to expose the container to the host machine
+      - "3080:3080"
+    command: "npm run build && npm run server"

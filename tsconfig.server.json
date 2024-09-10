@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "module": "node16",
+    "strict": false,
+    "noEmit": false,
+    "rootDir": "src",
+    "outDir": "server"
+  },
+}
