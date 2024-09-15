@@ -24,9 +24,9 @@
       "success",
       "success",
       "success",
-      "success",
-      "success",
       "trigger",
+      "trigger",
+      "complication",
       "complication"
     ]
   },
@@ -40,17 +40,18 @@
       "success",
       "success",
       "success",
-      "success",
-      "success",
-      "success",
       "trigger",
       "trigger",
-      "trigger"
+      "trigger",
+      "trigger",
+      "trigger",
+      "complication"
     ]
   },
   "injury": {
     "sides": 20,
     "symbols": [
+      "wound",
       "wound",
       "wound",
       "wound",
