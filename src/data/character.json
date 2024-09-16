@@ -13,5 +13,6 @@
   "weapons": [],
   "injuries": [],
   "inventory": [],
+  "cyberware": [],
   "currency": {"assets":  0, "credits":  0}
 }
