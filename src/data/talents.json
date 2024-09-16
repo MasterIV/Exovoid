@@ -136,7 +136,7 @@
   },
   {
     "talent": "Cybernetic Overload",
-    "description": "Once per session, you may double the effectiveness of a piece of cyberware in your body for the remainder of the encounter. If used outside of an encounter, the overload lasts for 5 Minutes.",
+    "description": "By spending an edge point you may double the effectiveness of a piece of cyberware in your body for the remainder of the encounter. If used outside of an encounter, the overload lasts for 5 Minutes. When the effect ends, roll once on your cyberware malfunction table.",
     "representation": 1
   },
   {
