@@ -367,7 +367,7 @@
   },
   {
     "talent": "Killer Instincts",
-    "description": "Increase your damage with one-handed melee weapons (including unarmed attacks) by +1, and by +2 with two-handed weapons.",
+    "description": "You gain +1 Heft for your melee attacks.",
     "representation": 1
   },
   {
