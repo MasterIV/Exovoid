@@ -75,8 +75,8 @@ As the existence of the Empire opposes the supreme rule over the galaxy by the M
 the natural consequence can only be war. 
 For decades both faction have engaged in a fierce war that has cost trillions of lives.
 This changed when the war escalated to a point where both sides started using old Elder weaponry.
-Ancient Machines called Sentinels appeared and scoured everything within 50 lig[ht years from life.
-After this incident the war with the empire turned cold.]()
+Ancient Machines called Sentinels appeared and scoured everything within 50 light years from life.
+After this incident the war with the empire turned cold.
 The Mordex and Galactics refrained from engaging directly and instead have their 
 vassals and clients fight in a proxy war.
 There are usually minor gains and losses but the border between the empire and hegemony 

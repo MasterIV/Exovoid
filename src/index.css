@@ -176,6 +176,10 @@ code {
 /* =========================================================== */
 
 .chapter {
+  width: 80%;
+  margin: auto;
   column-count: 2;
-  text-align: justify;
+  column-gap: 100px;
+  line-height: 130%;
+  color: #EEE;
 }

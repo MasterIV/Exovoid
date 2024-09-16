@@ -6,6 +6,9 @@ Next Tasks:
 - weapon actions
 - implement cyberware
 - add accordion for weapon / npc
+- lore
+  - biocompatibility
+  - advanced tech
 
 Overall:
 

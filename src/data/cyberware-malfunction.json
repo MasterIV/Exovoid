@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Critical Shutdown",
+    "description": "All cyberware systems shut down completely for 24 hours. The character is incapacitated during this time. Permanent damage to 2 pieces of cyberware, requiring expensive repairs or replacements.",
+    "repair": "Tech d5 check per damaged piece, requiring 4 hours of work. Requires medical access.",
+    "range": [2, 4]
+  }
+]
