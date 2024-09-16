@@ -347,7 +347,8 @@
   {
     "talent": "Iron Skin",
     "description": "Gain +1 soak and +4 maximum health.",
-    "representation": 2
+    "representation": 2,
+    "modifier": {"health":  4}
   },
   {
     "talent": "Iron Wall",

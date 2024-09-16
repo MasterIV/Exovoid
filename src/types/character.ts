@@ -19,6 +19,21 @@ export interface InventoryItem {
     notes?: string;
 }
 
+export interface CharacterCyberWare {
+    id: string;
+    name: string;
+    enabled: boolean;
+    notes?: string;
+}
+
+export interface StatModifierType {
+    health?: number;
+    ap?: number;
+    immunity?: number;
+    speed?: number;
+    heft?: number;
+}
+
 export default interface CharacterType {
     id: string,
     name: string;
@@ -37,6 +52,7 @@ export default interface CharacterType {
     talents: string[];
     weapons: CharacterWeapon[];
     injuries: string[];
+    cyberware: CharacterCyberWare[];
     inventory: InventoryItem[];
     currency: {
         assets: number;

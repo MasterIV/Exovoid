@@ -10,6 +10,9 @@ import {DicePoolType} from "../types/dice";
 import calculateHealth from "../logic/calculateHealth";
 import calculateEdge from "../logic/calculateEdge";
 import calculateActionPoints from "../logic/calculateActionPoints";
+import calculateImmunity from "../logic/calculateImmunity";
+import calculateSpeed from "../logic/calculateSpeed";
+import calculateHeft from "../logic/calculateHeft";
 
 interface CharacterPageProps {
     onChange: (name: string, value: any) => void;
@@ -70,9 +73,9 @@ export default React.memo(function CharacterPage({stats, onChange, onRoll, locke
                 <Paper style={derivedStyles}>
                     <Typography align={"center"}>
                         Action Points {calculateActionPoints(stats)},
-                        Speed {Math.ceil(3 + (CON + AGI) / 2)},
-                        Heft {Math.ceil(STR / 2)},
-                        Cyber-Immunity {CON + STR}
+                        Speed {calculateSpeed(stats)},
+                        Heft {calculateHeft(stats)},
+                        Cyber-Immunity {calculateImmunity(stats)}
                     </Typography>
                 </Paper>
             </Grid>

@@ -90,7 +90,7 @@ function Game({character, error, onChange}: GameProps) {
             </Grid>
         </Grid>
 
-        {tabs.map(((t, i) => (<Box key={t.name} display={tab === i ? "flex" : "none"}>{t.content}</Box>)))}
+        {tabs.map(((t, i) => (<Box key={t.name} style={{flexDirection: "column"}} display={tab === i ? "flex" : "none"}>{t.content}</Box>)))}
 
     </Container>);
 }
