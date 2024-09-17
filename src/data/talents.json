@@ -86,7 +86,7 @@
   },
   {
     "talent": "Climber",
-    "description": "You reduce the difficulty to climb by 2 and halve the time it takes to climb.",
+    "description": "You reduce the difficulty to climb by 2 and halve the time it takes to climb. Additionally, reduce the distance class of any fall by 2.",
     "representation": 1
   },
   {
@@ -247,11 +247,6 @@
   {
     "talent": "Exploit Weakspot",
     "description": "You may give yourself a -2 pool penalty before your melee attack, but the attack gains Penetrating (3). If the weapon already has Penetrating, increase the quality by +2 instead.",
-    "representation": 1
-  },
-  {
-    "talent": "Falling Techniques",
-    "description": "Reduce the distance class of any fall by 2.",
     "representation": 1
   },
   {
@@ -574,6 +569,11 @@
     "talent": "Relentless Pursuit",
     "description": "If you pursue a target that tries to escape, you can spend an edge point and then make a roll on Infiltration, Athletics or Acrobatics to create a shortcut, distraction or other helpful aid to make your pursuit a success.",
     "representation": 3
+  },
+  {
+    "talent": "Resourceful",
+    "description": "Increase your maximum edge points by +2.",
+    "representation": 1
   },
   {
     "talent": "Riposte",
