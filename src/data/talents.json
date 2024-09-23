@@ -127,7 +127,8 @@
   {
     "talent": "Cyberadaption Training",
     "description": "You gain +4 Cyberimmunity.",
-    "representation": 3
+    "representation": 3,
+	"modifier": {"immunity":  4}
   },
   {
     "talent": "Cybernetic Maintenance",
@@ -824,5 +825,84 @@
     "talent": "Zero-G Finesse",
     "description": "You ignore penalties on physical actions resulting from Zero-G environments.",
     "representation": 2
+  },
+  {
+    "talent": "Childhood: Raised By Aliens",
+    "description": "You learn an alien language of your choice, and gain +3 pool when interacting with that race.",
+    "representation": 0
+  },
+  {
+    "talent": "Childhood: Traumatic Childhood",
+    "description": "You may regain one edge point at any point each session, but your sleep is often disurbed, resulting in a -2 pool penaty on nightly regeneration.",
+    "representation": 0
+  },
+  {
+    "talent": "Childhood: Lab Child",
+    "description": "Gain +4 Cyber Immunity or +2 maximum health.",
+    "representation": 0,
+	"modifier": {"health":  2},
+	"modifier": {"immunity":  4}
+  },
+  {
+    "talent": "Adolescence: Military Draft",
+    "description": "Gain +1 maximum health.",
+    "representation": 0,
+	"modifier": {"health":  1}
+  },
+  {
+    "talent": "Adolescence: Honorary Work",
+    "description": "Your honorary deeds are logged in the books of the officials. If you get in trouble, you can use this to your benefit to gain a +3 pool modifier on attempts to mitigate your own consequences. Additionally, you have one powerful contact from that time (like a politician, city leader or similar) who will help you out whenever possible.",
+    "representation": 0
+  },
+  {
+    "talent": "Adolescence: Criminal Past",
+    "description": "You did some terrible crimes for which some systems are still looking for you.",
+    "representation": 0
+  },
+  {
+    "talent": "Adolescence: Addict",
+    "description": "Drugs (like Stim Packs, Pain Killers etc.) don't provide any of the positive effects for you any more.",
+    "representation": 0
+  },
+  {
+    "talent": "Adolescence: Labor",
+    "description": "You need to take daily medicine worth 10 Credits per pill. If you do not take your medicine, you suffer -1 pool penalty on all checks.",
+    "representation": 0
+  },
+  {
+    "talent": "Life Events: Made Lifelong Friend",
+    "description": "Define the nature and profession of your friend. Once per adventure, if they are available, you may call upon their aid and they will do everything within reason to help you.",
+    "representation": 0
+  },
+  {
+    "talent": "Life Events: Saved A Life",
+    "description": "Formulate an NPC with their rough nature, profession and influence. Once during your entire campaign, you can call for their help and they will go out of their way to do what is necessary, even taking massive risks to save your own life. You can also contact them occasionally to obtain information or other minor help.",
+    "representation": 0
+  },
+  {
+    "talent": "Life Events: Learned A Dark Secret",
+    "description": "At any point during the campaign you may claim to know something about a secretive matter. From that point onwards, your character has continued knowledge about that matter (e.g. an alien race, an organization, a corporation etc.) providing you with advantages when dealing with that topic.",
+    "representation": 0
+  },
+  {
+    "talent": "Life Events: Survived Catastrophe",
+    "description": "You may ignore the Traumatized injury without spending edge points.",
+    "representation": 0
+  },
+  {
+    "talent": "Life Events: Formed A Rivalry",
+    "description": "Your rival may appear at some point during the campaign, making your life harder.",
+    "representation": 0
+  },
+  {
+    "talent": "Life Events: Rescued From Danger",
+    "description": "Gain +1 maximum edge points.",
+    "representation": 0,
+	"modifier": {"edge":  1}
+  },
+  {
+    "talent": "Life Events: Joined A Secret Organization",
+    "description": "Your chosen organization may contact you from time to time, demanding from you to perform smaller, secretive tasks - if you refuse, they may begin treating you like a traitor.",
+    "representation": 0
   }
 ]

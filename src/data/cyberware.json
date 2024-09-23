@@ -6,7 +6,8 @@
     "description": "Increase your Action Points by +3, but if you have 3 or less Action Points during a round, you cannot perform any actions (but reactions).",
     "cyberImmunityCost": 5,
     "cost": 1000,
-    "rarity": 3
+    "rarity": 3,
+	"modifier": {"ap":  3}
   },
   {
     "type": "Reflexbooster",
@@ -15,7 +16,8 @@
     "description": "Increase your Action Points by +2, and to determine your Action Points at the beginning of a round, roll 2d6 and use the better result.",
     "cyberImmunityCost": 6,
     "cost": 3000,
-    "rarity": 4
+    "rarity": 4,
+	"modifier": {"ap":  2}
   },
   {
     "type": "Reflexbooster",
@@ -24,7 +26,8 @@
     "description": "Increase your Action Points by +5.",
     "cyberImmunityCost": 8,
     "cost": 7500,
-    "rarity": 5
+    "rarity": 5,
+	"modifier": {"ap":  5}
   },
   {
     "type": "Move By Wire",
@@ -33,7 +36,9 @@
     "description": "You gain +1 Action Point, +2 Speed and +2 pool bonus when you attempt to dodge or parry.",
     "cyberImmunityCost": 10,
     "cost": 4000,
-    "rarity": 4
+    "rarity": 4,
+	"modifier": {"ap":  1},
+	"modifier": {"speed":  2}
   },
   {
     "type": "Move By Wire",
@@ -42,7 +47,9 @@
     "description": "You gain +1 Action Point, +2 Speed and +2 pool bonus when you attempt to dodge or parry. You also gain a free trigger on dodges, parries and melee attacks.",
     "cyberImmunityCost": 12,
     "cost": 6000,
-    "rarity": 5
+    "rarity": 5,
+	"modifier": {"ap":  1},
+	"modifier": {"speed":  2}
   },
   {
     "type": "Move By Wire",
@@ -51,7 +58,9 @@
     "description": "You gain +1 Action Point, +2 Speed and +2 pool bonus when you attempt to dodge or parry. You also gain a free trigger on dodges, parries and melee attacks. You may now attempt to parry ranged attacks if you wield a suitable melee weapon, but can only do so up to two times per round. A successful Riposte will ricochet the bullets back at any target within range 10 of you, for half the damage.",
     "cyberImmunityCost": 14,
     "cost": 10000,
-    "rarity": 6
+    "rarity": 6,
+	"modifier": {"ap":  1},
+	"modifier": {"speed":  2}
   },
   {
     "type": "Dermal Armor",
@@ -132,7 +141,8 @@
     "description": "Increases your maximum health by +3.",
     "cyberImmunityCost": 4,
     "cost": 600,
-    "rarity": 3
+    "rarity": 3,
+	"modifier": {"health":  3}
   },
   {
     "type": "Skeletal Reinforcement",
@@ -141,7 +151,8 @@
     "description": "Increases your maximum health by +3 and you become immune to losing your limbs from regular combat-related outcomes.",
     "cyberImmunityCost": 4,
     "cost": 1100,
-    "rarity": 4
+    "rarity": 4,
+	"modifier": {"health":  3}
   },
   {
     "type": "Synthetic Muscles",
@@ -195,7 +206,8 @@
     "description": "Replaces both legs with visible cybernetic variants. Grants +2 speed and +2 pool bonus on all physical tests where your legs are heavily involved, mostly running, jumping and landing.",
     "cyberImmunityCost": 9,
     "cost": 1800,
-    "rarity": 3
+    "rarity": 3,
+	"modifier": {"speed":  2}
   },
   {
     "type": "Cybernetic Legs",
@@ -204,7 +216,8 @@
     "description": "Replaces both legs with visible cybernetic variants. Grants +3 speed and +2 pool bonus on all physical tests where your legs are heavily involved, mostly running, jumping and landing. Additionally, you can jump twice as high or far as a normal human.",
     "cyberImmunityCost": 9,
     "cost": 2600,
-    "rarity": 4
+    "rarity": 4,
+	"modifier": {"speed":  3}
   },
   {
     "type": "Cybernetic Legs",
@@ -213,7 +226,8 @@
     "description": "Replaces both legs with natural looking cybernetic limbs that are nearly indetectable as such. Grants +3 speed and +2 pool bonus on all physical tests where your legs are heavily involved, mostly running, jumping and landing. Additionally, you can jump twice as high or far as a normal human.",
     "cyberImmunityCost": 6,
     "cost": 4200,
-    "rarity": 5
+    "rarity": 5,
+	"modifier": {"speed":  3}
   },
   {
     "type": "Adrenaline Booster",
