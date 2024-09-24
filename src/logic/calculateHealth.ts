@@ -12,7 +12,7 @@ cyberware.forEach(c => cyberMap[c.name] = c);
 
 export default function calculateHealth(stats: CharacterType) {
     const CON = stats.attributes.CON || 0;
-    let health = 8 + CON;
+    let health = 5 + CON;
 
     stats.talents
         .filter(t => talentMap[t].modifier?.health)
