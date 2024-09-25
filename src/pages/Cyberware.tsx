@@ -92,7 +92,7 @@ export default React.memo(function CyberWarePage({stats, locked, onChange} : Cyb
                 renderInput={(params) => <TextField {...params} label="Cyberware" />}/></Grid>
             <Grid item xs={2}><Btn fullWidth onClick={() => data && changeCyberWare([...stats.cyberware, {...defaults, id: uuid.v4(), name: data}])}>Add Cyberware</Btn></Grid>
             <Grid textAlign="right" item xs={4}>
-                <Chip label={`Occupied: ${stats.cyberware.map(c => cyberMap[c.name].cyberImmunityCost).reduce((a, b) => a+b)}`} />
+                <Chip label={`Occupied: ${stats.cyberware.map(c => cyberMap[c.name].cyberImmunityCost).reduce((a, b) => a+b, 0)}`} />
                 &nbsp;&nbsp;
                 <Chip label={`Immunity: ${calculateImmunity(stats)}`} />
             </Grid>
@@ -117,12 +117,12 @@ export default React.memo(function CyberWarePage({stats, locked, onChange} : Cyb
 
                             const status = stats.malfunctions[m.name] || defaultMalfunction;
 
-                            const changeSlot = (s: number, v: boolean) => changeMalfunction(m.name, {...status, slots: slots.map(( i) => i === s ? v : status.slots[i])});
+                            const changeSlot = (s: number, v: boolean) => changeMalfunction(m.name, {...status, slots: slots.map(( i) => i === s ? v : Boolean(status.slots[i]))});
                             const changeActive = (v: boolean) => changeMalfunction(m.name, {...status, active: v});
 
                             return (<TableRow key={m.name} style={{background: status.active ? '#400' : 'none'}}>
                                 <TableCell width="10%"><Stack>
-                                    {slots.map(s => <FormControlLabel key={s} control={<Checkbox onChange={e => changeSlot(s, e.target.checked)} checked={status.slots[s]} />} label={s + m.range[0]} />)}
+                                    {slots.map(s => <FormControlLabel key={s} control={<Checkbox onChange={e => changeSlot(s, e.target.checked)} checked={Boolean(status.slots[s])} />} label={s + m.range[0]} />)}
                                 </Stack></TableCell>
                                 <TableCell width="10%"><Checkbox onChange={e => changeActive(e.target.checked)} checked={status.active} /></TableCell>
                                 <TableCell width="20%">{m.name}</TableCell>
