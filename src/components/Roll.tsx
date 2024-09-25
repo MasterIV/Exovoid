@@ -17,7 +17,7 @@ interface DiceSymbolProps {
 }
 
 export function DiceSymbol({type, symbols, exploded}: DiceSymbolProps) {
-    return (<div className={`dice large ${type} ${exploded && 'exploded'}`}>
+    return (<div style={{backgroundImage: `url("/img/dice/${type}.png")`}}  className={`dice large ${exploded && 'exploded'}`}>
         {symbols.length > 0 && <img alt={symbols.join("_")} src={`/img/symbols/${symbols.join("_")}.png`} width={24} />}
     </div>)
 }
@@ -29,7 +29,7 @@ interface DiceCounterProps {
 }
 
 export function DiceCounter({type, count, large=false}: DiceCounterProps) {
-    return (<div className={large ? `dice large ${type}` : `dice small ${type}`}>{count}</div>)
+    return (<div style={{backgroundImage: `url("/img/dice/${type}.png")`}} className={large ? `dice large` : `dice small`}>{count}</div>)
 }
 
 interface DicePoolProps extends DicePoolType {

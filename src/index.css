@@ -14,6 +14,10 @@ code {
     monospace;
 }
 
+.MuiModal-backdrop {
+  backdrop-filter: blur(2px);
+}
+
 .roll-btn {
   font-size: 18px !important;
   font-weight: 400 !important;
@@ -59,22 +63,6 @@ code {
   width: 64px;
   height: 64px;
   font-size: 32px;
-}
-
-.dice.default {
-  background-image: url("img/dice/default.png");
-}
-
-.dice.aptitude {
-  background-image: url("img/dice/aptitude.png");
-}
-
-.dice.expertise {
-  background-image: url("img/dice/expertise.png");
-}
-
-.dice.injury {
-  background-image: url("img/dice/injury.png");
 }
 
 .rollResult {
