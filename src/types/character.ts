@@ -34,6 +34,11 @@ export interface StatModifierType {
     heft?: number;
 }
 
+export interface CharacterCyberMalfunction {
+    active: boolean;
+    slots: boolean[];
+}
+
 export default interface CharacterType {
     id: string,
     name: string;
@@ -53,6 +58,7 @@ export default interface CharacterType {
     weapons: CharacterWeapon[];
     injuries: string[];
     cyberware: CharacterCyberWare[];
+    malfunctions: Record<string, CharacterCyberMalfunction>;
     inventory: InventoryItem[];
     currency: {
         assets: number;

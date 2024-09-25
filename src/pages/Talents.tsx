@@ -40,7 +40,7 @@ export default function TalentPage({stats, locked, onChange}: TalentPageProps) {
     return (<Grid container spacing={2} margin={1} direction="column">
         {freeTalents.length > 0 && <Grid item>
             <Paper className="career"><Grid container spacing={2}>
-                {freeTalents.map(t => <Grid xs={3} item><Paper className={"talent"}>
+                {freeTalents.map(t => <Grid xs={3} item key={t}><Paper className={"talent"}>
                     <Btn size="small" style={{float: "right"}}
                          disabled={locked} color="error"
                          onClick={() => window.confirm("Remove talent?") && removeTalent(t)}>Remove</Btn>

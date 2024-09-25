@@ -14,5 +14,6 @@
   "injuries": [],
   "inventory": [],
   "cyberware": [],
+  "malfunctions": {},
   "currency": {"assets":  0, "credits":  0}
 }

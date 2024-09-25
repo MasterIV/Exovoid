@@ -4,6 +4,7 @@ import Game from "./Game";
 import Login from "./Login";
 import AccountType from "./types/account";
 import Tables from "./Tables";
+import characterDefaults from "./data/character.json";
 
 import socket, {onAccountChange, onCharacterChange, onError} from "./socket";
 
@@ -23,7 +24,7 @@ function App() {
     const [error, setError] = useState<string>("");
 
     useEffect(() => {
-        onCharacterChange(setCharacter);
+        onCharacterChange(c => setCharacter({...characterDefaults, ...c}));
         onAccountChange(setAccount);
         onError(setError);
     }, []);

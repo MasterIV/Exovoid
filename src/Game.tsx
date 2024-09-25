@@ -4,6 +4,7 @@ import CharacterPage from "./pages/Character";
 import LorePage from "./pages/Lore";
 import CombatPage from "./pages/Combat";
 import InventoryPage from "./pages/Inventory";
+import CyberWarePage from "./pages/Cyberware";
 import TalentPage from "./pages/Talents";
 import CharacterType from "./types/character";
 import {RollResult} from "./components/RollResults";
@@ -58,7 +59,8 @@ function Game({character, error, onChange}: GameProps) {
         {name: "Character", content: <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Combat", content: <CombatPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
         {name: "Talents", content: <TalentPage locked={locked} stats={character} onChange={onChange}/>},
-        {name: "Inventory", content: <InventoryPage locked={locked} inventory={character.inventory || []} currency={character.currency} onChange={onChange}/>},
+        {name: "Cyberware", content: <CyberWarePage locked={locked} stats={character} onChange={onChange}/>},
+        {name: "Inventory", content: <InventoryPage locked={locked} inventory={character.inventory} currency={character.currency} onChange={onChange}/>},
         {name: "Npc", content: <NpcPage npcs={character.npcs || []} onChange={changeNpc} onRoll={changeRoll} />},
         {name: "Lore", content: <LorePage/>},
     ];

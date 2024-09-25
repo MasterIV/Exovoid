@@ -24,9 +24,10 @@ const defaults = {name: "", quantity: 1, location: "", notes: ""};
 interface ItemProps extends InventoryItem {
     onChange: (name: string, value: any) => void;
     onRemove: () => void;
+    locked?: boolean;
 }
 
-function Item({onChange, onRemove, ...item}: ItemProps) {
+function Item({onChange, onRemove, locked, ...item}: ItemProps) {
     const removeItem = () => window.confirm("Remove Item?") && onRemove();
 
     return  <TableRow>
@@ -42,7 +43,7 @@ function Item({onChange, onRemove, ...item}: ItemProps) {
         <TableCell>
             <Stack direction="row" spacing={2}>
                 <TextInput name="note" values={item} onChange={onChange} />
-                <Btn onClick={removeItem}>Remove</Btn>
+                <Btn disabled={locked} color="error" onClick={removeItem}>Remove</Btn>
             </Stack>
         </TableCell>
     </TableRow>;
@@ -81,7 +82,7 @@ export default React.memo(function InventoryPage({inventory, currency, locked, o
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <Collection values={inventory} onChange={changeInventory} component={Item} />
+                        <Collection locked={locked} values={inventory} onChange={changeInventory} component={Item} />
                     </TableBody>
                 </Table>
             </TableContainer>
