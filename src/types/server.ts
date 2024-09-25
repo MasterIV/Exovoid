@@ -5,10 +5,17 @@ import {Socket as ClientSideSocket} from "socket.io-client";
 import {DefaultEventsMap} from "socket.io/dist/typed-events";
 import {DicePoolType, DiceResultType} from "./dice";
 import {Combatant} from "./combat";
+import {ShipType} from "./ship";
 
 type Metadata = Record<string, any>
 
-export interface ClientEvents {
+interface PassThroughEvents {
+    combatant: (data: Combatant) => void;
+    ship: (ship: ShipType) => void;
+    reset: () => void;
+}
+
+export interface ClientEvents extends PassThroughEvents {
     // Stage: Authentication
     login: (name: string, password: string) => void;
     relogin: (name: string, token: string) => void;
@@ -19,17 +26,14 @@ export interface ClientEvents {
     // Stage Game
     roll: (pool: DicePoolType, metadata?: Metadata) => void;
     save: (data: CharacterType) => void;
-    combatant: (data: Combatant) => void;
     reset: () => void;
 }
 
-export interface ServerEvents {
+export interface ServerEvents extends PassThroughEvents {
     account: (data: AccountType) => void;
     character: (data: CharacterType) => void;
     roll: (result: DiceResultType, metadata?: Metadata) => void;
     error: (message: string) => void;
-    combatant: (data: Combatant) => void;
-    reset: () => void;
 }
 
 export interface SocketData {

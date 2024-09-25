@@ -28,7 +28,6 @@ export default function CombatPage({stats, onChange, locked} : CombatPageProps) 
         damage: "",
     })
 
-    const corrections = React.useMemo(() => ({[stats.id]: stats}), [stats.id, stats.currentHealth]);
     const changeWeapons = useCallback((data: any) => onChange('weapons', data), [onChange]);
     const changeData = useCallback((k: string, v: any) => setData(old => ({...old, [k]: v})), []);
     const joinCombat = () => socket.emit("combatant", charToCombatant(stats));
@@ -46,7 +45,7 @@ export default function CombatPage({stats, onChange, locked} : CombatPageProps) 
 
     return (<Grid container spacing={2} margin={1}>
         <Grid item xs={3}>
-            <Initiative corrections={corrections} >
+            <Initiative>
                 <Grid item container spacing={2}>
                     <Grid item xs={12}><Btn fullWidth onClick={joinCombat}>Join Combat</Btn></Grid>
                 </Grid>

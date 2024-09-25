@@ -7,6 +7,7 @@ import Tables from "./Tables";
 import characterDefaults from "./data/character.json";
 
 import socket, {onAccountChange, onCharacterChange, onError} from "./socket";
+import InitiativeProvider from "./provider/InitiativeProvider";
 
 let updateTimer: any = null;
 
@@ -29,8 +30,10 @@ function App() {
         onError(setError);
     }, []);
 
-    if(character)
-        return <Game error={error} character={character} onChange={changeCharacter} />;
+    if (character)
+        return <InitiativeProvider stats={character}>
+            <Game error={error} character={character} onChange={changeCharacter}/>
+        </InitiativeProvider>;
 
     if(account)
         return <Tables

@@ -25,11 +25,10 @@ interface NpcPageProps {
 
 export default React.memo( function NpcPage({npcs, onChange, onRoll} : NpcPageProps) {
     const addNpc = () => onChange([...npcs, {...defaults, id: uuid.v4()}]);
-    const corrections = Object.fromEntries(npcs.map(n => [n.id, n]))
 
     return (<Grid container spacing={2} margin={1}>
         <Grid item xs={3}>
-            <Initiative corrections={corrections} />
+            <Initiative />
         </Grid>
         <Grid item container spacing={2} direction="column" xs={9}>
             <Collection values={npcs} onChange={onChange} component={Npc} onRoll={onRoll} />

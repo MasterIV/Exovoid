@@ -27,11 +27,12 @@ interface InjuryType {
 }
 
 interface InjuryProps extends InjuryType {
+    npc?: boolean;
     onRemove: () => void;
 }
 
-function Injury({name, description, modifier, severity, onRemove}: InjuryProps) {
-    return <Grid item><Paper className="injury">
+function Injury({name, description, modifier, severity, onRemove, npc}: InjuryProps) {
+    return <Grid item xs={npc ? 12 : 'auto'}><Paper className="injury" style={{minHeight: 40, background: '#311'}}>
         <Btn onClick={onRemove} color="error" style={{float: "right"}}>Remove</Btn>
         <strong>{name}:</strong> {description}
         (Sev: {severity}, Mod: {modifier})
@@ -46,6 +47,7 @@ interface InjuryRoll {
 }
 
 interface InjuriesProps {
+    npc?: boolean;
     injuries: string[];
     health: number;
     changeHealth: (hp: number) => void;
@@ -54,7 +56,7 @@ interface InjuriesProps {
 
 const rollDefaults: InjuryRoll = {show: false, damage: 1, modifier: 0, injury: allInjuries[0].name};
 
-export default function Injuries({injuries, health, changeHealth, changeInjuries}: InjuriesProps) {
+export default function Injuries({injuries, health, changeHealth, changeInjuries, npc}: InjuriesProps) {
     const [roll, setRoll] = useState<InjuryRoll>(rollDefaults);
     const resetRoll = useCallback(() => setRoll(rollDefaults), []);
     const changeRoll = (k: string, v: any) => setRoll({...roll, [k]: v});
@@ -69,7 +71,8 @@ export default function Injuries({injuries, health, changeHealth, changeInjuries
     const rollCallback = (result: DiceResultType, metadata: any) => {
         if (metadata.id !== id) return;
         const summary = summarize(result);
-        const severity = Math.min(summary.wound|0, 7);
+        const wounds = npc ? (summary.wound|0) + (summary.minion|0) : (summary.wound|0)
+        const severity = Math.min(wounds, 7);
 
         if(severity > 0 ) {
             const bucket = injuryBuckets[severity];
@@ -98,6 +101,7 @@ export default function Injuries({injuries, health, changeHealth, changeInjuries
 
     return <>
         <Collection
+            npc={npc}
             values={mapped}
             onChange={data => changeInjuries(data.map((i) => (i as InjuryType).name))}
             component={Injury}/>

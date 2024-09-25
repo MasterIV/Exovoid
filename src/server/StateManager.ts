@@ -1,9 +1,12 @@
-import {ClientSocket} from "../types/server";
+import {ClientEvents, ClientSocket, ServerEvents} from "../types/server";
 import AccountService from "./AccountService";
 import CharacterService from "./CharacterService";
 import TableService from "./TableService";
 import CharacterType from "../types/character";
 import GameService from "./GameService";
+import {EventNames} from "socket.io/dist/typed-events";
+
+type OverlappingEvents = Extract<EventNames<ServerEvents>, EventNames<ClientEvents>>;
 
 export default class StateManager {
     private accountService: AccountService;
@@ -85,6 +88,14 @@ export default class StateManager {
         socket.emit("character", socket.data.character);
     }
 
+    private passThrough(socket: ClientSocket, event: OverlappingEvents) {
+        // @ts-ignore Fuck Type Gymnastics!
+        socket.on(event, this.wrapHandler(socket, (data) => {
+            if (!socket.data.character) throw new Error("Invalid character!");
+            socket.to(socket.data.character.table).emit(event, data);
+        }));
+    }
+
     registerGameHandlers(socket: ClientSocket) {
         socket.removeAllListeners();
 
@@ -103,14 +114,7 @@ export default class StateManager {
             this.characterService.save(data);
         }));
 
-        socket.on("combatant", this.wrapHandler(socket, (data) => {
-            if (!socket.data.character) throw new Error("Invalid character!");
-            socket.to(socket.data.character.table).emit("combatant", data);
-        }));
-
-        socket.on("reset", this.wrapHandler(socket, () => {
-            if (!socket.data.character) throw new Error("Invalid character!");
-            socket.to(socket.data.character.table).emit("reset");
-        }));
+        this.passThrough(socket, "combatant");
+        this.passThrough(socket, "reset");
     }
 }

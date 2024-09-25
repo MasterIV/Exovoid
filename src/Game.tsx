@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useContext, useState} from 'react';
 import {Alert, Box, Checkbox, Container, FormControlLabel, Grid, Modal, Paper, Stack, Tab, Tabs} from "@mui/material";
 import CharacterPage from "./pages/Character";
 import LorePage from "./pages/Lore";
@@ -13,6 +13,7 @@ import {DicePool} from "./components/Roll";
 import calculatePool from "./logic/calculatePool";
 import {Btn, TextInput} from "./components/Form";
 import NpcPage from "./pages/Npc";
+import {InitiativeContext} from "./provider/InitiativeProvider";
 
 interface GameProps {
     character: CharacterType;
@@ -39,6 +40,8 @@ function Game({character, error, onChange}: GameProps) {
         setTab(newValue);
     }, []);
 
+    const {spendAp} = useContext(InitiativeContext);
+
     const resetRoll = useCallback(() => setRoll({show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}}), []);
     const changeRoll = useCallback((skill: number, attribute: number, modifier = 0, metadata?: Record<string, any>) => setRoll({
         show: true,
@@ -50,19 +53,20 @@ function Game({character, error, onChange}: GameProps) {
 
     const onRoll = () => {
         socket.emit("roll", calculatePool(roll.attribute, roll.skill, roll.modifier), roll.metadata);
+        if(roll.metadata?.id && roll.metadata?.ap) spendAp(roll.metadata.id, roll.metadata.ap);
         resetRoll();
     }
 
     const changeNpc = React.useCallback((npcs: object[]) => onChange('npcs', npcs), [onChange]);
 
     const tabs = [
-        {name: "Character", content: <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
-        {name: "Combat", content: <CombatPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
-        {name: "Talents", content: <TalentPage locked={locked} stats={character} onChange={onChange}/>},
-        {name: "Cyberware", content: <CyberWarePage locked={locked} stats={character} onChange={onChange}/>},
-        {name: "Inventory", content: <InventoryPage locked={locked} inventory={character.inventory} currency={character.currency} onChange={onChange}/>},
-        {name: "Npc", content: <NpcPage npcs={character.npcs || []} onChange={changeNpc} onRoll={changeRoll} />},
-        {name: "Lore", content: <LorePage/>},
+        {name: "Character", content: () => <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
+        {name: "Combat", content: () => <CombatPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
+        {name: "Talents", content: () => <TalentPage locked={locked} stats={character} onChange={onChange}/>},
+        {name: "Cyberware", content: () => <CyberWarePage locked={locked} stats={character} onChange={onChange}/>},
+        {name: "Inventory", content: () => <InventoryPage locked={locked} inventory={character.inventory} currency={character.currency} onChange={onChange}/>},
+        {name: "Npc", content: () => <NpcPage npcs={character.npcs || []} onChange={changeNpc} onRoll={changeRoll} />},
+        {name: "Lore", content: () => <LorePage/>},
     ];
 
     return (<Container maxWidth="xl">
@@ -92,8 +96,7 @@ function Game({character, error, onChange}: GameProps) {
             </Grid>
         </Grid>
 
-        {tabs.map(((t, i) => (<Box key={t.name} style={{flexDirection: "column"}} display={tab === i ? "flex" : "none"}>{t.content}</Box>)))}
-
+        <Box>{tabs[tab].content()}</Box>
     </Container>);
 }
 

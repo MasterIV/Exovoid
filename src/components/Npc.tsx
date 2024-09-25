@@ -9,26 +9,28 @@ import Collection from "./Collection";
 import * as uuid from 'uuid';
 import {DicePool} from "./Roll";
 import calculatePool from "../logic/calculatePool";
+import Injuries from "./Injuries";
 
 
 interface NpcActionProps extends NpcActionType {
-    npc: string;
+    npc: NpcType;
     onRemove: () => void;
     onChange: (name: string, value: any) => void;
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
 }
 
-function NpcAction({onChange, onRemove, onRoll, npc, ...props}: NpcActionProps) {
+function NpcAction({onChange, onRemove, onRoll, id, npc, ...props}: NpcActionProps) {
     const a = props.aptitude||0;
     const e = props.expertise||0;
     const pool = calculatePool(a, e);
+    const meta = {skill: props.name, name: npc.name, ap: props.ap, id: npc.id};
 
     return <TableRow>
         <TableCell><TextInput label="Name" name="name" values={props} onChange={onChange} /></TableCell>
         <TableCell><Value width={75} name={"aptitude"} value={a} onChange={onChange} /></TableCell>
         <TableCell><Value width={75} name={"expertise"} value={e} onChange={onChange} /></TableCell>
         <TableCell><Value width={75} name={"ap"} value={props.ap||0} onChange={onChange} /></TableCell>
-        <TableCell><Btn onClick={() => onRoll(a, e, 0, {skill: props.name, npc})} fullWidth>
+        <TableCell><Btn onClick={() => onRoll(a, e, 0, meta)} fullWidth>
             <DicePool {...pool} />
         </Btn></TableCell>
     </TableRow>;
@@ -77,7 +79,7 @@ export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
                             </TableHead>
                             <TableBody>
                                 <Collection
-                                    npc={props.name}
+                                    npc={props}
                                     onRoll={onRoll}
                                     values={props.actions||[]}
                                     onChange={v => onChange('actions', v)}
@@ -87,9 +89,15 @@ export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
                 </Grid>
 
                 <Grid item container spacing={2}>
+                    <Injuries
+                        npc
+                        injuries={props.injuries || []}
+                        health={props.currentHealth}
+                        changeHealth={h => onChange('currentHealth', h)}
+                        changeInjuries={h => onChange('injuries', h)}  />
+
                     <Grid item><Btn onClick={addAction}>Add Action</Btn></Grid>
                     <Grid item><Btn onClick={joinCombat}>Join Combat</Btn></Grid>
-                    <Grid item><Btn>Take Damage</Btn></Grid>
                 </Grid>
             </Grid>
         </Paper>

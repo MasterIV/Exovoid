@@ -2,9 +2,7 @@
 
 Next Tasks:
 
-- take damage (npc)
 - weapon actions
-- implement cyberware
 - add accordion for weapon / npc
 - lore
   - biocompatibility

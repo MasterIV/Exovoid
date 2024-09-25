@@ -1,29 +1,9 @@
-import React, {useCallback, useEffect, useState} from "react";
-import socket from "../socket";
+import React, {useContext, useEffect} from "react";
 import {Combatant} from "../types/combat";
 import {Grid, Paper} from "@mui/material";
 import {Btn} from "./Form";
 import Value from "./Value";
-import {randomIni} from "../logic/randomIni";
-
-const UPDATE_DELAY = 2000;
-const timers: Record<string, number> = {};
-
-function updateCombatants(updated: Combatant) {
-    if (timers[updated.id]) window.clearTimeout(timers[updated.id]);
-    timers[updated.id] = window.setTimeout(() => socket.emit("combatant", updated), UPDATE_DELAY);
-}
-
-function correctCombatant(c: Combatant, correction: InitiativeCorrection) {
-    return {
-        ...c,
-        currentHealth: correction.currentHealth
-    };
-}
-
-function updatedCombatants(combatants: Record<string, Combatant>, corrections: Record<string, InitiativeCorrection>): Combatant[] {
-    return Object.values(combatants).map(c => corrections[c.id] ? correctCombatant(c, corrections[c.id]) : c);
-}
+import {InitiativeContext, InitiativeCorrection} from "../provider/InitiativeProvider";
 
 interface FighterProps extends Combatant {
     onChange: (updated: Combatant) => void;
@@ -50,58 +30,22 @@ const Fighter = React.memo(({onChange, ...props}: FighterProps) => {
     </Paper></Grid>;
 });
 
-interface InitiativeCorrection {
-    currentHealth: number;
-}
-
 interface InitiativeProps {
-    corrections: Record<string, InitiativeCorrection>;
     children?: React.ReactNode;
 }
 
-export default function Initiative({corrections, children}: InitiativeProps) {
-    const [combatants, setCombatants] = useState<Record<string, Combatant>>({});
+export default function Initiative({ children}: InitiativeProps) {
+    const {combatants, update, reset, round} = useContext(InitiativeContext);
 
-    useEffect(() => {
-        socket.on('combatant', data => setCombatants(old => ({...old, [data.id]: data})));
-        socket.on('reset', () => setCombatants({}));
-    }, []);
-
-    // Update combatant if external changes have happened
-    useEffect(() => {
-        Object.entries(corrections).forEach(([id, stats]) => {
-            if (combatants[id] && (
-                combatants[id].currentHealth !== stats.currentHealth
-            )) {
-                return updateCombatants(correctCombatant(combatants[id], stats));
-            }
-        })
-    }, [combatants, corrections]);
-
-    const changeAp = useCallback((c: Combatant) => {
-            setCombatants(old => {
-                updateCombatants(c);
-                return {...old, [c.id]: c};
-            })
-    }, []);
-
-    const resetCombatant = () => window.confirm("Reset Combat?") && socket.emit("reset");
-    const newRound = () => {
-        updatedCombatants(combatants, corrections).forEach(c => {
-            c.currentAp += c.maxAp + randomIni();
-            socket.emit("combatant", c);
-        });
-    }
-
-    const ini = updatedCombatants(combatants, corrections);
+    const ini = Object.values(combatants);
     ini.sort((a, b) => b.currentAp - a.currentAp);
 
     return <Grid container direction={"column"} spacing={2}>
-        {ini.map(c => <Fighter {...c} onChange={changeAp} key={c.id}/>)}
+        {ini.map(c => <Fighter {...c} onChange={update} key={c.id}/>)}
 
         <Grid item container spacing={2}>
-            <Grid item xs={6}><Btn fullWidth color="error" onClick={resetCombatant}>Reset</Btn></Grid>
-            <Grid item xs={6}><Btn fullWidth onClick={newRound}>New Round</Btn></Grid>
+            <Grid item xs={6}><Btn fullWidth color="error" onClick={reset}>Reset</Btn></Grid>
+            <Grid item xs={6}><Btn fullWidth onClick={round}>New Round</Btn></Grid>
         </Grid>
 
         {children}
