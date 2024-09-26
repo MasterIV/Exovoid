@@ -3,6 +3,7 @@
 Next Tasks:
 
 - weapon actions
+- generic combat actions
 - lore
   - biocompatibility
   - advanced tech

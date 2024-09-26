@@ -10,7 +10,7 @@ import {
     TableCell,
     TableHead,
     TableRow,
-    TextField,
+    TextField, Tooltip,
     Typography
 } from "@mui/material";
 import {Btn, Dropdown} from "./Form";
@@ -19,9 +19,11 @@ import weaponsMods from '../data/weapon-mods.json';
 import {CharacterWeapon} from "../types/character";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Value from "./Value";
+import {WeaponType} from "../types/wapon";
+import calculateWeaponActions from "../logic/calculateWeaponActions";
 
-const weaponMap: Record<string, any> = {};
-weapons.forEach(w => weaponMap[w.weapon] = w);
+const weaponMap: Record<string, WeaponType> = {};
+weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
 
 interface WeaponProps extends CharacterWeapon {
     onRemove: () => void;
@@ -29,17 +31,11 @@ interface WeaponProps extends CharacterWeapon {
     locked?: boolean;
 }
 
-const actions = [
-    {id: "a1", name: "Attack"},
-    {id: "a2", name: "Burst"},
-    {id: "a3", name: "Full Auto"},
-    {id: "a4", name: "Reload"},
-]
-
 export default React.memo(function Weapon({id, type, ammo, mods, locked, expanded, onChange, onRemove}: WeaponProps) {
     const details = weaponMap[type];
+    const actions = calculateWeaponActions(details);
     const [data, setData] = useState({
-        action: 'a1',
+        action: actions[0].id,
     });
 
     const changeData = (name: string, value: string) => {

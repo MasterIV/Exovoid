@@ -65,11 +65,6 @@ export default React.memo(function InventoryPage({inventory, currency, locked, o
 
     return <Grid container spacing={2} margin={1} direction="column">
 
-        <Grid item container spacing={2}>
-            <Grid item><Value label="Credits" name="credits" value={currency.credits} onChange={changeCurrency} /></Grid>
-            <Grid item><Value label="Assets" name="assets" value={currency.assets} onChange={changeCurrency} /></Grid>
-        </Grid>
-
         <Grid item>
             <TableContainer component={Paper}>
                 <Table>
@@ -88,8 +83,11 @@ export default React.memo(function InventoryPage({inventory, currency, locked, o
             </TableContainer>
         </Grid>
 
-        <Grid item>
-            <Btn onClick={() => changeInventory([...inventory, {...defaults, id: uuid.v4()}])}>Add Item</Btn>
+        <Grid item container spacing={2} alignItems="center">
+            <Grid xs={8} item><Btn onClick={() => changeInventory([...inventory, {...defaults, id: uuid.v4()}])}>Add Item</Btn></Grid>
+            <Grid xs={2} item><Value width={130} label="Credits" name="credits" value={currency.credits} onChange={changeCurrency} /></Grid>
+            <Grid xs={2} item><Value width={130} label="Assets" name="assets" value={currency.assets} onChange={changeCurrency} /></Grid>
         </Grid>
+
     </Grid>;
 });

@@ -53,7 +53,15 @@ function Game({character, error, onChange}: GameProps) {
 
     const onRoll = () => {
         socket.emit("roll", calculatePool(roll.attribute, roll.skill, roll.modifier), roll.metadata);
-        if(roll.metadata?.id && roll.metadata?.ap) spendAp(roll.metadata.id, roll.metadata.ap);
+
+        if(roll.metadata?.id && roll.metadata?.ap)
+            spendAp(roll.metadata.id, roll.metadata.ap);
+        if(roll.metadata?.weapon && roll.metadata?.ammo)
+            onChange('weapons', character.weapons.map(w => {
+                const ammo =  {...w.ammo, loaded: w.ammo.loaded - roll.metadata?.ammo};
+                return roll.metadata?.weapon === w.id ? {...w, ammo} : w;
+            }));
+
         resetRoll();
     }
 

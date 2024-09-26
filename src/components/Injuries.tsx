@@ -33,9 +33,8 @@ interface InjuryProps extends InjuryType {
 
 function Injury({name, description, modifier, severity, onRemove, npc}: InjuryProps) {
     return <Grid item xs={npc ? 12 : 'auto'}><Paper className="injury" style={{minHeight: 40, background: '#311'}}>
-        <Btn onClick={onRemove} color="error" style={{float: "right"}}>Remove</Btn>
-        <strong>{name}:</strong> {description}
-        (Sev: {severity}, Mod: {modifier})
+        <Btn onClick={onRemove} color="error" style={{float: "right", marginLeft: 10}}>Remove</Btn>
+        <strong>{name}:</strong> {description} (Sev: {severity}, Mod: {modifier})
     </Paper></Grid>
 }
 
