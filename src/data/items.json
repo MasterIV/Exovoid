@@ -354,7 +354,7 @@
     "category": "Crafting",
     "item": "3D Printer",
     "name": "PrintForce X1",
-    "description": "A portable fabricator that can create physical objects from digital blueprints using various materials. Ideal for crafting custom tools or parts.",
+    "description": "A portable fabricator that can create physical objects from digital blueprints using various materials. Ideal for crafting custom tools or parts. The material cost is equal to 5% of the aspired item, and the process takes a few minutes. 3D printed mechanical / electrical items (like weapons) break as soon as a botch or two complications were rolled (regardless if these were triggered or not).",
     "size": 4,
     "cost": 300,
     "rarity": 2
