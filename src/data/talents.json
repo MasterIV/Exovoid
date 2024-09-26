@@ -579,7 +579,8 @@
   {
     "talent": "Resourceful",
     "description": "Increase your maximum edge points by +2.",
-    "representation": 1
+    "representation": 1,
+	"modifier": {"edge":  2}
   },
   {
     "talent": "Riposte",
