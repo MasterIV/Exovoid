@@ -533,8 +533,8 @@
   },
   {
     "talent": "Quickfingers",
-    "description": "Gain a +3 pool bonus to pickpocketing or sleight of hand checks, and halve the AP costs to reload firearms (round up).",
-    "representation": 2
+    "description": "Gain a +3 pool bonus to pickpocketing or sleight of hand checks, and halve the AP costs to reload pistols, revolvers and MPs (round up).",
+    "representation": 1
   },
   {
     "talent": "Quick Recovery",
