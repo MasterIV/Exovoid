@@ -134,7 +134,7 @@
 		"Loud": 1
 	},
     "triggerOptions": "Lethal (5), Knocking, Penetrating (3)",
-    "specialRules": "Can be fired in one hand at +1 difficulty.",
+    "specialRules": "Can be fired in one hand, but then it gains the improvised quality unless the wielder has 6 or more Strength.",
     "modLimit": 3,
     "cost": 350,
     "ammoCost": 8,
@@ -606,7 +606,7 @@
     "cost": 550,
     "ammoCost": 50,
     "rarity": 3,
-    "range": "-"
+    "range": "5-15-30"
   },
   {
     "skill": "Heavy Weapons",
@@ -780,7 +780,7 @@
 		"Handling": 1
 	},
     "triggerOptions": "Knocking, Incapacitating, Penetrating (1)",
-    "specialRules": "Cannot do a parry against real melee weapons.\nCan be used as a two-handed attack (increasing the heft applied).",
+    "specialRules": "Cannot perform a Parry against real melee weapons.",
     "modLimit": 0,
     "cost": "Free!",
     "ammoCost": "-",
@@ -987,7 +987,7 @@
     "magazine": "-",
     "reload": "-",
     "speed": 4,
-    "damage": 6,
+    "damage": 7,
     "damageType": "Physical",
     "qualities":
 	{

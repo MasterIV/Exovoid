@@ -403,7 +403,7 @@
   },
   {
     "talent": "Martial Artist",
-    "description": "Add your full Heft to your unarmed attacks so long as you do not perform \"Dual Wield\" attacks. Additionally, you can parry armed weapons even while being unarmed.",
+    "description": "Treat your unarmed attacks like a 2-handed weapon (concerning Heft). Additionally, you can parry real weapons even while being unarmed.",
     "representation": 3
   },
   {
@@ -532,6 +532,11 @@
     "representation": 2
   },
   {
+    "talent": "Quickfingers",
+    "description": "Gain a +3 pool bonus to pickpocketing or sleight of hand checks, and halve the AP costs to reload firearms (round up).",
+    "representation": 2
+  },
+  {
     "talent": "Quick Recovery",
     "description": "Treating or regenerating your injuries has -1 difficulty.",
     "representation": 1
@@ -589,6 +594,11 @@
   {
     "talent": "Rush In",
     "description": "When you perform a Maneuver action, all ranged attacks against you have +2 difficulty until the rest of the round.",
+    "representation": 1
+  },
+  {
+    "talent": "Saboteur",
+    "description": "Gain a +3 pool bonus on checks to sabotage equipment or machinery. Sabotaged items malfunction in a specified way, and the malfunction isn't immediately obvious.",
     "representation": 1
   },
   {
@@ -705,6 +715,11 @@
     "talent": "Tactical Commander",
     "description": "You may distribute the generated triggers from \"Assist\" freely among team members, and you may convert your own triggers into successes on a 1:1 basis (instead of 2:1).",
     "representation": 2
+  },
+  {
+    "talent": "Take What's Needed",
+    "description": "After looting an enemy or pickpocketing someone, you can spend Edge points to claim that they had specific items on them which you now possess. The value of the items is 100 Credits per Edge point spent. The GM can refuse this.",
+    "representation": 1
   },
   {
     "talent": "Third Wind",
