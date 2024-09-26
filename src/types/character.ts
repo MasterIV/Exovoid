@@ -5,6 +5,7 @@ export interface CharacterWeapon {
     id: string;
     type: string;
     mods: string[];
+    expanded?: boolean;
     ammo: {
         loaded: number;
         reserve: number;

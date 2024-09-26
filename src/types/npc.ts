@@ -11,4 +11,5 @@ export interface NpcActionType {
 
 export default interface NpcType extends Combatant {
     actions: NpcActionType[];
+    expanded?: boolean;
 }

@@ -23,9 +23,7 @@ interface CombatPageProps {
 
 export default function CombatPage({stats, onChange, locked} : CombatPageProps) {
     const [data,setData] = useState({
-        weapon: "",
-        wound: "",
-        damage: "",
+        weapon: weapons[0].weapon,
     })
 
     const changeWeapons = useCallback((data: any) => onChange('weapons', data), [onChange]);
@@ -51,7 +49,7 @@ export default function CombatPage({stats, onChange, locked} : CombatPageProps) 
                 </Grid>
             </Initiative>
         </Grid>
-        <Grid item container spacing={2} direction="column" xs={6}>
+        <Grid item xs={6}>
 
                 <Collection
                     locked={locked}
@@ -59,7 +57,7 @@ export default function CombatPage({stats, onChange, locked} : CombatPageProps) 
                     onChange={changeWeapons}
                     component={Weapon} />
 
-                <Grid item container direction="row" spacing={2} alignItems="center">
+                <Grid container direction="row" spacing={2} alignItems="center" marginY={1}>
                     <Grid item xs={8}><Dropdown
                         id="add-weapon"
                         label="Weapon Type"

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {
+    Accordion, AccordionDetails, AccordionSummary,
     Autocomplete,
     Grid,
     Paper,
@@ -16,6 +17,7 @@ import {Btn, Dropdown} from "./Form";
 import weapons from '../data/weapons.json';
 import weaponsMods from '../data/weapon-mods.json';
 import {CharacterWeapon} from "../types/character";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Value from "./Value";
 
 const weaponMap: Record<string, any> = {};
@@ -34,7 +36,7 @@ const actions = [
     {id: "a4", name: "Reload"},
 ]
 
-export default React.memo(function Weapon({id, type, ammo, mods, locked, onChange, onRemove}: WeaponProps) {
+export default React.memo(function Weapon({id, type, ammo, mods, locked, expanded, onChange, onRemove}: WeaponProps) {
     const details = weaponMap[type];
     const [data, setData] = useState({
         action: 'a1',
@@ -46,17 +48,14 @@ export default React.memo(function Weapon({id, type, ammo, mods, locked, onChang
 
     const changeAmmo = (k:string,v:number) => onChange('ammo', {...ammo,[k]: v});
 
-    return <Grid item>
-        <Paper sx={{p: 2}}>
-            <Grid container direction="column" spacing={2}>
-                <Grid item container spacing={2}>
-                    <Grid item xs={8}>
-                        <Typography variant="h6">{type} ({details.type})</Typography>
-                    </Grid><Grid item xs={4} textAlign="right">
-                        <Btn color={"error"} disabled={locked} onClick={() => (window.confirm("Remove Weapon?") && onRemove())}>Remove</Btn>
-                    </Grid>
-                </Grid>
+    return <Accordion  expanded={Boolean(expanded)} onChange={(x, e) => onChange('expanded', e)}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+            <Typography variant="h6" marginRight={2}>{type} ({details.type})</Typography>
+            <Btn size="small" color={"error"} disabled={locked} onClick={() => (window.confirm("Remove Weapon?") && onRemove())}>Remove</Btn>
+        </AccordionSummary>
 
+        <AccordionDetails>
+            <Grid container direction="column" spacing={2}>
                 {details.magazine > 0 && <Grid item><Stack spacing={2} direction="row">
                     <Value width={120} label="Rounds Loaded" name="loaded" value={ammo.loaded} onChange={changeAmmo} />
                     <Value width={120} label="Ammo Reserve" name="reserve" value={ammo.reserve} onChange={changeAmmo} />
@@ -119,6 +118,6 @@ export default React.memo(function Weapon({id, type, ammo, mods, locked, onChang
                     <Grid item xs={4}><Btn fullWidth>Execute</Btn></Grid>
                 </Grid>
             </Grid>
-        </Paper>
-    </Grid>;
+        </AccordionDetails>
+    </Accordion>;
 });

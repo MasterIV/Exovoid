@@ -3,7 +3,6 @@
 Next Tasks:
 
 - weapon actions
-- add accordion for weapon / npc
 - lore
   - biocompatibility
   - advanced tech

@@ -65,7 +65,7 @@ function Game({character, error, onChange}: GameProps) {
         {name: "Talents", content: () => <TalentPage locked={locked} stats={character} onChange={onChange}/>},
         {name: "Cyberware", content: () => <CyberWarePage locked={locked} stats={character} onChange={onChange}/>},
         {name: "Inventory", content: () => <InventoryPage locked={locked} inventory={character.inventory} currency={character.currency} onChange={onChange}/>},
-        {name: "Npc", content: () => <NpcPage npcs={character.npcs || []} onChange={changeNpc} onRoll={changeRoll} />},
+        {name: "Npc", content: () => <NpcPage locked={locked}  npcs={character.npcs || []} onChange={changeNpc} onRoll={changeRoll} />},
         {name: "Lore", content: () => <LorePage/>},
     ];
 

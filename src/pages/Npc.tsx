@@ -9,7 +9,7 @@ import * as uuid from 'uuid';
 
 const defaults: NpcType = {
     id: "",
-    name: "",
+    name: "Alrik",
     currentHealth: 0,
     currentAp: 0,
     maxAp: 0,
@@ -21,18 +21,19 @@ interface NpcPageProps {
     npcs: NpcType[];
     onChange: (npcs: object[]) => void;
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
+    locked?: boolean;
 }
 
-export default React.memo( function NpcPage({npcs, onChange, onRoll} : NpcPageProps) {
+export default React.memo( function NpcPage({npcs, onChange, onRoll, locked} : NpcPageProps) {
     const addNpc = () => onChange([...npcs, {...defaults, id: uuid.v4()}]);
 
     return (<Grid container spacing={2} margin={1}>
         <Grid item xs={3}>
             <Initiative />
         </Grid>
-        <Grid item container spacing={2} direction="column" xs={9}>
-            <Collection values={npcs} onChange={onChange} component={Npc} onRoll={onRoll} />
-            <Grid item><Btn onClick={addNpc}>Add Npc</Btn></Grid>
+        <Grid item xs={9}>
+            <Collection locked={locked} values={npcs} onChange={onChange} component={Npc} onRoll={onRoll} />
+            <p><Btn onClick={addNpc}>Add Npc</Btn></p>
         </Grid>
     </Grid>);
 });

@@ -1,4 +1,14 @@
-import {Grid, Paper, Table, TableBody, TableCell, TableHead, TableRow} from "@mui/material";
+import {
+    Accordion, AccordionDetails,
+    AccordionSummary,
+    Grid,
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow, Typography
+} from "@mui/material";
 import NpcType, {NpcActionType} from "../types/npc";
 import {Btn, TextInput} from "./Form";
 import Value from "./Value";
@@ -10,6 +20,7 @@ import * as uuid from 'uuid';
 import {DicePool} from "./Roll";
 import calculatePool from "../logic/calculatePool";
 import Injuries from "./Injuries";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 
 interface NpcActionProps extends NpcActionType {
@@ -41,9 +52,10 @@ interface NpcProps extends NpcType {
     onRemove: () => void;
     onChange: (name: string, value: any) => void;
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
+    locked?: boolean;
 }
 
-export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
+export default function Npc({onChange, onRemove, onRoll, locked, ...props} : NpcProps) {
     const joinCombat = () => socket.emit("combatant", npcToCombatant(props));
     const addAction = () => onChange('actions', [...props.actions, {
         id: uuid.v4(),
@@ -53,17 +65,18 @@ export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
         ap: 0,
     }]);
 
-    return <Grid item>
-        <Paper className="npc">
+    return  <Accordion  expanded={Boolean(props.expanded)} onChange={(x, e) => onChange('expanded', e)}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+            <Typography variant="h6" marginRight={2}>{props.name}</Typography>
+            <Btn size="small" color={"error"} disabled={locked} onClick={() => (window.confirm("Remove Weapon?") && onRemove())}>Remove</Btn>
+        </AccordionSummary>
+
+        <AccordionDetails>
             <Grid container direction="column" spacing={2}>
                 <Grid item container spacing={2} alignItems="center">
-                    <Grid xs={9} item><TextInput label="Name" name="name" values={props} onChange={onChange} /></Grid>
-                    <Grid xs={3} item><Btn onClick={() => (window.confirm("Remove NPC?") && onRemove())} fullWidth color="error">Remove</Btn></Grid>
-                </Grid>
-
-                <Grid item container spacing={2}>
-                    <Grid item><Value width={150} label="Current Health" name={"currentHealth"} value={props.currentHealth||0} onChange={onChange} /></Grid>
-                    <Grid item><Value width={150} label="Action Points" name={"maxAp"} value={props.maxAp||0} onChange={onChange} /></Grid>
+                    <Grid xs={6} item><TextInput label="Name" name="name" values={props} onChange={onChange} /></Grid>
+                    <Grid xs={3} item textAlign={"center"}><Value width={140} label="Current Health" name={"currentHealth"} value={props.currentHealth||0} onChange={onChange} /></Grid>
+                    <Grid xs={3} item textAlign={"center"}><Value width={140} label="Action Points" name={"maxAp"} value={props.maxAp||0} onChange={onChange} /></Grid>
                 </Grid>
 
                 <Grid item>
@@ -100,6 +113,6 @@ export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
                     <Grid item><Btn onClick={joinCombat}>Join Combat</Btn></Grid>
                 </Grid>
             </Grid>
-        </Paper>
-    </Grid>;
+        </AccordionDetails>
+    </Accordion>;
 }
