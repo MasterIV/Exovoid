@@ -1,13 +1,14 @@
 import {
-    Accordion, AccordionDetails,
+    Accordion,
+    AccordionDetails,
     AccordionSummary,
     Grid,
-    Paper,
     Table,
     TableBody,
     TableCell,
     TableHead,
-    TableRow, Typography
+    TableRow,
+    Typography
 } from "@mui/material";
 import NpcType, {NpcActionType} from "../types/npc";
 import {Btn, TextInput} from "./Form";
@@ -65,10 +66,16 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
         ap: 0,
     }]);
 
+    const removeNpc = (e: any) => {
+        e.stopPropagation();
+        if(window.confirm("Remove Npc?"))
+            onRemove();
+    }
+
     return  <Accordion  expanded={Boolean(props.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography variant="h6" marginRight={2}>{props.name}</Typography>
-            <Btn size="small" color={"error"} disabled={locked} onClick={() => (window.confirm("Remove Weapon?") && onRemove())}>Remove</Btn>
+            <Btn size="small" color={"error"} disabled={locked} onClick={removeNpc}>Remove</Btn>
         </AccordionSummary>
 
         <AccordionDetails>

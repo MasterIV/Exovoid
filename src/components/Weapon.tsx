@@ -43,10 +43,16 @@ export default React.memo(function Weapon({locked,  onChange, onRemove, onAction
     const changeAmmo = (k:string,v:number) => onChange('ammo', {...weapon.ammo,[k]: v});
     const performAction = () => onAction(actions[action], weapon);
 
+    const removeWeapon = (e: any) => {
+        e.stopPropagation();
+        if(window.confirm("Remove Weapon?"))
+            onRemove();
+    }
+
     return <Accordion  expanded={Boolean(weapon.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography variant="h6" marginRight={2}>{weapon.type} ({details.type})</Typography>
-            <Btn size="small" color={"error"} disabled={locked} onClick={() => (window.confirm("Remove Weapon?") && onRemove())}>Remove</Btn>
+            <Btn size="small" color={"error"} disabled={locked} onClick={removeWeapon}>Remove</Btn>
         </AccordionSummary>
 
         <AccordionDetails>
