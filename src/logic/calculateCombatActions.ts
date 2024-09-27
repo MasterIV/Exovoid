@@ -24,12 +24,12 @@ export function calculateWeaponActions(weapon: WeaponType, talents: string[] = [
     }
 
     if(weapon.qualities["Burst"]) {
-        const penalty = weapon.qualities['Compensated'] ? 2 : 1;
+        const penalty = weapon.qualities['Compensated'] ? 1 : 2;
         actions.burst = {id: "burst", name: "Fire Burst", ap: weapon.speed, skill: weapon.skill, modifier: modifier-penalty, ammo: 1+weapon.qualities["Burst"]};
     }
 
     if(weapon.qualities["Full Auto"]) {
-        const penalty = weapon.qualities['Compensated'] ? 4 : 2;
+        const penalty = weapon.qualities['Compensated'] ? 2 : 4;
         actions['auto-main'] = {id: "auto-main", name: "Full Auto Main Attack", ap: weapon.speed*2, skill: weapon.skill, modifier: modifier-penalty, ammo: 1+weapon.qualities["Full Auto"]};
         actions['auto-up'] = {id: "auto-up", name: "Full Auto Follow Up", ap: 0, skill: weapon.skill, modifier: modifier-penalty};
     }
