@@ -750,37 +750,37 @@
   },
   {
     "talent": "Training: Agility",
-    "description": "Gain +1 Agility.",
+    "description": "Gain +1 Agility.\nIf you already have 8 Agility (not counting cybernetic enhancements), you may increase another attribute instead.",
     "representation": 8
   },
   {
     "talent": "Training: Constitution",
-    "description": "Gain +1 Constitution.",
+    "description": "Gain +1 Constitution.\nIf you already have 8 Constitution (not counting cybernetic enhancements), you may increase another attribute instead.",
     "representation": 5
   },
   {
     "talent": "Training: Coolness",
-    "description": "Gain +1 Coolness.",
+    "description": "Gain +1 Coolness.\nIf you already have 8 Coolness (not counting cybernetic enhancements), you may increase another attribute instead.",
     "representation": 8
   },
   {
     "talent": "Training: Education",
-    "description": "Gain +1 Education.",
+    "description": "Gain +1 Education.\nIf you already have 8 Education (not counting cybernetic enhancements), you may increase another attribute instead.",
     "representation": 4
   },
   {
     "talent": "Training: Intelligence",
-    "description": "Gain +1 Intelligence.",
+    "description": "Gain +1 Intelligence.\nIf you already have 8 Intelligence (not counting cybernetic enhancements), you may increase another attribute instead.",
     "representation": 8
   },
   {
     "talent": "Training: Personality",
-    "description": "Gain +1 Personality.",
+    "description": "Gain +1 Personality.\nIf you already have 8 Personality (not counting cybernetic enhancements), you may increase another attribute instead.",
     "representation": 7
   },
   {
     "talent": "Training: Strength",
-    "description": "Gain +1 Strength.",
+    "description": "Gain +1 Strength.\nIf you already have 8 Strength (not counting cybernetic enhancements), you may increase another attribute instead.",
     "representation": 2
   },
   {
