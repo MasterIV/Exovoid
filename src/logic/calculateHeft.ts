@@ -10,8 +10,8 @@ export default function calculateHeft(stats: CharacterType) {
     let heft = Math.ceil(STR / 2);
 
     stats.talents
-        .filter(t => talentMap[t].modifier?.speed)
-        .forEach(t => heft += talentMap[t].modifier?.speed || 0);
+        .filter(t => talentMap[t].modifier?.heft)
+        .forEach(t => heft += talentMap[t].modifier?.heft || 0);
 
     return heft;
 }

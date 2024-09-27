@@ -33,6 +33,7 @@ export interface StatModifierType {
     immunity?: number;
     speed?: number;
     heft?: number;
+	edge?: number;
 }
 
 export interface CharacterCyberMalfunction {

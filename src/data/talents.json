@@ -364,7 +364,8 @@
   {
     "talent": "Killer Instincts",
     "description": "You gain +1 Heft for your melee attacks.",
-    "representation": 1
+    "representation": 1,
+	"modifier": {"heft":  1}
   },
   {
     "talent": "Lethal Attacks",
@@ -853,11 +854,16 @@
     "representation": 0
   },
   {
-    "talent": "Childhood: Lab Child",
-    "description": "Gain +4 Cyber Immunity or +2 maximum health.",
+    "talent": "Childhood: Lab Child - Cyber Immunity",
+    "description": "Gain +4 Cyber Immunity.",
     "representation": 0,
-	"modifier": {"health":  2},
 	"modifier": {"immunity":  4}
+  },
+  {
+    "talent": "Childhood: Lab Child - Health",
+    "description": "Gain +2 maximum health.",
+    "representation": 0,
+	"modifier": {"health":  2}
   },
   {
     "talent": "Adolescence: Military Draft",
