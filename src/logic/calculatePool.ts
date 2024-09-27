@@ -1,4 +1,16 @@
 import {DicePoolType} from "../types/dice";
+import skills from "../data/skills.json";
+import AttributeType from "../types/attributes";
+
+const skillMap : Record<string, typeof skills[0]>= {};
+skills.forEach(s => skillMap[s.name] = s);
+
+export function attributeAverage(skill: string, attributes: AttributeType) {
+    const sum = skillMap[skill].attributes
+        .map(a => attributes[a as keyof typeof attributes] || 0)
+        .reduce((a, b) => a + b, 0) ;
+    return Math.ceil(sum / skillMap[skill].attributes.length);
+}
 
 export default function calculatePool(a: number, s: number, m=0) : DicePoolType {
     const values = [a, s];

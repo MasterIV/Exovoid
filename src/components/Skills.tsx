@@ -15,7 +15,7 @@ import Value from "./Value";
 import {Btn} from "./Form";
 import AttributeType from "../types/attributes";
 import {DicePool} from "./Roll";
-import calculatePool from "../logic/calculatePool";
+import calculatePool, {attributeAverage} from "../logic/calculatePool";
 import React from "react";
 
 interface SkillsProps {
@@ -44,10 +44,7 @@ export default React.memo(function Skills({skills, attributes, onChange, onRoll,
                         </TableHead>
                         <TableBody>
                             {d.map(s => {
-                                const sum = s.attributes
-                                    .map(a => attributes[a as keyof typeof attributes] || 0)
-                                    .reduce((a, b) => a + b, 0);
-                                const avg = Math.ceil(sum / s.attributes.length);
+                                const avg = attributeAverage(s.name, attributes);
                                 const pool = calculatePool(avg, skills[s.name] || 0);
 
                                 return (<TableRow key={s.name}>
@@ -59,7 +56,7 @@ export default React.memo(function Skills({skills, attributes, onChange, onRoll,
                                         {s.attributes.map(a => (
                                             <Chip key={a} label={`${a}: ${attributes[a as keyof typeof attributes]}`}/>))}
                                     </Stack></TableCell>
-                                    <TableCell><Btn onClick={() => onRoll(avg, skills[s.name] || 0, 0, {skill: s.name})} fullWidth>
+                                    <TableCell><Btn onClick={() => onRoll(skills[s.name] || 0, avg, 0, {skill: s.name})} fullWidth>
                                         <DicePool {...pool} />
                                     </Btn></TableCell>
                                 </TableRow>);

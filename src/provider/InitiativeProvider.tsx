@@ -60,7 +60,6 @@ export default function InitiativeProvider({ children, stats }: InitiativeProvid
 
     const spendAp = useCallback((id: string, spend: number) => {
         setCombatants(old => {
-            console.log('spend called', id, old)
             if(!old[id]) return old;
             const c =  {...old[id], currentAp: old[id].currentAp-spend};
             console.log(c);
