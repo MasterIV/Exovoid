@@ -4,7 +4,6 @@
     "symbols": [
       ["success", "explosive"],
       ["success", "explosive"],
-      ["success", "explosive"],
       "success",
       "success",
       "success",
@@ -12,8 +11,8 @@
       "success",
       "success",
       "trigger",
+      "trigger",
       "xp",
-      "complication",
       "botch"
     ]
   },
@@ -26,7 +25,6 @@
       "success",
       "trigger",
       "trigger",
-      "complication",
       "complication"
     ]
   },
@@ -39,8 +37,6 @@
       "success",
       "success",
       "success",
-      "success",
-      "trigger",
       "trigger",
       "trigger",
       "trigger",
