@@ -114,7 +114,7 @@
   {
     "slot": "Mechanism",
     "name": "Smartgun Integration",
-    "effects": "So long as the user possesses a smart eye cyberware or an armor with Visual Enhancers, they add Handling (+2).",
+    "effects": "So long as the user possesses a smart eye cyberware, AR glasses or an armor with Visual Enhancers, they add Handling (+2).",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
     "cost": 200,
     "rarity": 3
@@ -234,7 +234,7 @@
   {
     "slot": "Rail Attachments",
     "name": "Digital Laser Sight",
-    "effects": "Same as Laser Sight but without the drawback - you require AR glasses or a smart eye to see your laser.",
+    "effects": "Same as Laser Sight but without the drawback - you require AR glasses, smart eyes  or an armor with Visual Enhancers to see your laser.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
     "cost": 120,
     "rarity": 2
