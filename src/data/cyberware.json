@@ -3,31 +3,31 @@
     "type": "Reflexbooster",
     "name": "ReflexaGen V2",
     "tier": "Alpha",
-    "description": "Increase your Action Points by +3, but if you have 3 or less Action Points during a round, you cannot perform any actions (but reactions).",
+    "description": "Increase your Action Points by +2, but if you have 2 or less Action Points during a round, you cannot perform any actions (but reactions).",
     "cyberImmunityCost": 5,
     "cost": 1000,
     "rarity": 3,
-	"modifier": {"ap":  3}
+	"modifier": {"ap":  2}
   },
   {
     "type": "Reflexbooster",
     "name": "NeuraBoost XR",
     "tier": "Beta",
-    "description": "Increase your Action Points by +2, and to determine your Action Points at the beginning of a round, roll 2d6 and use the better result.",
+    "description": "Increase your Action Points by +3. Additionally, even if you have up to -5 AP, you can still perform reactions.",
     "cyberImmunityCost": 6,
     "cost": 3000,
     "rarity": 4,
-	"modifier": {"ap":  2}
+	"modifier": {"ap":  3}
   },
   {
     "type": "Reflexbooster",
     "name": "Velocitec Reflex Enhancer",
     "tier": "Omega",
-    "description": "Increase your Action Points by +5.",
+    "description": "Increase your Action Points by +4. Additionally, you gain +1 pool on dodge and parry actions.",
     "cyberImmunityCost": 8,
     "cost": 7500,
     "rarity": 5,
-	"modifier": {"ap":  5}
+	"modifier": {"ap":  4}
   },
   {
     "type": "Move By Wire",
