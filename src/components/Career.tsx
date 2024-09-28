@@ -38,13 +38,13 @@ export default React.memo(function Career({name, description, equipment, skills,
                 talent = name+":attribute1"
                 return <Paper className={acquiredTalents.includes(talent) ? "talent active" : "talent"} onClick={() => available && toggleTalent(talent)}>
                     <Typography fontWeight={"bold"}>Special Training: {attributes[0]}</Typography>
-                    <Typography variant={"caption"}>Gain +1 {attributes[0]}</Typography>
+                    <Typography variant={"caption"}>Gain +1 {attributes[0]}. If you already have 8 levels in that attribute (cybernetic enhancements aside), you may increase another attribute instead.</Typography>
                 </Paper>;
             case "7":
                 talent = name+":attribute2"
                 return <Paper className={acquiredTalents.includes(talent) ? "talent active" : "talent"} onClick={() => available && toggleTalent(talent)}>
                     <Typography fontWeight={"bold"}>Special Training: {attributes[1]}</Typography>
-                    <Typography variant={"caption"}>Gain +1 {attributes[1]}</Typography>
+                    <Typography variant={"caption"}>Gain +1 {attributes[1]}. If you already have 8 levels in that attribute (cybernetic enhancements aside), you may increase another attribute instead.</Typography>
                 </Paper>;
             default:
                 return talents[tier].map(t => <Paper key={t} className={acquiredTalents.includes(t) ? "talent active" : "talent"} onClick={() => available && toggleTalent(t)}>
