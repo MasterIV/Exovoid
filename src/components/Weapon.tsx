@@ -20,7 +20,7 @@ import weaponsMods from '../data/weapon-mods.json';
 import {CharacterWeapon} from "../types/character";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Value from "./Value";
-import {WeaponType} from "../types/wapon";
+import {WeaponType} from "../types/weapon";
 import {calculateWeaponActions, CombatAction} from "../logic/calculateCombatActions";
 
 const weaponMap: Record<string, WeaponType> = {};

@@ -1,4 +1,4 @@
-import {WeaponType} from "../types/wapon";
+import {WeaponType} from "../types/weapon";
 import CharacterType from "../types/character";
 
 export interface CombatAction {

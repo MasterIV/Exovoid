@@ -16,7 +16,7 @@ import Injuries from "../components/Injuries";
 import {calculateCombatActions, CombatAction} from "../logic/calculateCombatActions";
 import {attributeAverage} from "../logic/calculatePool";
 import {InitiativeContext} from "../provider/InitiativeProvider";
-import {WeaponType} from "../types/wapon";
+import {WeaponType} from "../types/weapon";
 
 const weaponMap: Record<string, WeaponType> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
