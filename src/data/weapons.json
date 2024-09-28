@@ -462,7 +462,8 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Burst": 5
+		"Burst": 5,
+		"Full Auto": 15
 	},
     "triggerOptions":
 	{
