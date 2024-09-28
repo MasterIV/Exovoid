@@ -14,7 +14,10 @@
 	{
 		"Concealed": 1
 	},
-    "triggerOptions": "Concussing",
+    "triggerOptions":
+	{
+		"Concussing": 0
+	},
     "specialRules": "",
     "modLimit": 2,
     "cost": 200,
@@ -36,9 +39,13 @@
     "qualities": 
 	{
 		"Concealed": 1,
-		"Silenced": 1
+		"Silenced": 0
 	},
-    "triggerOptions": "Incapacitating, Stunning",
+    "triggerOptions":
+	{
+		"Incapacitating": 0,
+		"Stunning": 0
+	},
     "specialRules": "",
     "modLimit": 2,
     "cost": 200,
@@ -62,7 +69,10 @@
 		"Burst": 5,
 		"Concealed": 2
 	},
-    "triggerOptions": "Shredding (1)",
+    "triggerOptions":
+	{
+		"Shredding": 2
+	},
     "specialRules": "",
     "modLimit": 3,
     "cost": 250,
@@ -86,7 +96,10 @@
 		"Handling": 1,
 		"Concealed": 2
 	},
-    "triggerOptions": "Penetrating (2)",
+    "triggerOptions":
+	{
+		"Penetrating": 2
+	},
     "specialRules": "",
     "modLimit": 3,
     "cost": 300,
@@ -109,7 +122,11 @@
 	{
 		"Concealed": 2
 	},
-    "triggerOptions": "Lethal (5), Shredding (2)",
+    "triggerOptions":
+	{
+		"Lethal": 5,
+		"Shredding": 2
+	},
     "specialRules": "",
     "modLimit": 2,
     "cost": 250,
@@ -131,9 +148,14 @@
     "qualities":
 	{
 		"Concealed": 2,
-		"Loud": 1
+		"Loud": 0
 	},
-    "triggerOptions": "Lethal (5), Knocking, Penetrating (3)",
+    "triggerOptions":
+	{
+		"Lethal": 5,
+		"Penetrating": 3,
+		"Knocking": 0
+	},
     "specialRules": "Can be fired in one hand, but then it gains the improvised quality unless the wielder has 6 or more Strength.",
     "modLimit": 3,
     "cost": 350,
@@ -154,14 +176,18 @@
     "damageType": "Laser",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Handling": 2,
 		"Burst": 6,
-		"Compensated": 1,
-		"Indiscriminate": 1,
+		"Compensated": 0,
+		"Indiscriminate": 0,
 		"Concealed": 2
 	},
-    "triggerOptions": "Penetrating (5), Shredding (1)",
+    "triggerOptions":
+	{
+		"Penetrating": 5,
+		"Shredding": 2
+	},
     "specialRules": "",
     "modLimit": 3,
     "cost": 800,
@@ -186,8 +212,11 @@
 		"Full Auto": 18,
 		"Concealed": 2
 	},
-    "triggerOptions": "Penetrating (2)",
-    "specialRules": "Gains \"Compensated\" when used with two hands.",
+    "triggerOptions":
+	{
+		"Penetrating": 2
+	},
+    "specialRules": "",
     "modLimit": 3,
     "cost": 300,
     "ammoCost": 4,
@@ -210,8 +239,11 @@
 		"Burst": 5,
 		"Concealed": 3
 	},
-    "triggerOptions": "Lethal (3)",
-    "specialRules": "",
+    "triggerOptions":
+	{
+		"Lethal": 3
+	},
+    "specialRules": "Gains \"Compensated\" when used with two hands.",
     "modLimit": 4,
     "cost": 350,
     "ammoCost": 5,
@@ -234,7 +266,10 @@
 		"Handling": 2,
 		"Burst": 5
 	},
-    "triggerOptions": "Concussing",
+    "triggerOptions":
+	{
+		"Concussing": 0
+	},
     "specialRules": "",
     "modLimit": 4,
     "cost": 400,
@@ -255,10 +290,13 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Compensated": 1,
+		"Compensated": 0,
 		"Full Auto": 15
 	},
-    "triggerOptions": "Penetrating (3)",
+    "triggerOptions":
+	{
+		"Penetrating": 3
+	},
     "specialRules": "",
     "modLimit": 4,
     "cost": 450,
@@ -283,7 +321,10 @@
 		"Burst": 5,
 		"Full Auto": 15
 	},
-    "triggerOptions": "Lethal (4)",
+    "triggerOptions":
+	{
+		"Lethal": 4
+	},
     "specialRules": "",
     "modLimit": 5,
     "cost": 450,
@@ -304,10 +345,14 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Loud": 1, 
+		"Loud": 0, 
 		"Burst": 5
 	},
-    "triggerOptions": "Lethal (4), Penetrating (3)",
+    "triggerOptions":
+	{
+		"Lethal": 5,
+		"Penetrating": 3
+	},
     "specialRules": "",
     "modLimit": 6,
     "cost": 600,
@@ -328,14 +373,18 @@
     "damageType": "Laser",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Handling": 3,
 		"Burst": 10,
 		"Full Auto": 30,
-		"Compensated": 1,
-		"Indiscriminate": 1
+		"Compensated": 0,
+		"Indiscriminate": 0
 	},
-    "triggerOptions": "Penetrating (6), Shredding (1)",
+    "triggerOptions":
+	{
+		"Penetrating": 6,
+		"Shredding": 2
+	},
     "specialRules": "",
     "modLimit": 5,
     "cost": 1400,
@@ -356,9 +405,15 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Loud": 1
+		"Loud": 0
 	},
-    "triggerOptions": "Concussing, Lethal (8), Shredding (3), Knocking",
+    "triggerOptions":
+	{
+		"Concussing": 0,
+		"Lethal": 8,
+		"Shredding": 3,
+		"Knocking": 0
+	},
     "specialRules": "",
     "modLimit": 4,
     "cost": 400,
@@ -381,7 +436,12 @@
 	{
 		
 	},
-    "triggerOptions": "Lethal (5), Shredding (2), Knocking",
+    "triggerOptions":
+	{
+		"Lethal": 5,
+		"Shredding": 2,
+		"Knocking": 0
+	},
     "specialRules": "",
     "modLimit": 5,
     "cost": 450,
@@ -404,7 +464,12 @@
 	{
 		"Burst": 5
 	},
-    "triggerOptions": "Lethal (3), Shredding (2), Knocking",
+    "triggerOptions":
+	{
+		"Lethal": 3,
+		"Shredding": 2,
+		"Knocking": 0
+	},
     "specialRules": "",
     "modLimit": 4,
     "cost": 500,
@@ -427,7 +492,13 @@
 	{
 		"Handling": 1
 	},
-    "triggerOptions": "Incapacitating, Concussing, Stunning, Knocking",
+    "triggerOptions":
+	{
+		"Incapacitating": 0,
+		"Concussing": 0,
+		"Stunning": 0,
+		"Knocking": 0
+	},
     "specialRules": "",
     "modLimit": 4,
     "cost": 450,
@@ -450,7 +521,11 @@
 	{
 		"Handling": 1
 	},
-    "triggerOptions": "Penetrating (3), Lethal (3)",
+    "triggerOptions":
+	{
+		"Penetrating": 3,
+		"Lethal": 3
+	},
     "specialRules": "",
     "modLimit": 6,
     "cost": 800,
@@ -473,7 +548,11 @@
 	{
 		"Handling": 2
 	},
-    "triggerOptions": "Penetrating (4), Lethal (4)",
+    "triggerOptions":
+	{
+		"Penetrating": 4,
+		"Lethal": 4
+	},
     "specialRules": "",
     "modLimit": 5,
     "cost": 1000,
@@ -497,7 +576,12 @@
 		"Handling": 1,
 		"Destructive": 7
 	},
-    "triggerOptions": "Penetrating (6), Shredding (4), Lethal (4)",
+    "triggerOptions":
+	{
+		"Penetrating": 6,
+		"Shredding": 4,
+		"Lethal": 4
+	},
     "specialRules": "Every trigger spent on the weapon's options is automatically spent on all options at once.",
     "modLimit": 5,
     "cost": 1300,
@@ -520,7 +604,13 @@
 	{
 		"Burst": 4
 	},
-    "triggerOptions": "Shredding (5), Burning, Lethal (5), Plasmascorch",
+    "triggerOptions":
+	{
+		"Shredding": 5,
+		"Lethal": 5,
+		"Burning": 0,
+		"Plasmascorch": 0
+	},
     "specialRules": "",
     "modLimit": 5,
     "cost": 4000,
@@ -541,13 +631,19 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Loud": 1,
+		"Loud": 0,
 		"Burst": 8,
 		"Full Auto": 20,
-		"Compensated": 1,
-		"Improvised": 1
+		"Compensated": 0,
+		"Improvised": 0
 	},
-    "triggerOptions": "Penetrating (3), Shredding (2), Lethal (5), Concussing",
+    "triggerOptions":
+	{
+		"Penetrating": 3,
+		"Shredding": 2,
+		"Lethal": 5,
+		"Concussing": 0
+	},
     "specialRules": "Gains Handling (3) when used braced or prone - bracing the weapon requires 3 AP. In that case, it also loses Improvised.",
     "modLimit": 6,
     "cost": 700,
@@ -570,11 +666,15 @@
 	{
 		"Burst": 2,
 		"Full Auto": 4,
-		"Compensated": 1,
+		"Compensated": 0,
 		"Area": 1,
-		"Indiscriminate": 1
+		"Indiscriminate": 0
 	},
-    "triggerOptions": "Burning, Penetrating (5)",
+    "triggerOptions":
+	{
+		"Burning": 0,
+		"Penetrating": 5
+	},
     "specialRules": "When using  Full Auto, the attacks have to happen against different targets / squares that must not be further away than 3 squares from each other.",
     "modLimit": 2,
     "cost": 600,
@@ -595,12 +695,19 @@
     "damageType": "Explosive",
     "qualities": 
 	{
-		"Loud": 1,
+		"Loud": 0,
 		"Area": 2,
-		"Indiscriminate": 1,
+		"Indiscriminate": 0,
 		"Destructive": 6
 	},
-    "triggerOptions": "Penetrating (3), Shredding (2), Lethal (3), Concussing, Stunning",
+    "triggerOptions":
+	{
+		"Penetrating": 3,
+		"Shredding": 2,
+		"Lethal": 3,
+		"Concussing": 0,
+		"Stunning": 0
+	},
     "specialRules": "Can be loaded with non-lethal grenades, which reduces the damage to 4, and removes the Penetrating, Shredding and Lethal options, while increasing the Area quality to 3 and adding the Incapacitating trigger options",
     "modLimit": 2,
     "cost": 550,
@@ -621,13 +728,18 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Loud": 1,
+		"Loud": 0,
 		"Burst": 10,
 		"Full Auto": 30,
-		"Compensated": 1,
-		"Improvised": 1
+		"Compensated": 0,
+		"Improvised": 0
 	},
-    "triggerOptions": "Penetrating (3), Shredding (4), Lethal (5)",
+    "triggerOptions":
+	{
+		"Penetrating": 3,
+		"Shredding": 4,
+		"Lethal": 5
+	},
     "specialRules": "Characters with 6 Strength or more ignore Improvised.",
     "modLimit": 4,
     "cost": 900,
@@ -649,9 +761,15 @@
     "qualities":
 	{
 		"Area": 4,
-		"Indiscriminate": 1
+		"Indiscriminate": 0
 	},
-    "triggerOptions": "Shredding (5), Burning, Lethal (5), Plasmascorch",
+    "triggerOptions":
+	{
+		"Shredding": 5,
+		"Lethal": 5,
+		"Burning": 0,
+		"Plasmascorch": 0
+	},
     "specialRules": "",
     "modLimit": 2,
     "cost": 5000,
@@ -672,13 +790,20 @@
     "damageType": "Explosive",
     "qualities":
 	{
-		"Loud": 1,
+		"Loud": 0,
 		"Handling": 4,
 		"Area": 3,
-		"Indiscriminate": 1,
+		"Indiscriminate": 0,
 		"Destructive": 8
 	},
-    "triggerOptions": "Penetrating (3), Shredding (4), Lethal (5), Concussing, Stunning",
+    "triggerOptions":
+	{
+		"Penetrating": 3,
+		"Shredding": 4,
+		"Lethal": 5,
+		"Concussing": 0,
+		"Stunning": 0
+	},
     "specialRules": "",
     "modLimit": 2,
     "cost": 900,
@@ -700,12 +825,16 @@
     "qualities":
 	{
 		"Concealed": 2,
-		"Loud": 1,
+		"Loud": 0,
 		"Handling": 2,
 		"Area": 3,
-		"Indiscriminate": 1
+		"Indiscriminate": 0
 	},
-    "triggerOptions": "Concussing, Stunning",
+    "triggerOptions":
+	{
+		"Concussing": 0,
+		"Stunning": 0
+	},
     "specialRules": "",
     "modLimit": 0,
     "cost": 40,
@@ -727,11 +856,14 @@
     "qualities":
 	{
 		"Concealed": 2,
-		"Loud": 1,
+		"Loud": 0,
 		"Area": 2,
-		"Indiscriminate": 1
+		"Indiscriminate": 0
 	},
-    "triggerOptions": "Lethal (4)",
+    "triggerOptions":
+	{
+		"Lethal": 4
+	},
     "specialRules": "",
     "modLimit": 0,
     "cost": 80,
@@ -752,11 +884,15 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Concealed": 1
 	},
-    "triggerOptions": "Lethal (2)",
-    "specialRules": "",
+    "triggerOptions":
+	{
+		"Lethal": 2,
+		"Murderous": 0
+	},
+    "specialRules": "Adds Heft to the damage like a melee weapon would.",
     "modLimit": 0,
     "cost": 40,
     "ammoCost": 0,
@@ -776,10 +912,15 @@
     "damageType": "Physical",
     "qualities": 
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Handling": 1
 	},
-    "triggerOptions": "Knocking, Incapacitating, Penetrating (1)",
+    "triggerOptions":
+	{
+		"Knocking": 0,
+		"Incapacitating": 0,
+		"Penetrating": 2
+	},
     "specialRules": "Cannot perform a Parry against real melee weapons.",
     "modLimit": 0,
     "cost": "Free!",
@@ -800,10 +941,14 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Concealed": 1
 	},
-    "triggerOptions": "Lethal (2)",
+    "triggerOptions":
+	{
+		"Lethal": 2,
+		"Murderous": 0
+	},
     "specialRules": "",
     "modLimit": 0,
     "cost": 50,
@@ -824,10 +969,15 @@
     "damageType": "Physical",
     "qualities": 
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Concealed": 1
 	},
-    "triggerOptions": "Stunning, Incapacitating, Knocking",
+    "triggerOptions":
+	{
+		"Stunning": 0,
+		"Incapacitating": 0,
+		"Knocking": 0
+	},
     "specialRules": "Cannot do a parry against real melee weapons.",
     "modLimit": 0,
     "cost": 50,
@@ -848,10 +998,14 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Concealed": 2
 	},
-    "triggerOptions": "Concussing, Incapacitating",
+    "triggerOptions":
+	{
+		"Concussing": 0,
+		"Incapacitating": 0
+	},
     "specialRules": "",
     "modLimit": 0,
     "cost": 40,
@@ -872,10 +1026,14 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Handling": 1
 	},
-    "triggerOptions": "Lethal (2), Concussing",
+    "triggerOptions":
+	{
+		"Lethal": 2,
+		"Concussing": 0
+	},
     "specialRules": "",
     "modLimit": 0,
     "cost": 40,
@@ -896,10 +1054,14 @@
     "damageType": "Electrical",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Handling": 3
 	},
-    "triggerOptions": "Incapacitating, Stunning",
+    "triggerOptions":
+	{
+		"Incapacitating": 0,
+		"Stunning": 0
+	},
     "specialRules": "",
     "modLimit": 0,
     "cost": 80,
@@ -920,10 +1082,13 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Defensive (Melee)": 1
 	},
-    "triggerOptions": "Lethal (4)",
+    "triggerOptions":
+	{
+		"Lethal": 4
+	},
     "specialRules": "",
     "modLimit": 0,
     "cost": 150,
@@ -944,10 +1109,13 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Defensive (Melee)": 1
 	},
-    "triggerOptions": "Lethal (4)",
+    "triggerOptions":
+	{
+		"Lethal": 4
+	},
     "specialRules": "Can be wielded in one hand, but then it gains the Improvised quality.",
     "modLimit": 0,
     "cost": 250,
@@ -970,7 +1138,13 @@
 	{
 		"Defensive (Melee)": 1
 	},
-    "triggerOptions": "Penetrating (3), Lethal (5), Shredding (3), Plasmascorch",
+    "triggerOptions":
+	{
+		"Penetrating": 3,
+		"Lethal": 5,
+		"Shredding": 3,
+		"Plasmascorch": 0
+	},
     "specialRules": "Requires a Plasma cell that allows the blade to be active for a total of 10 rounds (turning the Blade on and off is near-instantaneous). Replacing the cell costs 40 Credits.",
     "modLimit": 0,
     "cost": 4500,
@@ -991,11 +1165,15 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Silenced": 1,
+		"Silenced": 0,
 		"Defensive (Melee)": 1,
-		"Throwable (2-8 | 15)": 1
+		"Throwable (2-8 | 15)": 0
 	},
-    "triggerOptions": "Penetrating (2), Lethal (2)",
+    "triggerOptions":
+	{
+		"Penetrating": 2,
+		"Lethal": 2
+	},
     "specialRules": "Only applies Heft as if this weapon was 1-handed.",
     "modLimit": 0,
     "cost": 200,
@@ -1016,9 +1194,15 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Improvised": 1
+		"Improvised": 0
 	},
-    "triggerOptions": "Penetrating (3), Lethal (2), Concussing, Knocking",
+    "triggerOptions":
+	{
+		"Penetrating": 3,
+		"Lethal": 2,
+		"Concussing": 0,
+		"Knocking": 0
+	},
     "specialRules": "Characters with 6 Strength or more ignore Improvised.",
     "modLimit": 0,
     "cost": 225,
@@ -1039,9 +1223,12 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Silenced": 1
+		"Silenced": 0
 	},
-    "triggerOptions": "Lethal (5)",
+    "triggerOptions":
+	{
+		"Lethal": 5
+	},
     "specialRules": "",
     "modLimit": 0,
     "cost": 250,
@@ -1064,7 +1251,10 @@
 	{
 		"Defensive": 1
 	},
-    "triggerOptions": "Concussing",
+    "triggerOptions":
+	{
+		"Concussing": 0
+	},
     "specialRules": "",
     "modLimit": 0,
     "cost": 120,
@@ -1088,7 +1278,11 @@
 		"Defensive": 2,
 		"Speed": -2
 	},
-    "triggerOptions": "Stunning, Incapacitating",
+    "triggerOptions":
+	{
+		"Stunning": 0,
+		"Incapacitating": 0
+	},
     "specialRules": "Adds +1 difficulty to all attacks made due to limited vision.",
     "modLimit": 0,
     "cost": 250,

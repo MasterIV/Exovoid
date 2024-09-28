@@ -217,7 +217,7 @@
   },
   {
     "talent": "Embracing Chaos",
-    "description": "If you get affected by the damage of your own heavy weapons or grenades, you only take half the damage (round up) before applying it to your soak, armor and health.",
+    "description": "You may perform a new reaction during combat: If you get affected by a weapon with the Area quality, you may spend 2 AP to halve the damage before applying it to your armor and health.",
     "representation": 1
   },
   {
@@ -404,7 +404,7 @@
   },
   {
     "talent": "Martial Artist",
-    "description": "Treat your unarmed attacks like a 2-handed weapon (concerning Heft). Additionally, you can parry real weapons even while being unarmed.",
+    "description": "Treat your unarmed attacks like a 2-handed weapon (concerning Heft) and add the Murderous trigger option. Additionally, you can parry real weapons even while being unarmed.",
     "representation": 3
   },
   {
@@ -585,7 +585,7 @@
   },
   {
     "talent": "Riposte",
-    "description": "When you perform the Parry action, you may spend surplus triggers (after the 2 needed to trigger the counter attack) as usual to activate talents or your weapon's trigger options.",
+    "description": "When you perform the Parry action, you only require one Trigger to perform the counter attack, and you may spend surplus triggers (after the needed Trigger for the counter attack) as usual to activate talents or your weapon's trigger options.",
     "representation": 2
   },
   {
@@ -651,7 +651,8 @@
   {
     "talent": "Sprinter",
     "description": "You passively gain +3 speed.",
-    "representation": 2
+    "representation": 2,
+	"modifier": {"speed":  3}
   },
   {
     "talent": "Spy",
