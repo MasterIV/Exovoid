@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useMemo, useState} from "react";
 import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
     Autocomplete,
+    Chip,
     Grid,
     Stack,
     Table,
@@ -15,16 +16,12 @@ import {
     Typography
 } from "@mui/material";
 import {Btn, Dropdown} from "./Form";
-import weapons from '../data/weapons.json';
 import weaponsMods from '../data/weapon-mods.json';
 import {CharacterWeapon} from "../types/character";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Value from "./Value";
-import {WeaponType} from "../types/weapon";
 import {calculateWeaponActions, CombatAction} from "../logic/calculateCombatActions";
-
-const weaponMap: Record<string, WeaponType> = {};
-weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
+import {applyWeaponMods} from "../logic/applyMods";
 
 interface WeaponProps extends CharacterWeapon {
     onRemove: () => void;
@@ -34,8 +31,17 @@ interface WeaponProps extends CharacterWeapon {
     talents: string[];
 }
 
+function createChips(data: Record<string, number | undefined>) {
+    return <Stack direction="row" spacing={1} marginX={1} display={"inline-block"}>
+        {Object.entries(data).map(q => {
+            const label = Number(q[1]) > 0 ? `${q[0]}: ${q[1]}` : q[0];
+            return <Chip size="small" label={label} />;
+        })}
+    </Stack>
+}
+
 export default React.memo(function Weapon({locked,  onChange, onRemove, onAction, talents, ...weapon}: WeaponProps) {
-    const details = weaponMap[weapon.type];
+    const details = useMemo(() => applyWeaponMods(weapon), [weapon.type, weapon.mods]);
     const actions = calculateWeaponActions(details, talents);
 
     const [action, setAction] = useState(Object.keys(actions)[0]);
@@ -66,37 +72,39 @@ export default React.memo(function Weapon({locked,  onChange, onRemove, onAction
                 <Grid item><Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell>Hands</TableCell>
+                            <TableCell>Damage</TableCell>
+                            <TableCell>Speed</TableCell>
+                            <TableCell>Range</TableCell>
                             <TableCell>Magazine</TableCell>
                             <TableCell>Reload</TableCell>
-                            <TableCell>Speed</TableCell>
-                            <TableCell>Damage</TableCell>
                             <TableCell>Type</TableCell>
-                            <TableCell>Range</TableCell>
+                            <TableCell>Hands</TableCell>
+                            <TableCell>Mods</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         <TableRow>
-                            <TableCell>{details.hands}</TableCell>
+                            <TableCell>{details.damage}</TableCell>
+                            <TableCell>{details.speed}</TableCell>
+                            <TableCell>{details.range}</TableCell>
                             <TableCell>{details.magazine}</TableCell>
                             <TableCell>{details.reload}</TableCell>
-                            <TableCell>{details.speed}</TableCell>
-                            <TableCell>{details.damage}</TableCell>
                             <TableCell>{details.damageType}</TableCell>
-                            <TableCell>{details.range}</TableCell>
+                            <TableCell>{details.hands}</TableCell>
+                            <TableCell>{details.modLimit}</TableCell>
                         </TableRow>
 
-                        <TableRow><TableCell colSpan={7}>
+                        <TableRow><TableCell colSpan={8}>
                             <strong>Qualities: </strong>
-                            {Object.entries(details.qualities).map(q => Number(q[1]) > 0 ? `${q[0]}: ${q[1]}` : q[0]).join(", ")}
+                            {createChips(details.qualities)}
                         </TableCell></TableRow>
 
-                        <TableRow><TableCell colSpan={7}>
+                        <TableRow><TableCell colSpan={8}>
                             <strong>Trigger Options: </strong>
-                            {Object.entries(details.triggerOptions).map(q => Number(q[1]) > 0 ? `${q[0]}: ${q[1]}` : q[0]).join(", ")}
+                            {createChips(details.triggerOptions)}
                         </TableCell></TableRow>
 
-                        {details.specialRules && <TableRow><TableCell colSpan={7}>
+                        {details.specialRules && <TableRow><TableCell colSpan={8}>
                             <strong>Special Rules:</strong> {details.specialRules}
                         </TableCell></TableRow>}
                     </TableBody>

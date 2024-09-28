@@ -67,7 +67,7 @@ export default React.memo(function Career({name, description, equipment, skills,
             <Typography variant="h6">Description:</Typography>
             <Typography>{description}</Typography>
         </Grid><Grid xs={4} item>
-            <Typography variant="h6">Starting Equip:</Typography>
+            <Typography variant="h6">Starting Gear:</Typography>
             <ul>{equipment.map(e => <li key={e}>{e}</li>)}</ul>
         </Grid><Grid xs={3} item>
             <Typography variant="h6">Starting Skills:</Typography>

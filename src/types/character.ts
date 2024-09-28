@@ -41,6 +41,13 @@ export interface CharacterCyberMalfunction {
     slots: boolean[];
 }
 
+export interface CharacterArmor {
+    id: string;
+    type: string;
+    mods: string[];
+    expanded?: boolean;
+}
+
 export default interface CharacterType {
     id: string,
     name: string;
@@ -58,6 +65,7 @@ export default interface CharacterType {
     classes: string[];
     talents: string[];
     weapons: CharacterWeapon[];
+    armor: CharacterArmor[];
     injuries: string[];
     cyberware: CharacterCyberWare[];
     malfunctions: Record<string, CharacterCyberMalfunction>;

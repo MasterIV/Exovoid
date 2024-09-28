@@ -5,6 +5,7 @@ import Weapon from "../components/Weapon";
 import {Btn, Dropdown} from "../components/Form";
 import Collection from "../components/Collection";
 import weapons from '../data/weapons.json';
+import armors from '../data/armors.json';
 import * as uuid from 'uuid';
 import Value from "../components/Value";
 import calculateHealth from "../logic/calculateHealth";
@@ -17,6 +18,7 @@ import {calculateCombatActions, CombatAction} from "../logic/calculateCombatActi
 import {attributeAverage} from "../logic/calculatePool";
 import {InitiativeContext} from "../provider/InitiativeProvider";
 import {WeaponType} from "../types/weapon";
+import {Armor} from "../components/Armor";
 
 const weaponMap: Record<string, WeaponType> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
@@ -32,6 +34,7 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
     const actions = calculateCombatActions(stats);
     const [data,setData] = useState({
         weapon: weapons[0].weapon,
+        armor: armors[0].type,
         action: Object.keys(actions)[0],
     })
 
@@ -46,6 +49,13 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
         type: data.weapon,
         mods: [],
         ammo: {loaded: 0, reserve: 0}
+    }]);
+
+    const changeArmor = useCallback((data: any) => onChange('armor', data), [onChange]);
+    const addArmor = ()  => onChange('armor', [...stats.armor, {
+        id: uuid.v4(),
+        type: data.armor,
+        mods: [],
     }]);
 
     const performAction = (action: CombatAction, weapon: CharacterWeapon | null = null) => {
@@ -121,6 +131,23 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
                         onChange={changeData}
                         options={weapons.map(w => ({id: w.weapon, name: w.weapon}))} /></Grid>
                     <Grid item xs={4}><Btn fullWidth size="large" onClick={addWeapon}>Add Weapon</Btn></Grid>
+                </Grid>
+
+                <Collection
+                    locked={locked}
+                    values={stats.armor}
+                    onChange={changeArmor}
+                    component={Armor} />
+
+                <Grid container direction="row" spacing={2} alignItems="center" marginY={1}>
+                    <Grid item xs={8}><Dropdown
+                        id="add-armor"
+                        label="Armor Type"
+                        name="armor"
+                        values={data}
+                        onChange={changeData}
+                        options={armors.map(a => ({id: a.type, name: a.name}))} /></Grid>
+                    <Grid item xs={4}><Btn fullWidth size="large" onClick={addArmor}>Add Armor</Btn></Grid>
                 </Grid>
 
         </Grid>

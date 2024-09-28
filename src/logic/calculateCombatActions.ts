@@ -12,7 +12,7 @@ export interface CombatAction {
 }
 
 export function calculateWeaponActions(weapon: WeaponType, talents: string[] = [])  {
-    const modifier = Number(weapon.qualities['Handling'])|0;
+    const modifier = Number(weapon.qualities['Handling']) || 0;
     const ammo = weapon.skill === "Melee" ? 0 : 1;
     const actions: Record<string, CombatAction> = {attack: {id: "attack", ammo, name: "Attack", ap: weapon.speed, skill: weapon.skill, modifier}};
 
@@ -46,19 +46,19 @@ export function calculateWeaponActions(weapon: WeaponType, talents: string[] = [
 
     if(weapon.qualities["Burst"]) {
         const penalty = weapon.qualities['Compensated'] ? 1 : 2;
-        actions.burst = {id: "burst", name: "Fire Burst", ap: weapon.speed, skill: weapon.skill, modifier: modifier-penalty, ammo: ammo+weapon.qualities["Burst"]};
+        actions.burst = {id: "burst", name: "Fire Burst", ap: weapon.speed, skill: weapon.skill, modifier: modifier-penalty, ammo: weapon.qualities["Burst"]};
 
         if(talents.includes("Dual Wield")) {
-            actions["dual-burst"] = {id: "dual-burst", name: "Dual Wield Burst", ap: Math.floor(weapon.speed/2), skill: weapon.skill, modifier: modifier-penalty, ammo: ammo+weapon.qualities["Burst"]};
+            actions["dual-burst"] = {id: "dual-burst", name: "Dual Wield Burst", ap: Math.floor(weapon.speed/2), skill: weapon.skill, modifier: modifier-penalty, ammo: weapon.qualities["Burst"]};
         }
     }
 
     if(weapon.qualities["Full Auto"]) {
         const penalty = weapon.qualities['Compensated'] ? 2 : 4;
-        actions['auto-main'] = {id: "auto-main", name: "Full Auto Main Attack", ap: weapon.speed*2, skill: weapon.skill, modifier: modifier-penalty, ammo: ammo+weapon.qualities["Full Auto"]};
+        actions['auto-main'] = {id: "auto-main", name: "Full Auto Main Attack", ap: weapon.speed*2, skill: weapon.skill, modifier: modifier-penalty, ammo: weapon.qualities["Full Auto"]};
 
         if(talents.includes("Dual Wield")) {
-            actions['dual-auto-main'] = {id: "dual-auto-main", name: "Dual Wield Full Auto Main Attack", ap: Math.floor(weapon.speed/2)*2, skill: weapon.skill, modifier: modifier-penalty, ammo: ammo+weapon.qualities["Full Auto"]};
+            actions['dual-auto-main'] = {id: "dual-auto-main", name: "Dual Wield Full Auto Main Attack", ap: Math.floor(weapon.speed/2)*2, skill: weapon.skill, modifier: modifier-penalty, ammo: weapon.qualities["Full Auto"]};
         }
 
         actions['auto-up'] = {id: "auto-up", name: "Full Auto Follow Up", ap: 0, skill: weapon.skill, modifier: modifier-penalty};

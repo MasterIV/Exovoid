@@ -2,8 +2,10 @@
 
 Next Tasks:
 
-- weapon actions
-- generic combat actions
+- armor
+- Talents
+  - recoil control
+  - danger sense
 - lore
   - biocompatibility
   - advanced tech
