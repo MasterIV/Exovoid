@@ -61,7 +61,7 @@
   },
   {
     "talent": "Breath In, Exhale, Fire",
-    "description": "If you can see your target, you can perform this action by spending 3 AP to gain a free success, trigger or complication on your next shot against them.\nIf you perform any other action in the meantime, the benefit is lost.",
+    "description": "If you can see your target, you can perform this action by spending 3 AP to gain a free success, trigger or complication on your next shot against them. If you perform any other action in the meantime, the benefit is lost.",
     "representation": 2
   },
   {

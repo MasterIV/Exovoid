@@ -106,6 +106,7 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
 
                 <Collection
                     locked={locked}
+                    talents={stats.talents}
                     values={characterWeapons}
                     onChange={changeWeapons}
                     onAction={performAction}

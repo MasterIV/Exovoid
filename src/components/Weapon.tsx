@@ -31,11 +31,12 @@ interface WeaponProps extends CharacterWeapon {
     onChange: (name: string, value: any) => void;
     onAction: (action: CombatAction, weapon: CharacterWeapon | null) => void;
     locked?: boolean;
+    talents: string[];
 }
 
-export default React.memo(function Weapon({locked,  onChange, onRemove, onAction, ...weapon}: WeaponProps) {
+export default React.memo(function Weapon({locked,  onChange, onRemove, onAction, talents, ...weapon}: WeaponProps) {
     const details = weaponMap[weapon.type];
-    const actions = calculateWeaponActions(details);
+    const actions = calculateWeaponActions(details, talents);
 
     const [action, setAction] = useState(Object.keys(actions)[0]);
     const changeData = (name: string, value: string) => setAction(value);
