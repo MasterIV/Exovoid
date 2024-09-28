@@ -13,8 +13,8 @@ export interface WeaponType {
     range: string;
     damageType: string;
     specialRules: string;
-    triggerOptions: Record<string, number>;
-    qualities: Record<string, number>;
+    triggerOptions: Record<string, number | undefined>;
+    qualities: Record<string, number | undefined>;
 
     modLimit: number;
     cost: number;

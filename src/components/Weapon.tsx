@@ -88,12 +88,12 @@ export default React.memo(function Weapon({locked,  onChange, onRemove, onAction
 
                         <TableRow><TableCell colSpan={7}>
                             <strong>Qualities: </strong>
-                            {Object.entries(details.qualities).map(q => Number(q[1]) > 1 ? `${q[0]}(${q[1]})` : q[0]).join(", ")}
+                            {Object.entries(details.qualities).map(q => Number(q[1]) > 0 ? `${q[0]}: ${q[1]}` : q[0]).join(", ")}
                         </TableCell></TableRow>
 
                         <TableRow><TableCell colSpan={7}>
                             <strong>Trigger Options: </strong>
-                            {details.triggerOptions}
+                            {Object.entries(details.triggerOptions).map(q => Number(q[1]) > 0 ? `${q[0]}: ${q[1]}` : q[0]).join(", ")}
                         </TableCell></TableRow>
 
                         {details.specialRules && <TableRow><TableCell colSpan={7}>

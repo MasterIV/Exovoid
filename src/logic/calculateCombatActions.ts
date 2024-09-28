@@ -12,7 +12,7 @@ export interface CombatAction {
 }
 
 export function calculateWeaponActions(weapon: WeaponType, talents: string[] = [])  {
-    const modifier = weapon.qualities['Handling']|0;
+    const modifier = Number(weapon.qualities['Handling'])|0;
     const ammo = weapon.skill === "Melee" ? 0 : 1;
     const actions: Record<string, CombatAction> = {attack: {id: "attack", ammo, name: "Attack", ap: weapon.speed, skill: weapon.skill, modifier}};
 
