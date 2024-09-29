@@ -41,7 +41,7 @@ export function Armor({type, mods, locked, expanded, onChange, onRemove}: ArmorP
         </AccordionSummary>
 
         <AccordionDetails>
-            <Autocomplete multiple
+            <Autocomplete multiple disableClearable
                           value={mods}
                           onChange={(e, v) => onChange('mods', v)}
                           renderInput={(params) => <TextField {...params} label="Mods"/>}

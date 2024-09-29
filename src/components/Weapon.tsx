@@ -119,7 +119,7 @@ export default React.memo(function Weapon({locked,  onChange, onRemove, onAction
                 </Table></Grid>
                 
                 <Grid item>
-                    <Autocomplete multiple
+                    <Autocomplete multiple disableClearable
                                   value={weapon.mods}
                                   onChange={(e, v) =>  onChange('mods', v)}
                                   renderInput={(params) => <TextField {...params}  label="Mods" />}
