@@ -2,7 +2,6 @@
 
 Next Tasks:
 
-- armor
 - Talents
   - recoil control
   - danger sense

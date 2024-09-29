@@ -23,6 +23,9 @@ import Value from "./Value";
 import {calculateWeaponActions, CombatAction} from "../logic/calculateCombatActions";
 import {applyWeaponMods} from "../logic/applyMods";
 
+const modMap: Record<string, typeof weaponsMods[0]> = {};
+weaponsMods.forEach(mod => modMap[mod.name] = mod);
+
 interface WeaponProps extends CharacterWeapon {
     onRemove: () => void;
     onChange: (name: string, value: any) => void;
@@ -55,6 +58,11 @@ export default React.memo(function Weapon({locked,  onChange, onRemove, onAction
         if(window.confirm("Remove Weapon?"))
             onRemove();
     }
+
+    const filledSlots = weapon.mods.map(m => modMap[m].slot);
+    const availableMods = weaponsMods
+        .filter(m => !filledSlots.includes(m.slot))
+        .filter(m => m.compatible.includes(details.type));
 
     return <Accordion  expanded={Boolean(weapon.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
@@ -115,7 +123,7 @@ export default React.memo(function Weapon({locked,  onChange, onRemove, onAction
                                   value={weapon.mods}
                                   onChange={(e, v) =>  onChange('mods', v)}
                                   renderInput={(params) => <TextField {...params}  label="Mods" />}
-                                  options={weaponsMods.map(m => m.name)} />
+                                  options={availableMods.map(m => m.name)} />
                 </Grid>
 
                 <Grid item container spacing={2} alignItems="center" justifyContent="right">
