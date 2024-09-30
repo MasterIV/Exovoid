@@ -19,9 +19,13 @@ import {attributeAverage} from "../logic/calculatePool";
 import {InitiativeContext} from "../provider/InitiativeProvider";
 import {WeaponType} from "../types/weapon";
 import {Armor} from "../components/Armor";
+import calculateHeft from "../logic/calculateHeft";
 
 const weaponMap: Record<string, WeaponType> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
+
+const armorMap: Record<string, typeof armors[0]> = {};
+armors.forEach(w => armorMap[w.type] = w);
 
 interface CombatPageProps {
     onChange: (name: string, value: any) => void;
@@ -55,6 +59,7 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
     const addArmor = ()  => onChange('armor', [...stats.armor, {
         id: uuid.v4(),
         type: data.armor,
+        durability: armorMap[data.armor].durability,
         mods: [],
     }]);
 
@@ -115,6 +120,7 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
         <Grid item xs={6}>
 
                 <Collection
+                    heft={calculateHeft(stats)}
                     locked={locked}
                     talents={stats.talents}
                     values={characterWeapons}
@@ -129,7 +135,7 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
                         name="weapon"
                         values={data}
                         onChange={changeData}
-                        options={weapons.map(w => ({id: w.weapon, name: w.weapon}))} /></Grid>
+                        options={weapons.map(w => ({id: w.weapon, name: `${w.name} (${w.weapon})`}))} /></Grid>
                     <Grid item xs={4}><Btn fullWidth size="large" onClick={addWeapon}>Add Weapon</Btn></Grid>
                 </Grid>
 
@@ -146,7 +152,7 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
                         name="armor"
                         values={data}
                         onChange={changeData}
-                        options={armors.map(a => ({id: a.type, name: a.name}))} /></Grid>
+                        options={armors.map(a => ({id: a.type, name: `${a.name} (${a.type})`}))} /></Grid>
                     <Grid item xs={4}><Btn fullWidth size="large" onClick={addArmor}>Add Armor</Btn></Grid>
                 </Grid>
 

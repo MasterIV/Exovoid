@@ -13,20 +13,21 @@ import {
 } from "@mui/material";
 import {Btn} from "./Form";
 import armors from '../data/armors.json';
-import {CharacterWeapon} from "../types/character";
+import {CharacterArmor} from "../types/character";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Value from "./Value";
 
 const armorMap: Record<string, any> = {};
 armors.forEach(a => armorMap[a.type] = a);
 
-interface ArmorProps extends CharacterWeapon {
+interface ArmorProps extends CharacterArmor {
     onRemove: () => void;
     onChange: (name: string, value: any) => void;
     locked?: boolean;
 }
 
-export function Armor({type, mods, locked, expanded, onChange, onRemove}: ArmorProps) {
-    const details = armorMap[type];
+export function Armor({locked, expanded, onChange, onRemove, ...armor}: ArmorProps) {
+    const details = armorMap[armor.type];
 
     const removeArmor = (e: any) => {
         e.stopPropagation();
@@ -42,7 +43,7 @@ export function Armor({type, mods, locked, expanded, onChange, onRemove}: ArmorP
 
         <AccordionDetails>
             <Autocomplete multiple disableClearable
-                          value={mods}
+                          value={armor.mods}
                           onChange={(e, v) => onChange('mods', v)}
                           renderInput={(params) => <TextField {...params} label="Mods"/>}
                           options={details.moddingOptions}/>
@@ -50,7 +51,7 @@ export function Armor({type, mods, locked, expanded, onChange, onRemove}: ArmorP
             <Table style={{}}>
                 <TableBody>
                     <TableRow>
-                        <TableCell>Durability: {details.durability}</TableCell>
+                        <TableCell><Value label="Durability" mask={`/ ${details.durability}`} name="durability" value={armor.durability} onChange={onChange} /></TableCell>
                         <TableCell>Soak: {details.primarySoak} / {details.secondarySoak}</TableCell>
                         <TableCell>Mod Limit: {details.modLimit}</TableCell>
                     </TableRow>

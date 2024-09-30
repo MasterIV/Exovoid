@@ -2,8 +2,10 @@
 
 Next Tasks:
 
+- mods
+  - special rules
+  - dual scope
 - Talents
-  - recoil control
   - danger sense
 - lore
   - biocompatibility
@@ -11,13 +13,7 @@ Next Tasks:
 
 Overall:
 
- - combat
-   - initiative bar
-   - weapons (use/reload)
-   - armors
-   - injuries
  - networking
-   - syncing life and ap
    - logout
  - gm modes
    - generate npc

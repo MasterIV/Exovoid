@@ -32,6 +32,7 @@ interface WeaponProps extends CharacterWeapon {
     onAction: (action: CombatAction, weapon: CharacterWeapon | null) => void;
     locked?: boolean;
     talents: string[];
+    heft: number;
 }
 
 function createChips(data: Record<string, number | undefined>) {
@@ -43,7 +44,7 @@ function createChips(data: Record<string, number | undefined>) {
     </Stack>
 }
 
-export default React.memo(function Weapon({locked,  onChange, onRemove, onAction, talents, ...weapon}: WeaponProps) {
+export default React.memo(function Weapon({locked, heft, onChange, onRemove, onAction, talents, ...weapon}: WeaponProps) {
     const details = useMemo(() => applyWeaponMods(weapon), [weapon.type, weapon.mods]);
     const actions = calculateWeaponActions(details, talents);
 
@@ -64,9 +65,13 @@ export default React.memo(function Weapon({locked,  onChange, onRemove, onAction
         .filter(m => !filledSlots.includes(m.slot))
         .filter(m => m.compatible.includes(details.type));
 
+    let damage = details.damage;
+    if(details.skill === "Melee")
+        damage += details.hands * heft;
+
     return <Accordion  expanded={Boolean(weapon.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-            <Typography variant="h6" marginRight={2}>{weapon.type} ({details.type})</Typography>
+            <Typography variant="h6" marginRight={2}>{details.name} ({details.weapon})</Typography>
             <Btn size="small" color={"error"} disabled={locked} onClick={removeWeapon}>Remove</Btn>
         </AccordionSummary>
 
@@ -92,7 +97,7 @@ export default React.memo(function Weapon({locked,  onChange, onRemove, onAction
                     </TableHead>
                     <TableBody>
                         <TableRow>
-                            <TableCell>{details.damage}</TableCell>
+                            <TableCell>{damage}</TableCell>
                             <TableCell>{details.speed}</TableCell>
                             <TableCell>{details.range}</TableCell>
                             <TableCell>{details.magazine}</TableCell>
