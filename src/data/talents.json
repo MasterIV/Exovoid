@@ -569,7 +569,7 @@
   },
   {
     "talent": "Recoil Control",
-    "description": "You are always considered to have the \"Compensated\" quality. If the weapon already provides it, reduce the pool penalty by 1 additional point.",
+    "description": "When shooting in Burst or Full Auto mode, you require 40% less ammo (round up).",
     "representation": 2
   },
   {

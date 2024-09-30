@@ -1158,11 +1158,11 @@
 	"type": "Blade",
     "weapon": "Spear",
     "name": "Guardsteel Battle Spear",
-    "hands": 2,
+    "hands": 1,
     "magazine": 0,
     "reload": 0,
     "speed": 4,
-    "damage": 7,
+    "damage": 6,
     "damageType": "Physical",
     "qualities":
 	{
@@ -1175,7 +1175,7 @@
 		"Penetrating": 2,
 		"Lethal": 2
 	},
-    "specialRules": "Only applies Heft as if this weapon was 1-handed.",
+    "specialRules": "Can be wielded in two hands, providing Handling (2). Heft remains that of a one-handed weapon.",
     "modLimit": 0,
     "cost": 200,
     "ammoCost": 0,
