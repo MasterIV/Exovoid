@@ -2,7 +2,7 @@
   "id": "1",
   "name": "John Doe",
   "table": "test",
-  "attributes": {"INT":3, "STR":3, "COO":3, "CON":3, "AGI":3, "EDU":3, "PER":3},
+  "attributes": {"INT":0, "STR":0, "COO":0, "CON":0, "AGI":0, "EDU":0, "PER":0},
   "skills": {},
   "currentEdge": 0,
   "currentHealth": 0,
