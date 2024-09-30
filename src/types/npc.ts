@@ -6,6 +6,7 @@ export interface NpcActionType {
     aptitude: number;
     expertise: number;
     ap: number;
+    note?: string;
 }
 
 

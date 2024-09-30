@@ -87,6 +87,10 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
                 </Grid>
 
                 <Grid item>
+                    <TextInput name={"notes"} values={props} onChange={onChange} multiline />
+                </Grid>
+
+                <Grid item>
                         <Table>
                             <TableHead>
                                 <TableRow>
