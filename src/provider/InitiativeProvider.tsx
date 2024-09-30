@@ -71,6 +71,11 @@ export default function InitiativeProvider({ children, stats }: InitiativeProvid
     useEffect(() => {
         socket.on('combatant', data => setCombatants(old => ({...old, [data.id]: data})));
         socket.on('reset', () => setCombatants({}));
+        socket.on('remove', (id) => setCombatants(old => {
+            const updated = {...old};
+            delete updated[id];
+            return updated;
+        }));
     }, []);
 
     // check that health is in sync

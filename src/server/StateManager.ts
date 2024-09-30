@@ -115,6 +115,7 @@ export default class StateManager {
         }));
 
         this.passThrough(socket, "combatant");
+        this.passThrough(socket, "remove");
         this.passThrough(socket, "reset");
     }
 }

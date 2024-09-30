@@ -13,7 +13,11 @@ const defaults: NpcType = {
     currentHealth: 0,
     currentAp: 0,
     maxAp: 0,
-    actions: [],
+    minion: true,
+    actions: [
+        {id: "dodge", name: "Dodge", aptitude: 4, expertise: 0, ap: 2},
+        {id: "attack", name: "Attack", aptitude: 4, expertise: 0, ap: 3},
+    ],
     injuries: [],
 };
 

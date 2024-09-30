@@ -45,6 +45,7 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
     const changeWeapons = useCallback((data: any) => onChange('weapons', data), [onChange]);
     const changeData = useCallback((k: string, v: any) => setData(old => ({...old, [k]: v})), []);
     const joinCombat = () => socket.emit("combatant", charToCombatant(stats));
+    const leaveCombat = () => window.confirm("Leave Combat?") && socket.emit("remove", stats.id);
     const {spendAp} = useContext(InitiativeContext);
 
     const characterWeapons = stats.weapons || [];
@@ -99,8 +100,12 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
     return (<Grid container spacing={2} margin={1}>
         <Grid item xs={3}>
             <Initiative>
-                <Grid item container spacing={2}>
-                    <Grid item xs={12}><Btn fullWidth onClick={joinCombat}>Join Combat</Btn></Grid>
+                <Grid item>
+                    <Btn fullWidth onClick={joinCombat}>Join Combat</Btn>
+                </Grid>
+
+                <Grid item>
+                    <Btn fullWidth onClick={leaveCombat} color="error">Leave Combat</Btn>
                 </Grid>
 
                 <Grid item>

@@ -9,8 +9,8 @@ export interface NpcActionType {
     note?: string;
 }
 
-
 export default interface NpcType extends Combatant {
     actions: NpcActionType[];
     expanded?: boolean;
+    minion: boolean;
 }

@@ -2,6 +2,7 @@ import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
+    Checkbox,
     Grid,
     Table,
     TableBody,
@@ -11,17 +12,20 @@ import {
     Typography
 } from "@mui/material";
 import NpcType, {NpcActionType} from "../types/npc";
-import {Btn, TextInput} from "./Form";
+import {Btn, Dropdown, TextInput} from "./Form";
 import Value from "./Value";
 import socket from "../socket";
 import npcToCombatant from "../logic/npcToCombatant";
-import React from "react";
+import React, {useContext, useState} from "react";
 import Collection from "./Collection";
 import * as uuid from 'uuid';
 import {DicePool} from "./Roll";
 import calculatePool from "../logic/calculatePool";
 import Injuries from "./Injuries";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {calculateCombatActions, CombatAction} from "../logic/calculateCombatActions";
+import characterDefaults from "../data/character.json";
+import {InitiativeContext} from "../provider/InitiativeProvider";
 
 
 interface NpcActionProps extends NpcActionType {
@@ -58,6 +62,14 @@ interface NpcProps extends NpcType {
 
 export default function Npc({onChange, onRemove, onRoll, locked, ...props} : NpcProps) {
     const joinCombat = () => socket.emit("combatant", npcToCombatant(props));
+    const leaveCombat = () => socket.emit("remove", props.id);
+
+    const actions = calculateCombatActions(characterDefaults);
+    const [action, setAction] = useState(Object.keys(actions)[0]);
+
+    const {spendAp} = useContext(InitiativeContext);
+    const performAction = (action: CombatAction) => spendAp(props.id, action.ap);
+
     const addAction = () => onChange('actions', [...props.actions, {
         id: uuid.v4(),
         name: "",
@@ -81,7 +93,8 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
         <AccordionDetails>
             <Grid container direction="column" spacing={2}>
                 <Grid item container spacing={2} alignItems="center">
-                    <Grid xs={6} item><TextInput label="Name" name="name" values={props} onChange={onChange} /></Grid>
+                    <Grid xs={5} item><TextInput label="Name" name="name" values={props} onChange={onChange} /></Grid>
+                    <Grid xs={1} item textAlign="center"><Checkbox title="Minion?" checked={Boolean(props.minion)} onChange={e => onChange('minion', e.target.checked)} /></Grid>
                     <Grid xs={3} item textAlign={"center"}><Value width={140} label="Current Health" name={"currentHealth"} value={props.currentHealth||0} onChange={onChange} /></Grid>
                     <Grid xs={3} item textAlign={"center"}><Value width={140} label="Action Points" name={"maxAp"} value={props.maxAp||0} onChange={onChange} /></Grid>
                 </Grid>
@@ -114,7 +127,7 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
 
                 <Grid item container spacing={2}>
                     <Injuries
-                        npc
+                        npc={props.minion}
                         injuries={props.injuries || []}
                         health={props.currentHealth}
                         changeHealth={h => onChange('currentHealth', h)}
@@ -122,6 +135,20 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
 
                     <Grid item><Btn onClick={addAction}>Add Action</Btn></Grid>
                     <Grid item><Btn onClick={joinCombat}>Join Combat</Btn></Grid>
+                    <Grid item><Btn fullWidth onClick={leaveCombat} color="error">Leave Combat</Btn></Grid>
+
+                    <Grid item xs={2}>
+                        <Dropdown id={"action-general"}
+                                  label="Action"
+                                  name="action"
+                                  values={{action}}
+                                  onChange={(k,v) => setAction(v)}
+                                  options={Object.values(actions).filter(a => !a.skill)}/>
+                    </Grid>
+
+                    <Grid item>
+                        <Btn fullWidth onClick={() => performAction(actions[action])}>Execute</Btn>
+                    </Grid>
                 </Grid>
             </Grid>
         </AccordionDetails>

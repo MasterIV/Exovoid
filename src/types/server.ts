@@ -13,6 +13,7 @@ interface PassThroughEvents {
     combatant: (data: Combatant) => void;
     ship: (ship: ShipType) => void;
     reset: () => void;
+    remove: (id: string) => void;
 }
 
 export interface ClientEvents extends PassThroughEvents {
