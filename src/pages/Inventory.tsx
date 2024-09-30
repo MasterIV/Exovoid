@@ -34,7 +34,7 @@ function Item({onChange, onRemove, locked, ...item}: ItemProps) {
         <TableCell><Autocomplete
             freeSolo
             value={item.name}
-            options={items.map((i) => i.name)}
+            options={items.map((i) => `${i.name} (${i.item})`)}
             onChange={(e, v) => onChange('name', v)}
             renderInput={(params) => <TextField onChange={e => onChange('name', e.target.value)} {...params} label="Item" />}
         /></TableCell>
