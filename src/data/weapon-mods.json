@@ -307,11 +307,56 @@
   },
   {
     "slot": "Rail Attachments",
-    "name": "Dual Scope Mount",
-    "effects": "Allows the installation of two different scopes that you have to pay separately (including the option of just installing one and keeping the unmodified variant, aka stock sights). The second scope you install doesn't count against your mod limit of the gun.\nIt costs 1 AP to switch between the available sights.",
+    "name": "Dual Scope Mount (Red Dot)",
+    "effects": "Provides Handling (+1) when shooting at optimal range, but -1 within maximum range. Switching scopes costs 1 AP.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
     "cost": 80,
     "rarity": 2,
-	"showEffect": false
+	"showEffect": true
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Dual Scope Mount (Thermal Imaging)",
+    "effects": "Provides Handling (+2) when shooting at living creatures, but Handling (-4) against anything else. Additionally, all injury rolls that you cause have 2 less dice. Switching scopes costs 1 AP.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "cost": 80,
+    "rarity": 2,
+	"showEffect": true
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Dual Scope Mount (Night Vision)",
+    "effects": "Turns the difficulty increase during darkness into a mere -1 pool modifier, but adds +1 difficulty when using the scope in bright environments. Switching scopes costs 1 AP.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "cost": 80,
+    "rarity": 2,
+	"showEffect": true
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Dual Scope Mount (ACOG 4x)",
+    "effects": "Increases all ranges by 50%, but you suffer Handling (-1) when shooting within optimal range or under. Switching scopes costs 1 AP.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "cost": 80,
+    "rarity": 2,
+	"showEffect": true
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Dual Scope Mount (Marksman)",
+    "effects": "Increases all ranges by 100%, but also increases the lower end of the \"optimal range\" by 20 squares. If the new minimum range is equal to or higher than the upper end of the \"optimal range\", then the upper end simply becomes 10 squares higher than the new minimum. Switching scopes costs 1 AP.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "cost": 80,
+    "rarity": 2,
+	"showEffect": true
+  },
+  {
+    "slot": "Rail Attachments",
+    "name": "Dual Scope Mount (Smart Targeting)",
+    "effects": "Adds a -2 pool penalty to any attempts to actively dodge your attacks. Switching scopes costs 1 AP.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "cost": 80,
+    "rarity": 2,
+	"showEffect": true
   }
 ]
