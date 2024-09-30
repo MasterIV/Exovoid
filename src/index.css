@@ -70,6 +70,7 @@ code {
   width: 200px;
   margin: 5px;
   display: inline-block;
+  flex: none;
 }
 
 .rollDetails {
@@ -99,7 +100,7 @@ code {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   width: 100%;
   overflow: auto;
 }
