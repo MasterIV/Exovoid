@@ -53,7 +53,7 @@ and humanity started to carve out a niche within the Galactic Empire.
 **Key Events:**
 - **2169**: Establishment of the first human colony outside the solar system.
 - **2185**: Human scientists make significant strides in xenobiology, allowing for the development of new medicines and biotechnologies derived from alien organisms. These advancements improve human health and extend lifespans, further integrating humans into the Empire.
-- **2087**: The first successful human-computer neural interfaces are developed, allowing for direct brain-to-machine communication. This breakthrough later leads to the rise of cybernetic enhancements and the merging of basic AI with human day-to-day tasks.
+- **2187**: The first successful human-computer neural interfaces are developed, allowing for direct brain-to-machine communication. This breakthrough later leads to the rise of cybernetic enhancements and the merging of basic AI with human day-to-day tasks.
 - **2193**: The first humans are drafted by the galactic military. The draft is limited to manpower as humans are still lacking relevant technology.
 - **2195**: The draft into the Galactic military creates tension on Earth, as many see it as a sign of deeper subjugation. However, it also provides an opportunity for humans to gain combat experience and access to advanced military technology.
 
