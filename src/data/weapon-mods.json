@@ -15,7 +15,7 @@
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
     "cost": 200,
     "rarity": 2,
-	"showEffect": true
+	"showEffect": false
   },
   {
     "slot": "Muzzle / Barrel",
@@ -137,11 +137,11 @@
   {
     "slot": "Mechanism",
     "name": "AP Chamber",
-    "effects": "Increases the ammo cost by 30%, but the weapon adds Penetrating (+2).",
+    "effects": "Increases the ammo purchase prise by 30%.",
     "compatible": ["Pistol", "MP", "Rifle", "Heavy Weapon"],
     "cost": 250,
     "rarity": 3,
-	"showEffect": false
+	"showEffect": true
   },
   {
     "slot": "Mechanism",
@@ -213,7 +213,7 @@
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
     "cost": 80,
     "rarity": 2,
-	"showEffect": false
+	"showEffect": true
   },
   {
     "slot": "Grip",
@@ -222,7 +222,7 @@
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
     "cost": 80,
     "rarity": 2,
-	"showEffect": false
+	"showEffect": true
   },
   {
     "slot": "Magazine / Battery",

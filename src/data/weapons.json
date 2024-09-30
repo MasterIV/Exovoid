@@ -179,7 +179,7 @@
 		"Silenced": 0,
 		"Handling": 2,
 		"Burst": 6,
-		"Compensated": 0,
+		"Compensated": 1,
 		"Indiscriminate": 0,
 		"Concealed": 2
 	},
@@ -290,7 +290,7 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Compensated": 0,
+		"Compensated": 1,
 		"Full Auto": 15
 	},
     "triggerOptions":
@@ -377,7 +377,7 @@
 		"Handling": 3,
 		"Burst": 10,
 		"Full Auto": 30,
-		"Compensated": 0,
+		"Compensated": 1,
 		"Indiscriminate": 0
 	},
     "triggerOptions":
@@ -635,7 +635,7 @@
 		"Loud": 0,
 		"Burst": 8,
 		"Full Auto": 20,
-		"Compensated": 0,
+		"Compensated": 1,
 		"Improvised": 0
 	},
     "triggerOptions":
@@ -667,7 +667,7 @@
 	{
 		"Burst": 2,
 		"Full Auto": 4,
-		"Compensated": 0,
+		"Compensated": 1,
 		"Area": 1,
 		"Indiscriminate": 0
 	},
@@ -732,7 +732,7 @@
 		"Loud": 0,
 		"Burst": 10,
 		"Full Auto": 30,
-		"Compensated": 0,
+		"Compensated": 1,
 		"Improvised": 0
 	},
     "triggerOptions":
