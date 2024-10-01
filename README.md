@@ -2,9 +2,6 @@
 
 Next Tasks:
 
-- mods
-  - special rules
-  - dual scope
 - Talents
   - danger sense
 - lore
@@ -15,9 +12,6 @@ Overall:
 
  - networking
    - logout
- - gm modes
-   - generate npc
-   - combat controls
 
 # Getting Started with Create React App
 

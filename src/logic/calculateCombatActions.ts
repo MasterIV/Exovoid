@@ -109,3 +109,7 @@ export function calculateCombatActions(stats: CharacterType) {
 
     return actions;
 }
+
+export function formatAction(a: CombatAction) {
+    return {id: a.id, name: `${a.name} (${a.ap} AP)`};
+}

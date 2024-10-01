@@ -20,7 +20,7 @@ import weaponsMods from '../data/weapon-mods.json';
 import {CharacterWeapon} from "../types/character";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Value from "./Value";
-import {calculateWeaponActions, CombatAction} from "../logic/calculateCombatActions";
+import {calculateWeaponActions, CombatAction, formatAction} from "../logic/calculateCombatActions";
 import {applyWeaponMods} from "../logic/applyMods";
 
 const modMap: Record<string, typeof weaponsMods[0]> = {};
@@ -137,7 +137,7 @@ export default React.memo(function Weapon({locked, heft, onChange, onRemove, onA
                               name="action"
                               values={{action}}
                               onChange={changeData}
-                              options={Object.values(actions)}/></Grid>
+                              options={Object.values(actions).map(formatAction)}/></Grid>
                     <Grid item xs={4}><Btn fullWidth onClick={performAction}>Execute</Btn></Grid>
                 </Grid>
             </Grid>

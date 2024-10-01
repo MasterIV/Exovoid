@@ -14,7 +14,7 @@ import Initiative from "../components/Initiative";
 import socket from "../socket";
 import charToCombatant from "../logic/charToCombatant";
 import Injuries from "../components/Injuries";
-import {calculateCombatActions, CombatAction} from "../logic/calculateCombatActions";
+import {calculateCombatActions, CombatAction, formatAction} from "../logic/calculateCombatActions";
 import {attributeAverage} from "../logic/calculatePool";
 import {InitiativeContext} from "../provider/InitiativeProvider";
 import {WeaponType} from "../types/weapon";
@@ -114,7 +114,7 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
                               name="action"
                               values={data}
                               onChange={changeData}
-                              options={Object.values(actions)}/>
+                              options={Object.values(actions).map(formatAction)}/>
                 </Grid>
 
                 <Grid item>

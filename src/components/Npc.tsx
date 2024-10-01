@@ -23,7 +23,7 @@ import {DicePool} from "./Roll";
 import calculatePool from "../logic/calculatePool";
 import Injuries from "./Injuries";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import {calculateCombatActions, CombatAction} from "../logic/calculateCombatActions";
+import {calculateCombatActions, CombatAction, formatAction} from "../logic/calculateCombatActions";
 import characterDefaults from "../data/character.json";
 import {InitiativeContext} from "../provider/InitiativeProvider";
 
@@ -125,7 +125,7 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
                         </Table>
                 </Grid>
 
-                <Grid item container spacing={2}>
+                <Grid item container spacing={2} alignItems="center">
                     <Injuries
                         npc={props.minion}
                         injuries={props.injuries || []}
@@ -137,13 +137,13 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
                     <Grid item><Btn onClick={joinCombat}>Join Combat</Btn></Grid>
                     <Grid item><Btn fullWidth onClick={leaveCombat} color="error">Leave Combat</Btn></Grid>
 
-                    <Grid item xs={2}>
+                    <Grid item xs={3}>
                         <Dropdown id={"action-general"}
                                   label="Action"
                                   name="action"
                                   values={{action}}
                                   onChange={(k,v) => setAction(v)}
-                                  options={Object.values(actions).filter(a => !a.skill)}/>
+                                  options={Object.values(actions).filter(a => !a.skill).map(formatAction)}/>
                     </Grid>
 
                     <Grid item>
