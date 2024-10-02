@@ -61,7 +61,7 @@
     "modLimit": 1,
     "moddingOptions": ["Advanced Materials", "Audio Suite", "Ballistic Net", "Diamantine Mesh", "Reflective Coating", "State-of-the-Art"],
     "specialRules": "Replacement plates can be installed by spending 6 AP, and they cost half the value of the vest - this restores all durability.",
-    "cost": 250,
+    "cost": 200,
     "rarity": 2
   },
   {
