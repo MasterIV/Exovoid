@@ -507,7 +507,7 @@
     "category": "Hacking",
     "item": "Cyberdeck Tier-3",
     "name": "SpecterNode",
-    "description": "Device Integrity: 6\nFirewall: 8\nIC Level: 4\nSignal Range: 25\n\nWhenever you use one AT on an enemy system, you get to perform the \"Manipulate File\" option for free.",
+    "description": "Device Integrity: 6\nFirewall: 8\nIC Level: 4\nSignal Range: 25\n\nAT generated with this cyberdeck do not decay over time.",
     "size": 1,
     "cost": 700,
     "rarity": 3
