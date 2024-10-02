@@ -534,7 +534,7 @@
     "category": "Hacking",
     "item": "Cyberdeck Upgrade: Integrity",
     "name": "Sentinel Core",
-    "description": "Grants your cyberdeck +2 integrity.\n\nOnly one upgrade of any type can be installed per deck.",
+    "description": "Grants your cyberdeck +2 integrity.\n\nIncrease the cost of this upgrade by +250 Credits for each Upgrade that has already been installed. Each type may only be installed once.",
     "size": 0,
     "cost": 150,
     "rarity": 4
@@ -543,7 +543,7 @@
     "category": "Hacking",
     "item": "Cyberdeck Upgrade: Firewall",
     "name": "Aegis Defender",
-    "description": "Grants your cyberdeck +2 firewall.\n\nOnly one upgrade of any type can be installed per deck.",
+    "description": "Grants your cyberdeck +2 firewall.\n\nIncrease the cost of this upgrade by +250 Credits for each Upgrade that has already been installed. Each type may only be installed once.",
     "size": 0,
     "cost": 150,
     "rarity": 4
@@ -552,9 +552,63 @@
     "category": "Hacking",
     "item": "Cyberdeck Upgrade: IC",
     "name": "Nemesis Protocol",
-    "description": "Grants your cyberdeck +1 IC Level.\n\nOnly one upgrade of any type can be installed per deck.",
+    "description": "Grants your cyberdeck +1 IC Level.\n\nIncrease the cost of this upgrade by +250 Credits for each Upgrade that has already been installed. Each type may only be installed once.",
     "size": 0,
     "cost": 200,
+    "rarity": 5
+  },
+  {
+    "category": "Hacking",
+    "item": "Cyberdeck Upgrade: Signal Range",
+    "name": "BitRepeater",
+    "description": "Doubles the signal range of your cyberdeck.\n\nIncrease the cost of this upgrade by +250 Credits for each Upgrade that has already been installed. Each type may only be installed once.",
+    "size": 0,
+    "cost": 150,
+    "rarity": 4
+  },
+  {
+    "category": "Hacking",
+    "item": "Netrunner Suite: Control",
+    "name": "Hijack Dominus",
+    "description": "Enemy hackers need to spend twice the amount of AT on the Cancel option to remove any Hijack option you have ongoing.\n\nInstalling a Netrunner Suite reduces your device's integrity by 1.",
+    "size": 0,
+    "cost": 200,
+    "rarity": 54
+  },
+  {
+    "category": "Hacking",
+    "item": "Netrunner Suite: BioDeath",
+    "name": "Neural Reaper",
+    "description": "Whenever you use an AT on a target device, you may decide to cause 4 Biofeedback damage (ignoring armor) against any neurally linked user for each AT spent.\n\nInstalling a Netrunner Suite reduces your device's integrity by 1.",
+    "size": 0,
+    "cost": 250,
+    "rarity": 5
+  },
+  {
+    "category": "Hacking",
+    "item": "Netrunner Suite: Closure",
+    "name": "ZeroDay Purge",
+    "description": "When you use the Cancel option to remove AT from a target system, you remove 2 AT per usage of the option instead of just 1.\n\nInstalling a Netrunner Suite reduces your device's integrity by 1.",
+    "size": 0,
+    "cost": 200,
+    "rarity": 4
+  },
+  {
+    "category": "Hacking",
+    "item": "Netrunner Suite: Corrupt",
+    "name": "HexCorruptor",
+    "description": "Whenever you use an AT on a target device, you may decide to cause 1 Data Corruption for each AT spent. You can decide to spend your AT directly on disrupting the device's integrity, in which case you cause 3 Data Corruption per AT spent.\n\nInstalling a Netrunner Suite reduces your device's integrity by 1.",
+    "size": 0,
+    "cost": 200,
+    "rarity": 4
+  },
+  {
+    "category": "Hacking",
+    "item": "Netrunner Suite: Mislead",
+    "name": "Phantomtrail",
+    "description": "You can spend 2 AT on a target device to cause it to get a falsified location when it uses the Locate option against you. The locating hacker can attempt a Computers d4 check to notice the false lead.\n\nInstalling a Netrunner Suite reduces your device's integrity by 1.",
+    "size": 0,
+    "cost": 250,
     "rarity": 5
   }
 ]
