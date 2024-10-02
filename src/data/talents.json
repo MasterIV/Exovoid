@@ -701,7 +701,7 @@
   },
   {
     "talent": "System Hardening",
-    "description": "You may declare one device of your choice. After spending at least five minutes to install / activate subroutines, that device gains +1 Firewall and +1 IC Level.",
+    "description": "As a new downtime activity, you may declare one device. You install custom subroutines, permanently granting that device +1 Firewall and +1 IC Level. Cannot be stacked multiple times on the same device.",
     "representation": 2
   },
   {
