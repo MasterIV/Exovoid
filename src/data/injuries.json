@@ -87,7 +87,7 @@
     "severity": 3,
     "modifier": 0,
     "name": "Bleeding",
-    "description": "Suffer 1 damage (ignoring soak) at the end of each round for 1d6 rounds. Stacks."
+    "description": "Suffer 1 damage (ignoring armor) at the end of each round for 1d6 rounds. Stacks."
   },
   {
     "severity": 3,

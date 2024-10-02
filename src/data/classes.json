@@ -158,7 +158,7 @@
     "description": "The Celebrity is a master of influence and charisma, using their fame and public image to sway opinions, rally support, or manipulate social situations. Whether as a diplomat, spokesperson, or socialite, they can open doors that others cannot and sway the masses with their presence.",
     "equipment": [
       "Luxury Home.",
-      "Servitor Drone.",
+      "Servitor Drone or 5000 Credits.",
       "Hover Car.",
 	  "15 Assets"
     ],
@@ -480,7 +480,7 @@
     "name": "Diplomat",
     "description": "Diplomats are skilled negotiators and political operators, specializing in forging alliances, brokering peace, and navigating complex political landscapes. They excel in social interactions and can defuse conflicts or manipulate events in their favor through words alone.",
     "equipment": [
-      "Simulant Drone or 2 Servitor drones.",
+      "Simulant Drone or 2 Servitor drones or 8000 Credits.",
       "Luxury Home.",
       "10 Assets."
     ],
