@@ -48,7 +48,7 @@
     "modLimit": 1,
     "moddingOptions": ["Advanced Materials", "Ballistic Net", "Diamantine Mesh", "Reflective Coating"],
     "specialRules": "Can never be repaired.",
-    "cost": 400,
+    "cost": 150,
     "rarity": 2
   },
   {
