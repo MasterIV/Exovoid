@@ -736,7 +736,7 @@
   },
   {
     "talent": "Tinkerer",
-    "description": "You may declare one personal weapon or armor that gains +1 Mod Slot. Due to the quirkiness of the modification, only you can make use of it.",
+    "description": "You may declare one personal weapon or armor that gains +1 Mod Slot, and a unique modification that you invented. Due to the quirkiness of the modification, only you can make use of it.",
     "representation": 3
   },
   {
