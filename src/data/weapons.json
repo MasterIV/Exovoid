@@ -599,11 +599,13 @@
     "magazine": 10,
     "reload": 4,
     "speed": 4,
-    "damage": 10,
+    "damage": 12,
     "damageType": "Fire",
     "qualities":
 	{
-		"Burst": 4
+		"Burst": 4,
+		"Compensated": 1,
+		"Handling": 2
 	},
     "triggerOptions":
 	{
@@ -612,7 +614,7 @@
 		"Burning": 0,
 		"Plasmascorch": 0
 	},
-    "specialRules": "",
+    "specialRules": "Also gain one free Trigger on each attack that can only be spent on the weapon's trigger options.",
     "modLimit": 5,
     "cost": 4000,
     "ammoCost": 15,
@@ -771,7 +773,7 @@
 		"Burning": 0,
 		"Plasmascorch": 0
 	},
-    "specialRules": "",
+    "specialRules": "Also gain one free Trigger on each attack that can only be spent on the weapon's trigger options.",
     "modLimit": 2,
     "cost": 5000,
     "ammoCost": 120,
