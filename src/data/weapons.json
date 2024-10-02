@@ -895,7 +895,7 @@
 	{
 		"Incapacitating": 0
 	},
-    "specialRules": "Incapacitating option is automatically active. The Area lingers for this and two more rounds. Anyone ending a round within the area needs to resist the Incapacitating trigger option.",
+    "specialRules": "Ignores armor. Incapacitating option is automatically active. The Area lingers for this and two more rounds. Anyone ending a round within the area needs to resist the Incapacitating trigger option.",
     "modLimit": 0,
     "cost": 100,
     "ammoCost": 0,
