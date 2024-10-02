@@ -444,7 +444,7 @@
     "category": "Everyday",
     "item": "Holo-Communicator",
     "name": "Echolink Holocomm",
-    "description": "A wrist-mounted or handheld device that allows for real-time holographic communication across vast distances.\n\nDevice Integrity: 2\nFirewall: 6\nIC Level: 3",
+    "description": "A wrist-mounted or handheld device that allows for real-time holographic communication across vast distances.\n\nDevice Integrity: 2\nFirewall: 6\nIC Level: 3\nSignal Range: 5",
     "size": 1,
     "cost": 60,
     "rarity": 0
