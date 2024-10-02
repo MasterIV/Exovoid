@@ -227,7 +227,7 @@
   },
   {
     "talent": "Evasive",
-    "description": "You remove the default -3 pool penalty for your defense & parry checks, and you can perform one active defense or parry per round without AP cost.",
+    "description": "You remove the default -3 pool penalty for your dodge & parry checks, and you can perform one dodge or parry per round for only 1 AP cost instead of 2.",
     "representation": 2
   },
   {
@@ -317,7 +317,7 @@
   },
   {
     "talent": "Heavy Blow",
-    "description": "You double the AP costs of your melee attack, but if successfull, you gain 3 free triggers.",
+    "description": "You may double the AP costs of your melee attack, but if successfull, you gain 3 free triggers.",
     "representation": 1
   },
   {

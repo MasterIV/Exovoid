@@ -849,7 +849,7 @@
     "skill": "Athletics",
 	"type": "Grenade",
     "weapon": "Frag Grenade",
-    "name": "Havoc Frag Grande",
+    "name": "Havoc Frag Boy",
     "hands": 1,
     "magazine": 0,
     "reload": 0,
@@ -872,6 +872,61 @@
     "cost": 80,
     "ammoCost": 0,
     "rarity": 3,
+    "range": "1-8-12"
+  },
+  {
+    "skill": "Athletics",
+	"type": "Grenade",
+    "weapon": "Gas Grenade",
+    "name": "Noxon Choker",
+    "hands": 1,
+    "magazine": 0,
+    "reload": 0,
+    "speed": 5,
+    "damage": 8,
+    "damageType": "Physical",
+    "qualities":
+	{
+		"Concealed": 2,
+		"Area": 3,
+		"Indiscriminate": 0
+	},
+    "triggerOptions":
+	{
+		"Incapacitating": 0
+	},
+    "specialRules": "Incapacitating option is automatically active. The Area lingers for this and two more rounds. Anyone ending a round within the area needs to resist the Incapacitating trigger option.",
+    "modLimit": 0,
+    "cost": 100,
+    "ammoCost": 0,
+    "rarity": 4,
+    "range": "1-8-12"
+  },
+  {
+    "skill": "Athletics",
+	"type": "Grenade",
+    "weapon": "Smoke Grenade",
+    "name": "Azerra Shroud Maker",
+    "hands": 1,
+    "magazine": 0,
+    "reload": 0,
+    "speed": 4,
+    "damage": 0,
+    "damageType": "Physical",
+    "qualities":
+	{
+		"Concealed": 2,
+		"Area": 3,
+		"Handling": 1
+	},
+    "triggerOptions":
+	{
+	},
+    "specialRules": "The Area lingers for this and two more rounds. Anyone trying to attack through or across the smoke suffers +2 difficulty.",
+    "modLimit": 0,
+    "cost": 30,
+    "ammoCost": 0,
+    "rarity": 2,
     "range": "1-8-12"
   },
   {
