@@ -487,6 +487,15 @@
   },
   {
     "category": "Hacking",
+    "item": "Repeater",
+    "name": "Callisto Extender",
+    "description": "This device acts as a node with its own Signal Range of 10 squares. It can be slaved to a cyberdeck, data pad or holo-communicator, but both devices need to touch each other to establish an encrypted channel. The direct communication range between this device and its master device is 10km.",
+    "size": 1,
+    "cost": 60,
+    "rarity": 0
+  },
+  {
+    "category": "Hacking",
     "item": "Cyberdeck Tier-1",
     "name": "PhantomLink",
     "description": "Device Integrity: 5\nFirewall: 9\nIC Level: 3\nSignal Range: 20\n\nIf others use the \"Locate\" action against you, they need to spend 3 AT instead.",
