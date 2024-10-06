@@ -354,7 +354,7 @@
     "category": "Crafting",
     "item": "3D Printer",
     "name": "PrintForce X1",
-    "description": "A portable fabricator that can create physical objects from digital blueprints using various materials. Ideal for crafting custom tools or parts. The material cost is equal to 5% of the aspired item, and the process takes a few minutes. 3D printed mechanical / electrical items (like weapons) break as soon as a botch or two complications were rolled (regardless if these were triggered or not).",
+    "description": "A portable fabricator that can create physical objects from digital blueprints using various materials. Ideal for crafting custom tools or parts. The material cost is equal to 5% of the aspired item, and the process takes a few minutes. 3D printed mechanical / electrical items (like weapons) break as soon as a botch or two complications were rolled (regardless if these were triggered or not). Assembling an item from the printed parts requires a few minutes and a Tech check - the difficulty is equal to the rarity of the item - 2 (to a Minimum of 2).",
     "size": 4,
     "cost": 300,
     "rarity": 2
@@ -363,7 +363,7 @@
     "category": "Crafting",
     "item": "Component Analyzer",
     "name": "Partdetect",
-    "description": "A handheld device that scans items to identify their components, making it easier to disassemble or reverse-engineer technology.",
+    "description": "A handheld device that scans items to identify their components, making it easier to disassemble or reverse-engineer technology. Requires a Sensors check to use.",
     "size": 3,
     "cost": 200,
     "rarity": 2
@@ -381,7 +381,7 @@
     "category": "Crafting",
     "item": "Scrap Converter",
     "name": "Recycle Pro",
-    "description": "A device that breaks down junk and scrap into usable materials, reducing waste and providing resources for repairs.",
+    "description": "A device that breaks down junk and scrap into usable materials, reducing waste and providing resources for repairs. You gain 1/4th of the item's value in components - convert the value into Spare Tech or Spare Ship parts.",
     "size": 5,
     "cost": 500,
     "rarity": 3
@@ -399,7 +399,7 @@
     "category": "Crafting",
     "item": "Chemistry Kit",
     "name": "Labpack Synthesis",
-    "description": "A mini lab consisting of various devices to synthesize components.",
+    "description": "A mini lab consisting of various devices to synthesize components using a Science check.",
     "size": 5,
     "cost": 450,
     "rarity": 3
@@ -453,7 +453,7 @@
     "category": "Everyday",
     "item": "Universal Translator",
     "name": "Lingua-Master 2200",
-    "description": "A device that instantly translates spoken or written language, allowing communication with any species or dialect.",
+    "description": "A device that instantly translates spoken or written language, allowing communication with any species or dialect. Due to the delay in communication and lack of nuance, you suffer +1 difficulty on all social checks.",
     "size": 1,
     "cost": 180,
     "rarity": 0
@@ -471,7 +471,7 @@
     "category": "Everyday",
     "item": "VR Headset",
     "name": "Immersi Gear",
-    "description": "A device that immerses the user in a virtual environment, useful for entertainment, training, communication or direct drone control.",
+    "description": "A device that immerses the user in a virtual environment, useful for entertainment, training, communication or direct drone control. When controlling a drone directly, the drone rigger uses their own skills in Gunnery (shooting), Pilot (melee, stealth and movement), Sensors (perception and data interpretation) and Tech (instead of Survival rolls).",
     "size": 2,
     "cost": 350,
     "rarity": 1
