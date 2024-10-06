@@ -99,7 +99,7 @@
     "qualities": "Auto Medikit",
     "modLimit": 2,
     "moddingOptions": ["Advanced Materials", "Audio Suite", "Ballistic Net", "Diamantine Mesh", "Reflective Coating", "Sealed", "Shock Absorber", "State-of-the-Art" ,"Visual Enhancer"],
-    "specialRules": "Auto Medikit replenishes 5 health automatically once until refilled. It halves the duration of all bleeding effects (round down).",
+    "specialRules": "Auto Medikit replenishes 5 health automatically once until refilled (max. once per encounter, refill costs 50 Credits). It halves the duration of all bleeding effects (round down).",
     "cost": 500,
     "rarity": 3
   },
