@@ -252,6 +252,15 @@
 	"showEffect": false
   },
   {
+    "slot": "Magazine / Battery",
+    "name": "Self-Charging Battery",
+    "effects": "Reduce the magazine capacity by 20% (round up), but the firearm automatically recharges 1 shot at the beginning of each round.",
+    "compatible": ["Laser Pistol", "Laser Rifle"],
+    "cost": 300,
+    "rarity": 4,
+	"showEffect": true
+  },
+  {
     "slot": "Rail Attachments",
     "name": "Laser Sight",
     "effects": "Provides a free trigger on every attack after the first against the same target. Having the Laser Sight active makes your position very apparent.",
