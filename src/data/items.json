@@ -45,6 +45,24 @@
     "rarity": 1
   },
   {
+    "category": "Gadget",
+    "item": "Magnetic Grapple",
+    "name": "Ascension Sling",
+    "description": "A handheld grapple gun that fires a magnetized claw. Ideal for quick ascents or for retrieving metal objects from a distance. Comes with a retractable 15m long cable that can support up to 300 kg.",
+    "size": 2,
+    "cost": 250,
+    "rarity": 2
+  },
+  {
+    "category": "Gadget",
+    "item": "Anti-EMP Module",
+    "name": "Orion EMP-Zero Pack",
+    "description": "This module can be worn, and will neutralize one strong EMP wave that would otherwise destroy or disturb worn equipment. The module burns out upon absorbing an EMP wave.",
+    "size": 1,
+    "cost": 100,
+    "rarity": 1
+  },
+  {
     "category": "Survival",
     "item": "Portable Shelter",
     "name": "Envirodome Compact",
@@ -126,6 +144,15 @@
     "rarity": 2
   },
   {
+    "category": "Survival",
+    "item": "Atmospheric Analyzer",
+    "name": "AeroScout Pro",
+    "description": "A handheld device that analyzes the local air quality, detecting toxins, radiation levels, and oxygen content.",
+    "size": 1,
+    "cost": 120,
+    "rarity": 2
+  },
+  {
     "category": "Medicine",
     "item": "Biofoam Dispenser",
     "name": "Medifoam XT",
@@ -142,6 +169,15 @@
     "size": 1,
     "cost": 20,
     "rarity": 1
+  },
+  {
+    "category": "Medicine",
+    "item": "Healing Patch",
+    "name": "Somaseal Bio-Repair",
+    "description": "A single-use patch that adheres to wounds, promoting rapid healing through bio-stimulants. Restores 30% of a character's maximum health instantly (round up). Is only useful once per day, as an overflow of the stimulants causes averse effects (e.g. dizzyness or nausea).",
+    "size": 1,
+    "cost": 50,
+    "rarity": 2
   },
   {
     "category": "Medicine",
@@ -343,6 +379,15 @@
   },
   {
     "category": "Espionage",
+    "item": "Frequency Jammer",
+    "name": "Nullzone",
+    "description": "This device emits a jamming signal that blocks all communications and wireless signals within a 100-meter radius for 5 minutes. After use it requires recharging.",
+    "size": 2,
+    "cost": 400,
+    "rarity": 4
+  },
+  {
+    "category": "Espionage",
     "item": "Spytool",
     "name": "Spectrascope",
     "description": "A compact device that combines high-definition zoom with directional audio capture, allowing you to spy on distant targets and eavesdrop on conversations with precision.",
@@ -408,7 +453,7 @@
     "category": "Crafting",
     "item": "Spare Ship Parts",
     "name": "Ship-Complement 101",
-    "description": "Allows one repair attempt on a critically damaged ship part. Is used up with the attempt.",
+    "description": "Allows one repair attempt on a critically damaged ship part, it's armor or hull. Is used up with the attempt.",
     "size": 4,
     "cost": 500,
     "rarity": 2
@@ -417,7 +462,7 @@
     "category": "Crafting",
     "item": "Spare Tech Parts",
     "name": "Azerra Fixermould",
-    "description": "Allows one repair attempt on a damaged firearm or smaller piece of technology. Is used up with the attempt.",
+    "description": "Allows one repair attempt on a damaged firearm, drone or other piece of technology. Is used up with the attempt.",
     "size": 2,
     "cost": 50,
     "rarity": 1
@@ -582,7 +627,7 @@
     "description": "Enemy hackers need to spend twice the amount of AT on the Cancel option to remove any Hijack option you have ongoing.\n\nInstalling a Netrunner Suite reduces your device's integrity by 1.",
     "size": 0,
     "cost": 200,
-    "rarity": 54
+    "rarity": 4
   },
   {
     "category": "Hacking",
