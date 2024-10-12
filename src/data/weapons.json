@@ -405,7 +405,8 @@
     "damageType": "Physical",
     "qualities":
 	{
-		"Loud": 0
+		"Loud": 0,
+		"Burst": 2
 	},
     "triggerOptions":
 	{
