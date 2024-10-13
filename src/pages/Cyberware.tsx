@@ -1,6 +1,9 @@
 import React, {useCallback, useState} from "react";
 import {
-    Autocomplete, Checkbox, Chip, FormControlLabel,
+    Autocomplete,
+    Checkbox,
+    Chip,
+    FormControlLabel,
     Grid,
     Paper,
     Stack,
@@ -12,7 +15,7 @@ import {
     TableRow,
     TextField
 } from "@mui/material";
-import CharacterType, {CharacterCyberMalfunction, CharacterCyberWare, InventoryItem} from "../types/character";
+import CharacterType, {CharacterCyberMalfunction, CharacterCyberWare} from "../types/character";
 import Collection from "../components/Collection";
 
 import cyberWares from '../data/cyberware.json';
@@ -21,7 +24,7 @@ import cyberMalfunctions from '../data/cyberware-malfunction.json';
 import {Btn, TextInput} from "../components/Form";
 import * as uuid from 'uuid';
 import CyberWareType from "../types/cyberware";
-import calculateImmunity from "../logic/calculateImmunity";
+import {calculateImmunity} from "../logic/calculateDerived";
 
 const defaults: CharacterCyberWare = {id: "", name: "", enabled: true};
 const cyberMap: Record<string, CyberWareType> = {};

@@ -1,6 +1,6 @@
 import CharacterType from "../types/character";
 import {Combatant} from "../types/combat";
-import calculateActionPoints from "./calculateActionPoints";
+import {calculateActionPoints} from "./calculateDerived";
 
 export default function charToCombatant(stats: CharacterType, ap = 0) : Combatant {
     return {

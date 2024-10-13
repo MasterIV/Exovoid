@@ -7,12 +7,14 @@ import Value from "../components/Value";
 import {DicePool} from "../components/Roll";
 import CharacterType from "../types/character";
 import {DicePoolType} from "../types/dice";
-import calculateHealth from "../logic/calculateHealth";
-import calculateEdge from "../logic/calculateEdge";
-import calculateActionPoints from "../logic/calculateActionPoints";
-import calculateImmunity from "../logic/calculateImmunity";
-import calculateSpeed from "../logic/calculateSpeed";
-import calculateHeft from "../logic/calculateHeft";
+import {
+    calculateActionPoints,
+    calculateEdge,
+    calculateHealth,
+    calculateHeft,
+    calculateImmunity,
+    calculateSpeed
+} from "../logic/calculateDerived";
 
 interface CharacterPageProps {
     onChange: (name: string, value: any) => void;

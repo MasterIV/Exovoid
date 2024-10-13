@@ -8,8 +8,6 @@ import weapons from '../data/weapons.json';
 import armors from '../data/armors.json';
 import * as uuid from 'uuid';
 import Value from "../components/Value";
-import calculateHealth from "../logic/calculateHealth";
-import calculateEdge from "../logic/calculateEdge";
 import Initiative from "../components/Initiative";
 import socket from "../socket";
 import charToCombatant from "../logic/charToCombatant";
@@ -19,7 +17,7 @@ import {attributeAverage} from "../logic/calculatePool";
 import {InitiativeContext} from "../provider/InitiativeProvider";
 import {WeaponType} from "../types/weapon";
 import {Armor} from "../components/Armor";
-import calculateHeft from "../logic/calculateHeft";
+import {calculateEdge, calculateHealth, calculateHeft} from "../logic/calculateDerived";
 
 const weaponMap: Record<string, WeaponType> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
