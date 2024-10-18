@@ -6,18 +6,15 @@ import AccountType from "./types/account";
 import Tables from "./Tables";
 import characterDefaults from "./data/character.json";
 
-import socket, {onAccountChange, onCharacterChange, onError} from "./socket";
+import socket, {onAccountChange, onCharacterChange, onError, saveCharacter} from "./socket";
 import InitiativeProvider from "./provider/InitiativeProvider";
-
-let updateTimer: any = null;
 
 function App() {
     const [character, setCharacter] = useState<CharacterType|null>(null);
     const changeCharacter = useCallback((name: string, value: any) => setCharacter(old => {
         if(!old) return old;
         const updated = {...old, [name]: value};
-        if(updateTimer) clearTimeout(updateTimer);
-        updateTimer = setTimeout(() => socket.emit("save", updated), 5000);
+        saveCharacter(updated);
         return updated;
     }), []);
 
