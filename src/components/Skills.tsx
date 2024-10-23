@@ -20,7 +20,7 @@ import React from "react";
 
 interface SkillsProps {
     onChange: (name: string, value: number) => void;
-    onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
+    onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>, support?: boolean) => void;
     attributes: AttributeType;
     skills: { [key: string]: number };
     locked?: boolean;
@@ -39,13 +39,14 @@ export default React.memo(function Skills({skills, attributes, onChange, onRoll,
                             <TableRow>
                                 <TableCell>Skill</TableCell>
                                 <TableCell>Attribute</TableCell>
-                                <TableCell>Roll</TableCell>
+                                <TableCell colSpan={2}>Roll</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {d.map(s => {
                                 const avg = attributeAverage(s.name, attributes);
-                                const pool = calculatePool(avg, skills[s.name] || 0);
+                                const skill = skills[s.name] ?? 0;
+                                const pool = calculatePool(avg, skill);
 
                                 return (<TableRow key={s.name}>
                                     <TableCell>
@@ -56,9 +57,12 @@ export default React.memo(function Skills({skills, attributes, onChange, onRoll,
                                         {s.attributes.map(a => (
                                             <Chip key={a} label={`${a}: ${attributes[a as keyof typeof attributes]}`}/>))}
                                     </Stack></TableCell>
-                                    <TableCell><Btn onClick={() => onRoll(skills[s.name] || 0, avg, 0, {skill: s.name})} fullWidth>
+                                    <TableCell><Btn onClick={() => onRoll(skill, avg, 0, {skill: s.name})} fullWidth>
                                         <DicePool {...pool} />
                                     </Btn></TableCell>
+                                    <TableCell>{skill > 0 && <Btn onClick={() => onRoll(0, Math.ceil(skill /2), 0, {skill: "Support "+s.name}, true)} fullWidth>
+                                        <DicePool aptitude={Math.ceil(skill /2)} />
+                                    </Btn>}</TableCell>
                                 </TableRow>);
                             })}
                         </TableBody>

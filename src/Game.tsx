@@ -14,6 +14,7 @@ import calculatePool from "./logic/calculatePool";
 import {Btn, TextInput} from "./components/Form";
 import NpcPage from "./pages/Npc";
 import {InitiativeContext} from "./provider/InitiativeProvider";
+import {DicePoolType} from "./types/dice";
 
 interface GameProps {
     character: CharacterType;
@@ -27,12 +28,20 @@ interface RollConfig {
     skill: number;
     modifier: number;
     metadata?: Record<string, any>;
+    support: boolean;
+}
+
+function emptyPool(pool: DicePoolType) {
+    return (pool.default ?? 0) < 1 &&
+        (pool.aptitude ?? 0) < 1 &&
+        (pool.expertise ?? 0) < 1 &&
+        (pool.injury ?? 0) < 1;
 }
 
 function Game({character, error, onChange}: GameProps) {
     const [locked, setLocked] = useState(false);
     const [roll, setRoll] = useState<RollConfig>({
-        show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}
+        show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}, support: false
     });
 
     const [tab, setTab] = React.useState(0);
@@ -42,17 +51,19 @@ function Game({character, error, onChange}: GameProps) {
 
     const {spendAp} = useContext(InitiativeContext);
 
-    const resetRoll = useCallback(() => setRoll({show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}}), []);
-    const changeRoll = useCallback((skill: number, attribute: number, modifier = 0, metadata?: Record<string, any>) => setRoll({
+    const resetRoll = useCallback(() => setRoll({show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}, support: false}), []);
+    const changeRoll = useCallback((skill: number, attribute: number, modifier = 0, metadata?: Record<string, any>, support = false) => setRoll({
         show: true,
         skill,
         attribute,
         modifier,
-        metadata
+        metadata,
+        support
     }), []);
 
     const onRoll = () => {
-        socket.emit("roll", calculatePool(roll.attribute, roll.skill, roll.modifier), roll.metadata);
+        if(roll.support) socket.emit("roll", {aptitude: roll.attribute+roll.modifier}, roll.metadata);
+        else socket.emit("roll", calculatePool(roll.attribute, roll.skill, roll.modifier), roll.metadata);
 
         if(roll.metadata?.id && roll.metadata?.ap)
             spendAp(roll.metadata.id, roll.metadata.ap);
@@ -77,6 +88,10 @@ function Game({character, error, onChange}: GameProps) {
         {name: "Lore", content: () => <LorePage/>},
     ];
 
+    const pool = roll.support
+        ? {aptitude: roll.attribute+roll.modifier}
+        : calculatePool(roll.attribute, roll.skill, roll.modifier);
+
     return (<Container maxWidth="xl">
         {(error) && <Alert severity="error">{error}</Alert>}
 
@@ -87,8 +102,8 @@ function Game({character, error, onChange}: GameProps) {
                 <Stack spacing={3} textAlign="center">
                     <TextInput label="Modifier" type="number" name="modifier" values={roll}
                                onChange={(k, v) => setRoll({...roll, [k]: Number(v)})}/>
-                    <DicePool {...calculatePool(roll.attribute, roll.skill, roll.modifier)} large/>
-                    <Btn onClick={onRoll}>Roll!</Btn>
+                    <DicePool {...pool} large/>
+                    <Btn disabled={emptyPool(pool)} onClick={onRoll}>Roll!</Btn>
                 </Stack>
             </Paper>
         </Modal>
