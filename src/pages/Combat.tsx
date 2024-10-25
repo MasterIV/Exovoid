@@ -47,6 +47,23 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
     const {spendAp} = useContext(InitiativeContext);
 
     const characterWeapons = stats.weapons || [];
+
+    const [isWeaponAddVisible, setIsWeaponAddVisible] = useState(false);
+    const showWeapon = () => {
+        setIsWeaponAddVisible(true);
+    };
+    const hideWeapon = () => {
+        setIsWeaponAddVisible(false);
+    };
+
+    const [isArmorAddVisible, setIsArmorAddVisible] = useState(false);
+    const showArmor = () => {
+        setIsArmorAddVisible(true);
+    };
+    const hideArmor = () => {
+        setIsArmorAddVisible(false);
+    };
+
     const addWeapon = () => onChange('weapons', [...characterWeapons, {
         id: uuid.v4(),
         type: data.weapon,
@@ -121,43 +138,55 @@ export default function CombatPage({stats, onChange, onRoll, locked} : CombatPag
             </Initiative>
         </Grid>
         <Grid item xs={6}>
+            <Grid item xs={6} marginY={1}>Weapons</Grid>
+            <Collection
+                heft={calculateHeft(stats)}
+                locked={locked}
+                talents={stats.talents}
+                values={characterWeapons}
+                onChange={changeWeapons}
+                onAction={performAction}
+                component={Weapon}/>
 
-                <Collection
-                    heft={calculateHeft(stats)}
-                    locked={locked}
-                    talents={stats.talents}
-                    values={characterWeapons}
-                    onChange={changeWeapons}
-                    onAction={performAction}
-                    component={Weapon} />
+            {isWeaponAddVisible && !locked && (<Grid container direction="row" spacing={2} alignItems="center" marginY={1}>
+                <Grid item xs={8.7}><Dropdown
+                    id="add-weapon"
+                    label="Weapon Type"
+                    name="weapon"
+                    values={data}
+                    onChange={changeData}
+                    options={weapons.map(w => ({id: w.weapon, name: `${w.name} (${w.weapon})`}))}/></Grid>
+                <Grid item xs={2}><Btn fullWidth size="large" onClick={addWeapon}>Add</Btn></Grid>
+                <Grid item xs={1}><Btn fullWidth size="large" onClick={hideWeapon} color="error">X</Btn></Grid>
+            </Grid>)
+            }
+            {!isWeaponAddVisible && !locked && (
+                <Grid item xs={12} marginY={1}><Btn fullWidth size="large" onClick={showWeapon}>Add Weapon</Btn></Grid>
+            )}
 
+            <Grid item xs={6} marginY={1}>Armors</Grid>
+            <Collection
+                locked={locked}
+                values={stats.armor}
+                onChange={changeArmor}
+                component={Armor}/>
+
+            {isArmorAddVisible && !locked && (
                 <Grid container direction="row" spacing={2} alignItems="center" marginY={1}>
-                    <Grid item xs={8}><Dropdown
-                        id="add-weapon"
-                        label="Weapon Type"
-                        name="weapon"
-                        values={data}
-                        onChange={changeData}
-                        options={weapons.map(w => ({id: w.weapon, name: `${w.name} (${w.weapon})`}))} /></Grid>
-                    <Grid item xs={4}><Btn fullWidth size="large" onClick={addWeapon}>Add Weapon</Btn></Grid>
-                </Grid>
-
-                <Collection
-                    locked={locked}
-                    values={stats.armor}
-                    onChange={changeArmor}
-                    component={Armor} />
-
-                <Grid container direction="row" spacing={2} alignItems="center" marginY={1}>
-                    <Grid item xs={8}><Dropdown
+                    <Grid item xs={8.7}><Dropdown
                         id="add-armor"
                         label="Armor Type"
                         name="armor"
                         values={data}
                         onChange={changeData}
-                        options={armors.map(a => ({id: a.type, name: `${a.name} (${a.type})`}))} /></Grid>
-                    <Grid item xs={4}><Btn fullWidth size="large" onClick={addArmor}>Add Armor</Btn></Grid>
-                </Grid>
+                        options={armors.map(a => ({id: a.type, name: `${a.name} (${a.type})`}))}/></Grid>
+                    <Grid item xs={2}><Btn fullWidth size="large" onClick={addArmor}>Add</Btn></Grid>
+                    <Grid item xs={1}><Btn fullWidth size="large" onClick={hideArmor} color="error">X</Btn></Grid>
+                </Grid>)
+            }
+            {!isArmorAddVisible && !locked && (
+                <Grid item xs={12} marginY={1}><Btn fullWidth size="large" onClick={showArmor}>Add Armor</Btn></Grid>
+            )}
 
         </Grid>
         <Grid container direction="column" item xs={3} spacing={2}>
