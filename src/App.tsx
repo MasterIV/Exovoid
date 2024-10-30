@@ -41,15 +41,25 @@ function App() {
             <Game character={character} onChange={changeCharacter}/>
         </InitiativeProvider>;
 
-    if(account)
+    if (account)
         return <Tables
             account={account}
-            onJoin={(id) => {setSocketError(""); socket.emit("join", id);}}
-            onCreate={(name, table, pw) => {setSocketError(""); socket.emit("create", name, table, pw);}} />;
+            onJoin={(id) => {
+                socket.emit("join", id);
+            }}
+            onCreate={(name, table, pw) => {
+                socket.emit("create", name, table, pw);
+            }}
+        />;
 
     return <Login
-            onLogin={(name, pw) => {setSocketError(""); socket.emit("login", name, pw);}}
-            onRegister={(name, pw) => {setSocketError(""); socket.emit("register", name, pw);}} />;
+        onLogin={(name, pw) => {
+            socket.emit("login", name, pw);
+        }}
+        onRegister={(name, pw) => {
+            socket.emit("register", name, pw);
+        }}
+    />;
 }
 
 export default App;
