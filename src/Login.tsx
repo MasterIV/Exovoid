@@ -10,12 +10,11 @@ interface LoginData {
 }
 
 interface LoginProps {
-    error?: string;
     onLogin: (name: string, pw: string) => void;
     onRegister: (name: string, pw: string) => void;
 }
 
-function Login({onLogin, onRegister, error}: LoginProps) {
+function Login({onLogin, onRegister}: LoginProps) {
     const [data, setData] = useState<LoginData>({});
     const onChange = (name: string, value: string) => setData({...data, [name]: value});;
 
@@ -32,7 +31,7 @@ function Login({onLogin, onRegister, error}: LoginProps) {
 
     return <Paper className="paperSmall">
         <Stack spacing={2}>
-            {(data.error || error) && <Alert severity="error">{error || data.error}</Alert>}
+            {(data.error) && <Alert severity="error">{data.error}</Alert>}
             <TextInput label="Name" name="name" values={data} onChange={onChange} />
             <TextInput type="password" label="Password" name="pw" values={data} onChange={onChange} />
             <TextInput type="password" label="Repeat Password" name="pwr" values={data} onChange={onChange} />

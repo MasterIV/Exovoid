@@ -4,7 +4,6 @@ import {Alert, Paper, Stack} from "@mui/material";
 import {Btn, TextInput} from "./components/Form";
 
 interface TablesProps {
-    error?: string;
     account: AccountType;
     onJoin: (id: string) => void;
     onCreate: (name: string, table: string, pw: string) => void;
@@ -17,7 +16,7 @@ interface TableData {
     error?: string;
 }
 
-function Tables({account, onJoin, onCreate, error}: TablesProps) {
+function Tables({account, onJoin, onCreate}: TablesProps) {
     const [data, setData] = useState<TableData>({});
     const onChange = (name: string, value: string) => setData({...data, [name]: value});
 
@@ -35,7 +34,7 @@ function Tables({account, onJoin, onCreate, error}: TablesProps) {
 
         <Paper className="paperSmall">
             <Stack spacing={2}>
-                {(data.error || error) && <Alert severity="error">{error || data.error}</Alert>}
+                {(data.error) && <Alert severity="error">{data.error}</Alert>}
                 <TextInput label="Table Name" name="table" values={data} onChange={onChange} />
                 <TextInput label="Character Name" name="character" values={data} onChange={onChange} />
                 <TextInput type="password" label="Password" name="pw" values={data} onChange={onChange} />

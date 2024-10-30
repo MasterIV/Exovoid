@@ -38,7 +38,7 @@ function emptyPool(pool: DicePoolType) {
         (pool.injury ?? 0) < 1;
 }
 
-function Game({character, error, onChange}: GameProps) {
+function Game({character, onChange}: GameProps) {
     const [locked, setLocked] = useState(false);
     const [roll, setRoll] = useState<RollConfig>({
         show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}, support: false
@@ -93,8 +93,6 @@ function Game({character, error, onChange}: GameProps) {
         : calculatePool(roll.attribute, roll.skill, roll.modifier);
 
     return (<Container maxWidth="xl">
-        {(error) && <Alert severity="error">{error}</Alert>}
-
         <RollResult/>
 
         <Modal open={roll.show} onClose={resetRoll}>

@@ -8,6 +8,7 @@ import characterDefaults from "./data/character.json";
 
 import socket, {onAccountChange, onCharacterChange, onError, saveCharacter} from "./socket";
 import InitiativeProvider from "./provider/InitiativeProvider";
+import {Alert, Box, Stack} from "@mui/material";
 
 function App() {
     const [character, setCharacter] = useState<CharacterType|null>(null);
@@ -19,30 +20,36 @@ function App() {
     }), []);
 
     const [account, setAccount] = useState<AccountType|null>(null);
-    const [error, setError] = useState<string>("");
+    const [socketError, setSocketError] = useState<string>();
 
     useEffect(() => {
         onCharacterChange(c => setCharacter({...characterDefaults, ...c}));
         onAccountChange(setAccount);
-        onError(setError);
+        onError(setSocketError);
     }, []);
+
+    if (socketError) {
+        return (
+            <Box margin={4}>
+                <Alert severity="error">{socketError}</Alert>
+            </Box>
+        );
+    }
 
     if (character)
         return <InitiativeProvider stats={character}>
-            <Game error={error} character={character} onChange={changeCharacter}/>
+            <Game character={character} onChange={changeCharacter}/>
         </InitiativeProvider>;
 
     if(account)
         return <Tables
-            error={error}
             account={account}
-            onJoin={(id) => {setError(""); socket.emit("join", id);}}
-            onCreate={(name, table, pw) => {setError(""); socket.emit("create", name, table, pw);}} />;
+            onJoin={(id) => {setSocketError(""); socket.emit("join", id);}}
+            onCreate={(name, table, pw) => {setSocketError(""); socket.emit("create", name, table, pw);}} />;
 
     return <Login
-            error={error}
-            onLogin={(name, pw) => {setError(""); socket.emit("login", name, pw);}}
-            onRegister={(name, pw) => {setError(""); socket.emit("register", name, pw);}} />;
+            onLogin={(name, pw) => {setSocketError(""); socket.emit("login", name, pw);}}
+            onRegister={(name, pw) => {setSocketError(""); socket.emit("register", name, pw);}} />;
 }
 
 export default App;
