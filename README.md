@@ -10,8 +10,8 @@ Next Tasks:
 
 Overall:
 
- - networking
-   - logout
+- networking
+  - logout
 
 # Getting Started with Create React App
 

@@ -1,5 +1,5 @@
 [
-   {
+  {
     "name": "Space Marine",
     "description": "The Space Marine is an elite soldier, equipped with advanced armor and weaponry designed for combat in zero-g, confined environments, like space ships and stations. Trained for boarding actions, they excel in heavy combat and can withstand the rigors of space warfare.",
     "equipment": [
@@ -109,7 +109,7 @@
       "Civilian Combat Suit and mods worth 400 Credits.",
       "Espionage items worth 2000 Credits.",
       "Cybernetics worth 1000 Credits.",
-	  "10 Assets"
+      "10 Assets"
     ],
     "attributes": ["COO", "PER"],
     "skills": {
@@ -117,7 +117,7 @@
       "Con Arts": 2,
       "Firearms": 2,
       "Investigation": 2,
-	  "Skullduggery": 1
+      "Skullduggery": 1
     },
     "talents": {
       "0": ["Lockpicker", "Far Shot", "Spy"],
@@ -135,7 +135,7 @@
       "Weapons (incl. Mods) worth 500 Credits.",
       "Hacking items worth 1000 Credits.",
       "Cybernetics worth 2000 Credits.",
-	  "15 Assets"
+      "15 Assets"
     ],
     "attributes": ["INT", "INT"],
     "skills": {
@@ -160,7 +160,7 @@
       "Luxury Home.",
       "Servitor Drone or 5000 Credits.",
       "Hover Car.",
-	  "15 Assets"
+      "15 Assets"
     ],
     "attributes": ["PER", "COO"],
     "skills": {
@@ -184,7 +184,7 @@
     "equipment": [
       "Weapons (incl. Mods) worth 500 Credits.",
       "Any vehicles / space ships worth 10 Assets (including upgrades or modules).",
-	  "20 Assets"
+      "20 Assets"
     ],
     "attributes": ["COO", "PER"],
     "skills": {
@@ -208,9 +208,9 @@
     "equipment": [
       "Weapons (incl. Mods) worth 1000 Credits.",
       "Motorcycle or Urban Car.",
-	  "Any one armor (incl. Mods) worth 1000 Credits.",
-	  "Cybernetics worth 3000 Credits.",
-	  "8 Assets."
+      "Any one armor (incl. Mods) worth 1000 Credits.",
+      "Cybernetics worth 3000 Credits.",
+      "8 Assets."
     ],
     "attributes": ["STR", "CON"],
     "skills": {
@@ -234,8 +234,8 @@
     "equipment": [
       "Weapons (incl. Mods) worth 1000 Credits.",
       "Any one armor (incl. Mods) worth 1000 Credits.",
-	  "Any vehicles / space ships (incl. modules) worth 15 Assets.",
-	  "5 Assets."
+      "Any vehicles / space ships (incl. modules) worth 15 Assets.",
+      "5 Assets."
     ],
     "attributes": ["COO", "PER"],
     "skills": {
@@ -243,7 +243,7 @@
       "Politics": 2,
       "Firearms": 2,
       "Defense": 1,
-	  "Sensors": 1
+      "Sensors": 1
     },
     "talents": {
       "0": ["Tactical Commander", "Tactical Advance", "Helping Hand"],
@@ -260,7 +260,7 @@
     "equipment": [
       "Weapons (incl. Mods) worth 500 Credits.",
       "Combat-Ready Space Suit.",
-	  "30 Assets for space ships / modules."
+      "30 Assets for space ships / modules."
     ],
     "attributes": ["AGI", "INT"],
     "skills": {
@@ -284,7 +284,7 @@
     "equipment": [
       "Weapons (incl. Mods) worth 500 Credits.",
       "Small Space Station.",
-	  "20 Assets for space ships / modules."
+      "20 Assets for space ships / modules."
     ],
     "attributes": ["AGI", "COO"],
     "skills": {
@@ -292,7 +292,7 @@
       "Gunnery": 2,
       "Infiltration": 2,
       "Pilot": 2,
-	  "Streetwise": 2
+      "Streetwise": 2
     },
     "talents": {
       "0": ["Salvager", "Combat Docking", "Thug Language"],
@@ -309,7 +309,7 @@
     "equipment": [
       "One weapon or armor (incl. mods) worth 5000 Credits.",
       "Crafting items worth 1000 Credits.",
-	  "8 Assets."
+      "8 Assets."
     ],
     "attributes": ["INT", "AGI"],
     "skills": {
@@ -333,9 +333,9 @@
     "equipment": [
       "VR Headset.",
       "Tier-1 Cyberdeck.",
-	  "Cybernetics worth 2000 Credits.",
-	  "Drones worth 5000 Credits.",
-	  "5 Assets."
+      "Cybernetics worth 2000 Credits.",
+      "Drones worth 5000 Credits.",
+      "5 Assets."
     ],
     "attributes": ["AGI", "INT"],
     "skills": {
@@ -366,7 +366,7 @@
       "Xenology": 2,
       "Investigation": 2,
       "Zero-G": 2,
-	  "Pilot": 1
+      "Pilot": 1
     },
     "talents": {
       "0": ["Climber", "Self-Treatment", "Astrogation"],
@@ -393,7 +393,7 @@
       "Empathy": 2,
       "Con Arts": 2,
       "Firearms": 2,
-	  "Streetwise": 1
+      "Streetwise": 1
     },
     "talents": {
       "0": ["Tracker", "Intimidation", "Spy"],

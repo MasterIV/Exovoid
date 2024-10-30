@@ -6,16 +6,25 @@
     "compatible": ["Pistol", "MP", "Rifle", "Heavy Weapon"],
     "cost": 150,
     "rarity": 1,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Muzzle / Barrel",
     "name": "Silencer",
     "effects": "Provides the weapon with the \"Silenced\" quality. If the weapon had the \"Loud\" quality, it loses it instead.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 200,
     "rarity": 2,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Muzzle / Barrel",
@@ -24,7 +33,7 @@
     "compatible": ["Pistol", "MP", "Rifle", "Heavy Weapon"],
     "cost": 100,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Muzzle / Barrel",
@@ -33,7 +42,7 @@
     "compatible": ["Laser Pistol", "Laser Rifle"],
     "cost": 120,
     "rarity": 3,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Muzzle / Barrel",
@@ -42,79 +51,151 @@
     "compatible": ["Laser Pistol", "Laser Rifle"],
     "cost": 150,
     "rarity": 3,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Muzzle / Barrel",
     "name": "Heat Ventilation System",
     "effects": "Allows to use the gun for more than 10 shots in vacuum.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 250,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Scopes",
     "name": "Red Dot Scope",
     "effects": "Provides Handling (+1) when shooting at optimal range, but -1 within maximum range.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 150,
     "rarity": 1,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Scopes",
     "name": "Thermal Imaging Scope",
     "effects": "Provides Handling (+2) when shooting at living creatures, but Handling (-4) against anything else. Additionally, all injury rolls that you cause have 2 less dice.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 300,
     "rarity": 3,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Scopes",
     "name": "Night Vision Scope",
     "effects": "Turns the difficulty increase during darkness into a mere -1 pool modifier, but adds +1 difficulty when using the scope in bright environments.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 250,
     "rarity": 3,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Scopes",
     "name": "ACOG 4x Scope",
     "effects": "Increases all ranges by 50%, but you suffer Handling (-1) when shooting within optimal range or under.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 200,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Scopes",
     "name": "Marksman Scope",
     "effects": "Increases all ranges by 100%, but also increases the lower end of the \"optimal range\" by 20 squares.\nIf the new minimum range is equal to or higher than the upper end of the \"optimal range\", then the upper end simply becomes 10 squares higher than the new minimum.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 250,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Scopes",
     "name": "Smart Targeting Scope",
     "effects": "Adds a -2 pool penalty to any attempts to actively dodge your attacks.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 350,
     "rarity": 3,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Mechanism",
     "name": "Fast Trigger Unit",
     "effects": "The weapon gains the Burst quality equal to 1/5th of the unmodified magazine capacity (to a minimum of 5). It also gains the Full Auto quality equal to three times the weapon's Burst quality.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 200,
     "rarity": 2,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Mechanism",
@@ -123,16 +204,25 @@
     "compatible": ["Plasma Rifle", "Plasma Heavy Weapon"],
     "cost": 250,
     "rarity": 4,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Mechanism",
     "name": "Smartgun Integration",
     "effects": "So long as the user possesses a smart eye cyberware, AR glasses or an armor with Visual Enhancers, they add Handling (+2).",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 200,
     "rarity": 3,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Mechanism",
@@ -141,25 +231,43 @@
     "compatible": ["Pistol", "MP", "Rifle", "Heavy Weapon"],
     "cost": 250,
     "rarity": 3,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Mechanism",
     "name": "Waterproof Internals",
     "effects": "Makes the weapon operable under water and reduces pool penalties when the weapon is wet.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 50,
     "rarity": 1,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Mechanism",
     "name": "Extended Frame",
     "effects": "This mod does not count against the mod limit (but does count against the Mechanism slot), but instead adds +1 mod that can be installed in the gun.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 120,
     "rarity": 2,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Stock",
@@ -168,88 +276,165 @@
     "compatible": ["MP", "Rifle", "Laser Rifle", "Plasma Rifle"],
     "cost": 50,
     "rarity": 1,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Stock",
     "name": "Adjustable Combat Stock",
     "effects": "Provides Handling (+1).",
-    "compatible": ["MP", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "MP",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 100,
     "rarity": 1,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Stock",
     "name": "Shock Absorption Stock",
     "effects": "Increases the \"Compensated\" quality by one, or grants it at the first level if it wasn't present.",
-    "compatible": ["MP", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "MP",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 100,
     "rarity": 2,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Grip",
     "name": "Ergonomic Grip",
     "effects": "Provides Handling (+1) on the first attack after switching to a new target.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 40,
     "rarity": 1,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Grip",
     "name": "Foregrip",
     "effects": "Provides Handling (+1) when shooting from out of cover.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 50,
     "rarity": 1,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Grip",
     "name": "Precision Grip",
     "effects": "Provides Handling (+1) when only shooting single rounds (no Burst or Full Auto fire).",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 80,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Grip",
     "name": "Shock-Absorption Grip",
     "effects": "Reduces the total AP cost of Full-Auto attacks by 1.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 80,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Magazine / Battery",
     "name": "High-Cap",
     "effects": "Increases magazine capacity by 50% (round down).",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 60,
     "rarity": 1,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Magazine / Battery",
     "name": "Drum / Block",
     "effects": "Reduces handling by 1, increases reload AP cost by 1, but triples the magazine capacity (increases capacity to a minimum of 15).",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 80,
     "rarity": 2,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Magazine / Battery",
     "name": "Quick-Reload",
     "effects": "Reduces the AP cost to reload the weapon by 1 (to a minimum of 1).",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 50,
     "rarity": 1,
-	"showEffect": false
+    "showEffect": false
   },
   {
     "slot": "Magazine / Battery",
@@ -258,114 +443,219 @@
     "compatible": ["Laser Pistol", "Laser Rifle"],
     "cost": 300,
     "rarity": 4,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Laser Sight",
     "effects": "Provides a free trigger on every attack after the first against the same target. Having the Laser Sight active makes your position very apparent.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 60,
     "rarity": 1,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Digital Laser Sight",
     "effects": "Provides a free trigger on every attack after the first against the same target - you require AR glasses, smart eyes  or an armor with Visual Enhancers to see your laser.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 120,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Flashlight",
     "effects": "Illuminates dark areas, but also blinds enemies after aiming at them for the first time (if in a dark area).",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 50,
     "rarity": 1,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Underbarrel Grenade Launcher",
     "effects": "Allows to make one shot with the unmodified weapon profile of the Grenade Launcher.",
-    "compatible": ["Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 250,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Bayonet Mount",
     "effects": "Allows to perform melee attacks with the unmodified weapon profile of a Knife.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 60,
     "rarity": 1,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Bipod",
     "effects": "Can be braced stationary by spending 3 AP. When doing so, the weapon gains Handling (+2).",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 60,
     "rarity": 1,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Dual Scope Mount (Red Dot)",
     "effects": "Provides Handling (+1) when shooting at optimal range, but -1 within maximum range. Switching scopes costs 1 AP.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 80,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Dual Scope Mount (Thermal Imaging)",
     "effects": "Provides Handling (+2) when shooting at living creatures, but Handling (-4) against anything else. Additionally, all injury rolls that you cause have 2 less dice. Switching scopes costs 1 AP.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 80,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Dual Scope Mount (Night Vision)",
     "effects": "Turns the difficulty increase during darkness into a mere -1 pool modifier, but adds +1 difficulty when using the scope in bright environments. Switching scopes costs 1 AP.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 80,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Dual Scope Mount (ACOG 4x)",
     "effects": "Increases all ranges by 50%, but you suffer Handling (-1) when shooting within optimal range or under. Switching scopes costs 1 AP.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 80,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Dual Scope Mount (Marksman)",
     "effects": "Increases all ranges by 100%, but also increases the lower end of the \"optimal range\" by 20 squares. If the new minimum range is equal to or higher than the upper end of the \"optimal range\", then the upper end simply becomes 10 squares higher than the new minimum. Switching scopes costs 1 AP.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 80,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   },
   {
     "slot": "Rail Attachments",
     "name": "Dual Scope Mount (Smart Targeting)",
     "effects": "Adds a -2 pool penalty to any attempts to actively dodge your attacks. Switching scopes costs 1 AP.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": [
+      "Pistol",
+      "MP",
+      "Laser Pistol",
+      "Rifle",
+      "Laser Rifle",
+      "Plasma Rifle",
+      "Heavy Weapon",
+      "Plasma Heavy Weapon"
+    ],
     "cost": 80,
     "rarity": 2,
-	"showEffect": true
+    "showEffect": true
   }
 ]

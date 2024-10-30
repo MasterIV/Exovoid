@@ -1,7 +1,7 @@
-import {StatModifierType} from "./character";
+import { StatModifierType } from "./character";
 
 export default interface TalentType {
-    talent: string;
-    description: string;
-    modifier?: StatModifierType;
+  talent: string;
+  description: string;
+  modifier?: StatModifierType;
 }

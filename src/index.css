@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,7 +10,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -24,12 +24,13 @@ code {
 }
 
 .avatar {
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   height: 180px;
   border-radius: 5px;
 }
 
-.dice, .avatar {
+.dice,
+.avatar {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,7 +39,11 @@ code {
 .dice {
   color: white;
   display: inline-flex;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
   justify-content: center;
   align-items: center;
 }
@@ -49,14 +54,13 @@ code {
 }
 
 .dice.exploded {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .dice.small {
   width: 32px;
   height: 32px;
   font-size: 20px;
-
 }
 
 .dice.large {
@@ -84,8 +88,12 @@ code {
 }
 
 @keyframes roll {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(1800deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1800deg);
+  }
 }
 
 .rollDetails > .dice {
@@ -105,17 +113,18 @@ code {
   overflow: auto;
 }
 
-.paperSmall, .paperLarge {
+.paperSmall,
+.paperLarge {
   padding: 16px;
   margin: 50px auto auto;
 }
 
 .paperSmall {
-  width: 400px
+  width: 400px;
 }
 
 .paperLarge {
-  width: 600px
+  width: 600px;
 }
 
 /* =========================================================== */
@@ -148,7 +157,8 @@ code {
 /* ====================== Combat Page ======================== */
 /* =========================================================== */
 
-.combatant, .injury {
+.combatant,
+.injury {
   padding: 10px;
 }
 
@@ -170,5 +180,5 @@ code {
   column-count: 2;
   column-gap: 100px;
   line-height: 130%;
-  color: #EEE;
+  color: #eee;
 }

@@ -6,5 +6,5 @@
     "noEmit": false,
     "rootDir": "src",
     "outDir": "server"
-  },
+  }
 }

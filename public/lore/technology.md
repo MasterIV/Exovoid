@@ -19,8 +19,8 @@ People usually tend to categorize technology into various tiers. These are the m
 
 #### Intergalactic Travel Technologies
 
-**1. Wormhole Network:** 
-The most advanced and efficient method of intergalactic travel, created by the mysterious Elder race. 
+**1. Wormhole Network:**
+The most advanced and efficient method of intergalactic travel, created by the mysterious Elder race.
 This network consists of stable wormholes connecting distant points in the galaxy, allowing instantaneous travel between them.
 Every couple of centuries there have been shifts in the network, with some wormholes disappearing and others emerging.
 The stable wormholes within the network emerge in regular intervals at specific points.
@@ -61,7 +61,7 @@ The relay stations are equipped with the highest level of cybersecurity and usua
 
 #### Weapons and Defense Technologies
 
-Weapons have a wide range. 
+Weapons have a wide range.
 Low technology races like humans are mostly limited to kinetic weapons like cannons and rail guns.
 More advanced races also make heavy use of various energy-based weapons.
 This ranges from lasers and masers to more exotic forms like disruptors, which fires intense bolts of energy phased in such a way as to disrupt the molecular cohesion of the target.

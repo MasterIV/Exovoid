@@ -128,7 +128,7 @@
     "talent": "Cyberadaption Training",
     "description": "You gain +4 Cyberimmunity.",
     "representation": 3,
-	"modifier": {"immunity":  4}
+    "modifier": { "immunity": 4 }
   },
   {
     "talent": "Cybernetic Maintenance",
@@ -344,7 +344,7 @@
     "talent": "Iron Skin",
     "description": "Gain +1 soak and +4 maximum health.",
     "representation": 2,
-    "modifier": {"health":  4}
+    "modifier": { "health": 4 }
   },
   {
     "talent": "Iron Wall",
@@ -365,7 +365,7 @@
     "talent": "Killer Instincts",
     "description": "You gain +1 Heft for your melee attacks.",
     "representation": 1,
-	"modifier": {"heft":  1}
+    "modifier": { "heft": 1 }
   },
   {
     "talent": "Lethal Attacks",
@@ -581,7 +581,7 @@
     "talent": "Resourceful",
     "description": "Increase your maximum edge points by +2.",
     "representation": 1,
-	"modifier": {"edge":  2}
+    "modifier": { "edge": 2 }
   },
   {
     "talent": "Riposte",
@@ -652,7 +652,7 @@
     "talent": "Sprinter",
     "description": "You passively gain +3 speed.",
     "representation": 2,
-	"modifier": {"speed":  3}
+    "modifier": { "speed": 3 }
   },
   {
     "talent": "Spy",
@@ -858,19 +858,19 @@
     "talent": "Childhood: Lab Child - Cyber Immunity",
     "description": "Gain +4 Cyber Immunity.",
     "representation": 0,
-	"modifier": {"immunity":  4}
+    "modifier": { "immunity": 4 }
   },
   {
     "talent": "Childhood: Lab Child - Health",
     "description": "Gain +2 maximum health.",
     "representation": 0,
-	"modifier": {"health":  2}
+    "modifier": { "health": 2 }
   },
   {
     "talent": "Adolescence: Military Draft",
     "description": "Gain +1 maximum health.",
     "representation": 0,
-	"modifier": {"health":  1}
+    "modifier": { "health": 1 }
   },
   {
     "talent": "Adolescence: Honorary Work",
@@ -921,7 +921,7 @@
     "talent": "Life Events: Rescued From Danger",
     "description": "Gain +1 maximum edge points.",
     "representation": 0,
-	"modifier": {"edge":  1}
+    "modifier": { "edge": 1 }
   },
   {
     "talent": "Life Events: Joined A Secret Organization",

@@ -1,3 +1,1 @@
-export interface ShipType {
-
-}
+export interface ShipType {}

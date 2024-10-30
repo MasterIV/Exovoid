@@ -1,4 +1,3 @@
-
 There once has been race more advanced than any other in the galaxy: they are usually referred to as the Elders.
 The Elders have vanished from the galaxy, even though their technology is much more advanced than any species currently in existence.
 Only some remnants of the elders can be found in the galaxy, the most prominent of them is a wormhole network that spans the galaxy.

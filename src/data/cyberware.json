@@ -7,7 +7,7 @@
     "cyberImmunityCost": 5,
     "cost": 1000,
     "rarity": 3,
-	"modifier": {"ap":  2}
+    "modifier": { "ap": 2 }
   },
   {
     "type": "Reflexbooster",
@@ -17,7 +17,7 @@
     "cyberImmunityCost": 6,
     "cost": 3000,
     "rarity": 4,
-	"modifier": {"ap":  3}
+    "modifier": { "ap": 3 }
   },
   {
     "type": "Reflexbooster",
@@ -27,7 +27,7 @@
     "cyberImmunityCost": 8,
     "cost": 7500,
     "rarity": 5,
-	"modifier": {"ap":  4}
+    "modifier": { "ap": 4 }
   },
   {
     "type": "Move By Wire",
@@ -37,8 +37,8 @@
     "cyberImmunityCost": 10,
     "cost": 4000,
     "rarity": 4,
-	"modifier": {"ap":  1},
-	"modifier": {"speed":  2}
+    "modifier": { "ap": 1 },
+    "modifier": { "speed": 2 }
   },
   {
     "type": "Move By Wire",
@@ -48,8 +48,8 @@
     "cyberImmunityCost": 12,
     "cost": 6000,
     "rarity": 5,
-	"modifier": {"ap":  1},
-	"modifier": {"speed":  2}
+    "modifier": { "ap": 1 },
+    "modifier": { "speed": 2 }
   },
   {
     "type": "Move By Wire",
@@ -59,8 +59,8 @@
     "cyberImmunityCost": 14,
     "cost": 10000,
     "rarity": 6,
-	"modifier": {"ap":  1},
-	"modifier": {"speed":  2}
+    "modifier": { "ap": 1 },
+    "modifier": { "speed": 2 }
   },
   {
     "type": "Dermal Armor",
@@ -142,7 +142,7 @@
     "cyberImmunityCost": 4,
     "cost": 600,
     "rarity": 3,
-	"modifier": {"health":  3}
+    "modifier": { "health": 3 }
   },
   {
     "type": "Skeletal Reinforcement",
@@ -152,7 +152,7 @@
     "cyberImmunityCost": 4,
     "cost": 1100,
     "rarity": 4,
-	"modifier": {"health":  3}
+    "modifier": { "health": 3 }
   },
   {
     "type": "Synthetic Muscles",
@@ -207,7 +207,7 @@
     "cyberImmunityCost": 9,
     "cost": 1800,
     "rarity": 3,
-	"modifier": {"speed":  2}
+    "modifier": { "speed": 2 }
   },
   {
     "type": "Cybernetic Legs",
@@ -217,7 +217,7 @@
     "cyberImmunityCost": 9,
     "cost": 2600,
     "rarity": 4,
-	"modifier": {"speed":  3}
+    "modifier": { "speed": 3 }
   },
   {
     "type": "Cybernetic Legs",
@@ -227,7 +227,7 @@
     "cyberImmunityCost": 6,
     "cost": 4200,
     "rarity": 5,
-	"modifier": {"speed":  3}
+    "modifier": { "speed": 3 }
   },
   {
     "type": "Adrenaline Booster",
