@@ -87,7 +87,7 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
     return  <Accordion  expanded={Boolean(props.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography variant="h6" marginRight={2}>{props.name}</Typography>
-            <Btn size="small" color={"error"} disabled={locked} onClick={removeNpc}>Remove</Btn>
+            <Btn size="small" color={"error"} variant="outlined" disabled={locked} onClick={removeNpc}>Remove</Btn>
         </AccordionSummary>
 
         <AccordionDetails>
