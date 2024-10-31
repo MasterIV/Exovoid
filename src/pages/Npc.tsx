@@ -1,5 +1,5 @@
 import React from "react";
-import {Grid} from "@mui/material";
+import {Box, Grid} from "@mui/material";
 import Initiative from "../components/Initiative";
 import Collection from "../components/Collection";
 import NpcType from "../types/npc";
@@ -31,13 +31,15 @@ interface NpcPageProps {
 export default React.memo( function NpcPage({npcs, onChange, onRoll, locked} : NpcPageProps) {
     const addNpc = () => onChange([...npcs, {...defaults, id: uuid.v4()}]);
 
-    return (<Grid container spacing={2} margin={1}>
-        <Grid item xs={3}>
-            <Initiative />
+    return (
+        <Grid container direction="row" spacing={2}>
+            <Grid item md={3} xs={12}>
+                <Initiative/>
+            </Grid>
+            <Grid item md={9} xs={12}>
+                <Collection locked={locked} values={npcs} onChange={onChange} component={Npc} onRoll={onRoll}/>
+                <Box display="flex" justifyContent="end" marginTop={2}><Btn onClick={addNpc}>Add Npc</Btn></Box>
+            </Grid>
         </Grid>
-        <Grid item xs={9}>
-            <Collection locked={locked} values={npcs} onChange={onChange} component={Npc} onRoll={onRoll} />
-            <p><Btn onClick={addNpc}>Add Npc</Btn></p>
-        </Grid>
-    </Grid>);
+    );
 });

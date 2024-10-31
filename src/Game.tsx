@@ -119,7 +119,7 @@ function Game({character, error, onChange}: GameProps) {
             </Grid>
         </Grid>
 
-        <Box>{tabs[tab].content()}</Box>
+        <Box marginTop={2}>{tabs[tab].content()}</Box>
     </Container>);
 }
 
