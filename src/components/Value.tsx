@@ -9,6 +9,7 @@ interface ValueProps {
     onChange: (name: string, value: number) => void;
     label?: string;
     width?: number;
+    fullWidth?: boolean;
     mask?: string;
     disabled?: boolean;
 }
@@ -19,7 +20,8 @@ export default React.memo(function Value({
     onChange,
     mask,
     label = "Value",
-    width = 90,
+    width,
+    fullWidth = false,
     disabled = false
 }: ValueProps) {
     const inputProps: InputProps = {};
@@ -39,6 +41,7 @@ export default React.memo(function Value({
             variant="filled"
             sx={{width}}
             InputProps={inputProps}
+            fullWidth={fullWidth}
             size="small"/>
         <Button disabled={disabled} onClick={() => onChange(name, value + 1)}><AddIcon fontSize="small"/></Button>
     </ButtonGroup>;

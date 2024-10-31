@@ -61,7 +61,7 @@ export default React.memo(function CharacterPage({stats, onChange, onRoll, locke
     const vigilance = Math.ceil(3 + (INT + COO) / 3);
     const vigilancePool: DicePoolType = {default: 1, aptitude: vigilance};
 
-    return (<Grid container spacing={2} margin={1} direction="column">
+    return (<Grid container spacing={2} direction="column">
         <Grid item container spacing={2}>
             <Grid item container xs={3} spacing={1} direction="column">
                 <Grid item><TextInput label="Name" name="name" values={stats} onChange={onChange}/></Grid>
@@ -82,18 +82,18 @@ export default React.memo(function CharacterPage({stats, onChange, onRoll, locke
                 </Paper>
             </Grid>
             <Grid item container xs={2} spacing={1} direction="column">
-                <Grid item textAlign='right'>
-                    <Value name='currentHealth' width={128} label='Health' mask={` / ${calculateHealth(stats)}`}
+                <Grid item>
+                    <Value name='currentHealth' fullWidth label='Health' mask={` / ${calculateHealth(stats)}`}
                            value={currentHealth} onChange={onChange}/>
                 </Grid>
-                <Grid item textAlign='right'>
-                    <Value name='currentEdge' width={128} label='Edge' mask={` / ${calculateEdge(stats)}`} value={currentEdge}
+                <Grid item>
+                    <Value name='currentEdge' fullWidth label='Edge' mask={` / ${calculateEdge(stats)}`} value={currentEdge}
                            onChange={onChange}/>
                 </Grid>
-                <Grid item textAlign='right'>
-                    <Value name='exp' width={128} label='Exp' value={exp} onChange={onChange}/>
+                <Grid item>
+                    <Value name='exp' fullWidth label='Exp' value={exp} onChange={onChange}/>
                 </Grid>
-                <Grid item textAlign='right'>
+                <Grid item>
                     <Btn fullWidth className='roll-btn' onClick={() => onRoll(vigilance, 0, 0, {skill: "Vigilance"})}>
                         Vigilance
                         <DicePool {...vigilancePool} />
