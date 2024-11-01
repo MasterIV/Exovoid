@@ -50,7 +50,7 @@ export default React.memo(function Skills({skills, attributes, onChange, onRoll,
 
                                 return (<TableRow key={s.name}>
                                     <TableCell>
-                                        <Value disabled={locked} name={s.name} label={s.name}
+                                        <Value width={90} disabled={locked} name={s.name} label={s.name}
                                                value={skills[s.name] || 0} onChange={onChange}/>
                                     </TableCell>
                                     <TableCell> <Stack direction="row" spacing={1}>
