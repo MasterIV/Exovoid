@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import AccountType from "./types/account";
 import {Alert, Paper, Stack} from "@mui/material";
 import {Btn, TextInput} from "./components/Form";
@@ -31,10 +31,7 @@ function Tables({account, onJoin, onCreate, error}: TablesProps) {
             <Stack spacing={2}>
                 <div>Open sessions</div>
                 {account.tables.map(table => (
-                    <Btn
-                        key={table.id}
-                        onClick={() => onJoin(table.id)}
-                    >
+                    <Btn key={table.id} onClick={() => onJoin(table.id)}>
                         Join {table.name} ({table.character})
                     </Btn>
                 ))}
