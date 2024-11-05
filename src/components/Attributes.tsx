@@ -18,7 +18,7 @@ export default React.memo(function Attributes({values, onChange, locked=false}: 
             const value = values[a as keyof typeof values] || 0;
 
             return (<Grid key={a} item>
-                <Value disabled={locked} name={a} label={name} value={value} onChange={onChange}/>
+                <Value disabled={locked} name={a} label={name} width={90} value={value} onChange={onChange}/>
             </Grid>);
         })}
     </Grid>);

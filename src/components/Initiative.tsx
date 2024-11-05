@@ -44,8 +44,8 @@ export default function Initiative({ children}: InitiativeProps) {
         {ini.map(c => <Fighter {...c} onChange={update} key={c.id}/>)}
 
         <Grid item container spacing={2}>
-            <Grid item xs={6}><Btn fullWidth color="error" onClick={reset}>Reset</Btn></Grid>
-            <Grid item xs={6}><Btn fullWidth onClick={round}>New Round</Btn></Grid>
+            <Grid item xs={4}><Btn fullWidth color="error" onClick={reset}>Reset</Btn></Grid>
+            <Grid item xs={8}><Btn fullWidth onClick={round}>New Round</Btn></Grid>
         </Grid>
 
         {children}

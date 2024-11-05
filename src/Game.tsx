@@ -113,13 +113,13 @@ function Game({character, error, onChange}: GameProps) {
                 {tabs.map(tab => (<Tab key={tab.name} label={tab.name}/>))}
             </Tabs></Grid>
 
-            <Grid xs={4} textAlign="right" item>
+            <Grid xs={4} display="flex" alignItems="center" justifyContent="end" item>
                 <FormControlLabel control={<Checkbox  checked={locked} onChange={e => setLocked(e.target.checked)} />} label="Lock" />
-                <Btn>Logout</Btn>
+                <Btn size="small" variant="outlined" color="secondary" disabled>Logout</Btn>
             </Grid>
         </Grid>
 
-        <Box>{tabs[tab].content()}</Box>
+        <Box marginTop={2}>{tabs[tab].content()}</Box>
     </Container>);
 }
 

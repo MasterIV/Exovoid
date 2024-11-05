@@ -19,7 +19,7 @@ export const TextInput = (props: TextInputProps) => {
 
 
 
-export const Btn = (props: ButtonProps) => <Button {...props} variant="contained" />;
+export const Btn = (props: ButtonProps) => <Button variant="contained" {...props} />;
 
 interface DropdownProps extends Omit<SelectProps, 'onChange' | 'variant'>{
     id: string,

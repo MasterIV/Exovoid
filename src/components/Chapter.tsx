@@ -14,7 +14,7 @@ export default function({url, title, columns = true}: ChapterProps) {
         axios
             .get(url)
             .then(res => setText(res.data));
-    });
+    }, [url]);
 
     const className: string = columns ? "chapter" : "";
 

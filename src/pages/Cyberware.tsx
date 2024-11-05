@@ -42,18 +42,24 @@ function CyberWare({onChange, onRemove, locked, name, enabled, ...data}: CyberWa
     const removeItem = () => window.confirm("Remove Item?") && onRemove();
     const details = cyberMap[name];
 
-    return  <TableRow>
-        <TableCell>{name}</TableCell>
-        <TableCell>{details.description}</TableCell>
-        <TableCell><Checkbox onChange={e => onChange('enabled', e.target.checked)} checked={enabled} /></TableCell>
-        <TableCell>{details.cyberImmunityCost}</TableCell>
-        <TableCell>
-            <Stack direction="row" spacing={2}>
-                <TextInput name="note" values={data} onChange={onChange} />
-                <Btn color="error" disabled={locked} onClick={removeItem}>Remove</Btn>
-            </Stack>
-        </TableCell>
-    </TableRow>;
+    return  (
+        <TableRow>
+            <TableCell>
+                <Stack spacing={1} direction="column">
+                    <b>{name}</b>
+                    <div>{details.description}</div>
+                </Stack>
+            </TableCell>
+            <TableCell><Checkbox onChange={e => onChange('enabled', e.target.checked)} checked={enabled}/></TableCell>
+            <TableCell>{details.cyberImmunityCost}</TableCell>
+            <TableCell>
+                <TextInput name="note" values={data} onChange={onChange}/>
+            </TableCell>
+            <TableCell>
+                <Btn color="error" disabled={locked} variant="outlined" onClick={removeItem}>Remove</Btn>
+            </TableCell>
+        </TableRow>
+    );
 }
 
 interface CyberWarePageProps {
@@ -67,21 +73,24 @@ export default React.memo(function CyberWarePage({stats, locked, onChange} : Cyb
     const changeMalfunction =  useCallback((n: string, d: CharacterCyberMalfunction) => onChange('malfunctions', {...stats.malfunctions, [n]: d}), [stats.malfunctions]);
     const [data,setData] = useState(cyberWares[0].name);
 
-    return <Grid container spacing={2} margin={1} direction="column">
+    return <Grid container spacing={2} direction="column">
         <Grid item>
+            <h2>Installed Cyberware</h2>
+
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell width="20%">Name</TableCell>
-                            <TableCell width="30%">Description</TableCell>
+                            <TableCell width="40%">Name</TableCell>
                             <TableCell width="5%">Enabled</TableCell>
-                            <TableCell width="5%">Immunity</TableCell>
+                            <TableCell width="10%">Immunity</TableCell>
                             <TableCell width="40%">Notes</TableCell>
+                            <TableCell width="5%"/>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <Collection locked={locked} values={stats.cyberware} onChange={changeCyberWare} component={CyberWare} />
+                        <Collection locked={locked} values={stats.cyberware} onChange={changeCyberWare}
+                                    component={CyberWare}/>
                     </TableBody>
                 </Table>
             </TableContainer>
@@ -89,19 +98,25 @@ export default React.memo(function CyberWarePage({stats, locked, onChange} : Cyb
 
         <Grid item container spacing={2} alignItems="center">
             <Grid item xs={6}><Autocomplete
+                size="small"
                 value={data}
                 options={cyberWares.map((i) => i.name)}
                 onChange={(e, v) => setData(v||cyberWares[0].name)}
                 renderInput={(params) => <TextField {...params} label="Cyberware" />}/></Grid>
             <Grid item xs={2}><Btn fullWidth onClick={() => data && changeCyberWare([...stats.cyberware, {...defaults, id: uuid.v4(), name: data}])}>Add Cyberware</Btn></Grid>
-            <Grid textAlign="right" item xs={4}>
-                <Chip label={`Occupied: ${stats.cyberware.map(c => cyberMap[c.name].cyberImmunityCost).reduce((a, b) => a+b, 0)}`} />
-                &nbsp;&nbsp;
-                <Chip label={`Immunity: ${calculateImmunity(stats)}`} />
+            <Grid item container xs={4} spacing={1} justifyContent="end" direction="row">
+                <Grid item>
+                    <Chip
+                        label={`Occupied: ${stats.cyberware.map(c => cyberMap[c.name].cyberImmunityCost).reduce((a, b) => a + b, 0)}`}/>
+                </Grid>
+                <Grid item>
+                    <Chip label={`Immunity: ${calculateImmunity(stats)}`}/>
+                </Grid>
             </Grid>
         </Grid>
 
         <Grid item>
+            <h2>Cyberware Malfunctions</h2>
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
