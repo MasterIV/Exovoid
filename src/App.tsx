@@ -8,6 +8,7 @@ import characterDefaults from "./data/character.json";
 
 import socket, {onAccountChange, onCharacterChange, onError, saveCharacter} from "./socket";
 import InitiativeProvider from "./provider/InitiativeProvider";
+import {SnackbarProvider} from "notistack";
 
 function App() {
     const [character, setCharacter] = useState<CharacterType|null>(null);
@@ -29,7 +30,9 @@ function App() {
 
     if (character)
         return <InitiativeProvider stats={character}>
-            <Game error={error} character={character} onChange={changeCharacter}/>
+            <SnackbarProvider maxSnack={5} autoHideDuration={12_000} anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}>
+                <Game error={error} character={character} onChange={changeCharacter}/>
+            </SnackbarProvider>
         </InitiativeProvider>;
 
     if(account)

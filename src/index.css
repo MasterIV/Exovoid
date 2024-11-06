@@ -95,16 +95,6 @@ code {
   animation-timing-function: ease-out;
 }
 
-.resultArea {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  width: 100%;
-  overflow: auto;
-}
-
 .paperSmall, .paperLarge {
   padding: 16px;
   margin: 50px auto auto;
