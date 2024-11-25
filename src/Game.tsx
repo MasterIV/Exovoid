@@ -20,7 +20,6 @@ import NotesPage from "./pages/Notes";
 
 interface GameProps {
     character: CharacterType;
-    table: TableType;
     onChange: (name: string, value: any) => void;
     error?: string;
 }
@@ -41,7 +40,7 @@ function emptyPool(pool: DicePoolType) {
         (pool.injury ?? 0) < 1;
 }
 
-function Game({character, table, error, onChange}: GameProps) {
+function Game({character, error, onChange}: GameProps) {
     const [locked, setLocked] = useState(false);
     const [roll, setRoll] = useState<RollConfig>({
         show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}, support: false
@@ -88,7 +87,7 @@ function Game({character, table, error, onChange}: GameProps) {
         {name: "Cyberware", content: () => <CyberWarePage locked={locked} stats={character} onChange={onChange}/>},
         {name: "Inventory", content: () => <InventoryPage locked={locked} inventory={character.inventory} currency={character.currency} onChange={onChange}/>},
         {name: "Npc", content: () => <NpcPage locked={locked}  npcs={character.npcs || []} onChange={changeNpc} onRoll={changeRoll} />},
-        {name: "Notes", content: () => <NotesPage table={table} onTableChange={() => {}} character={character} onCharacterChange={onChange}/>},
+        {name: "Notes", content: () => <NotesPage character={character} onCharacterChange={onChange}/>},
         {name: "Lore", content: () => <LorePage/>},
     ];
 

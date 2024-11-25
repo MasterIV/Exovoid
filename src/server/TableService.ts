@@ -24,7 +24,7 @@ export default class TableService {
         const file = `${dir}/${id}.json`;
         const content = fs.readFileSync(file);
         const table = JSON.parse(content.toString()) as TableData;
-        return table.data;
+        return table.data || {};
     }
 
     check(table: string, password: string) {
