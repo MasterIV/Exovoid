@@ -15,11 +15,10 @@ import {
     calculateImmunity,
     calculateSpeed
 } from "../logic/calculateDerived";
+import useCharacter from "../state/character";
 
 interface CharacterPageProps {
-    onChange: (name: string, value: any) => void;
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
-    stats: CharacterType;
     locked?: boolean;
 }
 
@@ -31,7 +30,10 @@ const derivedStyles: React.CSSProperties = {
     padding: 5,
 };
 
-export default React.memo(function CharacterPage({stats, onChange, onRoll, locked=false}: CharacterPageProps) {
+export default React.memo(function CharacterPage({onRoll, locked=false}: CharacterPageProps) {
+    const stats = useCharacter();
+    const onChange = useCharacter(state => state.update);
+
     const {
         attributes,
         skills,

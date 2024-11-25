@@ -8,13 +8,13 @@ interface TableState extends TableType {
     update: (name: string, value: any) => void;
 }
 
-let tableUpdateTimer: any = null;
+let updateTimer: any = null;
 const useTable = create<TableState>((set) => ({
     update: (name, value) => set(state => {
-        if(tableUpdateTimer) clearTimeout(tableUpdateTimer);
-        tableUpdateTimer = setTimeout(() => {
+        if(updateTimer) clearTimeout(updateTimer);
+        updateTimer = setTimeout(() => {
             socket.emit("table", {...state, [name]: value});
-            tableUpdateTimer = null;
+            updateTimer = null;
         }, SAVE_DELAY);
 
         return {[name]: value};

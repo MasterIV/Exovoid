@@ -25,6 +25,7 @@ import {Btn, TextInput} from "../components/Form";
 import * as uuid from 'uuid';
 import CyberWareType from "../types/cyberware";
 import {calculateImmunity} from "../logic/calculateDerived";
+import useCharacter from "../state/character";
 
 const defaults: CharacterCyberWare = {id: "", name: "", enabled: true};
 const cyberMap: Record<string, CyberWareType> = {};
@@ -63,14 +64,18 @@ function CyberWare({onChange, onRemove, locked, name, enabled, ...data}: CyberWa
 }
 
 interface CyberWarePageProps {
-    onChange: (name: string, value: any) => void;
     locked?: boolean;
-    stats: CharacterType;
 }
 
-export default React.memo(function CyberWarePage({stats, locked, onChange} : CyberWarePageProps) {
+export default React.memo(function CyberWarePage({locked} : CyberWarePageProps) {
+    const onChange = useCharacter(state => state.update);
+    const malfunctions = useCharacter(state => state.malfunctions);
+    const cyberware = useCharacter(state => state.cyberware);
+    const immunity = useCharacter(state => calculateImmunity(state));
+
     const changeCyberWare = useCallback((i:any) => onChange('cyberware', i), [onChange]);
-    const changeMalfunction =  useCallback((n: string, d: CharacterCyberMalfunction) => onChange('malfunctions', {...stats.malfunctions, [n]: d}), [stats.malfunctions]);
+    const changeMalfunction =  useCallback((n: string, d: CharacterCyberMalfunction) => onChange('malfunctions', {...malfunctions, [n]: d}), [malfunctions]);
+
     const [data,setData] = useState(cyberWares[0].name);
 
     return <Grid container spacing={2} direction="column">
@@ -89,7 +94,7 @@ export default React.memo(function CyberWarePage({stats, locked, onChange} : Cyb
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <Collection locked={locked} values={stats.cyberware} onChange={changeCyberWare}
+                        <Collection locked={locked} values={cyberware} onChange={changeCyberWare}
                                     component={CyberWare}/>
                     </TableBody>
                 </Table>
@@ -103,14 +108,14 @@ export default React.memo(function CyberWarePage({stats, locked, onChange} : Cyb
                 options={cyberWares.map((i) => i.name)}
                 onChange={(e, v) => setData(v||cyberWares[0].name)}
                 renderInput={(params) => <TextField {...params} label="Cyberware" />}/></Grid>
-            <Grid item xs={2}><Btn fullWidth onClick={() => data && changeCyberWare([...stats.cyberware, {...defaults, id: uuid.v4(), name: data}])}>Add Cyberware</Btn></Grid>
+            <Grid item xs={2}><Btn fullWidth onClick={() => data && changeCyberWare([...cyberware, {...defaults, id: uuid.v4(), name: data}])}>Add Cyberware</Btn></Grid>
             <Grid item container xs={4} spacing={1} justifyContent="end" direction="row">
                 <Grid item>
                     <Chip
-                        label={`Occupied: ${stats.cyberware.map(c => cyberMap[c.name].cyberImmunityCost).reduce((a, b) => a + b, 0)}`}/>
+                        label={`Occupied: ${cyberware.map(c => cyberMap[c.name].cyberImmunityCost).reduce((a, b) => a + b, 0)}`}/>
                 </Grid>
                 <Grid item>
-                    <Chip label={`Immunity: ${calculateImmunity(stats)}`}/>
+                    <Chip label={`Immunity: ${immunity}`}/>
                 </Grid>
             </Grid>
         </Grid>
@@ -133,7 +138,7 @@ export default React.memo(function CyberWarePage({stats, locked, onChange} : Cyb
                             const length = 1 + m.range[1] - m.range[0];
                             const slots = Array.from({length}, (x, i) => i);
 
-                            const status = stats.malfunctions[m.name] || defaultMalfunction;
+                            const status = malfunctions[m.name] || defaultMalfunction;
 
                             const changeSlot = (s: number, v: boolean) => changeMalfunction(m.name, {...status, slots: slots.map(( i) => i === s ? v : Boolean(status.slots[i]))});
                             const changeActive = (v: boolean) => changeMalfunction(m.name, {...status, active: v});

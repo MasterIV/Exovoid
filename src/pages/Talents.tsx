@@ -3,8 +3,8 @@ import Career, {getCareerTalents} from "../components/Career";
 import careers from "../data/classes.json";
 import talents from '../data/talents.json';
 import {Grid, Paper, Typography} from "@mui/material";
-import CharacterType from "../types/character";
 import {Btn, Dropdown} from "../components/Form";
+import useCharacter from "../state/character";
 
 const careerMap: Record<string, any> = {};
 careers.forEach(c => careerMap[c.name] = c);
@@ -13,8 +13,6 @@ const talentMap: Record<string, string> = {};
 talents.forEach(t => talentMap[t.talent] = t.description);
 
 interface TalentPageProps {
-    onChange: (name: string, value: any) => void;
-    stats: CharacterType;
     locked?: boolean;
 }
 
@@ -23,19 +21,22 @@ interface TalentPageState {
     talent: string;
 }
 
-export default function TalentPage({stats, locked, onChange}: TalentPageProps) {
+export default function TalentPage({locked}: TalentPageProps) {
+    const onChange = useCharacter(state => state.update);
+    const classes = useCharacter(state => state.classes);
+    const characterTalents = useCharacter(state => state.talents);
+    
     const [values, setValues] = useState<TalentPageState>({class: careers[0].name, talent: talents[0].talent});
     const changeValues = useCallback((k: string, v: string) => setValues(old => ({...old, [k]: v})), []);
 
     const selectTalent = useCallback((t: string[]) => onChange('talents', t), [onChange])
-    const classTalents = stats.classes.map(c => getCareerTalents(c, careerMap[c].talents)).flat();
-    const freeTalents = stats.talents.filter(t => !classTalents.includes(t));
+    const classTalents = classes.map(c => getCareerTalents(c, careerMap[c].talents)).flat();
+    const freeTalents = characterTalents.filter(t => !classTalents.includes(t));
 
-    const removeClass = useCallback((n: string) => onChange('classes', stats.classes.filter(c => c !== n)), [stats.classes]);
-    const removeTalent = useCallback((n: string) => onChange('talents', stats.talents.filter(t => t !== n)), [stats.talents]);
-    const addCareer = () => onChange('classes', [...stats.classes, values.class]);
-    const addTalent= () => onChange('talents', [...stats.talents, values.talent]);
-
+    const removeClass = useCallback((n: string) => onChange('classes', classes.filter(c => c !== n)), [classes]);
+    const removeTalent = useCallback((n: string) => onChange('talents', characterTalents.filter(t => t !== n)), [characterTalents]);
+    const addCareer = () => onChange('classes', [...classes, values.class]);
+    const addTalent= () => onChange('talents', [...characterTalents, values.talent]);
 
     return (<Grid container spacing={2} direction="column">
         {freeTalents.length > 0 && <Grid item>
@@ -61,12 +62,12 @@ export default function TalentPage({stats, locked, onChange}: TalentPageProps) {
             <Grid item xs={4}><Btn onClick={addTalent} fullWidth>Add Talent</Btn></Grid>
         </Grid>
 
-        {stats.classes.map(c => <Grid key={c} item>
+        {classes.map(c => <Grid key={c} item>
             <Career {...careerMap[c]}
                 locked={locked}
                     onChange={selectTalent}
                     onRemove={removeClass}
-                    acquiredTalents={stats.talents || []}/>
+                    acquiredTalents={characterTalents || []}/>
         </Grid>)}
 
         <Grid item container spacing={2} alignItems="center">

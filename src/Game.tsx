@@ -17,10 +17,9 @@ import {InitiativeContext} from "./provider/InitiativeProvider";
 import {DicePoolType} from "./types/dice";
 import {TableType} from "./types/table";
 import NotesPage from "./pages/Notes";
+import useCharacter from "./state/character";
 
 interface GameProps {
-    character: CharacterType;
-    onChange: (name: string, value: any) => void;
     error?: string;
 }
 
@@ -40,7 +39,7 @@ function emptyPool(pool: DicePoolType) {
         (pool.injury ?? 0) < 1;
 }
 
-function Game({character, error, onChange}: GameProps) {
+function Game({error}: GameProps) {
     const [locked, setLocked] = useState(false);
     const [roll, setRoll] = useState<RollConfig>({
         show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}, support: false
@@ -63,6 +62,9 @@ function Game({character, error, onChange}: GameProps) {
         support
     }), []);
 
+    const weapons = useCharacter(state => state.weapons);
+    const onChange = useCharacter(state => state.update);
+
     const onRoll = () => {
         if(roll.support) socket.emit("roll", {aptitude: roll.attribute+roll.modifier}, roll.metadata);
         else socket.emit("roll", calculatePool(roll.attribute, roll.skill, roll.modifier), roll.metadata);
@@ -70,7 +72,7 @@ function Game({character, error, onChange}: GameProps) {
         if(roll.metadata?.id && roll.metadata?.ap)
             spendAp(roll.metadata.id, roll.metadata.ap);
         if(roll.metadata?.weapon && roll.metadata?.ammo)
-            onChange('weapons', character.weapons.map(w => {
+            onChange('weapons', weapons.map(w => {
                 const ammo =  {...w.ammo, loaded: w.ammo.loaded - roll.metadata?.ammo};
                 return roll.metadata?.weapon === w.id ? {...w, ammo} : w;
             }));
@@ -78,16 +80,14 @@ function Game({character, error, onChange}: GameProps) {
         resetRoll();
     }
 
-    const changeNpc = React.useCallback((npcs: object[]) => onChange('npcs', npcs), [onChange]);
-
     const tabs = [
-        {name: "Character", content: () => <CharacterPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
-        {name: "Combat", content: () => <CombatPage locked={locked} stats={character} onChange={onChange} onRoll={changeRoll}/>},
-        {name: "Talents", content: () => <TalentPage locked={locked} stats={character} onChange={onChange}/>},
-        {name: "Cyberware", content: () => <CyberWarePage locked={locked} stats={character} onChange={onChange}/>},
-        {name: "Inventory", content: () => <InventoryPage locked={locked} inventory={character.inventory} currency={character.currency} onChange={onChange}/>},
-        {name: "Npc", content: () => <NpcPage locked={locked}  npcs={character.npcs || []} onChange={changeNpc} onRoll={changeRoll} />},
-        {name: "Notes", content: () => <NotesPage character={character} onCharacterChange={onChange}/>},
+        {name: "Character", content: () => <CharacterPage locked={locked} onRoll={changeRoll}/>},
+        {name: "Combat", content: () => <CombatPage locked={locked} onRoll={changeRoll}/>},
+        {name: "Talents", content: () => <TalentPage locked={locked}/>},
+        {name: "Cyberware", content: () => <CyberWarePage locked={locked}/>},
+        {name: "Inventory", content: () => <InventoryPage locked={locked}/>},
+        {name: "Npc", content: () => <NpcPage locked={locked} onRoll={changeRoll} />},
+        {name: "Notes", content: () => <NotesPage />},
         {name: "Lore", content: () => <LorePage/>},
     ];
 

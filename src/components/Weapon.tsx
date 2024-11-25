@@ -39,7 +39,7 @@ function createChips(data: Record<string, number | undefined>) {
     return <Stack direction="row" spacing={1} marginX={1} display={"inline-block"}>
         {Object.entries(data).map(q => {
             const label = Number(q[1]) > 0 ? `${q[0]}: ${q[1]}` : q[0];
-            return <Chip size="small" label={label} />;
+            return <Chip key={q[0]} size="small" label={label} />;
         })}
     </Stack>
 }

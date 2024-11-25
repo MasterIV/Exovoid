@@ -18,6 +18,7 @@ import items from '../data/items.json';
 import {Btn, TextInput} from "../components/Form";
 import * as uuid from 'uuid';
 import Value from "../components/Value";
+import useCharacter from "../state/character";
 
 const defaults = {name: "", quantity: 1, location: "", notes: ""};
 
@@ -54,16 +55,14 @@ function Item({onChange, onRemove, locked, ...item}: ItemProps) {
 }
 
 interface InventoryPageProps {
-    onChange: (name: string, value: any) => void;
     locked?: boolean;
-    inventory: InventoryItem[];
-    currency: {
-        assets: number;
-        credits: number;
-    };
 }
 
-export default React.memo(function InventoryPage({inventory, currency, locked, onChange} : InventoryPageProps) {
+export default React.memo(function InventoryPage({locked} : InventoryPageProps) {
+    const onChange = useCharacter(state => state.update);
+    const currency = useCharacter(state => state.currency);
+    const inventory = useCharacter(state => state.inventory);
+
     const changeInventory = useCallback((value:unknown) => onChange('inventory', value), [onChange]);
     const changeCurrency = (key: string, value: number) => onChange('currency', {...currency, [key]: value});
 

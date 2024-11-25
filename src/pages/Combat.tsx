@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useState} from "react";
 import {Grid} from "@mui/material";
-import CharacterType, {CharacterWeapon} from "../types/character";
+import {CharacterWeapon} from "../types/character";
 import Weapon from "../components/Weapon";
 import {Btn, Dropdown} from "../components/Form";
 import Collection from "../components/Collection";
@@ -18,6 +18,7 @@ import {InitiativeContext} from "../provider/InitiativeProvider";
 import {WeaponType} from "../types/weapon";
 import {Armor} from "../components/Armor";
 import {calculateEdge, calculateHealth, calculateHeft} from "../logic/calculateDerived";
+import useCharacter from "../state/character";
 
 const weaponMap: Record<string, WeaponType> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
@@ -26,13 +27,14 @@ const armorMap: Record<string, typeof armors[0]> = {};
 armors.forEach(w => armorMap[w.type] = w);
 
 interface CombatPageProps {
-    onChange: (name: string, value: any) => void;
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
-    stats: CharacterType;
     locked?: boolean;
 }
 
-export default function CombatPage({stats, onChange, onRoll, locked} : CombatPageProps) {
+export default function CombatPage({onRoll, locked} : CombatPageProps) {
+    const stats = useCharacter();
+    const onChange = useCharacter(state => stats.update);
+
     const actions = calculateCombatActions(stats);
     const [data,setData] = useState({
         weapon: weapons[0].weapon,

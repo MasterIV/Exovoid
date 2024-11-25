@@ -5,6 +5,7 @@ import {randomIni} from "../logic/randomIni";
 import CharacterType from "../types/character";
 import charToCombatant from "../logic/charToCombatant";
 import npcToCombatant from "../logic/npcToCombatant";
+import useCharacter from "../state/character";
 
 export interface InitiativeCorrection {
     currentHealth: number;
@@ -35,11 +36,11 @@ export const InitiativeContext = createContext<InitiativeContextType>({
 });
 
 interface InitiativeProviderProps {
-    stats: CharacterType;
     children: any;
 }
 
-export default function InitiativeProvider({ children, stats }: InitiativeProviderProps) {
+export default function InitiativeProvider({ children }: InitiativeProviderProps) {
+    const stats = useCharacter();
     const [combatants, setCombatants] = useState<Record<string, Combatant>>({});
 
     const update = useCallback((c: Combatant) => {
