@@ -5,6 +5,7 @@ import TableService from "./TableService";
 import CharacterType from "../types/character";
 import GameService from "./GameService";
 import {EventNames} from "socket.io/dist/typed-events";
+import {TableType} from "../types/table";
 
 type OverlappingEvents = Extract<EventNames<ServerEvents>, EventNames<ClientEvents>>;
 
@@ -83,9 +84,10 @@ export default class StateManager {
     private selectCharacter(socket: ClientSocket, character: CharacterType) : void {
         socket.data.character = character;
         socket.rooms.forEach(r => socket.leave(r));
-        socket.join(socket.data.character.table);
+        socket.join(character.table);
         this.registerGameHandlers(socket);
-        socket.emit("character", socket.data.character);
+        socket.emit("character", character);
+        socket.emit("table", this.tableService.load(character.table))
     }
 
     private passThrough(socket: ClientSocket, event: OverlappingEvents) {
@@ -108,11 +110,22 @@ export default class StateManager {
         }));
 
         socket.on("save", this.wrapHandler(socket, (data) => {
-            if (!socket.data.character || socket.data.character.id !== data.id)
+            if (!socket.data.character)
                 throw new Error("Invalid character!");
             console.log("Saving changes on: " + data.name);
-            this.characterService.save(data);
+            this.characterService.save({
+                ...data,
+                // don't allow the client to overwrite id or table
+                id: socket.data.character.id,
+                table: socket.data.character.table
+            });
         }));
+
+        socket.on("table", this.wrapHandler(socket, (table: TableType) => {
+            if (!socket.data.character) throw new Error("Character required!");
+            this.tableService.save(socket.data.character.table, table);
+            socket.to(socket.data.character.table).emit("table", table);
+        }))
 
         this.passThrough(socket, "combatant");
         this.passThrough(socket, "remove");

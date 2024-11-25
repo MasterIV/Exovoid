@@ -77,4 +77,5 @@ export default interface CharacterType {
     };
 
     npcs?: NpcType[];
+    notes?: string;
 }

@@ -6,6 +6,7 @@ import {DefaultEventsMap} from "socket.io/dist/typed-events";
 import {DicePoolType, DiceResultType} from "./dice";
 import {Combatant} from "./combat";
 import {ShipType} from "./ship";
+import {TableType} from "./table";
 
 type Metadata = Record<string, any>
 
@@ -14,6 +15,7 @@ interface PassThroughEvents {
     ship: (ship: ShipType) => void;
     reset: () => void;
     remove: (id: string) => void;
+    table: (table: TableType) => void;
 }
 
 export interface ClientEvents extends PassThroughEvents {
