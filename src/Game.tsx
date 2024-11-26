@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {Alert, Box, Checkbox, Container, FormControlLabel, Grid, Modal, Paper, Stack, Tab, Tabs} from "@mui/material";
 import CharacterPage from "./pages/Character";
 import LorePage from "./pages/Lore";
@@ -6,18 +6,17 @@ import CombatPage from "./pages/Combat";
 import InventoryPage from "./pages/Inventory";
 import CyberWarePage from "./pages/Cyberware";
 import TalentPage from "./pages/Talents";
-import CharacterType from "./types/character";
 import {RollResult} from "./components/RollResults";
 import socket from "./socket";
 import {DicePool} from "./components/Roll";
 import calculatePool from "./logic/calculatePool";
 import {Btn, TextInput} from "./components/Form";
 import NpcPage from "./pages/Npc";
-import {InitiativeContext} from "./provider/InitiativeProvider";
 import {DicePoolType} from "./types/dice";
-import {TableType} from "./types/table";
 import NotesPage from "./pages/Notes";
 import useCharacter from "./state/character";
+import {setLock, useLock} from "./state/lock";
+import useCombat from "./state/combat";
 
 interface GameProps {
     error?: string;
@@ -40,7 +39,9 @@ function emptyPool(pool: DicePoolType) {
 }
 
 function Game({error}: GameProps) {
-    const [locked, setLocked] = useState(false);
+    const locked = useLock();
+    const setLocked = setLock;
+
     const [roll, setRoll] = useState<RollConfig>({
         show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}, support: false
     });
@@ -50,7 +51,7 @@ function Game({error}: GameProps) {
         setTab(newValue);
     }, []);
 
-    const {spendAp} = useContext(InitiativeContext);
+    const spendAp = useCombat(state => state.spendAp);
 
     const resetRoll = useCallback(() => setRoll({show: false, attribute: 0, skill: 0, modifier: 0, metadata: {}, support: false}), []);
     const changeRoll = useCallback((skill: number, attribute: number, modifier = 0, metadata?: Record<string, any>, support = false) => setRoll({

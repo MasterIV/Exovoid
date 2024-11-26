@@ -16,7 +16,7 @@ import {Btn, Dropdown, TextInput} from "./Form";
 import Value from "./Value";
 import socket from "../socket";
 import npcToCombatant from "../logic/npcToCombatant";
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import Collection from "./Collection";
 import * as uuid from 'uuid';
 import {DicePool} from "./Roll";
@@ -25,7 +25,7 @@ import Injuries from "./Injuries";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {calculateCombatActions, CombatAction, formatAction} from "../logic/calculateCombatActions";
 import characterDefaults from "../data/character.json";
-import {InitiativeContext} from "../provider/InitiativeProvider";
+import useCombat from "../state/combat";
 
 
 interface NpcActionProps extends NpcActionType {
@@ -67,7 +67,7 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
     const actions = calculateCombatActions(characterDefaults);
     const [action, setAction] = useState(Object.keys(actions)[0]);
 
-    const {spendAp} = useContext(InitiativeContext);
+    const spendAp = useCombat(state => state.spendAp);
     const performAction = (action: CombatAction) => spendAp(props.id, action.ap);
 
     const addAction = () => onChange('actions', [...props.actions, {

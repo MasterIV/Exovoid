@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from "react";
+import React, {useCallback, useState} from "react";
 import {Grid} from "@mui/material";
 import {CharacterWeapon} from "../types/character";
 import Weapon from "../components/Weapon";
@@ -14,11 +14,11 @@ import charToCombatant from "../logic/charToCombatant";
 import Injuries from "../components/Injuries";
 import {calculateCombatActions, CombatAction, formatAction} from "../logic/calculateCombatActions";
 import {attributeAverage} from "../logic/calculatePool";
-import {InitiativeContext} from "../provider/InitiativeProvider";
 import {WeaponType} from "../types/weapon";
 import {Armor} from "../components/Armor";
 import {calculateEdge, calculateHealth, calculateHeft} from "../logic/calculateDerived";
 import useCharacter from "../state/character";
+import useCombat from "../state/combat";
 
 const weaponMap: Record<string, WeaponType> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
@@ -46,7 +46,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
     const changeData = useCallback((k: string, v: any) => setData(old => ({...old, [k]: v})), []);
     const joinCombat = () => socket.emit("combatant", charToCombatant(stats));
     const leaveCombat = () => window.confirm("Leave Combat?") && socket.emit("remove", stats.id);
-    const {spendAp} = useContext(InitiativeContext);
+    const spendAp = useCombat(state => state.spendAp);
 
     const characterWeapons = stats.weapons || [];
     const addWeapon = () => onChange('weapons', [...characterWeapons, {

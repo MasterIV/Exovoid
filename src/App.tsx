@@ -5,7 +5,6 @@ import AccountType from "./types/account";
 import Tables from "./Tables";
 
 import socket, {onAccountChange, onError} from "./socket";
-import InitiativeProvider from "./provider/InitiativeProvider";
 import useCharacter from "./state/character";
 
 function App() {
@@ -20,9 +19,7 @@ function App() {
     }, []);
 
     if (character)
-        return <InitiativeProvider>
-            <Game error={error}/>
-        </InitiativeProvider>;
+        return <Game error={error}/>;
 
     if(account)
         return <Tables

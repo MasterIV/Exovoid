@@ -1,9 +1,9 @@
-import React, {useContext, useEffect} from "react";
+import React from "react";
 import {Combatant} from "../types/combat";
 import {Grid, Paper} from "@mui/material";
 import {Btn} from "./Form";
 import Value from "./Value";
-import {InitiativeContext, InitiativeCorrection} from "../provider/InitiativeProvider";
+import useCombat from "../state/combat";
 
 interface FighterProps extends Combatant {
     onChange: (updated: Combatant) => void;
@@ -35,7 +35,7 @@ interface InitiativeProps {
 }
 
 export default function Initiative({ children}: InitiativeProps) {
-    const {combatants, update, reset, round} = useContext(InitiativeContext);
+    const {combatants, update, reset, round} = useCombat();
 
     const ini = Object.values(combatants);
     ini.sort((a, b) => b.currentAp - a.currentAp);
