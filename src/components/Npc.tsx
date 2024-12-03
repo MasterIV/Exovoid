@@ -127,7 +127,8 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
 
                 <Grid item container spacing={2} alignItems="center">
                     <Injuries
-                        npc={props.minion}
+                        npc={true}
+                        minion={props.minion}
                         injuries={props.injuries || []}
                         health={props.currentHealth}
                         changeHealth={h => onChange('currentHealth', h)}

@@ -46,6 +46,7 @@ interface InjuryRoll {
 }
 
 interface InjuriesProps {
+    minion?: boolean;
     npc?: boolean;
     injuries: string[];
     health: number;
@@ -55,7 +56,7 @@ interface InjuriesProps {
 
 const rollDefaults: InjuryRoll = {show: false, damage: 1, modifier: 0, injury: allInjuries[0].name};
 
-export default function Injuries({injuries, health, changeHealth, changeInjuries, npc}: InjuriesProps) {
+export default function Injuries({injuries, health, changeHealth, changeInjuries, npc = false, minion = false}: InjuriesProps) {
     const [roll, setRoll] = useState<InjuryRoll>(rollDefaults);
     const resetRoll = useCallback(() => setRoll(rollDefaults), []);
     const changeRoll = (k: string, v: any) => setRoll({...roll, [k]: v});
@@ -70,7 +71,7 @@ export default function Injuries({injuries, health, changeHealth, changeInjuries
     const rollCallback = (result: DiceResultType, metadata: any) => {
         if (metadata.id !== id) return;
         const summary = summarize(result);
-        const wounds = npc ? (summary.wound|0) + (summary.minion|0) : (summary.wound|0)
+        const wounds = minion ? (summary.wound|0) + (summary.minion|0) : (summary.wound|0)
         const severity = Math.min(wounds, 7);
 
         if(severity > 0 ) {
