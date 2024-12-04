@@ -39,7 +39,7 @@ function NpcAction({onChange, onRemove, onRoll, id, npc, ...props}: NpcActionPro
     const a = props.aptitude||0;
     const e = props.expertise||0;
     const pool = calculatePool(a, e);
-    const meta = {skill: props.name, name: npc.name, ap: props.ap, id: npc.id};
+    const meta = {skill: props.name, npc: npc.name, ap: props.ap, id: npc.id};
 
     return <TableRow>
         <TableCell><TextInput label="Name" name="name" values={props} onChange={onChange} /></TableCell>
