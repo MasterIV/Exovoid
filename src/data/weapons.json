@@ -127,7 +127,7 @@
 		"Lethal": 5,
 		"Shredding": 2
 	},
-    "specialRules": "",
+    "specialRules": "Once per encounter, you may ignore the first weapon jam or \"Damaged\" quality that would otherwise be applied to the Revolver.",
     "modLimit": 2,
     "cost": 250,
     "ammoCost": 7,
