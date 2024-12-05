@@ -10,6 +10,8 @@ interface TableState extends TableType {
 
 let updateTimer: any = null;
 const useTable = create<TableState>((set) => ({
+    notes: "",
+    ships: [],
     update: (name, value) => set(state => {
         if(updateTimer) clearTimeout(updateTimer);
         updateTimer = setTimeout(() => {

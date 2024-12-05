@@ -17,6 +17,7 @@ import NotesPage from "./pages/Notes";
 import useCharacter from "./state/character";
 import {setLock, useLock} from "./state/lock";
 import useCombat from "./state/combat";
+import ShipPage from "./pages/Ship";
 
 interface GameProps {
     error?: string;
@@ -88,6 +89,7 @@ function Game({error}: GameProps) {
         {name: "Cyberware", content: () => <CyberWarePage />},
         {name: "Inventory", content: () => <InventoryPage />},
         {name: "Npc", content: () => <NpcPage locked={locked} onRoll={changeRoll} />},
+        {name: "Ships", content: () => <ShipPage />},
         {name: "Notes", content: () => <NotesPage />},
         {name: "Lore", content: () => <LorePage/>},
     ];
