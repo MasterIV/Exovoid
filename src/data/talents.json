@@ -26,7 +26,7 @@
   },
   {
     "talent": "Astrogation",
-    "description": "When using FTL drives and making a Pilot check, you may spend one Trigger each to increase the range of the jump by +10%. If you plan to perform several chained jumps, you only make a single roll and apply the bonus to all jumps.",
+    "description": "When using FTL drives and making a Science check, you may spend one Trigger each to increase the range of the jump by +50%. If you plan to perform several chained jumps, you only make a single roll and apply the bonus to all jumps.",
     "representation": 3
   },
   {
@@ -357,6 +357,11 @@
     "representation": 2
   },
   {
+    "talent": "Jack Of All Trades",
+    "description": "After rolling, you may spend an Edge point to add a Complication to any roll. Additionally, increase your maximum edge points by +1.",
+    "representation": 1
+  },
+  {
     "talent": "Juiced Up",
     "description": "When performing First Aid, you can spend one Trigger to provide the target with +1 Soak and +2 pool bonus to all physical checks for this and the next round.",
     "representation": 1
@@ -579,7 +584,7 @@
   },
   {
     "talent": "Resourceful",
-    "description": "Increase your maximum edge points by +2.",
+    "description": "Increase your maximum edge points by +3.",
     "representation": 1,
 	"modifier": {"edge":  2}
   },
@@ -811,7 +816,7 @@
   },
   {
     "talent": "Weakspot Analysis",
-    "description": "When attacking mechanical entities, you may spend one Trigger each to add +1 malfunction die.",
+    "description": "When attacking mechanical entities and you make them roll for malfunction, they add +3 dice.",
     "representation": 1
   },
   {
