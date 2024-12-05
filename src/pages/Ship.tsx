@@ -103,9 +103,9 @@ export default function ShipPage({}: ShipPageProps) {
     const setData = useCallback((k: string, v: any) => setState(state => ({...state, [k]: v})), []);
     const changeShip = useCallback((k: string, v: any) => onChange('ships', ships.map(
         (s: ShipType) : ShipType => ship.id === s.id ? {...ship, [k]: v} : s
-    )), [ship]);
+    )), [ship, onChange]);
 
-    const changeSystem = useCallback((data: any) => changeShip('systems', data), [onChange]);
+    const changeSystem = useCallback((data: any) => changeShip('systems', data), [changeShip]);
     const addSystem = () => changeShip('systems', [...ship.systems, {
         id: uuid.v4(),
         type: state.system,
@@ -113,7 +113,7 @@ export default function ShipPage({}: ShipPageProps) {
         powered: true,
     }]);
 
-    const changeWeapon = useCallback((data: any) => changeShip('weapons', data), [onChange]);
+    const changeWeapon = useCallback((data: any) => changeShip('weapons', data), [changeShip]);
     const addWeapon = () => changeShip('weapons', [...ship.weapons, {
         id: uuid.v4(),
         type: state.weapon,
@@ -121,7 +121,7 @@ export default function ShipPage({}: ShipPageProps) {
         powered: true,
     }]);
 
-    const changeCargo = useCallback((data: any) => changeShip('cargo', data), [onChange]);
+    const changeCargo = useCallback((data: any) => changeShip('cargo', data), [changeShip]);
     const locked = useLock();
     const definition = shipTypeMap[ship.size];
 
