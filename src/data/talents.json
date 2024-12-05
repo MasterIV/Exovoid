@@ -359,7 +359,8 @@
   {
     "talent": "Jack Of All Trades",
     "description": "After rolling, you may spend an Edge point to add a Complication to any roll. Additionally, increase your maximum edge points by +1.",
-    "representation": 1
+    "representation": 1,
+	"modifier": {"edge":  1}
   },
   {
     "talent": "Juiced Up",
@@ -586,7 +587,7 @@
     "talent": "Resourceful",
     "description": "Increase your maximum edge points by +3.",
     "representation": 1,
-	"modifier": {"edge":  2}
+	"modifier": {"edge":  3}
   },
   {
     "talent": "Riposte",
