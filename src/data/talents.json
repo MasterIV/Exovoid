@@ -364,7 +364,7 @@
   },
   {
     "talent": "Jerryrigging",
-    "description": "You can spend an Edge point to improvise a temporary tool, item or other aid. It provides someone with a +1 pool bonus for a given skill, or can substitute any low-tech item worth 100 credits or less. The item becomes unusable after one scene.",
+    "description": "You can spend an Edge point to improvise a temporary tool, item or other aid. It provides someone with a +1 pool bonus for a given skill, or can substitute any low-tech item worth 200 credits or less. The item becomes unusable after one scene.",
     "representation": 1
   },
   {
