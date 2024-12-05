@@ -369,8 +369,8 @@
 	  "Pilot": 1
     },
     "talents": {
-      "0": ["Climber", "Self-Treatment", "Astrogation"],
-      "1": ["Linguist", "Chart Comprehension"],
+      "0": ["Climber", "Self-Treatment", "Jerryrigging"],
+      "1": ["Astrogation", "Chart Comprehension"],
       "2": ["Will To Survive", "Jack Of All Trades"],
       "3": ["Disposable Drone Army", "Resourceful"],
       "5": ["Tracker", "Xeno Engineer"],

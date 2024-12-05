@@ -363,6 +363,11 @@
 	"modifier": {"edge":  1}
   },
   {
+    "talent": "Jerryrigging",
+    "description": "You can spend an Edge point to improvise a temporary tool, item or other aid. It provides someone with a +1 pool bonus for a given skill, or can substitute any low-tech item worth 100 credits or less. The item becomes unusable after one scene.",
+    "representation": 1
+  },
+  {
     "talent": "Juiced Up",
     "description": "When performing First Aid, you can spend one Trigger to provide the target with +1 Soak and +2 pool bonus to all physical checks for this and the next round.",
     "representation": 1
