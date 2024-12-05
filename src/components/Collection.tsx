@@ -18,6 +18,12 @@ interface CollectionProps {
     [key: string]: any;
 }
 
+export interface CollectionItemPros {
+    onChange: (name: string, value: any) => void;
+    onRemove: () => void;
+    index: number;
+}
+
 export default React.memo(function Collection({values, onChange, ...props}: CollectionProps) {
     // add element
 

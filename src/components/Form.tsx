@@ -1,6 +1,7 @@
 import {Button, ButtonProps, FormControl, InputLabel, MenuItem, Select, SelectProps, TextField} from "@mui/material";
 import {OutlinedTextFieldProps} from "@mui/material/TextField/TextField";
 import React from "react";
+import {useLock} from "../state/lock";
 
 interface TextInputProps extends Omit<OutlinedTextFieldProps, 'onChange' | 'variant'> {
     name: string,
@@ -20,6 +21,21 @@ export const TextInput = (props: TextInputProps) => {
 
 
 export const Btn = (props: ButtonProps) => <Button variant="contained" {...props} />;
+
+interface RmBtnProps extends ButtonProps {
+    label: string;
+    onRemove: () => void;
+}
+
+export const RmBtn = ({label, onRemove, ...props} : RmBtnProps) => {
+    const removeCallback = (e: any) => {
+        e.stopPropagation();
+        if(window.confirm(`Remove ${label}?`)) onRemove();
+    }
+
+    const locked = useLock();
+    return <Btn {...props} disabled={locked} color="error" variant="outlined" onClick={removeCallback}>Remove</Btn>;
+}
 
 interface DropdownProps extends Omit<SelectProps, 'onChange' | 'variant'>{
     id: string,

@@ -84,9 +84,9 @@ function Game({error}: GameProps) {
     const tabs = [
         {name: "Character", content: () => <CharacterPage locked={locked} onRoll={changeRoll}/>},
         {name: "Combat", content: () => <CombatPage locked={locked} onRoll={changeRoll}/>},
-        {name: "Talents", content: () => <TalentPage locked={locked}/>},
-        {name: "Cyberware", content: () => <CyberWarePage locked={locked}/>},
-        {name: "Inventory", content: () => <InventoryPage locked={locked}/>},
+        {name: "Talents", content: () => <TalentPage />},
+        {name: "Cyberware", content: () => <CyberWarePage />},
+        {name: "Inventory", content: () => <InventoryPage />},
         {name: "Npc", content: () => <NpcPage locked={locked} onRoll={changeRoll} />},
         {name: "Notes", content: () => <NotesPage />},
         {name: "Lore", content: () => <LorePage/>},

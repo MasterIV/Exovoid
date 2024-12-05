@@ -12,12 +12,12 @@ import {
     Typography
 } from "@mui/material";
 import NpcType, {NpcActionType} from "../types/npc";
-import {Btn, Dropdown, TextInput} from "./Form";
+import {Btn, Dropdown, RmBtn, TextInput} from "./Form";
 import Value from "./Value";
 import socket from "../socket";
 import npcToCombatant from "../logic/npcToCombatant";
 import React, {useState} from "react";
-import Collection from "./Collection";
+import Collection, {CollectionItemPros} from "./Collection";
 import * as uuid from 'uuid';
 import {DicePool} from "./Roll";
 import calculatePool from "../logic/calculatePool";
@@ -28,10 +28,8 @@ import characterDefaults from "../data/character.json";
 import useCombat from "../state/combat";
 
 
-interface NpcActionProps extends NpcActionType {
+interface NpcActionProps extends NpcActionType, CollectionItemPros {
     npc: NpcType;
-    onRemove: () => void;
-    onChange: (name: string, value: any) => void;
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
 }
 
@@ -52,15 +50,11 @@ function NpcAction({onChange, onRemove, onRoll, id, npc, ...props}: NpcActionPro
     </TableRow>;
 }
 
-
-interface NpcProps extends NpcType {
-    onRemove: () => void;
-    onChange: (name: string, value: any) => void;
+interface NpcProps extends NpcType, CollectionItemPros {
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
-    locked?: boolean;
 }
 
-export default function Npc({onChange, onRemove, onRoll, locked, ...props} : NpcProps) {
+export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
     const joinCombat = () => socket.emit("combatant", npcToCombatant(props));
     const leaveCombat = () => socket.emit("remove", props.id);
 
@@ -78,16 +72,10 @@ export default function Npc({onChange, onRemove, onRoll, locked, ...props} : Npc
         ap: 0,
     }]);
 
-    const removeNpc = (e: any) => {
-        e.stopPropagation();
-        if(window.confirm("Remove Npc?"))
-            onRemove();
-    }
-
     return  <Accordion  expanded={Boolean(props.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography variant="h6" marginRight={2}>{props.name}</Typography>
-            <Btn size="small" color={"error"} variant="outlined" disabled={locked} onClick={removeNpc}>Remove</Btn>
+            <RmBtn size="small" onRemove={onRemove} label="NPC" />
         </AccordionSummary>
 
         <AccordionDetails>

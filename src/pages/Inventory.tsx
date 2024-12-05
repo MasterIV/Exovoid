@@ -1,64 +1,19 @@
 import React, {useCallback} from "react";
-import {
-    Autocomplete,
-    Grid,
-    Paper,
-    Stack,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    TextField
-} from "@mui/material";
-import {InventoryItem} from "../types/character";
+import {Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
 import Collection from "../components/Collection";
-import items from '../data/items.json';
-import {Btn, TextInput} from "../components/Form";
+import {Btn} from "../components/Form";
 import * as uuid from 'uuid';
 import Value from "../components/Value";
 import useCharacter from "../state/character";
+import Item from "../components/Item";
 
 const defaults = {name: "", quantity: 1, location: "", notes: ""};
 
-interface ItemProps extends InventoryItem {
-    onChange: (name: string, value: any) => void;
-    onRemove: () => void;
-    locked?: boolean;
-}
-
-function Item({onChange, onRemove, locked, ...item}: ItemProps) {
-    const removeItem = () => window.confirm("Remove Item?") && onRemove();
-
-    return (
-        <TableRow>
-            <TableCell>
-                <Autocomplete
-                    freeSolo
-                    value={item.name}
-                    options={items.map((i) => `${i.name} (${i.item})`)}
-                    onChange={(e, v) => onChange('name', v)}
-                    renderInput={(params) => <TextField onChange={e => onChange('name', e.target.value)} {...params} label="Item"/>}
-                />
-            </TableCell>
-            <TableCell><TextInput type="number" name="quantity" values={item} onChange={onChange}/></TableCell>
-            <TableCell><TextInput name="location" values={item} onChange={onChange}/></TableCell>
-            <TableCell>
-                <TextInput name="note" values={item} onChange={onChange}/>
-            </TableCell>
-            <TableCell>
-                <Btn disabled={locked} color="error" variant="outlined" onClick={removeItem}>Remove</Btn>
-            </TableCell>
-        </TableRow>
-    );
-}
-
 interface InventoryPageProps {
-    locked?: boolean;
+
 }
 
-export default React.memo(function InventoryPage({locked} : InventoryPageProps) {
+export default React.memo(function InventoryPage({} : InventoryPageProps) {
     const onChange = useCharacter(state => state.update);
     const currency = useCharacter(state => state.currency);
     const inventory = useCharacter(state => state.inventory);
@@ -100,7 +55,7 @@ export default React.memo(function InventoryPage({locked} : InventoryPageProps) 
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            <Collection locked={locked} values={inventory} onChange={changeInventory} component={Item}/>
+                            <Collection values={inventory} onChange={changeInventory} component={Item}/>
                         </TableBody>
                     </Table>
                 </TableContainer>

@@ -15,22 +15,20 @@ import {
     TextField,
     Typography
 } from "@mui/material";
-import {Btn, Dropdown} from "./Form";
+import {Btn, Dropdown, RmBtn} from "./Form";
 import weaponsMods from '../data/weapon-mods.json';
 import {CharacterWeapon} from "../types/character";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Value from "./Value";
 import {calculateWeaponActions, CombatAction, formatAction} from "../logic/calculateCombatActions";
 import {applyWeaponMods} from "../logic/applyMods";
+import {CollectionItemPros} from "./Collection";
 
 const modMap: Record<string, typeof weaponsMods[0]> = {};
 weaponsMods.forEach(mod => modMap[mod.name] = mod);
 
-interface WeaponProps extends CharacterWeapon {
-    onRemove: () => void;
-    onChange: (name: string, value: any) => void;
+interface WeaponProps extends CharacterWeapon, CollectionItemPros {
     onAction: (action: CombatAction, weapon: CharacterWeapon | null) => void;
-    locked?: boolean;
     talents: string[];
     heft: number;
 }
@@ -44,7 +42,7 @@ function createChips(data: Record<string, number | undefined>) {
     </Stack>
 }
 
-export default React.memo(function Weapon({locked, heft, onChange, onRemove, onAction, talents, ...weapon}: WeaponProps) {
+export default React.memo(function Weapon({heft, onChange, onRemove, onAction, talents, ...weapon}: WeaponProps) {
     const details = useMemo(() => applyWeaponMods(weapon), [weapon.type, weapon.mods]);
     const actions = calculateWeaponActions(details, talents);
 
@@ -53,12 +51,6 @@ export default React.memo(function Weapon({locked, heft, onChange, onRemove, onA
 
     const changeAmmo = (k:string,v:number) => onChange('ammo', {...weapon.ammo,[k]: v});
     const performAction = () => onAction(actions[action], weapon);
-
-    const removeWeapon = (e: any) => {
-        e.stopPropagation();
-        if(window.confirm("Remove Weapon?"))
-            onRemove();
-    }
 
     const filledSlots = weapon.mods.map(m => modMap[m].slot);
     const availableMods = weaponsMods
@@ -72,7 +64,7 @@ export default React.memo(function Weapon({locked, heft, onChange, onRemove, onA
     return <Accordion  expanded={Boolean(weapon.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography variant="h6" marginRight={2}>{details.name} ({details.weapon})</Typography>
-            <Btn size="small" color={"error"} disabled={locked} onClick={removeWeapon}>Remove</Btn>
+            <RmBtn size="small" label="Weapon" onRemove={onRemove} />
         </AccordionSummary>
 
         <AccordionDetails>

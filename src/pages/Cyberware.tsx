@@ -16,12 +16,12 @@ import {
     TextField
 } from "@mui/material";
 import CharacterType, {CharacterCyberMalfunction, CharacterCyberWare} from "../types/character";
-import Collection from "../components/Collection";
+import Collection, {CollectionItemPros} from "../components/Collection";
 
 import cyberWares from '../data/cyberware.json';
 import cyberMalfunctions from '../data/cyberware-malfunction.json';
 
-import {Btn, TextInput} from "../components/Form";
+import {Btn, RmBtn, TextInput} from "../components/Form";
 import * as uuid from 'uuid';
 import CyberWareType from "../types/cyberware";
 import {calculateImmunity} from "../logic/calculateDerived";
@@ -33,14 +33,9 @@ cyberWares.forEach(c => cyberMap[c.name] = c);
 
 const defaultMalfunction: CharacterCyberMalfunction = {active: false, slots: []};
 
-interface CyberWareProps extends CharacterCyberWare {
-    locked?: boolean;
-    onChange: (name: string, value: any) => void;
-    onRemove: () => void;
-}
+interface CyberWareProps extends CharacterCyberWare, CollectionItemPros {}
 
-function CyberWare({onChange, onRemove, locked, name, enabled, ...data}: CyberWareProps) {
-    const removeItem = () => window.confirm("Remove Item?") && onRemove();
+function CyberWare({onChange, onRemove, name, enabled, ...data}: CyberWareProps) {
     const details = cyberMap[name];
 
     return  (
@@ -53,21 +48,15 @@ function CyberWare({onChange, onRemove, locked, name, enabled, ...data}: CyberWa
             </TableCell>
             <TableCell><Checkbox onChange={e => onChange('enabled', e.target.checked)} checked={enabled}/></TableCell>
             <TableCell>{details.cyberImmunityCost}</TableCell>
-            <TableCell>
-                <TextInput name="note" values={data} onChange={onChange}/>
-            </TableCell>
-            <TableCell>
-                <Btn color="error" disabled={locked} variant="outlined" onClick={removeItem}>Remove</Btn>
-            </TableCell>
+            <TableCell><TextInput name="note" values={data} onChange={onChange}/></TableCell>
+            <TableCell><RmBtn label="Cyberware" onRemove={onRemove}/></TableCell>
         </TableRow>
     );
 }
 
-interface CyberWarePageProps {
-    locked?: boolean;
-}
+interface CyberWarePageProps {}
 
-export default React.memo(function CyberWarePage({locked} : CyberWarePageProps) {
+export default React.memo(function CyberWarePage({} : CyberWarePageProps) {
     const onChange = useCharacter(state => state.update);
     const malfunctions = useCharacter(state => state.malfunctions);
     const cyberware = useCharacter(state => state.cyberware);
@@ -94,8 +83,7 @@ export default React.memo(function CyberWarePage({locked} : CyberWarePageProps) 
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <Collection locked={locked} values={cyberware} onChange={changeCyberWare}
-                                    component={CyberWare}/>
+                        <Collection values={cyberware} onChange={changeCyberWare} component={CyberWare}/>
                     </TableBody>
                 </Table>
             </TableContainer>
