@@ -162,7 +162,7 @@
   },
   {
     "talent": "Diplomatic Immunity",
-    "description": "Once per session, you can make your diplomatic immunity known. Due to the resulting hesitation of enemies, you reduce all injury rolls by 3 dice (to a Minimum of 0).",
+    "description": "Once per session, you can make your diplomatic immunity known. Due to the resulting hesitation of enemies, they require +1 success to hit you, and you reduce all injury rolls by 3 dice (to a Minimum of 0).",
     "representation": 1
   },
   {
@@ -172,7 +172,7 @@
   },
   {
     "talent": "Disposable Drone Army",
-    "description": "Declare a drone with a value of 3000 Credits or less. After each adventure, if that drone got destroyed, you get a free repair or even replacement.",
+    "description": "Declare a drone with a base value of 3000 Credits or less. After each adventure, if that drone got destroyed, you get a free repair or even replacement, including any mounted weapons and upgrades.",
     "representation": 2
   },
   {
