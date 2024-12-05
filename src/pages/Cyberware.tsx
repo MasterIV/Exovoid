@@ -15,7 +15,7 @@ import {
     TableRow,
     TextField
 } from "@mui/material";
-import CharacterType, {CharacterCyberMalfunction, CharacterCyberWare} from "../types/character";
+import {CharacterCyberMalfunction, CharacterCyberWare} from "../types/character";
 import Collection, {CollectionItemPros} from "../components/Collection";
 
 import cyberWares from '../data/cyberware.json';

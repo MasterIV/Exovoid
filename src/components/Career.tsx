@@ -1,7 +1,7 @@
 import React from "react";
 import {Grid, Paper, Table, TableBody, TableCell, TableRow, Typography} from "@mui/material";
 import talents from '../data/talents.json';
-import {Btn, RmBtn} from "./Form";
+import {RmBtn} from "./Form";
 
 const talentMap: Record<string, string> = {};
 talents.forEach(t => talentMap[t.talent] = t.description);

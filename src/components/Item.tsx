@@ -1,9 +1,8 @@
 import {Autocomplete, TableCell, TableRow, TextField} from "@mui/material";
 import items from "../data/items.json";
-import {Btn, RmBtn, TextInput} from "./Form";
+import {RmBtn, TextInput} from "./Form";
 import React from "react";
 import {InventoryItem} from "../types/character";
-import {useLock} from "../state/lock";
 import {CollectionItemPros} from "./Collection";
 
 interface ItemProps extends InventoryItem, CollectionItemPros {}
