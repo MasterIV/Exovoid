@@ -3,7 +3,7 @@ import Career, {getCareerTalents} from "../components/Career";
 import careers from "../data/classes.json";
 import talents from '../data/talents.json';
 import {Grid, Paper, Typography} from "@mui/material";
-import {Btn, Dropdown} from "../components/Form";
+import {Btn, Dropdown, RmBtn} from "../components/Form";
 import useCharacter from "../state/character";
 
 const careerMap: Record<string, any> = {};
@@ -12,16 +12,14 @@ careers.forEach(c => careerMap[c.name] = c);
 const talentMap: Record<string, string> = {};
 talents.forEach(t => talentMap[t.talent] = t.description);
 
-interface TalentPageProps {
-    locked?: boolean;
-}
+interface TalentPageProps {}
 
 interface TalentPageState {
     class: string;
     talent: string;
 }
 
-export default function TalentPage({locked}: TalentPageProps) {
+export default function TalentPage({}: TalentPageProps) {
     const onChange = useCharacter(state => state.update);
     const classes = useCharacter(state => state.classes);
     const characterTalents = useCharacter(state => state.talents);
@@ -42,9 +40,7 @@ export default function TalentPage({locked}: TalentPageProps) {
         {freeTalents.length > 0 && <Grid item>
             <Paper className="career"><Grid container spacing={2}>
                 {freeTalents.map(t => <Grid xs={3} item key={t}><Paper className={"talent"}>
-                    <Btn size="small" style={{float: "right"}}
-                         disabled={locked} color="error"
-                         onClick={() => window.confirm("Remove talent?") && removeTalent(t)}>Remove</Btn>
+                    <RmBtn size="small" style={{float: "right", marginLeft: 5}} onRemove={() =>  removeTalent(t)} label="Talent"/>
                     <Typography fontWeight="bold">{t}</Typography>
                     <Typography variant="body2">{talentMap[t]}</Typography>
                 </Paper></Grid>)}
@@ -64,7 +60,6 @@ export default function TalentPage({locked}: TalentPageProps) {
 
         {classes.map(c => <Grid key={c} item>
             <Career {...careerMap[c]}
-                locked={locked}
                     onChange={selectTalent}
                     onRemove={removeClass}
                     acquiredTalents={characterTalents || []}/>

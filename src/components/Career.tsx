@@ -1,7 +1,7 @@
 import React from "react";
 import {Grid, Paper, Table, TableBody, TableCell, TableRow, Typography} from "@mui/material";
 import talents from '../data/talents.json';
-import {Btn} from "./Form";
+import {RmBtn} from "./Form";
 
 const talentMap: Record<string, string> = {};
 talents.forEach(t => talentMap[t.talent] = t.description);
@@ -18,12 +18,11 @@ interface CareerProps {
     skills: Record<string, any>;
     talents: Record<string, string[]>;
     acquiredTalents: string[];
-    locked?: boolean;
     onChange: (talents: string[]) => void;
     onRemove: (name: string) => void;
 }
 
-export default React.memo(function Career({name, description, equipment, skills, attributes, talents, acquiredTalents, onChange, onRemove, locked}: CareerProps) {
+export default React.memo(function Career({name, description, equipment, skills, attributes, talents, acquiredTalents, onChange, onRemove}: CareerProps) {
     const toggleTalent = (t: string) => {
         if(acquiredTalents.includes(t))
             onChange(acquiredTalents.filter(v => v!==t));
@@ -60,7 +59,7 @@ export default React.memo(function Career({name, description, equipment, skills,
 
     return <Paper className="career"><Grid container spacing={2} direction={"column"}>
         <Grid item>
-            <Btn style={{float: "right"}} disabled={locked} color="error" onClick={() => window.confirm("Remove class?") && onRemove(name)}>Remove</Btn>
+            <RmBtn style={{float: "right"}} label="Class" onRemove={() => onRemove(name)}/>
             <Typography variant={"h5"}>{name}</Typography>
         </Grid><Grid container item direction={"row"} spacing={2}>
         <Grid xs={5} item>

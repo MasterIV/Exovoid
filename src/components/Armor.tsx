@@ -11,34 +11,25 @@ import {
     TextField,
     Typography
 } from "@mui/material";
-import {Btn} from "./Form";
+import {RmBtn} from "./Form";
 import armors from '../data/armors.json';
 import {CharacterArmor} from "../types/character";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Value from "./Value";
+import {CollectionItemPros} from "./Collection";
 
 const armorMap: Record<string, any> = {};
 armors.forEach(a => armorMap[a.type] = a);
 
-interface ArmorProps extends CharacterArmor {
-    onRemove: () => void;
-    onChange: (name: string, value: any) => void;
-    locked?: boolean;
-}
+interface ArmorProps extends CharacterArmor, CollectionItemPros {}
 
-export function Armor({locked, expanded, onChange, onRemove, ...armor}: ArmorProps) {
+export function Armor({expanded, onChange, onRemove, ...armor}: ArmorProps) {
     const details = armorMap[armor.type];
-
-    const removeArmor = (e: any) => {
-        e.stopPropagation();
-        if (window.confirm("Remove Armor?"))
-            onRemove();
-    }
 
     return <Accordion expanded={Boolean(expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography variant="h6" marginRight={2}>{details.name} ({details.type})</Typography>
-            <Btn size="small" color={"error"} disabled={locked} onClick={removeArmor}>Remove</Btn>
+            <RmBtn size="small" label="Armor" onRemove={onRemove} />
         </AccordionSummary>
 
         <AccordionDetails>
