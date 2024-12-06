@@ -126,6 +126,60 @@
     "rarity": 3
   },
   {
+    "type": "Smartears",
+    "name": "Sonix Auralis Pro",
+    "tier": "Alpha",
+    "description": "Allows to record what you hear, receive audio comms and filter audio, allowing to eavesdrop even in crowded areas.",
+    "cyberImmunityCost": 2,
+    "cost": 600,
+    "rarity": 2
+  },
+  {
+    "type": "Smartears",
+    "name": "EchoCore Audio Suite",
+    "tier": "Beta",
+    "description": "Allows to record what you hear, receive audio comms and filter audio, allowing to eavesdrop even in crowded areas. Converts up to three dice from your Vigilance roll into Expertise dice when it's about hearing something hidden or distant.",
+    "cyberImmunityCost": 2,
+    "cost": 1000,
+    "rarity": 3
+  },
+  {
+    "type": "Smartnose",
+    "name": "Aromatrace Analyzer",
+    "tier": "Alpha",
+    "description": "Allows you to record smells, simulate smells, as well as exactly matching pheromones to recognize / trace people.",
+    "cyberImmunityCost": 2,
+    "cost": 600,
+    "rarity": 2
+  },
+  {
+    "type": "Smartnose",
+    "name": "Chemisense Olfactor-X",
+    "tier": "Beta",
+    "description": "Allows you to record smells, simulate smells, as well as exactly matching pheromones to recognize / trace people. Additionally, you can recognize specific chemical compounds or gasses.",
+    "cyberImmunityCost": 3,
+    "cost": 900,
+    "rarity": 3
+  },
+  {
+    "type": "Smartskin",
+    "name": "Tactilis Sensora",
+    "tier": "Alpha",
+    "description": "Amplifies tactile sensitivity, enabling the detection of fine textures, pressure changes, and micro-vibrations.",
+    "cyberImmunityCost": 2,
+    "cost": 600,
+    "rarity": 2
+  },
+  {
+    "type": "Smartskin",
+    "name": "Neo Touch",
+    "tier": "Beta",
+    "description": "Advanced smart skin with enhanced haptic feedback, designed for detailed tactile analysis and heightened environmental awareness.",
+    "cyberImmunityCost": 3,
+    "cost": 900,
+    "rarity": 3
+  },
+  {
     "type": "Smartlink",
     "name": "Dermalgunner Minion",
     "tier": "Alpha",
@@ -133,6 +187,24 @@
     "cyberImmunityCost": 2,
     "cost": 300,
     "rarity": 3
+  },
+  {
+    "type": "Sixth Sense",
+    "name": "EchoViz Array",
+    "tier": "Alpha",
+    "description": "Provides advanced echolocation to map surroundings, revealing hidden objects and movements beyond obstacles. The user can perceive rough geometry and movement up to five squares around obstacles and corners.",
+    "cyberImmunityCost": 4,
+    "cost": 1000,
+    "rarity": 3
+  },
+  {
+    "type": "Sixth Sense",
+    "name": "Perceptis Omnisense",
+    "tier": "Beta",
+    "description": "Revolutionary spatial awareness technology that integrates multi-spectrum detection, offering intuitive visualization of areas out of sight. The user can get a fairly detailed glimpse at things up to ten squares around obstacles and corners.",
+    "cyberImmunityCost": 6,
+    "cost": 2000,
+    "rarity": 4
   },
   {
     "type": "Skeletal Reinforcement",
@@ -266,6 +338,15 @@
     "rarity": 5
   },
   {
+    "type": "Integrated Comms",
+    "name": "Azerra Stealthlink",
+    "tier": "Alpha",
+    "description": "Implants a basic communication device, allowing for audio transmissions to other devices within 10km. The user can merely think what they want to say, rather than having to actually talk.",
+    "cyberImmunityCost": 3,
+    "cost": 750,
+    "rarity": 3
+  },
+  {
     "type": "Improved Metabolism",
     "name": "UltraMend 7.2",
     "tier": "Alpha",
@@ -318,6 +399,24 @@
     "cyberImmunityCost": 6,
     "cost": 2500,
     "rarity": 5
+  },
+  {
+    "type": "Cybernetic Liver",
+    "name": "HepatiCore Basic",
+    "tier": "Alpha",
+    "description": "A streamlined liver augmentation designed for efficient alcohol metabolism, minimizing harmful effects and enabling prolonged social indulgence.",
+    "cyberImmunityCost": 2,
+    "cost": 400,
+    "rarity": 2
+  },
+  {
+    "type": "Cybernetic Liver",
+    "name": "BioPurge Omega",
+    "tier": "Beta",
+    "description": "Advanced cybernetic filtration technology offering protection against toxins, poisons, unwanted drugs, and ingested environmental contaminants. When using drugs, roll a d6. On a 4+, you may ignore any related drawbacks.",
+    "cyberImmunityCost": 5,
+    "cost": 1800,
+    "rarity": 4
   },
   {
     "type": "Emotional Regulator",
@@ -408,6 +507,51 @@
     "cyberImmunityCost": 7,
     "cost": 4500,
     "rarity": 5
+  },
+  {
+    "type": "Navigation Suites",
+    "name": "Navix Orientier",
+    "tier": "Alpha",
+    "description": "Provides you with an internal magnetometer and gyro-compass, capable of keeping you oriented in most planetary, ship-board, and station-side environments. You may reroll any roll related to local scale navigation and maneuvering, except in areas devoid of magnetic fields like deep space.",
+    "cyberImmunityCost": 2,
+    "cost": 550,
+    "rarity": 2
+  },
+  {
+    "type": "Navigation Suites",
+    "name": "StarLink Inner Guide 2",
+    "tier": "Beta",
+    "description": "Integrates inertial guidance with internal magnetometers and path optimization algorithms to facilitate navigation and maneuvering in any environment. You may reroll any roll related to personal navigation regardless of scale or environment. Additionally, you gain +1 Speed.",
+    "cyberImmunityCost": 3,
+    "cost": 1100,
+    "rarity": 3
+  },
+  {
+    "type": "Navigation Suites",
+    "name": "Navix FDS",
+    "tier": "Omega",
+    "description": "Implements a multi-node magnetometer network throughout your body that precisely measures local magnetic fields and overlays them on your vision. You can see masses of metal, flows of electricity, and magnetic fields within 5 squares with the clarity of normal vision, including through most barriers. You may reroll any roll related to personal navigation regardless of scale or environment.",
+    "cyberImmunityCost": 4,
+    "cost": 2400,
+    "rarity": 4
+  },
+  {
+    "type": "Sensor Arrays",
+    "name": "Heisenberg Systems Rad Alert",
+    "tier": "Alpha",
+    "description": "Implanted particle and radiation sensors monitor local radiation conditions and provide warning at configurable danger thresholds. You always know the intensity and types of radiation present in your environment, and whether they present a health hazard.",
+    "cyberImmunityCost": 2,
+    "cost": 500,
+    "rarity": 2
+  },
+  {
+    "type": "Sensor Arrays",
+    "name": "Heisenberg Systems MS-SpectraFeel",
+    "tier": "Beta",
+    "description": "You always know current radiation levels (and whether they pose a health risk or not), and through a combination of emitters and sensors embedded in your palms you are enabled to identify substances by touch, allowing you to discern chemical compositions in detail, and analyze the internal structure of objects to a depth of approximately 20cm. Such active scanning can be detected. When repairing something, you gain +1 pool due to the added layers of information.",
+    "cyberImmunityCost": 5,
+    "cost": 2000,
+    "rarity": 4
   },
   {
     "type": "Pheromone Glands",

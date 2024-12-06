@@ -244,6 +244,15 @@
   },
   {
     "category": "Medicine",
+    "item": "Cyberware Immune Suppressor",
+    "name": "Cyberceptin",
+    "description": "Reduces the risks of adverse effects from cyberware temporarily. For 24h, deactivate eight cyberware malfunction results (numbers between 2 and 40) and ignore their effects. When the effects wear off, you suffer a -1 pool penalty to all checks for 1d6 hours unless you take another dose.",
+    "size": 0,
+    "cost": 30,
+    "rarity": 3
+  },
+  {
+    "category": "Medicine",
     "item": "Hallucinogen",
     "name": "Dreamwave",
     "description": "A drug that induces vivid hallucinations, which can be used recreationally or for nefarious purposes, like disorienting an enemy.",
