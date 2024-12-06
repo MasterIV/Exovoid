@@ -479,6 +479,11 @@
     "representation": 1
   },
   {
+    "talent": "Multitasking Admiral",
+    "description": "Once per round, you can spend 1 AP to make a supporting skill check to aid any one allied crew member in their next task. Additionally, increase the multitasking capacity of your ship's AI by +1.",
+    "representation": 1
+  },
+  {
     "talent": "Notorious Liar",
     "description": "Once per day you may declare a lie as being so bullet-proof that no test is necessary to make NPCs believe it.",
     "representation": 2
@@ -565,7 +570,7 @@
   },
   {
     "talent": "Rank and File",
-    "description": "You may draft 2 NPCs that will serve you as crew members. They have all attributes on level 4 and expertise 1 in all relevant skills. Choose 2 skills for each of them which they gain +2 expertise in.",
+    "description": "You may draft 2 NPCs that will serve you as crew members. They have all attributes on level 4 and expertise 1 in all relevant skills. Choose 2 skills for each of them which they gain +2 expertise in. They can perform the \"Train Skill\" downtime activity a number of times based on your own level.",
     "representation": 1
   },
   {
