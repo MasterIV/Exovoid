@@ -320,6 +320,24 @@
     "rarity": 4
   },
   {
+    "type": "Pain Editor",
+    "name": "NeuroQuell-X",
+    "tier": "Alpha",
+    "description": "You may ignore the effects of up to one severity 1 injury - you still have to suffer its injury pool modifier and eventually treat it, you merely ignore its impact. At the beginning of each round, you can re-determine which severity 1 injury your pain editor targets.",
+    "cyberImmunityCost": 3,
+    "cost": 1100,
+    "rarity": 3
+  },
+  {
+    "type": "Pain Editor",
+    "name": "SomaCalm Pro",
+    "tier": "Beta",
+    "description": "You may ignore the effects of up to two severity 1 injuries or a single severity 2 injury - you still have to suffer their injury pool modifiers and eventually treat them, you merely ignore their impact. At the beginning of each round, you can re-determine which injuries your pain editor targets.",
+    "cyberImmunityCost": 6,
+    "cost": 1800,
+    "rarity": 4
+  },
+  {
     "type": "Internal Cyberdeck",
     "name": "DeckTek iN-900",
     "tier": "Alpha",
@@ -524,7 +542,8 @@
     "description": "Integrates inertial guidance with internal magnetometers and path optimization algorithms to facilitate navigation and maneuvering in any environment. You may reroll any roll related to personal navigation regardless of scale or environment. Additionally, you gain +1 Speed.",
     "cyberImmunityCost": 3,
     "cost": 1100,
-    "rarity": 3
+    "rarity": 3,
+	"modifier": {"speed":  1}
   },
   {
     "type": "Navigation Suites",
