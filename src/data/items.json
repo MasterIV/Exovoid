@@ -405,6 +405,15 @@
     "rarity": 2
   },
   {
+    "category": "Espionage",
+    "item": "Torture Tools",
+    "name": "Dr. Evil's Toybox",
+    "description": "An assortment of various tools to torture a subject without killing them (unless you overdo their use). Provides a +3 pool bonus to retrieve information from a given subject, though torture will often require a downtime activity.",
+    "size": 3,
+    "cost": 150,
+    "rarity": 4
+  },
+  {
     "category": "Crafting",
     "item": "3D Printer",
     "name": "PrintForce X1",
