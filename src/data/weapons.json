@@ -517,7 +517,7 @@
     "magazine": 15,
     "reload": 3,
     "speed": 4,
-    "damage": 9,
+    "damage": 10,
     "damageType": "Physical",
     "qualities":
 	{
