@@ -1,9 +1,9 @@
 import React from "react";
-import {Combatant} from "../types/combat";
+import {Combatant} from "../../types/combat";
 import {Grid, Paper} from "@mui/material";
-import {Btn} from "./Form";
-import Value from "./Value";
-import useCombat from "../state/combat";
+import {Btn} from "../Form";
+import Value from "../Value";
+import useCombat from "../../state/combat";
 
 interface FighterProps extends Combatant {
     onChange: (updated: Combatant) => void;

@@ -1,12 +1,12 @@
-import Collection from "./Collection";
+import Collection from "../Collection";
 import {Grid, Modal, Paper, Stack} from "@mui/material";
-import {Btn, Dropdown, TextInput} from "./Form";
+import {Btn, Dropdown, TextInput} from "../Form";
 import React, {useCallback, useState} from "react";
-import allInjuries from '../data/injuries.json';
-import {DicePool} from "./Roll";
-import socket from "../socket";
-import {DiceResultType} from "../types/dice";
-import {summarize} from "./RollResults";
+import allInjuries from '../../data/injuries.json';
+import {DicePool} from "../Roll";
+import socket from "../../socket";
+import {DiceResultType} from "../../types/dice";
+import {summarize} from "../RollResults";
 import * as uuid from 'uuid';
 
 const injuryMap: Record<string, InjuryType> = {};

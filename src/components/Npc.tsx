@@ -21,7 +21,7 @@ import Collection, {CollectionItemPros} from "./Collection";
 import * as uuid from 'uuid';
 import {DicePool} from "./Roll";
 import calculatePool from "../logic/calculatePool";
-import Injuries from "./Injuries";
+import Injuries from "./Combat/Injuries";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {calculateCombatActions, CombatAction, formatAction} from "../logic/calculateCombatActions";
 import characterDefaults from "../data/character.json";

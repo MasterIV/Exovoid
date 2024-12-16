@@ -11,6 +11,7 @@ export interface ShipWeapon {
     id: string;
     type: string;
     powered: boolean;
+    expanded?: boolean;
     ammo: {
         loaded: number;
         reserve: number;

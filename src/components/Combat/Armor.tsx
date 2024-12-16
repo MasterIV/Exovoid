@@ -11,12 +11,12 @@ import {
     TextField,
     Typography
 } from "@mui/material";
-import {RmBtn} from "./Form";
-import armors from '../data/armors.json';
-import {CharacterArmor} from "../types/character";
+import {RmBtn} from "../Form";
+import armors from '../../data/armors.json';
+import {CharacterArmor} from "../../types/character";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Value from "./Value";
-import {CollectionItemPros} from "./Collection";
+import Value from "../Value";
+import {CollectionItemPros} from "../Collection";
 
 const armorMap: Record<string, any> = {};
 armors.forEach(a => armorMap[a.type] = a);

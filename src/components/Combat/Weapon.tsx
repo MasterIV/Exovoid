@@ -15,14 +15,14 @@ import {
     TextField,
     Typography
 } from "@mui/material";
-import {Btn, Dropdown, RmBtn} from "./Form";
-import weaponsMods from '../data/weapon-mods.json';
-import {CharacterWeapon} from "../types/character";
+import {Btn, Dropdown, RmBtn} from "../Form";
+import weaponsMods from '../../data/weapon-mods.json';
+import {CharacterWeapon} from "../../types/character";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Value from "./Value";
-import {calculateWeaponActions, CombatAction, formatAction} from "../logic/calculateCombatActions";
-import {applyWeaponMods} from "../logic/applyMods";
-import {CollectionItemPros} from "./Collection";
+import Value from "../Value";
+import {calculateWeaponActions, CombatAction, formatAction} from "../../logic/calculateCombatActions";
+import {applyWeaponMods} from "../../logic/applyMods";
+import {CollectionItemPros} from "../Collection";
 
 const modMap: Record<string, typeof weaponsMods[0]> = {};
 weaponsMods.forEach(mod => modMap[mod.name] = mod);

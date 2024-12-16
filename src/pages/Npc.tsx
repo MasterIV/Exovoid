@@ -1,6 +1,6 @@
 import React from "react";
 import {Box, Grid} from "@mui/material";
-import Initiative from "../components/Initiative";
+import Initiative from "../components/Combat/Initiative";
 import Collection from "../components/Collection";
 import NpcType from "../types/npc";
 import Npc from "../components/Npc";
