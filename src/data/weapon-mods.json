@@ -54,6 +54,15 @@
 	"showEffect": true
   },
   {
+    "slot": "Muzzle / Barrel",
+    "name": "Extended Barrel",
+    "effects": "The weapon gains +20% optimum and maximal range and deals +1 damage, but increases its \"Concealed\" quality by 1 level.",
+    "compatible": ["Pistol", "MP", "Rifle", "Heavy Weapon"],
+    "cost": 120,
+    "rarity": 2,
+	"showEffect": false
+  },
+  {
     "slot": "Scopes",
     "name": "Red Dot Scope",
     "effects": "Provides Handling (+1) when shooting at optimal range, but -1 within maximum range.",
@@ -159,6 +168,24 @@
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
     "cost": 120,
     "rarity": 2,
+	"showEffect": false
+  },
+  {
+    "slot": "Mechanism",
+    "name": "Biometric Lock",
+    "effects": "The weapon can only be used by a number of users programmed into the handle - does not require fingerprints.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "cost": 75,
+    "rarity": 2,
+	"showEffect": false
+  },
+  {
+    "slot": "Mechanism",
+    "name": "Transformable",
+    "effects": "The weapon can switch between its usual form and another melee or ranged weapon chosen upon acquiring this mod. Switching the forms requires 2 AP. The other form of the weapon can be modded separately, but both weapons lose a mod slot for \"Transformable\", and the costs need to be spent on both. The two chosen forms needs to be sensible - the GM is the final arbiter. Such weapons tend to look bizarre and complicated, and any attempts to repair or modify them suffer a -2 pool penalty.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "cost": 300,
+    "rarity": 4,
 	"showEffect": false
   },
   {

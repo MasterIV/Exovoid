@@ -576,7 +576,8 @@
     "qualities":
 	{
 		"Handling": 1,
-		"Destructive": 7
+		"Destructive": 7,
+		"Loud": 0
 	},
     "triggerOptions":
 	{
@@ -1038,7 +1039,7 @@
 		"Murderous": 0
 	},
     "specialRules": "",
-    "modLimit": 0,
+    "modLimit": 1,
     "cost": 50,
     "ammoCost": 0,
     "rarity": 1,
@@ -1067,7 +1068,7 @@
 		"Knocking": 0
 	},
     "specialRules": "Cannot do a parry against real melee weapons.",
-    "modLimit": 0,
+    "modLimit": 1,
     "cost": 50,
     "ammoCost": 0,
     "rarity": 1,
@@ -1095,7 +1096,7 @@
 		"Incapacitating": 0
 	},
     "specialRules": "",
-    "modLimit": 0,
+    "modLimit": 2,
     "cost": 40,
     "ammoCost": 0,
     "rarity": 1,
@@ -1123,7 +1124,7 @@
 		"Concussing": 0
 	},
     "specialRules": "",
-    "modLimit": 0,
+    "modLimit": 2,
     "cost": 40,
     "ammoCost": 0,
     "rarity": 1,
@@ -1151,7 +1152,7 @@
 		"Stunning": 0
 	},
     "specialRules": "",
-    "modLimit": 0,
+    "modLimit": 2,
     "cost": 80,
     "ammoCost": 0,
     "rarity": 1,
@@ -1178,7 +1179,7 @@
 		"Lethal": 4
 	},
     "specialRules": "",
-    "modLimit": 0,
+    "modLimit": 2,
     "cost": 150,
     "ammoCost": 0,
     "rarity": 1,
@@ -1205,11 +1206,39 @@
 		"Lethal": 4
 	},
     "specialRules": "Can be wielded in one hand, but then it gains the Improvised quality.",
-    "modLimit": 0,
+    "modLimit": 2,
     "cost": 250,
     "ammoCost": 0,
     "rarity": 2,
     "range": "1-2"
+  },
+  {
+    "skill": "Melee",
+	"type": "Blade",
+    "weapon": "Mono-Wire Whip",
+    "name": "Phantom Slicer Cables",
+    "hands": 1,
+    "magazine": 0,
+    "reload": 0,
+    "speed": 3,
+    "damage": 10,
+    "damageType": "Physical",
+    "qualities":
+	{
+		"Silenced": 0,
+		"Concealed": 1
+	},
+    "triggerOptions":
+	{
+		"Murderous": 0,
+		"Penetrating": 4
+	},
+    "specialRules": "Heft is never added to the damage of attacks with this weapon. A rolled Botch means harming yourself or an ally within range for the full damage.",
+    "modLimit": 0,
+    "cost": 2000,
+    "ammoCost": 0,
+    "rarity": 4,
+    "range": "2-4"
   },
   {
     "skill": "Melee",
@@ -1234,7 +1263,7 @@
 		"Plasmascorch": 0
 	},
     "specialRules": "Requires a Plasma cell that allows the blade to be active for a total of 10 rounds (turning the Blade on and off is near-instantaneous). Replacing the cell costs 40 Credits.",
-    "modLimit": 0,
+    "modLimit": 3,
     "cost": 4500,
     "ammoCost": 0,
     "rarity": 4,
@@ -1263,7 +1292,7 @@
 		"Lethal": 2
 	},
     "specialRules": "Can be wielded in two hands, providing Handling (2). Heft remains that of a one-handed weapon.",
-    "modLimit": 0,
+    "modLimit": 3,
     "cost": 200,
     "ammoCost": 0,
     "rarity": 1,
@@ -1292,7 +1321,7 @@
 		"Knocking": 0
 	},
     "specialRules": "Characters with 6 Strength or more ignore Improvised.",
-    "modLimit": 0,
+    "modLimit": 3,
     "cost": 225,
     "ammoCost": 0,
     "rarity": 1,
@@ -1318,7 +1347,35 @@
 		"Lethal": 5
 	},
     "specialRules": "",
-    "modLimit": 0,
+    "modLimit": 3,
+    "cost": 250,
+    "ammoCost": 0,
+    "rarity": 2,
+    "range": "1"
+  },
+  {
+    "skill": "Melee",
+	"type": "Blunt",
+    "weapon": "Mining Pickaxe",
+    "name": "Exocore Rocksplitter",
+    "hands": 2,
+    "magazine": 0,
+    "reload": 0,
+    "speed": 5,
+    "damage": 8,
+    "damageType": "Physical",
+    "qualities":
+	{
+		"Silenced": 0,
+		"Improvised": 0
+	},
+    "triggerOptions":
+	{
+		"Lethal": 4,
+		"Penetrating": 5
+	},
+    "specialRules": "Characters with 6 Strength or more ignore Improvised.",
+    "modLimit": 1,
     "cost": 250,
     "ammoCost": 0,
     "rarity": 2,
@@ -1344,7 +1401,7 @@
 		"Concussing": 0
 	},
     "specialRules": "",
-    "modLimit": 0,
+    "modLimit": 1,
     "cost": 120,
     "ammoCost": 0,
     "rarity": 1,
@@ -1372,7 +1429,7 @@
 		"Incapacitating": 0
 	},
     "specialRules": "Adds +1 difficulty to all attacks made due to limited vision.",
-    "modLimit": 0,
+    "modLimit": 2,
     "cost": 250,
     "ammoCost": 0,
     "rarity": 2,
