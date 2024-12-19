@@ -16,6 +16,7 @@ import {Btn, Dropdown, RmBtn, TextInput} from "../Form";
 import React, {useState} from "react";
 import shipSystems from "../../data/ship-modules.json";
 import * as uuid from "uuid";
+import {parseShipStat} from "../../logic/calculateShipStats";
 
 const shipSystemMap: Record<string, typeof shipSystems[0]> = {};
 shipSystems.forEach(t => shipSystemMap[t.name] = t);
@@ -26,17 +27,16 @@ interface SystemProps extends ShipSystem, CollectionItemPros {
 
 function System({onChange, onRemove, type, powered, capacity, ...system}: SystemProps) {
     const definition = shipSystemMap[type];
-    const Max = capacity;
-    const Cap = eval(String(definition.capacity));
+    const systemCapacity = parseShipStat(definition.capacity, capacity);
 
     return <TableRow>
         <TableCell>{definition.power !== 0 &&
             <Checkbox onChange={e => onChange('powered', e.target.checked)} checked={powered}/>}</TableCell>
         <TableCell>{type}</TableCell>
         <TableCell><TextInput type="number" name="amount" values={system} onChange={onChange}/></TableCell>
-        <TableCell>{Cap * system.amount}</TableCell>
-        <TableCell><Typography color={powered ? "white" : "grey"}>{eval(String(definition.power)) * system.amount}</Typography></TableCell>
-        <TableCell>{eval(String(definition.cost)) * system.amount}</TableCell>
+        <TableCell>{systemCapacity * system.amount}</TableCell>
+        <TableCell><Typography color={powered ? "white" : "grey"}>{parseShipStat(definition.power, capacity, systemCapacity) * system.amount}</Typography></TableCell>
+        <TableCell>{parseShipStat(definition.cost, capacity, systemCapacity) * system.amount}</TableCell>
         <TableCell>{definition.description}</TableCell>
         <TableCell><RmBtn label="System" onRemove={onRemove}/></TableCell>
     </TableRow>;
