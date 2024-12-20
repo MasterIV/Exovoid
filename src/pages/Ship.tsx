@@ -6,7 +6,7 @@ import shipTypes from "../data/ships.json";
 import shipSystems from "../data/ship-modules.json";
 import shipWeapons from "../data/ship-weapons.json";
 import {Grid, Paper, Table, TableCell, TableContainer, TableRow} from "@mui/material";
-import {Dropdown, TextInput} from "../components/Form";
+import {Btn, Dropdown, RmBtn, TextInput} from "../components/Form";
 import * as uuid from "uuid";
 import {useLock} from "../state/lock";
 import Systems from "../components/Ship/Systems";
@@ -66,6 +66,17 @@ export default function ShipPage({}: ShipPageProps) {
 
     return <Grid container spacing={2} margin={1}>
         <Grid container direction={"column"} item spacing={2} xs={3}>
+            <Grid item>
+                <Dropdown
+                    id="ship"
+                    label="Ship"
+                    name="selected"
+                    values={{selected}}
+                    disabled={locked}
+                    onChange={(k,v) => setSelected(v)}
+                    options={ships.map((s, i) => ({id: String(i), name: s.name}))} />
+            </Grid>
+
             <Grid item><TextInput label="Name" name="name" values={ship} onChange={changeShip} /></Grid>
 
             <Grid item>
@@ -130,6 +141,12 @@ export default function ShipPage({}: ShipPageProps) {
                     </Table>
                 </TableContainer>
             </Grid>
+
+            <Grid item container spacing={2}>
+                <Grid item xs={6}><Btn fullWidth>Add Ship</Btn></Grid>
+                <Grid item xs={6}><RmBtn fullWidth label="Ship" onRemove={() => {}} /></Grid>
+            </Grid>
+
         </Grid><Grid item container direction="column" spacing={2} xs={9}>
             <Systems systems={ship.systems} onChange={changeSystem} capacity={definition.capacity}/>
             <Weapons weapons={ship.weapons} onChange={changeWeapon} />

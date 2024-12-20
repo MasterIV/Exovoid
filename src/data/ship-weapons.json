@@ -13,7 +13,7 @@
     "range": "0-3-4",
     "qualities": "Burst (10), Full Auto (30), Compensated, Handling (2)",
     "triggerOptions": "Shredding (2)",
-    "assetCost": 1,
+    "cost": 1,
     "magCost": 720,
     "rarity": 3
   },
@@ -31,7 +31,7 @@
     "range": "0-3-4",
     "qualities": "Burst (10), Full Auto (30), Compensated, Handling (2)",
     "triggerOptions": "Shredding (2)",
-    "assetCost": 1,
+    "cost": 1,
     "magCost": 540,
     "rarity": 3
   },
@@ -49,7 +49,7 @@
     "range": "0-2-4",
     "qualities": "Handling (2)",
     "triggerOptions": "Concussing, Lethal (3)",
-    "assetCost": 1,
+    "cost": 1,
     "magCost": 500,
     "rarity": 3
   },
@@ -67,7 +67,7 @@
     "range": "0-3-5",
     "qualities": "Burst (8)",
     "triggerOptions": "Shredding (2)",
-    "assetCost": 1,
+    "cost": 1,
     "magCost": 900,
     "rarity": 3
   },
@@ -86,7 +86,7 @@
     "maximumRange": "-",
     "qualities": "Traveling (3 | 6), Fuel (8)",
     "triggerOptions": "Penetrating (6), Shredding (4), Lethal (5)",
-    "assetCost": 1,
+    "cost": 1,
     "magCost": 350,
     "rarity": 3
   },
@@ -104,7 +104,7 @@
     "range": "0-8-20",
     "qualities": "Handling (3)",
     "triggerOptions": "Penetrating (4)",
-    "assetCost": 2,
+    "cost": 2,
     "magCost": "-",
     "rarity": 4
   },
@@ -122,7 +122,7 @@
     "range": "0-8-20",
     "qualities": "Handling (3)",
     "triggerOptions": "Penetrating (4)",
-    "assetCost": 2,
+    "cost": 2,
     "magCost": "-",
     "rarity": 4
   },
@@ -141,7 +141,7 @@
     "maximumRange": "1.000.000",
     "qualities": "",
     "triggerOptions": "Breakthrough (4)",
-    "assetCost": 2,
+    "cost": 2,
     "magCost": 80,
     "rarity": 3
   },
@@ -160,7 +160,7 @@
     "maximumRange": "-",
     "qualities": "Traveling (4 | 8), Fuel (3), Handling (2)",
     "triggerOptions": "Concussing, Lethal (3)",
-    "assetCost": 2,
+    "cost": 2,
     "magCost": 550,
     "rarity": 4
   },
@@ -178,7 +178,7 @@
     "range": "0-4-6",
     "qualities": "Burst (8)",
     "triggerOptions": "Shredding (3)",
-    "assetCost": 2,
+    "cost": 2,
     "magCost": 1350,
     "rarity": 4
   },
@@ -196,7 +196,7 @@
     "range": "0-3-6",
     "qualities": "",
     "triggerOptions": "Disabling",
-    "assetCost": 2,
+    "cost": 2,
     "magCost": 900,
     "rarity": 4
   },
@@ -214,7 +214,7 @@
     "range": "0-4-6",
     "qualities": "Burst (8)",
     "triggerOptions": "Shredding (3)",
-    "assetCost": 2,
+    "cost": 2,
     "magCost": 1350,
     "rarity": 4
   },
@@ -232,7 +232,7 @@
     "range": "0-8-20",
     "qualities": "Handling (3)",
     "triggerOptions": "Penetrating (5)",
-    "assetCost": 3,
+    "cost": 3,
     "magCost": "-",
     "rarity": 5
   },
@@ -250,7 +250,7 @@
     "range": "0-8-20",
     "qualities": "Handling (3)",
     "triggerOptions": "Penetrating (5)",
-    "assetCost": 3,
+    "cost": 3,
     "magCost": "-",
     "rarity": 5
   },
@@ -269,7 +269,7 @@
     "maximumRange": "1.000.000",
     "qualities": "",
     "triggerOptions": "Breakthrough (6)",
-    "assetCost": 3,
+    "cost": 3,
     "magCost": 160,
     "rarity": 4
   },
@@ -287,7 +287,7 @@
     "range": "0-2-6",
     "qualities": "Handling (2), Burst (6), Compensated",
     "triggerOptions": "Concussing, Lethal (5)",
-    "assetCost": 4,
+    "cost": 4,
     "magCost": 3000,
     "rarity": 5
   },
@@ -306,7 +306,7 @@
     "maximumRange": "-",
     "qualities": "Traveling (3 | 9), Fuel (10)",
     "triggerOptions": "Penetrating (8), Shredding (6), Lethal (8)",
-    "assetCost": 4,
+    "cost": 4,
     "magCost": 2000,
     "rarity": 6
   },
@@ -324,7 +324,7 @@
     "range": "0-10-25",
     "qualities": "Handling (3)",
     "triggerOptions": "Penetrating (6)",
-    "assetCost": 5,
+    "cost": 5,
     "magCost": "-",
     "rarity": 6
   },
@@ -343,7 +343,7 @@
     "maximumRange": "1.000.000",
     "qualities": "",
     "triggerOptions": "Breakthrough (8)",
-    "assetCost": 5,
+    "cost": 5,
     "magCost": 240,
     "rarity": 5
   },
@@ -361,7 +361,7 @@
     "range": "0-5-8",
     "qualities": "Burst (8)",
     "triggerOptions": "Shredding (4)",
-    "assetCost": 4,
+    "cost": 4,
     "magCost": 1800,
     "rarity": 5
   },
@@ -379,7 +379,7 @@
     "range": "0-5-8",
     "qualities": "Burst (8)",
     "triggerOptions": "Shredding (4)",
-    "assetCost": 4,
+    "cost": 4,
     "magCost": 1800,
     "rarity": 5
   }

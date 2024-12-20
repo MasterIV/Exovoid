@@ -51,7 +51,8 @@
     "power": "Cap / 4",
     "description": "Adds +1 speed.",
     "cost": "Cap / 2",
-    "rarity": 3
+    "rarity": 3,
+    "modifier": {"speed": 1}
   },
   {
     "type": "Thruster Upgrade",
@@ -60,7 +61,8 @@
     "power": 0,
     "description": "Adds +1 speed and +1 maneuverability. Can only be used for 5 rounds total before needing to be recharged at a station.",
     "cost": "Cap / 3",
-    "rarity": 3
+    "rarity": 3,
+    "modifier": {"speed": 1, "maneuverability":  1}
   },
   {
     "type": "Thruster Upgrade",
@@ -69,7 +71,8 @@
     "power": "Cap / 2",
     "description": "Adds +1 speed and +1 maneuverability.",
     "cost": "Cap / 2",
-    "rarity": 4
+    "rarity": 4,
+    "modifier": {"speed": 1, "maneuverability":  1}
   },
   {
     "type": "Thruster Upgrade",
@@ -78,7 +81,8 @@
     "power": "Cap",
     "description": "Adds +3 speed and +1 maneuverability.",
     "cost": "Cap + 2",
-    "rarity": 6
+    "rarity": 6,
+    "modifier": {"speed": 3, "maneuverability":  1}
   },
   {
     "type": "FTL Drive",
@@ -114,7 +118,8 @@
     "power": 0,
     "description": "Adds +50% Armor Durability.",
     "cost": "Cap / 4",
-    "rarity": 3
+    "rarity": 3,
+    "modifier": {"armorMultiplier": 0.5}
   },
   {
     "type": "Armor Plating",
@@ -123,7 +128,8 @@
     "power": 0,
     "description": "Adds +1 primary and secondary Soak and +25% Armor Durability.\n\n* Cannot be combined with Steel Plates.",
     "cost": "Cap / 2",
-    "rarity": 3
+    "rarity": 3,
+    "modifier": {"armorMultiplier": 0.5, "primarySoak":  1, "secondarySoak": 1}
   },
   {
     "type": "Armor Plating",
@@ -132,7 +138,8 @@
     "power": 0,
     "description": "Adds +3 primary Soak.",
     "cost": "Cap / 2",
-    "rarity": 4
+    "rarity": 4,
+    "modifier": {"primarySoak": 3}
   },
   {
     "type": "Armor Plating",
@@ -159,7 +166,8 @@
     "power": 0,
     "description": "Gain +25% Hull (round up).",
     "cost": "Cap / 4",
-    "rarity": 3
+    "rarity": 3,
+    "modifier": {"hullMultiplier": 0.25}
   },
   {
     "type": "Structure",
