@@ -505,6 +505,24 @@
   },
   {
     "category": "Everyday",
+    "item": "Burner Fake ID",
+    "name": "Jane / John Doe Card",
+    "description": "A fake identification that can be used for most services and payments and will pass cursory checks. Seeing through the fake ID requires an Investigation d2 check.",
+    "size": 0,
+    "cost": 200,
+    "rarity": 3
+  },
+  {
+    "category": "Everyday",
+    "item": "Sophisticated Fake ID",
+    "name": "U.N. Registry Key",
+    "description": "A fake identification that can be used for all services and payments and will pass most checks. Seeing through the fake ID requires an Investigation d4 check.",
+    "size": 0,
+    "cost": 850,
+    "rarity": 5
+  },
+  {
+    "category": "Everyday",
     "item": "Holo-Communicator",
     "name": "Echolink Holocomm",
     "description": "A wrist-mounted or handheld device that allows for real-time holographic communication across vast distances.\n\nDevice Integrity: 2\nFirewall: 6\nIC Level: 3\nSignal Range: 5",
