@@ -1,0 +1,82 @@
+[
+  {
+    "name": "No-Name",
+    "effects": "A No-Name weapon is 50% cheaper compared to its list price - this does not affect mods.",
+	"showEffect": false
+  },
+  {
+    "name": "Akura Micro",
+    "effects": "Reduce the AP required to attack by 1, but also decrease the base damage by 1. For Laser weapons, the base damage is decreased by 2 instead.",
+	"showEffect": false
+  },
+  {
+    "name": "Azerra Firearms",
+    "effects": "Add \"Shredding (2)\". If the weapon already has it, increase it by +1.",
+	"showEffect": false
+  },
+  {
+    "name": "Callisto",
+    "effects": "Attacks with a Callisto weapon gain a free trigger that can only be spent on the weapon's trigger options. The weapon cannot get any mods from the category \"Mechanism\", and it has one less mod slot.",
+	"showEffect": true
+  },
+  {
+    "name": "Cerberus Armory",
+    "effects": "The weapon has one less mod slot. When attacking with the weapon, you can decide if you want to make a regular attack or a non-lethal one. The non-lethal attack deals -2 damage but gains the \"Incapacitating\" and \"Stunning\" qualities.",
+	"showEffect": true
+  },
+  {
+    "name": "Ekris Companions",
+    "effects": "During each encounter, gain one edge point (so long as you actively use that weapon) that has to be spent during that encounter - or it is simply lost.",
+	"showEffect": true
+  },
+  {
+    "name": "Exocore",
+    "effects": "Functions without penalty or drawbacks in vacuum or low-G environments. Repairing or modding such a weapon is easier, reducing the target number by 1. ",
+	"showEffect": true
+  },
+  {
+    "name": "Forge Titan Dynamics",
+    "effects": "Spend twice the ammo for each shot fired, but increase the base damage by +2.",
+	"showEffect": false
+  },
+  {
+    "name": "Horizon Arms",
+    "effects": "The first time such a weapon would suffer \"Damaged\" or jam during a scene, it can be ignored instead.",
+	"showEffect": true
+  },
+  {
+    "name": "Lugtah Codex",
+    "effects": "These weapons can fire 3D printed ammunition without the usual risks involved. Their energy-based weapons can simply be recharged using any power socket.",
+	"showEffect": true
+  },
+  {
+    "name": "Nova Industries (Laser)",
+    "effects": "Add \"Penetrating (5)\". If it already has it, increase it by +2 instead",
+	"showEffect": false
+  },
+  {
+    "name": "Nova Industries (Electrical)",
+    "effects": "Add \"Concussing\".",
+	"showEffect": false
+  },
+  {
+    "name": "Nova Industries (Fire)",
+    "effects": "Add \"Plasmascorch\".",
+	"showEffect": false
+  },
+  {
+    "name": "Orion Tactical",
+    "effects": "Gain +1 mod slot. For a single mod category of your choice, you may install up to two different mods instead.",
+	"showEffect": false
+  },
+  {
+    "name": "Triton Systems",
+    "effects": "Add \"Concealed (3)\". If it already has it, decrease it by 1 (to a min. of 1).",
+	"showEffect": false
+  },
+  {
+    "name": "Vanguard Precision",
+    "effects": "The weapon is automatically considered to have a \"Marksman Scope\"  installed, and you can switch between iron sights and the scope freely. This special scope is proprietary and cannot be taken off or replaced by a different scope. It does not occupy a mod slot though.",
+	"showEffect": true
+  }
+]
