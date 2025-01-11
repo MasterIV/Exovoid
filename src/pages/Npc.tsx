@@ -29,7 +29,7 @@ interface NpcPageProps {
 
 export default React.memo( function NpcPage({onRoll, locked} : NpcPageProps) {
     const onChange = useCharacter(state => state.update);
-    const npcs = useCharacter(state => state.npcs || []);
+    const npcs = useCharacter(state => state.npcs) || [];
     const changeNpc = React.useCallback((npcs: object[]) => onChange('npcs', npcs), [onChange]);
     const addNpc = () => changeNpc([...npcs, {...defaults, id: uuid.v4()}]);
 
