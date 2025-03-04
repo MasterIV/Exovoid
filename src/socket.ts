@@ -25,4 +25,10 @@ export const onError = (setError: (data: string) => void) => {
     socket.on("error", setError);
 }
 
+export const onDisconnect = (
+    disconnectHandler: () => void,
+) => {
+    socket.on('disconnect', disconnectHandler)
+}
+
 export default socket;
