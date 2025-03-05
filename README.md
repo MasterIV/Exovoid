@@ -2,6 +2,16 @@
 
 Next Tasks:
 
+- improvements:
+  - don't count exploding botches
+  - only update inputs after removing the focus
+  - make the logout button actually work
+- features:
+  - weapon manufacturers
+  - complete ship tab
+  - hacking tab
+  - credit value (weapons/armor/items?)
+  - npc action icons
 - Talents
   - danger sense
 - lore
