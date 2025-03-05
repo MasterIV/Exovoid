@@ -20,6 +20,7 @@ export function summarize(result: DiceResultType): Record<string, number> {
     const summary: Record<string, number> = {};
 
     result
+        .filter(r => !r.exploded || !r.symbols.includes('botch'))
         .map(r => r.symbols)
         .flat()
         .filter(s => s !== "explosive")
