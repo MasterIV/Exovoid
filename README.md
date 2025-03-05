@@ -3,8 +3,6 @@
 Next Tasks:
 
 - improvements:
-  - don't count exploding botches
-  - only update inputs after removing the focus
   - make the logout button actually work
 - features:
   - weapon manufacturers

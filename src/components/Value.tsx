@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Button, ButtonGroup, InputAdornment, InputProps, TextField} from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -26,6 +26,11 @@ export default React.memo(function Value({
 }: ValueProps) {
     const inputProps: InputProps = {};
 
+    const [val, setVal] = useState(String(value))
+    useEffect(() => {
+        if(String(value) !== val) setVal(String(value))
+    }, [value]);
+
     if(mask) {
         inputProps['endAdornment'] = <InputAdornment position="start">{mask}</InputAdornment>;
     }
@@ -35,9 +40,10 @@ export default React.memo(function Value({
         <TextField
             id={name}
             label={label}
-            value={value}
+            value={val}
             disabled={disabled}
-            onChange={e => onChange(name, Number(e.target.value))}
+            onChange={e => setVal(e.target.value)}
+            onBlur={() => onChange(name, Number(val)|0)}
             variant="filled"
             sx={{width}}
             InputProps={inputProps}
