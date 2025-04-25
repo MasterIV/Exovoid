@@ -53,7 +53,7 @@ interface DropdownProps extends Omit<SelectProps, 'onChange' | 'variant'>{
 export const Dropdown = ({id, values, options, onChange, ...props}: DropdownProps) =>
     <FormControl fullWidth>
         <InputLabel id={id}>{props.label}</InputLabel>
-        <Select {...props} labelId={id} value={values[props.name]} onChange={e=>onChange(props.name, e.target.value)}>
+        <Select size="small" {...props} labelId={id} value={values[props.name]} onChange={e=>onChange(props.name, e.target.value)}>
             {options.map((option) => <MenuItem key={option.id} value={option.id}>{option.name}</MenuItem>)}
         </Select>
     </FormControl>;

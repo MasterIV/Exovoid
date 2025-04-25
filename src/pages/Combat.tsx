@@ -141,7 +141,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
                         values={data}
                         onChange={changeData}
                         options={weapons.map(w => ({id: w.weapon, name: `${w.name} (${w.weapon})`}))} /></Grid>
-                    <Grid item xs={4}><Btn fullWidth size="large" onClick={addWeapon}>Add Weapon</Btn></Grid>
+                    <Grid item xs={4}><Btn fullWidth onClick={addWeapon}>Add Weapon</Btn></Grid>
                 </Grid>
 
                 <Collection
@@ -158,7 +158,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
                         values={data}
                         onChange={changeData}
                         options={armors.map(a => ({id: a.type, name: `${a.name} (${a.type})`}))} /></Grid>
-                    <Grid item xs={4}><Btn fullWidth size="large" onClick={addArmor}>Add Armor</Btn></Grid>
+                    <Grid item xs={4}><Btn fullWidth onClick={addArmor}>Add Armor</Btn></Grid>
                 </Grid>
 
         </Grid>

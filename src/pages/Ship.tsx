@@ -77,7 +77,9 @@ export default function ShipPage({}: ShipPageProps) {
                     options={ships.map((s, i) => ({id: String(i), name: s.name}))} />
             </Grid>
 
-            <Grid item><TextInput label="Name" name="name" values={ship} onChange={changeShip} /></Grid>
+            <Grid item>
+                <TextInput size="small" label="Name" name="name" values={ship} onChange={changeShip} />
+            </Grid>
 
             <Grid item>
                 <Dropdown

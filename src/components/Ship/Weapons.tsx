@@ -39,7 +39,7 @@ function Weapon({onChange, onRemove, type, powered, ...weapon}: WeaponProps) {
         onChange('powered', e.target.checked)
     }
 
-    return <Grid item><Accordion expanded={Boolean(weapon.expanded)} onChange={(x, e) => onChange('expanded', e)}>
+    return <Accordion expanded={Boolean(weapon.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography color={powered ? "white" : "grey"} variant="h6" marginRight={2}>{details.name} ({details.weapon})</Typography>
             <RmBtn size="small" label="Weapon" onRemove={onRemove}/>
@@ -78,7 +78,7 @@ function Weapon({onChange, onRemove, type, powered, ...weapon}: WeaponProps) {
                 </Table></Grid>
             </Grid>
         </AccordionDetails>
-    </Accordion></Grid>;
+    </Accordion>;
 }
 
 interface WeaponsProps {
@@ -98,10 +98,10 @@ export default function Weapons({weapons, onChange}: WeaponsProps) {
     }]);
 
     return <>
-        <Collection
+        <Grid item><Collection
             values={weapons}
             onChange={onChange}
-            component={Weapon}/>
+            component={Weapon}/></Grid>
 
         <Grid item container direction="row" spacing={2} alignItems="center">
             <Grid item xs={8}><Dropdown
@@ -111,7 +111,7 @@ export default function Weapons({weapons, onChange}: WeaponsProps) {
                 values={{weapon}}
                 onChange={(k,v) => setWeapon(v)}
                 options={shipWeapons.map(w => ({id: w.weapon, name: `${w.name} (${w.weapon})`}))}/></Grid>
-            <Grid item xs={4}><Btn fullWidth size="large" onClick={addWeapon}>Add Weapon</Btn></Grid>
+            <Grid item xs={4}><Btn fullWidth onClick={addWeapon}>Add Weapon</Btn></Grid>
         </Grid>
     </>;
 }

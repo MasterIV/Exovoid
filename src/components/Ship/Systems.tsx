@@ -89,6 +89,6 @@ export default function Systems({systems, capacity, onChange}: SystemsProps) {
                 values={{system}}
                 onChange={(k,v) => setSystem(v)}
                 options={shipSystems.map(s => ({id: s.name, name: `${s.name} (${s.type})`}))}/></Grid>
-            <Grid item xs={4}><Btn fullWidth size="large" onClick={addSystem}>Add System</Btn></Grid>
+            <Grid item xs={4}><Btn fullWidth onClick={addSystem}>Add System</Btn></Grid>
         </Grid></>;
 }

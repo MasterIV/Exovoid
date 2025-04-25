@@ -3,7 +3,7 @@ import {
     AccordionDetails,
     AccordionSummary,
     Checkbox,
-    Grid,
+    Grid, Stack,
     Table,
     TableBody,
     TableCell,
@@ -41,12 +41,17 @@ function NpcAction({onChange, onRemove, onRoll, id, npc, ...props}: NpcActionPro
 
     return <TableRow>
         <TableCell><TextInput label="Name" name="name" values={props} onChange={onChange} /></TableCell>
-        <TableCell><Value width={75} name={"aptitude"} value={a} onChange={onChange} /></TableCell>
-        <TableCell><Value width={75} name={"expertise"} value={e} onChange={onChange} /></TableCell>
-        <TableCell><Value width={75} name={"ap"} value={props.ap||0} onChange={onChange} /></TableCell>
-        <TableCell><Btn onClick={() => onRoll(a, e, 0, meta)} fullWidth>
-            <DicePool {...pool} />
-        </Btn></TableCell>
+        <TableCell>
+            <Stack spacing={1}>
+                <Value width={90} name={"aptitude"} value={a} onChange={onChange} label="Aptitude" />
+                <Value width={90} name={"expertise"} value={e} onChange={onChange} label="Expertise" />
+            </Stack>
+        </TableCell>
+        <TableCell>
+            <Stack spacing={1}>
+                <Value width={90} name={"ap"} value={props.ap||0} onChange={onChange} label="AP" />
+                <Btn onClick={() => onRoll(a, e, 0, meta)} fullWidth><DicePool {...pool} /></Btn>
+            </Stack></TableCell>
     </TableRow>;
 }
 
@@ -95,11 +100,9 @@ export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
                         <Table>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell width="25%">Action</TableCell>
-                                    <TableCell>Aptitude</TableCell>
-                                    <TableCell>Expertise</TableCell>
-                                    <TableCell>Action Points</TableCell>
-                                    <TableCell>Roll</TableCell>
+                                    <TableCell>Action</TableCell>
+                                    <TableCell width={190}>Stats</TableCell>
+                                    <TableCell width={190}>Roll</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>

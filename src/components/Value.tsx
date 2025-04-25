@@ -44,7 +44,7 @@ export default React.memo(function Value({
             disabled={disabled}
             onChange={e => setVal(e.target.value)}
             onBlur={() => onChange(name, Number(val)|0)}
-            variant="filled"
+            variant="outlined"
             sx={{width}}
             InputProps={inputProps}
             fullWidth={fullWidth}
