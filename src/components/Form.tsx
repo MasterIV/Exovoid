@@ -1,4 +1,4 @@
-import {Button, ButtonProps, FormControl, InputLabel, MenuItem, Select, SelectProps, TextField} from "@mui/material";
+import {Button, ButtonProps, MenuItem, TextField} from "@mui/material";
 import {OutlinedTextFieldProps} from "@mui/material/TextField/TextField";
 import React from "react";
 import {useLock} from "../state/lock";
@@ -37,7 +37,7 @@ export const RmBtn = ({label, onRemove, ...props} : RmBtnProps) => {
     return <Btn {...props} disabled={locked} color="error" variant="outlined" onClick={removeCallback}>Remove</Btn>;
 }
 
-interface DropdownProps extends Omit<SelectProps, 'onChange' | 'variant'>{
+interface DropdownProps extends Omit<OutlinedTextFieldProps, 'onChange' | 'variant'>{
     id: string,
     label: string,
     name: string,
@@ -51,9 +51,6 @@ interface DropdownProps extends Omit<SelectProps, 'onChange' | 'variant'>{
 }
 
 export const Dropdown = ({id, values, options, onChange, ...props}: DropdownProps) =>
-    <FormControl fullWidth>
-        <InputLabel id={id}>{props.label}</InputLabel>
-        <Select size="small" {...props} labelId={id} value={values[props.name]} onChange={e=>onChange(props.name, e.target.value)}>
+        <TextField size="small" fullWidth select {...props} value={values[props.name]} onChange={e=>onChange(props.name, e.target.value)}>
             {options.map((option) => <MenuItem key={option.id} value={option.id}>{option.name}</MenuItem>)}
-        </Select>
-    </FormControl>;
+        </TextField>;
