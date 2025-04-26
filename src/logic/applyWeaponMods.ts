@@ -2,6 +2,7 @@ import {WeaponType} from "../types/weapon";
 import {CharacterWeapon} from "../types/character";
 import weapons from '../data/weapons.json';
 import weaponsMods from "../data/weapon-mods.json";
+import manufacturers from '../data/manufacturer.json';
 
 const weaponMap: Record<string, WeaponType> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
@@ -17,6 +18,9 @@ export default function applyWeaponMods(weapon: CharacterWeapon, heft: number = 
         triggerOptions: {...weaponMap[weapon.type].triggerOptions},
     };
 
+    const manufacturer = manufacturers.find(m => m.name === weapon.manufacturer);
+    if(manufacturer?.showEffect) updated.specialRules += " " + manufacturer.effects
+
     switch (weapon.manufacturer) {
         case "No-Name":
             updated.cost = Math.round(updated.cost / 2 );
@@ -30,17 +34,9 @@ export default function applyWeaponMods(weapon: CharacterWeapon, heft: number = 
             break;
         case "Callisto":
             updated.modLimit -= 1;
-            updated.specialRules += " Gain one free trigger that can only be spend on the weapons trigger options.";
             break;
         case "Cerberus Armory":
             updated.modLimit -= 1;
-            updated.specialRules += " You can decide to make a non-lethal attack that deals -2 damage but gains the \"Incapacitating\" and \"Stunning\" trigger options.";
-            break;
-        case "Ekris Companions":
-            updated.specialRules += " Using this weapon, gain one free edge point during each encounter that has to be used during the encounter.";
-            break;
-        case "Exocore":
-            updated.specialRules += " No penalties in vacuum or low-G environments. Difficulty for repairs and modification reduced by 1.";
             break;
         case "Forge Titan Dynamics":
             updated.damage += 2;
@@ -51,26 +47,18 @@ export default function applyWeaponMods(weapon: CharacterWeapon, heft: number = 
             updated.cost = updated.cost * 2 + 200;
             updated.modLimit -= 1;
             break;
-        case "Horizon Arms":
-            updated.specialRules += " The first time per scene the weapon would suffer \"Damaged\" or jam can be ignored.";
-            break;
         case "Korvex Spinalworks":
             updated.qualities["Intoxicating"] = 0;
-            updated.specialRules += " Self repairs after one downtime.";
             break;
         case "Lugtah Codex":
             updated.cost = updated.cost * 2 + 200;
             updated.modLimit -= 1;
-            updated.specialRules += " Can use 3D printed ammo without risks or has a rechargeable battery.";
             break;
         case "Orion Tactical":
             updated.modLimit += 1;
             break;
         case "Triton Systems":
             updated.qualities["Concealed"] = Math.max((updated.qualities["Concealed"] || 4) - 1, 1);
-            break;
-        case "Vanguard Precision":
-            updated.specialRules += " Optional Marksman Scope: " + modMap["Marksman Scope"].effects;
             break;
         case "Nova Industries (Laser)":
             updated.damageType = "Laser";
