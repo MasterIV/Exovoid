@@ -271,7 +271,7 @@
     "range": "0-3-4",
 	"qualities": 
 	{
-		"Handling": 3
+		"Handling": 3,
 		"Point Defense": 1
 	},
 	"triggerOptions":

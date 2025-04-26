@@ -26,11 +26,11 @@ export interface WeaponType {
 }
 
 export interface WeaponModType {
-    slot: string
-    name: string
-    effects: string
-    compatible: string[]
-    cost: number
-    rarity: number
-    showEffect: boolean
+    slot: string;
+    name: string;
+    effects: string;
+    compatible: string[];
+    cost: number | string;
+    rarity: number;
+    showEffect: boolean;
 }

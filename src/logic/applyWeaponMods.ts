@@ -21,7 +21,7 @@ export default function applyWeaponMods(weapon: CharacterWeapon, heft: number = 
     const manufacturer = manufacturers
         .filter(m => m.compatible.includes(updated.type))
         .find(m => m.name === weapon.manufacturer);
-    if(manufacturer?.showEffect) updated.specialRules += " " + manufacturer.effects
+    if(manufacturer?.showEffect) updated.specialRules += " " + manufacturer.effects;
 
     switch (weapon.manufacturer) {
         case "No-Name":
@@ -181,7 +181,12 @@ export default function applyWeaponMods(weapon: CharacterWeapon, heft: number = 
             .forEach(k => updated[k] = weapon.overwrites[k])
     }
 
-    updated.cost += mods.map(m => modMap[m].cost).reduce((a, b) => a+b, 0)
+    updated.cost += mods
+        .map(m => modMap[m].cost)
+        .map(m => {
+            const Weapon = updated.cost;
+            return typeof m === "string" ? eval(m) : m
+        }).reduce((a, b) => a+b, 0)
 
     return updated;
 }
