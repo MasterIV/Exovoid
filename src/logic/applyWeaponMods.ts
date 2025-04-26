@@ -45,7 +45,6 @@ export default function applyWeaponMods(weapon: CharacterWeapon, heft: number = 
             break;
         case "Ghinroh Clan Forge":
             updated.triggerOptions["Lethal"] = (updated.triggerOptions["Lethal"] || 0) + 3;
-            updated.specialRules += " No penalties by the \"Damaged\" quality.";
             updated.cost = updated.cost * 2 + 200;
             updated.modLimit -= 1;
             break;
