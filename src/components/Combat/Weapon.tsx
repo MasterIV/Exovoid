@@ -25,9 +25,13 @@ const iconSize = 24;
 
 const slotLocations: Record<string, {left: number, top: number}> = {
     "Muzzle / Barrel": {left: 50, top: 150},
+    "Head / Blade": {left: 50, top: 150},
     "Scopes": {left: 330, top: 80},
+    "Material": {left: 330, top: 80},
     "Mechanism": {left: 300, top: 200},
+    "Body": {left: 300, top: 200},
     "Stock": {left: 460, top: 150},
+    "Handle": {left: 460, top: 150},
     "Grip": {left: 420, top: 300},
     "Magazine / Battery": {left: 430, top: 360},
     "Rail Attachments": {left: 150, top: 260},

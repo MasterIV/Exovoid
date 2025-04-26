@@ -183,7 +183,7 @@
     "slot": "Mechanism",
     "name": "Transformable",
     "effects": "Can switch between its original and chosen form by spending 2 AP. Repairing or modding the weapon incurs a -2 pool penalty.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon", "Blunt", "Blade", "Shield"],
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
     "cost": 300,
     "rarity": 4,
 	"showEffect": true
