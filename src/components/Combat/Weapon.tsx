@@ -2,7 +2,7 @@ import React, {useMemo, useState} from "react";
 import {Accordion, AccordionDetails, AccordionSummary, Chip, Grid, Paper, Stack, Typography} from "@mui/material";
 import {Btn, Dropdown, RmBtn, TextInput} from "../Form";
 import weaponsMods from '../../data/weapon-mods.json';
-import manufacturers from '../../data/weapon-manufacturer.json';
+import manufacturers from '../../data/manufacturer.json';
 import {CharacterWeapon} from "../../types/character";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Value from "../Value";
@@ -34,7 +34,9 @@ const slotLocations: Record<string, {left: number, top: number}> = {
 }
 
 export default React.memo(function Weapon({heft, onChange, onRemove, onAction, talents, ...weapon}: WeaponProps) {
-    const details = useMemo(() => applyWeaponMods(weapon, heft), [weapon.type, weapon.mods, weapon.overwrites, heft]);
+    const details = useMemo(
+        () => applyWeaponMods(weapon, heft),
+        [weapon.type, weapon.manufacturer, weapon.mods, weapon.overwrites, heft]);
     const actions = calculateWeaponActions(details, talents);
 
     const [action, setAction] = useState(Object.keys(actions)[0]);
@@ -58,7 +60,9 @@ export default React.memo(function Weapon({heft, onChange, onRemove, onAction, t
             .map(m => m?.name))
     }
 
-    console.log(`Render Weapon ${details.name}`)
+    const availableManufacturers = manufacturers
+        .filter(m => m.compatible.includes(details.type))
+        .map(m => ({id: m.name, name: m.name}));
 
     return <Accordion expanded={Boolean(weapon.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
@@ -77,7 +81,7 @@ export default React.memo(function Weapon({heft, onChange, onRemove, onAction, t
 
                 <Grid item>
                     <div className="weapon" style={{backgroundImage: `url(img/weapons/${details.image})`}}>
-                        <div style={{position: "absolute", top: 10, left: 10,}}>
+                        {availableManufacturers.length > 0 && <div style={{position: "absolute", top: 10, left: 10,}}>
                             <Dropdown
                                 size="small"
                                 id={"manufacturer"}
@@ -86,8 +90,8 @@ export default React.memo(function Weapon({heft, onChange, onRemove, onAction, t
                                 values={weapon}
                                 onChange={onChange}
                                 defaultValue={"No-Name"}
-                                options={manufacturers.map(m => ({id: m.name, name: m.name}))}/>
-                        </div>
+                                options={availableManufacturers}/>
+                        </div>}
 
                         <Grid spacing={2} container style={{position: "absolute", bottom: 10, left: 10}}
                               alignItems="flex-end">

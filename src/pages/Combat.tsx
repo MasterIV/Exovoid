@@ -52,7 +52,8 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
         id: uuid.v4(),
         type: data.weapon,
         mods: [],
-        ammo: {loaded: 0, reserve: 0}
+        ammo: {loaded: 0, reserve: 0},
+        manufacturer: "No-Name",
     }]);
 
     const changeArmor = useCallback((data: any) => onChange('armor', data), [onChange]);
@@ -61,6 +62,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
         type: data.armor,
         durability: armorMap[data.armor].durability,
         mods: [],
+        manufacturer: "No-Name",
     }]);
 
     const spendAp = useCombat(state => state.spendAp);
@@ -77,7 +79,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
                 id: character.id,
                 ap: action.ap,
                 weapon: weapon?.id,
-                ammo: action.ammo
+                ammo: weapon?.manufacturer === "Forge Titan Dynamics" ? (action.ammo ?? 0) * 2 : action.ammo
             };
 
             // defer any further action to roll submission

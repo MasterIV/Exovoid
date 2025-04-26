@@ -17,6 +17,80 @@ export function applyWeaponMods(weapon: CharacterWeapon, heft: number = 0): Weap
         triggerOptions: {...weaponMap[weapon.type].triggerOptions},
     };
 
+    switch (weapon.manufacturer) {
+        case "No-Name":
+            updated.cost = Math.round(updated.cost / 2 );
+            break;
+        case "Akura Micro":
+            updated.speed -= 1;
+            updated.damage -= updated.damageType === "Laser" ? 2 : 1;
+            break;
+        case "Azerra Firearms":
+            updated.triggerOptions["Shredding"] = (updated.triggerOptions["Shredding"] || 1) + 1;
+            break;
+        case "Callisto":
+            updated.modLimit -= 1;
+            updated.specialRules += " Gain one free trigger that can only be spend on the weapons trigger options.";
+            break;
+        case "Cerberus Armory":
+            updated.modLimit -= 1;
+            updated.specialRules += " You can decide to make a non-lethal attack that deals -2 damage but gains the \"Incapacitating\" and \"Stunning\" trigger options.";
+            break;
+        case "Ekris Companions":
+            updated.specialRules += " Using this weapon, gain one free edge point during each encounter that has to be used during the encounter.";
+            break;
+        case "Exocore":
+            updated.specialRules += " No penalties in vacuum or low-G environments. Difficulty for repairs and modification reduced by 1.";
+            break;
+        case "Forge Titan Dynamics":
+            updated.damage += 2;
+            break;
+        case "Ghinroh Clan Forge":
+            updated.triggerOptions["Lethal"] = (updated.triggerOptions["Lethal"] || 0) + 3;
+            updated.specialRules += " No penalties by the \"Damaged\" quality.";
+            updated.cost = updated.cost * 2 + 200;
+            updated.modLimit -= 1;
+            break;
+        case "Horizon Arms":
+            updated.specialRules += " The first time per scene the weapon would suffer \"Damaged\" or jam can be ignored.";
+            break;
+        case "Korvex Spinalworks":
+            updated.qualities["Intoxicating"] = 0;
+            updated.specialRules += " Self repairs after one downtime.";
+            break;
+        case "Lugtah Codex":
+            updated.cost = updated.cost * 2 + 200;
+            updated.modLimit -= 1;
+            updated.specialRules += " Can use 3D printed ammo without risks or has a rechargeable battery.";
+            break;
+        case "Orion Tactical":
+            updated.modLimit += 1;
+            break;
+        case "Triton Systems":
+            updated.qualities["Concealed"] = Math.max((updated.qualities["Concealed"] || 4) - 1, 1);
+            break;
+        case "Vanguard Precision":
+            updated.specialRules += " Optional Marksman Scope: " + modMap["Marksman Scope"].effects;
+            break;
+        case "Nova Industries (Laser)":
+            updated.damageType = "Laser";
+            updated.triggerOptions["Penetrating"] = (updated.triggerOptions["Penetrating"] || 3) + 2;
+            delete updated.qualities["Loud"];
+            updated.qualities["Silenced"] = 0;
+            updated.cost *= 2;
+            break;
+        case "Nova Industries (Electrical)":
+            updated.damageType = "Electrical";
+            updated.triggerOptions["Concussing"] = 0;
+            updated.cost *= 2;
+            break;
+        case "Nova Industries (Fire)":
+            updated.damageType = "Fire";
+            updated.triggerOptions["Plasmascorch"] = 0;
+            updated.cost *= 2;
+            break;
+    }
+
     // this needs to be before magazine modifications
     if (mods.includes("Fast Trigger Unit")) {
         if(!updated.qualities["Burst"])
@@ -84,6 +158,8 @@ export function applyWeaponMods(weapon: CharacterWeapon, heft: number = 0): Weap
             .filter(k => weapon.overwrites[k]) // @ts-ignore
             .forEach(k => updated[k] = weapon.overwrites[k])
     }
+
+    updated.cost += mods.map(m => modMap[m].cost).reduce((a, b) => a+b, 0)
 
     return updated;
 }

@@ -53,6 +53,7 @@ export interface CharacterCyberMalfunction {
 export interface CharacterArmor {
     id: string;
     type: string;
+    manufacturer: string;
     durability: number;
     mods: string[];
     expanded?: boolean;
