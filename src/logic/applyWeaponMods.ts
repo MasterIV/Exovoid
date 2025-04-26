@@ -18,7 +18,9 @@ export default function applyWeaponMods(weapon: CharacterWeapon, heft: number = 
         triggerOptions: {...weaponMap[weapon.type].triggerOptions},
     };
 
-    const manufacturer = manufacturers.find(m => m.name === weapon.manufacturer);
+    const manufacturer = manufacturers
+        .filter(m => m.compatible.includes(updated.type))
+        .find(m => m.name === weapon.manufacturer);
     if(manufacturer?.showEffect) updated.specialRules += " " + manufacturer.effects
 
     switch (weapon.manufacturer) {
