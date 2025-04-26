@@ -2,7 +2,7 @@
   {
     "type": "Hardened Cloth / Coat",
     "name": "GalenTek Resilient Weave Coat",
-    "durability": "-",
+    "durability": 0,
     "primarySoak": 1,
     "secondarySoak": 1,
     "qualities": "Concealed",

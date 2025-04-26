@@ -1,103 +1,103 @@
 [
   {
-    "modName": "Advanced Materials",
-    "modEffects": "Increase the durability of the armor by +25% (round up).",
+    "name": "Advanced Materials",
+    "effect": "Increase the durability of the armor by +25% (round up).",
     "cost": "Armor / 2",
     "rarity": 2
   },
   {
-    "modName": "Anti-Corrosive",
-    "modEffects": "Protects against corrosive atmospheres.",
+    "name": "Anti-Corrosive",
+    "effect": "Protects against corrosive atmospheres.",
     "cost": 100,
     "rarity": 1
   },
   {
-    "modName": "Audio Suite",
-    "modEffects": "Gain +3 Skill Levels on Vigilance checks when it's about hearing. The suite also allows you to filter sounds and set up an encrypted network of communication with others within 10km. Deactivates when the armor reaches 0 durability.",
+    "name": "Audio Suite",
+    "effect": "Gain +3 Skill Levels on Vigilance checks when it's about hearing. The suite also allows you to filter sounds and set up an encrypted network of communication with others within 10km. Deactivates when the armor reaches 0 durability.",
     "cost": 200,
     "rarity": 1
   },
   {
-    "modName": "Ballistic Net",
-    "modEffects": "Adds +2 Soak against ballistic projectiles.",
+    "name": "Ballistic Net",
+    "effect": "Adds +2 Soak against ballistic projectiles.",
     "cost": 450,
     "rarity": 1
   },
   {
-    "modName": "Battery Expansion",
-    "modEffects": "Triples the duration of the power armor's battery.",
+    "name": "Battery Expansion",
+    "effect": "Triples the duration of the power armor's battery.",
     "cost": 600,
     "rarity": 1
   },
   {
-    "modName": "Diamantine Mesh",
-    "modEffects": "Adds +2 Soak against melee attacks and plasma projectiles.",
+    "name": "Diamantine Mesh",
+    "effect": "Adds +2 Soak against melee attacks and plasma projectiles.",
     "cost": 300,
     "rarity": 1
   },
   {
-    "modName": "Droppack",
-    "modEffects": "Can be activated once to reduce the distance class of a fall by 10. After use, it requires at least 5 Minutes to recharge.",
+    "name": "Droppack",
+    "effect": "Can be activated once to reduce the distance class of a fall by 10. After use, it requires at least 5 Minutes to recharge.",
     "cost": 400,
     "rarity": 3
   },
   {
-    "modName": "Emergency Systems",
-    "modEffects": "The armor and its mods remain operable even when durability is 0.",
+    "name": "Emergency Systems",
+    "effect": "The armor and its mods remain operable even when durability is 0.",
     "cost": 600,
     "rarity": 3
   },
   {
-    "modName": "Heat Shielding",
-    "modEffects": "Protects against extreme heat.",
+    "name": "Heat Shielding",
+    "effect": "Protects against extreme heat.",
     "cost": 100,
     "rarity": 1
   },
   {
-    "modName": "Insulation",
-    "modEffects": "Protects against extreme cold.",
+    "name": "Insulation",
+    "effect": "Protects against extreme cold.",
     "cost": 100,
     "rarity": 1
   },
   {
-    "modName": "Radiation Shielding",
-    "modEffects": "Protects against radiation.",
+    "name": "Radiation Shielding",
+    "effect": "Protects against radiation.",
     "cost": 100,
     "rarity": 1
   },
   {
-    "modName": "Reflective Coating",
-    "modEffects": "Negates the armor penetration of lasers.",
+    "name": "Reflective Coating",
+    "effect": "Negates the armor penetration of lasers.",
     "cost": 300,
     "rarity": 1
   },
   {
-    "modName": "Sealed",
-    "modEffects": "The armor gains the Vacuum-Sealed quality and becomes usable in space by protecting against the dangers of vacuum, while providing life support for several hours.",
+    "name": "Sealed",
+    "effect": "The armor gains the Vacuum-Sealed quality and becomes usable in space by protecting against the dangers of vacuum, while providing life support for several hours.",
     "cost": 400,
     "rarity": 2
   },
   {
-    "modName": "Servos",
-    "modEffects": "The user gains +2 Speed and a +1 pool bonus on melee and defense checks. Deactivates when the armor reaches 0 durability.",
+    "name": "Servos",
+    "effect": "The user gains +2 Speed and a +1 pool bonus on melee and defense checks. Deactivates when the armor reaches 0 durability.",
     "cost": 900,
     "rarity": 3
   },
   {
-    "modName": "Shock Absorber",
-    "modEffects": "Adds +2 Soak against explosions and falling damage.",
+    "name": "Shock Absorber",
+    "effect": "Adds +2 Soak against explosions and falling damage.",
     "cost": 200,
     "rarity": 1
   },
   {
-    "modName": "State-of-the-Art",
-    "modEffects": "Increase the durability of the armor by +50% (round up). Cannot be combined with the Advanced Materials.",
+    "name": "State-of-the-Art",
+    "effect": "Increase the durability of the armor by +50% (round up). Cannot be combined with the Advanced Materials.",
     "cost": "Armor * 2",
     "rarity": 5
   },
   {
-    "modName": "Visual Enhancer",
-    "modEffects": "Gain +3 Skill Levels on Vigilance checks when it's about seeing something. The suite also allows zooming, video recording and similar perks. Deactivates when the armor reaches 0 durability.",
+    "name": "Visual Enhancer",
+    "effect": "Gain +3 Skill Levels on Vigilance checks when it's about seeing something. The suite also allows zooming, video recording and similar perks. Deactivates when the armor reaches 0 durability.",
     "cost": 600,
     "rarity": 3
   }

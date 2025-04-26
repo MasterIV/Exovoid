@@ -19,14 +19,15 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Value from "../Value";
 import {CollectionItemPros} from "../Collection";
 import manufacturers from '../../data/manufacturer.json';
+import applyArmorMods from "../../logic/applyArmorMods";
 
 const armorMap: Record<string, any> = {};
 armors.forEach(a => armorMap[a.type] = a);
 
 interface ArmorProps extends CharacterArmor, CollectionItemPros {}
 
-export function Armor({expanded, onChange, onRemove, ...armor}: ArmorProps) {
-    const details = armorMap[armor.type];
+export function Armor({expanded, onChange, onRemove, index, ...armor}: ArmorProps) {
+    const details = applyArmorMods(armor);
 
     const availableManufacturers = manufacturers
         .filter(m => m.compatible.includes("Armor"))

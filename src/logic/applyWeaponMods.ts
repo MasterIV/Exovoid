@@ -9,7 +9,7 @@ weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
 const modMap: Record<string, typeof weaponsMods[0]> = {};
 weaponsMods.forEach(mod => modMap[mod.name] = mod);
 
-export function applyWeaponMods(weapon: CharacterWeapon, heft: number = 0): WeaponType {
+export default function applyWeaponMods(weapon: CharacterWeapon, heft: number = 0): WeaponType {
     const mods = weapon.mods;
     const updated = {
         ...weaponMap[weapon.type],

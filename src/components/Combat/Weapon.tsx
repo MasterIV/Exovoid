@@ -7,7 +7,7 @@ import {CharacterWeapon} from "../../types/character";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Value from "../Value";
 import {calculateWeaponActions, CombatAction, formatAction} from "../../logic/calculateCombatActions";
-import {applyWeaponMods} from "../../logic/applyMods";
+import applyWeaponMods from "../../logic/applyWeaponMods";
 import {CollectionItemPros} from "../Collection";
 import ModSlot from "./ModSlot";
 import {WeaponModType} from "../../types/weapon";
