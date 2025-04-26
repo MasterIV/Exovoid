@@ -75,7 +75,7 @@ export default function Systems({systems, capacity, onChange}: SystemsProps) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <Collection values={systems} onChange={onChange} component={System} capacity={capacity} />
+                        <Collection id="ship-systems" values={systems} onChange={onChange} component={System} capacity={capacity} />
                     </TableBody>
                 </Table>
             </TableContainer>

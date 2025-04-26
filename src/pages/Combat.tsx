@@ -46,7 +46,6 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
     const changeData = useCallback((k: string, v: any) => setData(old => ({...old, [k]: v})), []);
     const joinCombat = () => socket.emit("combatant", charToCombatant(stats));
     const leaveCombat = () => window.confirm("Leave Combat?") && socket.emit("remove", stats.id);
-    const spendAp = useCombat(state => state.spendAp);
 
     const characterWeapons = stats.weapons || [];
     const addWeapon = () => onChange('weapons', [...characterWeapons, {
@@ -64,14 +63,18 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
         mods: [],
     }]);
 
-    const performAction = (action: CombatAction, weapon: CharacterWeapon | null = null) => {
+    const spendAp = useCombat(state => state.spendAp);
+    const performAction = useCallback((action: CombatAction, weapon: CharacterWeapon | null = null) => {
+        const character = useCharacter.getState()
+        const weapons = character.weapons || [];
+
         if(action.id !== "reload" && Number(action.ammo) > Number(weapon?.ammo.loaded))
             return alert("Not enough ammo!");
 
         if(action.skill) {
             const metadata = {
                 skill: action.skill,
-                id: stats.id,
+                id: character.id,
                 ap: action.ap,
                 weapon: weapon?.id,
                 ammo: action.ammo
@@ -79,8 +82,8 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
 
             // defer any further action to roll submission
             return onRoll(
-                stats.skills[action.skill] || 0,
-                attributeAverage(action.skill, stats.attributes),
+                character.skills[action.skill] || 0,
+                attributeAverage(action.skill, character.attributes),
                 action.modifier,
                 metadata);
         }
@@ -88,11 +91,11 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
         if(action.id === "reload" && action.ammo && weapon) {
             const loaded = Math.min(action.ammo, weapon.ammo.loaded + weapon.ammo.reserve);
             const reserve = weapon.ammo.reserve - loaded + weapon.ammo.loaded;
-            onChange('weapons', characterWeapons.map(w => w.id === weapon.id ? {...w, ammo: {loaded, reserve}} : w));
+            character.update('weapons', weapons.map(w => w.id === weapon.id ? {...w, ammo: {loaded, reserve}} : w));
         }
 
-        spendAp(stats.id, action.ap);
-    }
+        spendAp(character.id, action.ap);
+    }, [onRoll, spendAp]);
 
     const changeHealth = useCallback((hp: number) => onChange('currentHealth', hp), [onChange]);
     const changeInjuries = useCallback((i: string[]) => onChange('injuries', i), [onChange]);
@@ -125,6 +128,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
         <Grid item xs={6}>
 
                 <Collection
+                    id="character-weapons"
                     heft={calculateHeft(stats)}
                     locked={locked}
                     talents={stats.talents}
@@ -145,6 +149,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
                 </Grid>
 
                 <Collection
+                    id="character-armor"
                     locked={locked}
                     values={stats.armor}
                     onChange={changeArmor}
@@ -173,6 +178,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
             </Grid>
 
             <Injuries
+                id="character-injuries"
                 injuries={stats.injuries || []}
                 health={stats.currentHealth}
                 changeHealth={changeHealth}

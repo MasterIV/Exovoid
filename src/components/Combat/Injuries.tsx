@@ -46,6 +46,7 @@ interface InjuryRoll {
 }
 
 interface InjuriesProps {
+    id: string;
     minion?: boolean;
     npc?: boolean;
     injuries: string[];
@@ -56,7 +57,7 @@ interface InjuriesProps {
 
 const rollDefaults: InjuryRoll = {show: false, damage: 1, modifier: 0, injury: allInjuries[0].name};
 
-export default function Injuries({injuries, health, changeHealth, changeInjuries, npc = false, minion = false}: InjuriesProps) {
+export default function Injuries({id, injuries, health, changeHealth, changeInjuries, npc = false, minion = false}: InjuriesProps) {
     const [roll, setRoll] = useState<InjuryRoll>(rollDefaults);
     const resetRoll = useCallback(() => setRoll(rollDefaults), []);
     const changeRoll = (k: string, v: any) => setRoll({...roll, [k]: v});
@@ -64,12 +65,12 @@ export default function Injuries({injuries, health, changeHealth, changeInjuries
     const damage = roll.damage|0;
     const modifier = roll.modifier|0;
 
-    const id = uuid.v4();
+    const rollId = uuid.v4();
     const mapped = injuries.map((i: string, k: number) => ({...injuryMap[i], id: i+k}));
     const diceCount = (damage-Math.max(health,0)) + modifier + mapped.reduce((v, i) => v + i.modifier, 0);
 
     const rollCallback = (result: DiceResultType, metadata: any) => {
-        if (metadata.id !== id) return;
+        if (metadata.id !== rollId) return;
         const summary = summarize(result);
         const wounds = minion ? (summary.wound|0) + (summary.minion|0) : (summary.wound|0)
         const severity = Math.min(wounds, 7);
@@ -93,7 +94,7 @@ export default function Injuries({injuries, health, changeHealth, changeInjuries
 
         if(damage > health && diceCount > 0) {
             socket.on('roll', rollCallback);
-            socket.emit('roll', {injury: diceCount}, {id});
+            socket.emit('roll', {injury: diceCount}, {id: rollId});
         }
 
         resetRoll();
@@ -101,6 +102,7 @@ export default function Injuries({injuries, health, changeHealth, changeInjuries
 
     return <>
         <Collection
+            id={id}
             npc={npc}
             values={mapped}
             onChange={data => changeInjuries(data.map((i) => (i as InjuryType).name))}

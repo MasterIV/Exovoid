@@ -3,6 +3,7 @@ export interface WeaponType {
     weapon: string;
     skill: string;
     type: string;
+    image: string;
 
     hands: number;
     magazine: number;
@@ -20,4 +21,16 @@ export interface WeaponType {
     cost: number;
     ammoCost?: number;
     rarity: number;
+
+    slots?: Record<string, {left: number, top: number}>;
+}
+
+export interface WeaponModType {
+    slot: string
+    name: string
+    effects: string
+    compatible: string[]
+    cost: number
+    rarity: number
+    showEffect: boolean
 }

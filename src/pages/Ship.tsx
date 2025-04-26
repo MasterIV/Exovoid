@@ -152,7 +152,7 @@ export default function ShipPage({}: ShipPageProps) {
         </Grid><Grid item container direction="column" spacing={2} xs={9}>
             <Systems systems={ship.systems} onChange={changeSystem} capacity={definition.capacity}/>
             <Weapons weapons={ship.weapons} onChange={changeWeapon} />
-            <Inventory inventory={ship.cargo} onChange={changeCargo} />
+            <Inventory id="ship-inventory" inventory={ship.cargo} onChange={changeCargo} />
         </Grid>
     </Grid>;
 }

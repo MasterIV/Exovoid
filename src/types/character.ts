@@ -6,9 +6,18 @@ export interface CharacterWeapon {
     type: string;
     mods: string[];
     expanded?: boolean;
+    customization?: string;
+    manufacturer: string;
     ammo: {
         loaded: number;
         reserve: number;
+    },
+    overwrites: {
+        magazine?: number;
+        reload?: number;
+        speed?: number;
+        damage?: number;
+        range?: string;
     }
 }
 

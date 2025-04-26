@@ -9,11 +9,12 @@ import React from "react";
 const defaults = {name: "", quantity: 1, location: "", notes: ""};
 
 interface InventoryProps {
+    id: string;
     inventory: InventoryItem[];
     onChange: (data: any) => void;
 }
 
-export default function Inventory({inventory, onChange}: InventoryProps ) {
+export default function Inventory({id, inventory, onChange}: InventoryProps ) {
     const addItem = () => onChange([...inventory, {...defaults, id: uuid.v4()}]);
 
     return <>
@@ -30,7 +31,7 @@ export default function Inventory({inventory, onChange}: InventoryProps ) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <Collection values={inventory} onChange={onChange} component={Item}/>
+                        <Collection id={id} values={inventory} onChange={onChange} component={Item}/>
                     </TableBody>
                 </Table>
             </TableContainer>

@@ -16,10 +16,6 @@ Next Tasks:
   - biocompatibility
   - advanced tech
 
-Overall:
-
- - networking
-   - logout
 
 # Getting Started with Create React App
 

@@ -83,7 +83,7 @@ export default React.memo(function CyberWarePage({} : CyberWarePageProps) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <Collection values={cyberware} onChange={changeCyberWare} component={CyberWare}/>
+                        <Collection id="character-cyberware" values={cyberware} onChange={changeCyberWare} component={CyberWare}/>
                     </TableBody>
                 </Table>
             </TableContainer>

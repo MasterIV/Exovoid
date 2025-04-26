@@ -41,7 +41,7 @@ export default React.memo( function NpcPage({onRoll, locked} : NpcPageProps) {
             </Grid>
             <Grid item md={9} xs={12}>
                 <h2>Known NPCs</h2>
-                <Collection locked={locked} values={npcs} onChange={changeNpc} component={Npc} onRoll={onRoll}/>
+                <Collection id="npcs" locked={locked} values={npcs} onChange={changeNpc} component={Npc} onRoll={onRoll}/>
                 <Box display="flex" justifyContent="end" marginTop={2}><Btn onClick={addNpc}>Add Npc</Btn></Box>
             </Grid>
         </Grid>

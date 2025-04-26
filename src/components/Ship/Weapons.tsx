@@ -8,8 +8,11 @@ import {
     Checkbox,
     Grid,
     Stack,
-    Table, TableBody, TableCell,
-    TableHead, TableRow,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow,
     Typography
 } from "@mui/material";
 import {Btn, Dropdown, RmBtn} from "../Form";
@@ -99,6 +102,7 @@ export default function Weapons({weapons, onChange}: WeaponsProps) {
 
     return <>
         <Grid item><Collection
+            id="ship-weapons"
             values={weapons}
             onChange={onChange}
             component={Weapon}/></Grid>

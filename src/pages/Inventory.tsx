@@ -37,7 +37,7 @@ export default React.memo(function InventoryPage({} : InventoryPageProps) {
                 </Grid>
             </Grid>
 
-            <Inventory inventory={inventory} onChange={changeInventory} />
+            <Inventory id="character-inventory" inventory={inventory} onChange={changeInventory} />
         </Grid>
     );
 });

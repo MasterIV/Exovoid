@@ -3,7 +3,8 @@ import {
     AccordionDetails,
     AccordionSummary,
     Checkbox,
-    Grid, Stack,
+    Grid,
+    Stack,
     Table,
     TableBody,
     TableCell,
@@ -86,7 +87,7 @@ export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
         <AccordionDetails>
             <Grid container direction="column" spacing={2}>
                 <Grid item container spacing={2} alignItems="center">
-                    <Grid xs={5} item><TextInput label="Name" name="name" values={props} onChange={onChange} /></Grid>
+                    <Grid xs={5} item><TextInput size="small" label="Name" name="name" values={props} onChange={onChange} /></Grid>
                     <Grid xs={1} item textAlign="center"><Checkbox title="Minion?" checked={Boolean(props.minion)} onChange={e => onChange('minion', e.target.checked)} /></Grid>
                     <Grid xs={3} item textAlign={"center"}><Value width={140} label="Current Health" name={"currentHealth"} value={props.currentHealth||0} onChange={onChange} /></Grid>
                     <Grid xs={3} item textAlign={"center"}><Value width={140} label="Action Points" name={"maxAp"} value={props.maxAp||0} onChange={onChange} /></Grid>
@@ -107,6 +108,7 @@ export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
                             </TableHead>
                             <TableBody>
                                 <Collection
+                                    id={`npc-actions-${props.id}`}
                                     npc={props}
                                     onRoll={onRoll}
                                     values={props.actions||[]}
@@ -118,6 +120,7 @@ export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
 
                 <Grid item container spacing={2} alignItems="center">
                     <Injuries
+                        id={`npc-injuries-${props.id}`}
                         npc={true}
                         minion={props.minion}
                         injuries={props.injuries || []}
