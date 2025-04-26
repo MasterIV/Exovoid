@@ -56,11 +56,11 @@
   {
     "slot": "Muzzle / Barrel",
     "name": "Extended Barrel",
-    "effects": "The weapon gains +20% optimum and maximal range and deals +1 damage, but increases its \"Concealed\" quality by 1 level.",
+    "effects": "The weapon gains +20% optimum and maximum range.",
     "compatible": ["Pistol", "MP", "Rifle", "Heavy Weapon"],
     "cost": 120,
     "rarity": 2,
-	"showEffect": false
+	"showEffect": true
   },
   {
     "slot": "Scopes",
@@ -177,16 +177,16 @@
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
     "cost": 75,
     "rarity": 2,
-	"showEffect": false
+	"showEffect": true
   },
   {
     "slot": "Mechanism",
     "name": "Transformable",
-    "effects": "The weapon can switch between its usual form and another melee or ranged weapon chosen upon acquiring this mod. Switching the forms requires 2 AP. The other form of the weapon can be modded separately, but both weapons lose a mod slot for \"Transformable\", and the costs need to be spent on both. The two chosen forms needs to be sensible - the GM is the final arbiter. Such weapons tend to look bizarre and complicated, and any attempts to repair or modify them suffer a -2 pool penalty.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "effects": "Can switch between its original and chosen form by spending 2 AP. Repairing or modding the weapon incurs a -2 pool penalty.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon", "Blunt", "Blade", "Shield"],
     "cost": 300,
     "rarity": 4,
-	"showEffect": false
+	"showEffect": true
   },
   {
     "slot": "Stock",
@@ -394,5 +394,149 @@
     "cost": 80,
     "rarity": 2,
 	"showEffect": true
+  },
+  {
+    "slot": "Material",
+    "name": "Bouncy",
+    "effects": "When deflecting bullets (using the Omega variant of Move-By-Wire cyberware), the ricochets deal full damage instead of just half.",
+    "compatible": ["Blade", "Shield"],
+    "cost": 200,
+    "rarity": 4,
+	"showEffect": true
+  },
+  {
+    "slot": "Material",
+    "name": "Hardened",
+    "effects": "The first time during each scene the weapon would suffer the Damaged state, it ignores it instead.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 150,
+    "rarity": 3,
+	"showEffect": true
+  },
+  {
+    "slot": "Material",
+    "name": "Masterfully Crafted",
+    "effects": "Adds +1 base damage, or +2 damage for a 2-handed weapon.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": "Weapon * 2",
+    "rarity": 5,
+	"showEffect": false
+  },
+  {
+    "slot": "Material",
+    "name": "Light",
+    "effects": "The first parry attempt with the weapon only costs 1 instead of 2 AP each round.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 150,
+    "rarity": 2,
+	"showEffect": true
+  },
+  {
+    "slot": "Body",
+    "name": "Throwable",
+    "effects": "The weapon gains the quality \"Throwable (2-5 | 10)\".",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 120,
+    "rarity": 2,
+	"showEffect": true
+  },
+  {
+    "slot": "Body",
+    "name": "Transformable",
+    "effects": "Can switch between its original and chosen form by spending 2 AP. Repairing or modding the weapon incurs a -2 pool penalty.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 300,
+    "rarity": 4,
+	"showEffect": true
+  },
+  {
+    "slot": "Body",
+    "name": "Binding",
+    "effects": "If you use the \"Suppress / Distract\" spending option against the target you just hit, it is twice as effective.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 120,
+    "rarity": 3,
+	"showEffect": true
+  },
+  {
+    "slot": "Body",
+    "name": "Self-Repairing",
+    "effects": "After one hour, remove the \"Damaged\" quality from the weapon.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 250,
+    "rarity": 4,
+	"showEffect": true
+  },
+  {
+    "slot": "Handle",
+    "name": "Balanced",
+    "effects": "The weapon gains Handling (1). If it already has it, increase its Handling by +1 instead.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 150,
+    "rarity": 2,
+	"showEffect": false
+  },
+  {
+    "slot": "Handle",
+    "name": "Protective Handle",
+    "effects": "The weapon gains Defensive (1, Melee). If it already has it, this mod has no effect.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 200,
+    "rarity": 3,
+	"showEffect": false
+  },
+  {
+    "slot": "Handle",
+    "name": "Magnetized Grip",
+    "effects": "Drawing or picking up the weapon only costs 1 instead of 3 AP.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 80,
+    "rarity": 2,
+	"showEffect": true
+  },
+  {
+    "slot": "Head / Blade",
+    "name": "Serrated",
+    "effects": "The weapon gains the Injuring (3) quality.",
+    "compatible": ["Blade", "Shield"],
+    "cost": 50,
+    "rarity": 2,
+	"showEffect": false
+  },
+  {
+    "slot": "Head / Blade",
+    "name": "Retractable",
+    "effects": "In its folded form, the weapon appears like a regular item, suitcase or similar. Unfolding the weapon into its weapon-ready form requires spending 2 AP (this is in addition to drawing it).",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 300,
+    "rarity": 4,
+	"showEffect": true
+  },
+  {
+    "slot": "Head / Blade",
+    "name": "Molecular Edge",
+    "effects": "The weapon gains \"Pentrating (3)\" (if it already has it, increase it by +2 instead). Not applicable to blunt weapons.",
+    "compatible": ["Blade", "Shield"],
+    "cost": 200,
+    "rarity": 4,
+	"showEffect": false
+  },
+  {
+    "slot": "Head / Blade",
+    "name": "System Shock Module",
+    "effects": "Upon causing an injury roll, automatically cause a cyberware malfunction roll.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 300,
+    "rarity": 4,
+	"showEffect": false
+  },
+  {
+    "slot": "Head / Blade",
+    "name": "Bludgeoning",
+    "effects": "Gain the \"Knocking\" trigger option. It if already has it, the target has +1 difficulty to resist it.",
+    "compatible": ["Blunt", "Blade", "Shield"],
+    "cost": 60,
+    "rarity": 2,
+	"showEffect": false
   }
 ]

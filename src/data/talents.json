@@ -530,7 +530,7 @@
   },
   {
     "talent": "Point Defense",
-    "description": "You may target missiles and torpedoes while they are in-flight, as if they are enemy ships. The difficulty to hit them is d3.",
+    "description": "If you use the \"Point Defense\" weapon quality of a space ship weapon, you reduce the difficulty to hit a missile or torpedo by 2.",
     "representation": 1
   },
   {

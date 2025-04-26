@@ -356,6 +356,24 @@
     "rarity": 5
   },
   {
+    "type": "Cognitive Enhancement",
+    "name": "Mnemonic Vault",
+    "tier": "Alpha",
+    "description": "Grants perfect recall of any information seen or heard in the past 30 days.",
+    "cyberImmunityCost": 2,
+    "cost": 800,
+    "rarity": 2
+  },
+  {
+    "type": "Cognitive Enhancement",
+    "name": "Dreamsync Cortex",
+    "tier": "Beta",
+    "description": "Grants perfect recall of any information seen or heard in the past 180 days. Additionally, it enables the user to control their dreams and interface with virtual reality the same way a \"VR Headset\" would.",
+    "cyberImmunityCost": 4,
+    "cost": 1500,
+    "rarity": 3
+  },
+  {
     "type": "Integrated Comms",
     "name": "Azerra Stealthlink",
     "tier": "Alpha",
@@ -524,6 +542,24 @@
     "description": "Makes your outer body layer resistant to the effects of the vacuum indefinitely and allows you to withstand extreme weather (heat, cold or corrosion) for up to 30 Minutes - you still need to ensure a suitable oxygen intake. The skin looks visibly altered and has an alien texture to it.",
     "cyberImmunityCost": 7,
     "cost": 4500,
+    "rarity": 5
+  },
+  {
+    "type": "Stealth Skin",
+    "name": "Shadow Veil",
+    "tier": "Alpha",
+    "description": "Attempts to recognize the user's face with surveillance, as well as biometric scanning or heat detection suffer a -3 pool penalty.",
+    "cyberImmunityCost": 4,
+    "cost": 1800,
+    "rarity": 4
+  },
+  {
+    "type": "Stealth Skin",
+    "name": "Lightbender Skin",
+    "tier": "Beta",
+    "description": "Attempts to recognize the user's face with surveillance, as well as biometric scanning or heat detection suffer a -3 pool penalty. The skin tech can mimic surrounding textures and colors, granting +3 pool on checks to stay hidden - can also be used to display cool tattoos at will.",
+    "cyberImmunityCost": 6,
+    "cost": 4000,
     "rarity": 5
   },
   {

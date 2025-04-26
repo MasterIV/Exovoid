@@ -612,6 +612,24 @@
   },
   {
     "type": "Misc",
+    "name": "FTL Radiation Scrambler",
+    "capacity": 2,
+    "power": 0,
+    "description": "Charges: 3. Releases a device that disrupts the FTL signature your ship leaves behind, making the radiation decays after 1 hour per step (instead of 12 hours). Refilling one device charge costs 500 Credits.",
+    "cost": 4,
+    "rarity": 4
+  },
+  {
+    "type": "Misc",
+    "name": "FTL Dampening Field",
+    "capacity": 4,
+    "power": 6,
+    "description": "Creates a large gravity well of 2000 hexes radius within which other ships cannot activate their FTL drive unless they accept a +3 difficulty modifier on their attempt. While you use the disruptor field, you cannot use shields or cloaking devices.",
+    "cost": 7,
+    "rarity": 4
+  },
+  {
+    "type": "Misc",
     "name": "Escape Pods",
     "capacity": 1,
     "power": 0,

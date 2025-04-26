@@ -108,7 +108,40 @@ export default function applyWeaponMods(weapon: CharacterWeapon, heft: number = 
         updated.damage = Math.ceil(updated.damage * 1.2);
         updated.magazine = Math.ceil(updated.magazine * .7);
     }
-
+	
+	if (mods.includes("Masterfully Crafted"))
+		updated.damage += updated.hands;
+		
+	if (mods.includes("Throwable"))
+		updated.qualities["Throwable (2-5 | 10)"] = 0;
+		
+	if (mods.includes("Protective Handle"))
+		updated.qualities["Defensive (Melee)"] = 1;
+		
+	if (mods.includes("Serrated"))
+		updated.triggerOptions["Injuring"] = 3;
+		
+	if (mods.includes("Knocking")) {
+		if (updated.triggerOptions["Knocking"] === 0)
+			updated.specialRules += " The target has +1 difficulty to resist \"Knocking\".";
+		else
+			updated.triggerOptions["Knocking"] = 0;
+	}
+	
+	if (mods.includes("Molecular Edge"))
+		updated.triggerOptions["Penetrating"] = (updated.triggerOptions["Penetrating"] || 1) + 2;
+		
+	if (mods.includes("Retractable"))
+		updated.qualities["Concealed"] = Math.max((updated.qualities["Concealed"] || (2 + updated.hands)) - 1, 1);
+		
+	if(mods.includes("Balanced"))
+        updated.qualities["Handling"] = (updated.qualities["Handling"] || 0) + 1;
+	
+	if (mods.includes("Extended Barrel")) {
+		updated.damage += 1;
+		if (updated.qualities["Concealed"]) updated.qualities["Concealed"]++;
+	}
+	
     if (mods.includes("Focus Lense") && updated.qualities["Penetrating"])
         updated.qualities["Penetrating"] = Math.ceil(updated.qualities["Penetrating"] * 1.2);
 

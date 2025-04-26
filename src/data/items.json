@@ -417,7 +417,7 @@
     "category": "Crafting",
     "item": "3D Printer",
     "name": "PrintForce X1",
-    "description": "A portable fabricator that can create physical objects from digital blueprints using various materials. Ideal for crafting custom tools or parts. The material cost is equal to 5% of the aspired item, and the process takes a few minutes. 3D printed mechanical / electrical items (like weapons) break as soon as a botch or two complications were rolled (regardless if these were triggered or not). Assembling an item from the printed parts requires a few minutes and a Tech check - the difficulty is equal to the rarity of the item - 2 (to a Minimum of 1).",
+    "description": "A portable fabricator that can create physical objects from digital blueprints using various materials. Ideal for crafting custom tools or parts. The material cost is equal to 5% of the aspired item, and the process takes a few minutes. 3D printed mechanical / electrical items (like weapons) break as soon as a botch or two complications were rolled (regardless if these were triggered or not). Assembling an item from the printed parts requires a few minutes and a Tech check - the difficulty is equal to the rarity of the item - 2 (to a Minimum of 1). 3D-printed weapons or armor are always considered \"No-Name\".",
     "size": 4,
     "cost": 300,
     "rarity": 2
@@ -518,7 +518,7 @@
     "name": "U.N. Registry Key",
     "description": "A fake identification that can be used for all services and payments and will pass most checks. Seeing through the fake ID requires an Investigation d4 check.",
     "size": 0,
-    "cost": 850,
+    "cost": 500,
     "rarity": 5
   },
   {
