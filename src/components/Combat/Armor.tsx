@@ -4,7 +4,9 @@ import {
     AccordionDetails,
     AccordionSummary,
     Autocomplete,
+    Chip,
     Grid,
+    Stack,
     Table,
     TableBody,
     TableCell,
@@ -26,11 +28,20 @@ armors.forEach(a => armorMap[a.type] = a);
 
 interface ArmorProps extends CharacterArmor, CollectionItemPros {}
 
+function createChips(data: Record<string, number | undefined>) {
+    return <Stack direction="row" spacing={1} marginX={1} display={"inline-block"}>
+        {Object.entries(data).map(q => {
+            const label = Number(q[1]) > 0 ? `${q[0]}: ${q[1]}` : q[0];
+            return <Chip key={q[0]} size="small" label={label} />;
+        })}
+    </Stack>
+}
+
 export function Armor({expanded, onChange, onRemove, index, ...armor}: ArmorProps) {
     const details = applyArmorMods(armor);
 
     const availableManufacturers = manufacturers
-        .filter(m => m.compatible.includes("Armor"))
+        .filter(m => m.compatible.includes(details.type))
         .map(m => ({id: m.name, name: m.name}));
 
     return <Accordion expanded={Boolean(expanded)} onChange={(x, e) => onChange('expanded', e)}>
@@ -68,12 +79,17 @@ export function Armor({expanded, onChange, onRemove, index, ...armor}: ArmorProp
                                 <TableCell>Soak: {details.primarySoak} / {details.secondarySoak}</TableCell>
                                 <TableCell>Mod Limit: {details.modLimit}</TableCell>
                             </TableRow>
-                            {details.qualities &&
-                                <TableRow><TableCell colSpan={7}><strong>Qualities:</strong> {details.qualities}
-                                </TableCell></TableRow>}
-                            {details.specialRules &&
-                                <TableRow><TableCell colSpan={7}><strong>Special Rules:</strong> {details.specialRules}
-                                </TableCell></TableRow>}
+
+                            {Object.keys(details.qualities).length > 0 &&  <TableRow>
+                                <TableCell colSpan={7}>
+                                    <strong>Qualities:</strong>
+                                    {createChips(details.qualities)}
+                                </TableCell>
+                            </TableRow>}
+
+                            {details.specialRules &&<TableRow>
+                                <TableCell colSpan={7}><strong>Special Rules:</strong> {details.specialRules}</TableCell>
+                            </TableRow>}
                         </TableBody>
                     </Table>
                 </Grid>
