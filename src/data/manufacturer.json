@@ -2,14 +2,20 @@
   {
     "name": "No-Name",
     "effects": "A No-Name weapon is 50% cheaper compared to its list price - this does not affect mods.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon", "Armor"],
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon", "Blade", "Blunt", "Shield", "Armor", "Power Armor"],
 	"showEffect": false
   },
   {
     "name": "Akura Micro",
     "effects": "Reduce the AP required to attack by 1, but also decrease the base damage by 1. For Laser weapons, the base damage is decreased by 2 instead.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon", "Blade", "Blunt", "Shield"],
 	"showEffect": false
+  },
+  {
+    "name": "Argonis Framewerks",
+    "effects": "Changing a mod only takes five minutes and requires no Tech check - but the mod must be specifically made Argonis Framewerks systems.",
+    "compatible": ["Armor", "Power Armor"],
+	"showEffect": true
   },
   {
     "name": "Azerra Firearms",
@@ -19,33 +25,51 @@
   },
   {
     "name": "Callisto",
-    "effects": "Attacks with a Callisto weapon gain a free trigger that can only be spent on the weapon's trigger options. The weapon cannot get any mods from the category \"Mechanism\", and it has one less mod slot.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "effects": "Gain a free trigger that can only be spent on the weapon's trigger options.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon", "Blade", "Blunt", "Shield"],
 	"showEffect": true
   },
   {
     "name": "Cerberus Armory",
-    "effects": "The weapon has one less mod slot. When attacking with the weapon, you can decide if you want to make a regular attack or a non-lethal one. The non-lethal attack deals -2 damage but gains the \"Incapacitating\" and \"Stunning\" qualities.",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "effects": "Before attacking, you can decide to perform a non-lethal attack instead, dealing -2 damage but gaining the \"Incapacitating\" and \"Stunning\" trigger options.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon", "Blade", "Blunt", "Shield"],
 	"showEffect": true
   },
   {
     "name": "Ekris Companions",
-    "effects": "During each encounter, gain one edge point (so long as you actively use that weapon) that has to be spent during that encounter - or it is simply lost.",
+    "effects": "If you actively use the weapon, you obtain an extra edge point for that encounter - if it's not spent, it is lost.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon", "Blade", "Blunt", "Shield"],
+	"showEffect": true
+  },
+  {
+    "name": "Exocore",
+    "effects": "Functions without drawbacks in vacuum or low-G environments. Reduce the difficulty to repair or mod the weapon by 1.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
 	"showEffect": true
   },
   {
     "name": "Exocore",
-    "effects": "Functions without penalty or drawbacks in vacuum or low-G environments. Repairing or modding such a weapon is easier, reducing the target number by 1. ",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "effects": "Gain the \"Sealed\" quality which even remains when the durability drops to 0.",
+    "compatible": ["Armor", "Power Armor"],
+	"showEffect": true
+  },
+  {
+    "name": "Ferroclave Systems",
+    "effects": "Suffer a -2 pool penalty to Defense, but once every two rounds you can expend 3 points of durability to negate a hit (except against weapons with the \"Destructive\" quality).",
+    "compatible": ["Armor", "Power Armor"],
 	"showEffect": true
   },
   {
     "name": "Forge Titan Dynamics",
-    "effects": "Spend twice the ammo for each shot fired, but increase the base damage by +2.",
+    "effects": "The weapon spends twice the ammo for each shot fired.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
-	"showEffect": false
+	"showEffect": true
+  },
+  {
+    "name": "Ginroh Clan Forge",
+    "effects": "Ignore penalties from the \"Damaged\" quality.",
+    "compatible": ["Blade", "Blunt", "Shield"],
+	"showEffect": true
   },
   {
     "name": "Horizon Arms",
@@ -54,14 +78,26 @@
 	"showEffect": true
   },
   {
+    "name": "House Virellan Haute Armoré",
+    "effects": "Gain +1 pool bonus to all social checks so long as you can be seen.",
+    "compatible": ["Armor", "Power Armor"],
+	"showEffect": true
+  },
+  {
+    "name": "Korvex Spinalworks",
+    "effects": "Repairs itself after one downtime.",
+    "compatible": ["Blade", "Blunt", "Shield"],
+	"showEffect": true
+  },
+  {
     "name": "Lugtah Codex",
-    "effects": "These weapons can fire 3D printed ammunition without the usual risks involved. Their energy-based weapons can simply be recharged using any power socket.",
+    "effects": "Can use 3D-printed ammo without risks, and energy-based weapons have rechargable batteries.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
 	"showEffect": true
   },
   {
     "name": "Nova Industries (Laser)",
-    "effects": "Add \"Penetrating (5)\". If it already has it, increase it by +2 instead",
+    "effects": "Add \"Penetrating (5)\". If it already has it, increase it by +2 instead. Also add \"Silenced\" and remove \"Loud\".",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
 	"showEffect": false
   },
@@ -79,19 +115,49 @@
   },
   {
     "name": "Orion Tactical",
-    "effects": "Gain +1 mod slot. For a single mod category of your choice, you may install up to two different mods instead.",
+    "effects": "Changing a mod does not require a downtime, but can be done within 5 minutes.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+	"showEffect": true
+  },
+  {
+    "name": "Redline Dynamics",
+    "effects": "Gain +2 speed and +2 pool bonus on Defense.",
+    "compatible": ["Armor", "Power Armor"],
 	"showEffect": false
   },
   {
     "name": "Triton Systems",
     "effects": "Add \"Concealed (3)\". If it already has it, decrease it by 1 (to a min. of 1).",
-    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle"],
+	"showEffect": false
+  },
+  {
+    "name": "Umbraweave Collective",
+    "effects": "Targets have +1 difficulty to try and notice you. Alternatively, you benefit from -1 difficulty on Infiltration rolls.",
+    "compatible": ["Armor"],
 	"showEffect": false
   },
   {
     "name": "Vanguard Precision",
-    "effects": "The weapon is automatically considered to have a \"Marksman Scope\" installed, and you can switch between iron sights and the scope freely. This special scope is proprietary and cannot be taken off or replaced by a different scope. It does not occupy a mod slot though.",
+    "effects": "Increase the optimum and maximum range of the firearm by +100% - this does not stack with other scopes.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+	"showEffect": true
+  },
+  {
+    "name": "Vantari Bioshell",
+    "effects": "While the armor is worn, you regenerate 2 health or 2 armor durability at the end of every round. Fire-type damage deals +3 damage to you. Putting the armor on or removing it takes one hour.",
+    "compatible": ["Armor", "Power Armor"],
+	"showEffect": true
+  },
+  {
+    "name": "Keileid Assault Systems (Mordrex)",
+    "effects": "You can perform a ranged attack for free as part of any maneuver action. If the action point cost of the attack is higher, then that is the cost of the combined action.",
+    "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
+	"showEffect": true
+  },
+  {
+    "name": "Purasi Pack (Mordrex)",
+    "effects": "The weapon's optimal and maximum range decrease by 30%, but you do not suffer penalties when firing the weapon in melee reach. The weapon can also be used as a club, knife or sword - this choice is made once upon purchase.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
 	"showEffect": true
   }

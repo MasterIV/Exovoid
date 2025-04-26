@@ -601,6 +601,31 @@
     "range": "3-30-150"
   },
   {
+    "skill": "Firearms",
+    "type": "Bow",
+    "weapon": "Compound Bow",
+    "image": "placeholder.png",
+    "name": "Carbon Hunter Mk. II",
+    "hands": 2,
+    "magazine": 1,
+    "reload": 4,
+    "speed": 3,
+    "damage": 8,
+    "damageType": "Physical",
+    "qualities": {
+      "Silenced": 0
+    },
+    "triggerOptions": {
+      "Injuring": 3
+    },
+    "specialRules": "The wielder's Heft is added to the damage.",
+    "modLimit": 0,
+    "cost": 700,
+    "ammoCost": 3,
+    "rarity": 2,
+    "range": "3-20-60"
+  },
+  {
     "skill": "Heavy Weapons",
     "type": "Heavy Weapon",
     "weapon": "Machine Gun",
