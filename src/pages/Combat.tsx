@@ -19,12 +19,13 @@ import {Armor} from "../components/Combat/Armor";
 import {calculateEdge, calculateHealth, calculateHeft} from "../logic/calculateDerived";
 import useCharacter from "../state/character";
 import useCombat from "../state/combat";
+import {ArmorType} from "../types/armor";
 
 const weaponMap: Record<string, WeaponType> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
 
-const armorMap: Record<string, typeof armors[0]> = {};
-armors.forEach(w => armorMap[w.type] = w);
+const armorMap: Record<string, ArmorType> = {};
+armors.forEach(a => armorMap[a.armor] = a);
 
 interface CombatPageProps {
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
@@ -164,7 +165,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
                         name="armor"
                         values={data}
                         onChange={changeData}
-                        options={armors.map(a => ({id: a.type, name: `${a.name} (${a.type})`}))} /></Grid>
+                        options={armors.map(a => ({id: a.type, name: `${a.armor} (${a.type})`}))} /></Grid>
                     <Grid item xs={4}><Btn fullWidth onClick={addArmor}>Add Armor</Btn></Grid>
                 </Grid>
 
