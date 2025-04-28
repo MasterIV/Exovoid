@@ -51,7 +51,7 @@ export function Armor({expanded, onChange, onRemove, index, ...armor}: ArmorProp
 
     return <Accordion expanded={Boolean(expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
-            <Typography variant="h6" marginRight={2}>{details.name} ({details.type})</Typography>
+            <Typography variant="h6" marginRight={2}>{details.name} ({details.armor})</Typography>
             <RmBtn size="small" label="Armor" onRemove={onRemove}/>
         </AccordionSummary>
 
