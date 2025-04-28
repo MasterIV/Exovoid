@@ -39,7 +39,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
     const actions = calculateCombatActions(stats);
     const [data,setData] = useState({
         weapon: weapons[0].weapon,
-        armor: armors[0].type,
+        armor: armors[0].armor,
         action: Object.keys(actions)[0],
     })
 
@@ -165,7 +165,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
                         name="armor"
                         values={data}
                         onChange={changeData}
-                        options={armors.map(a => ({id: a.type, name: `${a.armor} (${a.type})`}))} /></Grid>
+                        options={armors.map(a => ({id: a.armor, name: `${a.armor} (${a.armor})`}))} /></Grid>
                     <Grid item xs={4}><Btn fullWidth onClick={addArmor}>Add Armor</Btn></Grid>
                 </Grid>
 

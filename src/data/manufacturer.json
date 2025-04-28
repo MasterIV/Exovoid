@@ -55,7 +55,7 @@
   },
   {
     "name": "Ferroclave Systems",
-    "effects": "Suffer a -2 pool penalty to Defense, but once every two rounds you can expend 3 points of durability to negate a hit (except against weapons with the \"Destructive\" quality).",
+    "effects": "Once every two rounds you can expend 3 points of durability to negate a hit (except against weapons with the \"Destructive\" quality).",
     "compatible": ["Armor", "Power Armor"],
 	"showEffect": true
   },

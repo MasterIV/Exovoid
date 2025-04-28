@@ -26,14 +26,19 @@ import applyArmorMods from "../../logic/applyArmorMods";
 const armorMap: Record<string, any> = {};
 armors.forEach(a => armorMap[a.type] = a);
 
-interface ArmorProps extends CharacterArmor, CollectionItemPros {}
+const leveledQualities = ["Speed", "Defensive", "Battery"]
+
+interface ArmorProps extends CharacterArmor, CollectionItemPros {
+}
 
 function createChips(data: Record<string, number | undefined>) {
     return <Stack direction="row" spacing={1} marginX={1} display={"inline-block"}>
-        {Object.entries(data).map(q => {
-            const label = Number(q[1]) > 0 ? `${q[0]}: ${q[1]}` : q[0];
-            return <Chip key={q[0]} size="small" label={label} />;
-        })}
+        {Object.entries(data)
+            .filter(q => !leveledQualities.includes(q[0]) || q[1] !== 0)
+            .map(q => {
+                const label = Number(q[1]) !== 0 ? `${q[0]}: ${q[1]}` : q[0];
+                return <Chip key={q[0]} size="small" label={label}/>;
+            })}
     </Stack>
 }
 
@@ -47,7 +52,7 @@ export function Armor({expanded, onChange, onRemove, index, ...armor}: ArmorProp
     return <Accordion expanded={Boolean(expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography variant="h6" marginRight={2}>{details.name} ({details.type})</Typography>
-            <RmBtn size="small" label="Armor" onRemove={onRemove} />
+            <RmBtn size="small" label="Armor" onRemove={onRemove}/>
         </AccordionSummary>
 
         <AccordionDetails>
@@ -80,15 +85,17 @@ export function Armor({expanded, onChange, onRemove, index, ...armor}: ArmorProp
                                 <TableCell>Mod Limit: {details.modLimit}</TableCell>
                             </TableRow>
 
-                            {Object.keys(details.qualities).length > 0 &&  <TableRow>
+                            {Object.keys(details.qualities).length > 0 && <TableRow>
                                 <TableCell colSpan={7}>
                                     <strong>Qualities:</strong>
                                     {createChips(details.qualities)}
                                 </TableCell>
                             </TableRow>}
 
-                            {details.specialRules &&<TableRow>
-                                <TableCell colSpan={7}><strong>Special Rules:</strong> {details.specialRules}</TableCell>
+                            {details.specialRules && <TableRow>
+                                <TableCell colSpan={7}>
+                                    <strong>Special Rules:</strong> {details.specialRules}
+                                </TableCell>
                             </TableRow>}
                         </TableBody>
                     </Table>
