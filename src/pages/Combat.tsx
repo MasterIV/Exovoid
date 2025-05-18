@@ -20,6 +20,7 @@ import {calculateEdge, calculateHealth, calculateHeft} from "../logic/calculateD
 import useCharacter from "../state/character";
 import useCombat from "../state/combat";
 import {ArmorType} from "../types/armor";
+import {useLock} from "../state/lock";
 
 const weaponMap: Record<string, WeaponType> = {};
 weapons.forEach(w => weaponMap[w.weapon] = w as WeaponType);
@@ -29,10 +30,10 @@ armors.forEach(a => armorMap[a.armor] = a);
 
 interface CombatPageProps {
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
-    locked?: boolean;
 }
 
-export default function CombatPage({onRoll, locked} : CombatPageProps) {
+export default function CombatPage({onRoll} : CombatPageProps) {
+    const locked = useLock();
     const stats = useCharacter();
     const onChange = useCharacter(state => stats.update);
 
@@ -66,8 +67,8 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
         manufacturer: "No-Name",
     }]);
 
-    const spendAp = useCombat(state => state.spendAp);
     const performAction = useCallback((action: CombatAction, weapon: CharacterWeapon | null = null) => {
+        const spendAp = useCombat.getState().spendAp;
         const character = useCharacter.getState()
         const weapons = character.weapons || [];
 
@@ -98,7 +99,7 @@ export default function CombatPage({onRoll, locked} : CombatPageProps) {
         }
 
         spendAp(character.id, action.ap);
-    }, [onRoll, spendAp]);
+    }, [onRoll]);
 
     const changeHealth = useCallback((hp: number) => onChange('currentHealth', hp), [onChange]);
     const changeInjuries = useCallback((i: string[]) => onChange('injuries', i), [onChange]);

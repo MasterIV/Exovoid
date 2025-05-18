@@ -145,6 +145,65 @@ code {
 }
 
 /* =========================================================== */
+/* ======================  Ship Page  ======================== */
+/* =========================================================== */
+
+.ship {
+  background-image: url(img/ship.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 512px;
+  height: 512px;
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,.1) , inset -1px -1px 2px rgba(0,0,0,.4);
+  position: relative;
+}
+
+.ship > div {
+  position: absolute;
+  background: rgba(0,0,0,.6);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.ship label {
+  color: white;
+}
+
+.ship input[value="0"] {
+  color: red;
+}
+
+.ship-stats {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.23);
+  border-radius: 4px;
+  background: rgba(0,20,50,.2);
+}
+
+.ship-stats tr:last-child td {
+  border-bottom: none;
+}
+
+
+.ship-stats > label {
+  width: 45%;
+}
+
+.ship-weapon {
+  /*background: #191929;*/
+  background: rgba(0,20,50,.2);
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,.1) , inset -1px -1px 2px rgba(0,0,0,.4);
+  padding: 10px 20px 20px 20px;
+}
+
+/*.ship-weapon strong {*/
+/*  padding-left: 10px;*/
+/*}*/
+
+/* =========================================================== */
 /* ====================== Combat Page ======================== */
 /* =========================================================== */
 

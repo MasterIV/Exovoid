@@ -1,4 +1,4 @@
-import {ShipSystem, ShipWeapon} from "../types/ship";
+import {ShipType} from "../types/ship";
 import shipSystems from "../data/ship-modules.json";
 import shipWeapons from "../data/ship-weapons.json";
 
@@ -33,17 +33,17 @@ export interface ShipStats extends ShipDefinition {
     powerGenerated: number;
 }
 
-export default function calculateShipStats(definition: ShipDefinition, systems: ShipSystem[], weapons: ShipWeapon[]): ShipStats {
+export default function calculateShipStats(definition: ShipDefinition, ship: ShipType): ShipStats {
     const result = {
         ...definition,
         shield: 0,
         power: definition.basePowerGenerated - definition.basePowerNeeded,
         powerGenerated: definition.basePowerGenerated,
         hullMultiplier: 1,
-        armorMultuplier: 1,
+        armorMultiplier: 1,
     };
 
-    systems.forEach(system => {
+    ship.systems.forEach(system => {
         const def = shipSystemMap[system.type]
         const capacity = parseShipStat(def.capacity, definition.capacity) * system.amount;
         const power = parseShipStat(def.power, definition.capacity, capacity) * system.amount;
@@ -68,14 +68,14 @@ export default function calculateShipStats(definition: ShipDefinition, systems: 
         }
     });
 
-    weapons.forEach(weapon => {
+    ship.weapons.forEach(weapon => {
        const def = shipWeaponMap[weapon.type];
        result.cost += def.cost;
        result.capacity -= def.capacity;
        if(weapon.powered) result.power -= def.power;
     });
 
-    result.armor *= result.armorMultuplier;
+    result.armor *= result.armorMultiplier;
     result.hull  *= result.hullMultiplier;
 
     return result;

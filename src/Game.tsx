@@ -19,6 +19,7 @@ import {setLock, useLock} from "./state/lock";
 import useCombat from "./state/combat";
 import ShipPage from "./pages/Ship";
 import ContentPage from "./pages/Content";
+import useTable from "./state/table";
 
 interface GameProps {
     error?: string;
@@ -65,32 +66,41 @@ function Game({error}: GameProps) {
         support
     }), []);
 
-    const weapons = useCharacter(state => state.weapons);
     const onChange = useCharacter(state => state.update);
 
     const onRoll = () => {
+        const weapons = useCharacter.getState().weapons;
+        const ship = useTable.getState().ships.find(s => s.id === roll.metadata?.ship);
+        const onChangeShip = useTable.getState().updateShip;
+
         if(roll.support) socket.emit("roll", {aptitude: roll.attribute+roll.modifier}, roll.metadata);
         else socket.emit("roll", calculatePool(roll.attribute, roll.skill, roll.modifier), roll.metadata);
 
         if(roll.metadata?.id && roll.metadata?.ap)
             spendAp(roll.metadata.id, roll.metadata.ap);
         if(roll.metadata?.weapon && roll.metadata?.ammo)
-            onChange('weapons', weapons.map(w => {
-                const ammo =  {...w.ammo, loaded: w.ammo.loaded - roll.metadata?.ammo};
-                return roll.metadata?.weapon === w.id ? {...w, ammo} : w;
-            }));
+            if(ship)
+                onChangeShip(ship.id, "weapons", ship.weapons.map(w => {
+                    const ammo =  {...w.ammo, loaded: w.ammo.loaded - roll.metadata?.ammo};
+                    return roll.metadata?.weapon === w.id ? {...w, ammo} : w;
+                }));
+            else if(weapons.find(w => w.id === roll.metadata?.weapon))
+                onChange('weapons', weapons.map(w => {
+                    const ammo =  {...w.ammo, loaded: w.ammo.loaded - roll.metadata?.ammo};
+                    return roll.metadata?.weapon === w.id ? {...w, ammo} : w;
+                }));
 
         resetRoll();
     }
 
     const tabs = [
         {name: "Character", content: () => <CharacterPage locked={locked} onRoll={changeRoll}/>},
-        {name: "Combat", content: () => <CombatPage locked={locked} onRoll={changeRoll}/>},
+        {name: "Combat", content: () => <CombatPage onRoll={changeRoll}/>},
         {name: "Talents", content: () => <TalentPage />},
         {name: "Cyberware", content: () => <CyberWarePage />},
         {name: "Inventory", content: () => <InventoryPage />},
         {name: "Npc", content: () => <NpcPage locked={locked} onRoll={changeRoll} />},
-        {name: "Ships", content: () => <ShipPage />},
+        {name: "Ships", content: () => <ShipPage onRoll={changeRoll} />},
         {name: "Notes", content: () => <NotesPage />},
         {name: "Content", content: () => <ContentPage />},
         {name: "Lore", content: () => <LorePage/>},

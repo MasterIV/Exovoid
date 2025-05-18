@@ -1,9 +1,11 @@
 import {ShipSystem} from "../../types/ship";
 import Collection, {CollectionItemPros} from "../Collection";
 import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
     Checkbox,
-    Grid,
-    Paper,
+    Stack,
     Table,
     TableBody,
     TableCell,
@@ -17,6 +19,7 @@ import React, {useState} from "react";
 import shipSystems from "../../data/ship-modules.json";
 import * as uuid from "uuid";
 import {parseShipStat} from "../../logic/calculateShipStats";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const shipSystemMap: Record<string, typeof shipSystems[0]> = {};
 shipSystems.forEach(t => shipSystemMap[t.name] = t);
@@ -32,7 +35,7 @@ function System({onChange, onRemove, type, powered, capacity, ...system}: System
     return <TableRow>
         <TableCell>{definition.power !== 0 &&
             <Checkbox onChange={e => onChange('powered', e.target.checked)} checked={powered}/>}</TableCell>
-        <TableCell>{type}</TableCell>
+        <TableCell>{definition.type}:<br />{type}</TableCell>
         <TableCell><TextInput type="number" name="amount" values={system} onChange={onChange}/></TableCell>
         <TableCell>{systemCapacity * system.amount}</TableCell>
         <TableCell><Typography color={powered ? "white" : "grey"}>{parseShipStat(definition.power, capacity, systemCapacity) * system.amount}</Typography></TableCell>
@@ -58,9 +61,10 @@ export default function Systems({systems, capacity, onChange}: SystemsProps) {
         powered: true,
     }]);
 
-    return <>
-        <Grid item>
-            <TableContainer component={Paper}>
+    return <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon/>}>Systems</AccordionSummary>
+        <AccordionDetails>
+            <TableContainer>
                 <Table>
                     <TableHead>
                         <TableRow>
@@ -79,16 +83,17 @@ export default function Systems({systems, capacity, onChange}: SystemsProps) {
                     </TableBody>
                 </Table>
             </TableContainer>
-        </Grid>
 
-        <Grid item container direction="row" spacing={2} alignItems="center">
-            <Grid item xs={8}><Dropdown
+            <Stack direction={"row"} spacing={2} margin={2}>
+                <Dropdown
                 id="add-system"
                 label="System Type"
                 name="system"
                 values={{system}}
                 onChange={(k,v) => setSystem(v)}
-                options={shipSystems.map(s => ({id: s.name, name: `${s.name} (${s.type})`}))}/></Grid>
-            <Grid item xs={4}><Btn fullWidth onClick={addSystem}>Add System</Btn></Grid>
-        </Grid></>;
+                options={shipSystems.map(s => ({id: s.name, name: `${s.name} (${s.type})`}))}/>
+
+                <Btn style={{width: 240}} onClick={addSystem}>Add System</Btn>
+            </Stack>
+        </AccordionDetails></Accordion>;
 }
