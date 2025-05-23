@@ -36,12 +36,14 @@ export default React.memo(function Collection({id, values, onChange, ...props}: 
         cache[id] = {
             values,
             onChange: (index: number, name: string, value: any) => {
-                cache[id].values[index][name] = value;
-                onChange([...cache[id].values])
+                const updated = [...cache[id].values];
+                updated[index] = {...updated[index], [name]: value };
+                onChange(updated)
             },
             onRemove: (index: number) =>  {
-                cache[id].values.splice(index, 1);
-                onChange([...cache[id].values]);
+                const updated = [...cache[id].values];
+                updated.splice(index, 1);
+                onChange(updated);
             }
         }
     } else if(id) {
