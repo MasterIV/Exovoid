@@ -32,7 +32,7 @@
     "requireDurability": false
   },
   {
-    "name": "Battery Expansion",
+    "name": "Battery Extension",
     "effects": "Triples the duration of the power armor's battery.",
     "cost": 600,
     "rarity": 1,
