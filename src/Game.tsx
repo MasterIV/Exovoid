@@ -127,11 +127,11 @@ function Game({error}: GameProps) {
         </Modal>
 
         <Grid container direction="row">
-            <Grid xs={8} item><Tabs value={tab} onChange={changeTab}>
+            <Grid xs={true} item><Tabs value={tab} onChange={changeTab}>
                 {tabs.map(tab => (<Tab key={tab.name} label={tab.name}/>))}
             </Tabs></Grid>
 
-            <Grid xs={4} display="flex" alignItems="center" justifyContent="end" item>
+            <Grid xs="auto" display="flex" alignItems="center" justifyContent="end" item>
                 <FormControlLabel control={<Checkbox  checked={locked} onChange={e => setLocked(e.target.checked)} />} label="Lock" />
                 <Btn size="small" variant="outlined" color="secondary" disabled>Logout</Btn>
             </Grid>

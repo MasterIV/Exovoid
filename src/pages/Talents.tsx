@@ -38,13 +38,15 @@ export default function TalentPage({}: TalentPageProps) {
 
     return (<Grid container spacing={2} direction="column">
         {freeTalents.length > 0 && <Grid item>
-            <Paper className="career"><Grid container spacing={2}>
+            <Paper className="career"><Grid container direction="row" spacing={2}>
+
                 {freeTalents.map(t => <Grid xs={3} item key={t}><Paper className={"talent"}>
                     <RmBtn size="small" style={{float: "right", marginLeft: 5}} onRemove={() =>  removeTalent(t)} label="Talent"/>
                     <Typography fontWeight="bold">{t}</Typography>
                     <Typography variant="body2">{talentMap[t]}</Typography>
                 </Paper></Grid>)}
-        </Grid></Paper>
+
+            </Grid></Paper>
         </Grid>}
 
         <Grid item container spacing={2} alignItems="center">
