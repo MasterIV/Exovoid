@@ -35,11 +35,11 @@ export default function applyArmorMods(armor: CharacterArmor) : ArmorType {
                 updated.qualities["Vacuum-Sealed"] = 0;
             break;
         case "Ferroclave Systems":
-            updated.qualities["Defensive"] = (updated.qualities["Defensive"] || 0) - 2;
+            updated.qualities["Evasive"] = (updated.qualities["Evasive"] || 0) - 2;
             break;
         case "Redline Dynamics":
             updated.qualities["Speed"] = (updated.qualities["Speed"] || 0) + 2;
-            updated.qualities["Defensive"] = (updated.qualities["Defensive"] || 0) + 2;
+            updated.qualities["Evasive"] = (updated.qualities["Evasive"] || 0) + 2;
             break;
     }
 
@@ -57,7 +57,7 @@ export default function applyArmorMods(armor: CharacterArmor) : ArmorType {
             updated.qualities["Vacuum-Sealed"] = 0;
         if(mods.includes("Servos")) {
             updated.qualities["Speed"] = (updated.qualities["Speed"] || 0) + 2;
-            updated.qualities["Defensive"] = (updated.qualities["Defensive"] || 0) + 1;
+            updated.qualities["Evasive"] = (updated.qualities["Evasive"] || 0) + 1;
         }
     }
 

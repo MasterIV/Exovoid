@@ -105,10 +105,10 @@
   },
   {
     "name": "Servos",
-    "effects": "The user gains +2 Speed and a +1 pool bonus on melee and defense checks.",
+    "effects": "The user gains +1 pool bonus on melee checks.",
     "cost": 900,
     "rarity": 3,
-	"showEffect": false,
+	"showEffect": true,
     "requireDurability": true
   },
   {

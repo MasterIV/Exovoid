@@ -5,6 +5,7 @@ where the core species, often referred to as the "Galactics"
 hold dominion over numerous vassal races, including humanity.
 Its vast expanse, diverse species, and advanced technology make it a formidable force in the galaxy,
 yet it is not without its challenges.
+But despite these challenges, the empire has been around for over half a million years.
 
 #### Founding and Expansion
 
@@ -58,22 +59,8 @@ But if in doubt, the Galactics have the last say.
 
 **The Galactics:**
 - **Rhinwa:** 
-  Slick-skinned, multi-appendaged creatures who view themselves as superior and are generally indifferent to the affairs of lower races.
-  They typically have a pale, iridescent color and their appendages often use two of their appendages as arms and fours as legs.
-  Their heads are slightly reminiscent of Hammerhead shark with large eyes on each side but without the predatorily aspects.
-  The typical Rhinwa prefers to stay in their home territory and doesn't like to venture to the fringes of the empire.
 - **Nexus:** 
-  Moon-sized AI-controlled space vessels, cold and logical, resulting from an AI incident by an unknown precursor species.
-  They often have sleek, metallic exteriors with complex sensor arrays and weapon systems.
-  The Nexus form a collective that lacks traditional culture but has a deep sense of purpose in maintaining galactic stability.
-  Limit contact to biological species including trade as interactions are often difficult due to their incomprehension of biological illogics and inefficiency.
-  Due to their unpredictable, AI-driven nature, they are viewed with great suspicion from other races, and the Rhinwa keep a close eye on their operations.
 - **Sylvarin:**
-  Elf-like humanoids, known for their ethereal beauty and advanced technology.
-  Tall, slender, and ethereal in appearance, with a somewhat humanoid form.
-  They have light skin tones with a slight luminescence, and hair that often appears silver or gold.
-  Sylvarin culture is artistic and philosophical, with a deep appreciation for beauty and aesthetics.
-  They have an insatiable thirst for unusual experiences, and they oftentimes neglect their own health and safety to pursue those.
 
 **Vassal Races:**
 - **Humans:** 
@@ -107,6 +94,7 @@ But if in doubt, the Galactics have the last say.
 **Internal Strife:**
 The lack of a central Emperor has led to political maneuvering and tension among the ruling factions. 
 This power struggle creates an unstable environment, with different species vying for greater influence.
+Even though they appear unified to the outside, there is constant tension between the ruling races.
 
 **External Threats:**
 The Hegemony, a rival faction led by the feline Mordrex, poses a constant threat. 
