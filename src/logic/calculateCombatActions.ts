@@ -74,7 +74,7 @@ export function calculateCombatActions(stats: CharacterType) {
         maneuver: {id: "maneuver", name: "Maneuver", ap: 4},
         disengage: {id: "disengage", name: "Disengage", ap: 3},
         quickstep: {id: "quickstep", name: "Quickstep", ap: 1},
-        prepare: {id: "prepare", name: "Prepare", ap: 1},
+        prepare: {id: "prepare", name: "Prepare", ap: 2},
         weapon: {id: "weapon", name: "Ready Weapon", ap: 3},
         dodge: {id: "dodge", name: "Dodge", ap: 2, skill: "Defense", modifier: -3},
         assist: {id: "assist", name: "Assist: Command", ap: 3, skill: "Command"},
@@ -113,7 +113,7 @@ export function calculateCombatActions(stats: CharacterType) {
 export function calculateShipActions(stats: CharacterType, shipSize: number, stations: Record<string, boolean>) {
     const actions: Record<string, CombatAction> = {
         switch: {id: "switch", name: "Switch Station", ap: 4},
-        prepare: {id: "prepare", name: "Prepare", ap: 1},
+        prepare: {id: "prepare", name: "Prepare", ap: 2},
     }
 
     if(stats.talents.includes("Air Of Authority")) {
