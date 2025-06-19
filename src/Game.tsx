@@ -113,7 +113,7 @@ function Game({error}: GameProps) {
     return (<Container maxWidth="xl">
         {(error) && <Alert severity="error">{error}</Alert>}
 
-        <RollResult/>
+        <RollResult onRoll={changeRoll} />
 
         <Modal open={roll.show} onClose={resetRoll}>
             <Paper className="paperSmall">

@@ -99,6 +99,10 @@ export function calculateCombatActions(stats: CharacterType) {
         actions.clarity = {id: "clarity", name: "Combat Clarity", ap: -2};
     }
 
+    if(stats.talents.includes("Cover Ducking")) {
+        actions.clarity = {id: "ducking", name: "Cover Ducking", ap: 0, skill: "Defense", modifier: -3};
+    }
+
     if(stats.talents.includes("Demand Obedience")) {
         actions.obedience = {id: "obedience", name: "Demand Obedience", ap: 6, skill: "Command"};
     }

@@ -95,6 +95,11 @@ code {
   animation-timing-function: ease-out;
 }
 
+.reRoll {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .resultArea {
   display: flex;
   flex-direction: row;
