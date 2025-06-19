@@ -61,6 +61,13 @@ useCharacter.subscribe(stats => {
         if(combatants[npc.id] && combatants[npc.id].currentHealth !== npc.currentHealth)
             update(npcToCombatant(npc, combatants[npc.id].currentAp));
     });
-})
+});
+
+window.addEventListener("keyup", (event) => {
+    if(event.code === "F8" && window.confirm("Sync combat?")) {
+        const {combatants} = useCombat.getState();
+        Object.values(combatants).forEach(c => socket.emit("combatant", c));
+    }
+});
 
 export default useCombat;
