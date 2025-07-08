@@ -85,6 +85,7 @@ export default function ShipDetails({ship, onChange, onAction}: ShipDetailsProps
     const locked = useLock();
     const stats = useCharacter();
     const definition = calculateShipStats(shipTypeMap[ship.size], ship);
+    const format = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 })
 
     const [stations, setStations] = useState(Object.fromEntries(Object.keys(availableStations).map(k => [k, false])));
     const actions = calculateShipActions(stats, definition.size, stations);
@@ -152,7 +153,7 @@ export default function ShipDetails({ship, onChange, onAction}: ShipDetailsProps
                     <Dropdown
                         id="shield-distirbution"
                         label="Shield Distribution"
-                        name="shieldDistirbution"
+                        name="shieldDistribution"
                         disabled={locked}
                         values={ship}
                         onChange={onChange}
@@ -226,16 +227,15 @@ export default function ShipDetails({ship, onChange, onAction}: ShipDetailsProps
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>Power</TableCell>
-                                    <TableCell>{-(definition.basePowerGenerated - definition.basePowerNeeded)}</TableCell>
+                                    <TableCell>{format.format(definition.power)}</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>Capacity</TableCell>
-                                    <TableCell>{definition.capacity}</TableCell>
+                                    <TableCell>{format.format(definition.capacity)}</TableCell>
                                 </TableRow>
-
                                 <TableRow>
                                     <TableCell>Cost</TableCell>
-                                    <TableCell>{definition.cost}</TableCell>
+                                    <TableCell>{format.format(definition.cost)}</TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>

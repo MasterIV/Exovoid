@@ -38,7 +38,7 @@ function System({onChange, onRemove, type, powered, capacity, ...system}: System
         <TableCell>{definition.type}:<br />{type}</TableCell>
         <TableCell><TextInput type="number" name="amount" values={system} onChange={onChange}/></TableCell>
         <TableCell>{systemCapacity * system.amount}</TableCell>
-        <TableCell><Typography color={powered ? "white" : "grey"}>{parseShipStat(definition.power, capacity, systemCapacity) * system.amount}</Typography></TableCell>
+        <TableCell>{parseShipStat(definition.power, capacity, systemCapacity) * system.amount}</TableCell>
         <TableCell>{parseShipStat(definition.cost, capacity, systemCapacity) * system.amount}</TableCell>
         <TableCell>{definition.description}</TableCell>
         <TableCell><RmBtn label="System" onRemove={onRemove}/></TableCell>

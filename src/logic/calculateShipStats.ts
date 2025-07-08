@@ -12,6 +12,10 @@ export function parseShipStat(expr: string | number, Max: number, Cap: number = 
     return Math.round(eval(String(expr)) * 100) / 100;
 }
 
+export function parseSystemModifier(expr: string | number, Hull: number) {
+    return Math.round(eval(String(expr)) * 100) / 100;
+}
+
 export interface ShipDefinition {
     size: number;
     bridge: number;
@@ -34,11 +38,12 @@ export interface ShipStats extends ShipDefinition {
 }
 
 export default function calculateShipStats(definition: ShipDefinition, ship: ShipType): ShipStats {
+    const basePower = definition.basePowerGenerated * -1
     const result = {
         ...definition,
         shield: 0,
-        power: definition.basePowerGenerated - definition.basePowerNeeded,
-        powerGenerated: definition.basePowerGenerated,
+        power: basePower - definition.basePowerNeeded,
+        powerGenerated: basePower,
         hullMultiplier: 1,
         armorMultiplier: 1,
     };
@@ -57,13 +62,10 @@ export default function calculateShipStats(definition: ShipDefinition, ship: Shi
             if (power < 0) result.basePowerGenerated -= power;
 
             if(def.modifier) {
-                // @ts-ignore
-                Object.entries(def.modifier).forEach((k, v) => result[k] += v * system.amount);
-            }
-
-            switch (system.type) {
-                case "":
-                    break;
+                Object.entries(def.modifier).forEach(([k, v]) => {
+                    // @ts-ignore
+                    result[k] += parseSystemModifier( v, definition.hull ) * system.amount
+                });
             }
         }
     });
@@ -77,6 +79,14 @@ export default function calculateShipStats(definition: ShipDefinition, ship: Shi
 
     result.armor *= result.armorMultiplier;
     result.hull  *= result.hullMultiplier;
+    result.shield = Math.ceil(result.shield)
+
+    if(ship.state === "used") {
+        result.cost *= .75;
+    } else if(ship.state === "modern") {
+        result.capacity += definition.capacity * .25;
+        result.cost += definition.capacity;
+    }
 
     return result;
 }

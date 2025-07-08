@@ -129,7 +129,7 @@
     "description": "Adds +1 primary and secondary Soak and +25% Armor Durability.\n\n* Cannot be combined with Steel Plates.",
     "cost": "Cap / 2",
     "rarity": 3,
-    "modifier": {"armorMultiplier": 0.5, "primarySoak":  1, "secondarySoak": 1}
+    "modifier": {"armorMultiplier": 0.25, "primarySoak":  1, "secondarySoak": 1}
   },
   {
     "type": "Armor Plating",
@@ -183,7 +183,7 @@
     "name": "Chaff Dispersal Pods",
     "capacity": 1,
     "power": 0,
-    "description": "Charges: 3\nCan be launched to perform active defense against an incoming guided rocket or torpedo (any projectile that uses the \"Traveling\" quality) using the Computers skill.",
+    "description": "Can be launched to perform active defense against an incoming guided rocket or torpedo (any projectile that uses the \"Traveling\" quality) using the Computers skill. (Charges: 3)",
     "cost": 1,
     "rarity": 3
   },
@@ -212,7 +212,8 @@
     "power": "Cap / 2 + 0.5",
     "description": "Shield Points = Base Hull / 10 + 4\nRegeneration = 25% per round (round up)",
     "cost": "Cap / 2",
-    "rarity": 4
+    "rarity": 4,
+    "modifier": {"shield": "Hull / 10 + 4", "shieldRecharge": 0.25}
   },
   {
     "type": "Shield Systems",
@@ -221,7 +222,8 @@
     "power": "Cap",
     "description": "Shield Points = Base Hull / 2\nRegeneration = 25% per round (round up)",
     "cost": "Cap / 1.33",
-    "rarity": 5
+    "rarity": 5,
+    "modifier": {"shield": "Hull / 2", "shieldRecharge": 0.25}
   },
   {
     "type": "Shield Systems",
@@ -230,7 +232,8 @@
     "power": "Cap * 2",
     "description": "Shield Points = Base Hull\nRegeneration = 15% per round (round up)",
     "cost": "Cap",
-    "rarity": 6
+    "rarity": 6,
+    "modifier": {"shield": "Hull", "shieldRecharge": 0.15}
   },
   {
     "type": "Shield Systems",
@@ -239,7 +242,8 @@
     "power": "Cap * 4",
     "description": "Shield Points = Base Hull * 2\nRegeneration = 10% per round (round up)",
     "cost": "Cap * 3",
-    "rarity": 7
+    "rarity": 7,
+    "modifier": {"shield": "Hull * 2", "shieldRecharge": 0.1}
   },
   {
     "type": "Sensors",
@@ -654,23 +658,5 @@
     "description": "The inside of the ship is especially comfortable and pleasing to be in. Crew members who spend considerable time on this ship to travel around or live gain +2 maximum edge.",
     "cost": "Cap / 2",
     "rarity": 4
-  },
-  {
-    "type": "Misc",
-    "name": "Used Ship",
-    "capacity": 0,
-    "power": 0,
-    "description": "Makes the ship and all modules cost 25% less assets. The downside is that so long as the ship has at least one part like this, it suffers a +2 pool modifier on all malfunction rolls.\n\nThe drawback can be removed later by paying the difference between used and modern parts, plus a 10% fee on top of the difference to pay for the overhaul.",
-    "cost": 0,
-    "rarity": 0
-  },
-  {
-    "type": "Misc",
-    "name": "State-Of-The-Art Variant",
-    "capacity": "- Max / 4",
-    "power": 0,
-    "description": "The ship is built with bleeding edge systems, making everything more compact and efficient. The ship's maximum capacity (that can be used to install modules and weapons) increases by 25%.\n\n* Cannot be combined with the \"Used Ship\" variant.",
-    "cost": "Cap",
-    "rarity": 5
   }
 ]
