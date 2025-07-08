@@ -35,6 +35,7 @@ export interface ShipStats extends ShipDefinition {
     shield: number;
     power: number;
     powerGenerated: number;
+    shieldRecharge: number;
 }
 
 export default function calculateShipStats(definition: ShipDefinition, ship: ShipType): ShipStats {
@@ -42,6 +43,7 @@ export default function calculateShipStats(definition: ShipDefinition, ship: Shi
     const result = {
         ...definition,
         shield: 0,
+        shieldRecharge: 0,
         power: basePower - definition.basePowerNeeded,
         powerGenerated: basePower,
         hullMultiplier: 1,

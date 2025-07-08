@@ -64,7 +64,7 @@ function ShipSegment({
     </Stack>
 }
 
-function applyDistribution(value: number, distribution: DirectionalValue) {
+export function applyDistribution(value: number, distribution: DirectionalValue) {
     const front = Math.round(value * distribution.front);
     const left = Math.round(value * distribution.left);
     const right = Math.round(value * distribution.right);

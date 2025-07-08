@@ -1,6 +1,6 @@
 import useTable from "../state/table";
 import React, {useCallback, useState} from "react";
-import {ShipType, ShipWeapon} from "../types/ship";
+import {DirectionalValue, distributions, ShipType, ShipWeapon} from "../types/ship";
 
 import shipTypes from "../data/ships.json";
 import {Accordion, AccordionDetails, AccordionSummary, Grid} from "@mui/material";
@@ -11,7 +11,7 @@ import Systems from "../components/Ship/Systems";
 import Weapons from "../components/Ship/Weapons";
 import Inventory from "../components/Inventory";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ShipDetails from "../components/Ship/ShipDetails";
+import ShipDetails, {applyDistribution} from "../components/Ship/ShipDetails";
 import Initiative from "../components/Combat/Initiative";
 import socket from "../socket";
 import charToCombatant from "../logic/charToCombatant";
@@ -20,6 +20,7 @@ import Malfunctions from "../components/Ship/Malfunctions";
 import {CombatAction} from "../logic/calculateCombatActions";
 import useCombat from "../state/combat";
 import {attributeAverage} from "../logic/calculatePool";
+import calculateShipStats from "../logic/calculateShipStats";
 
 const shipTypeMap: Record<string, typeof shipTypes[0]> = {};
 shipTypes.forEach(t => shipTypeMap[t.class] = t);
@@ -77,6 +78,20 @@ export default function ShipPage({onRoll}: ShipPageProps) {
 
     const locked = useLock();
     const definition = shipTypeMap[ship.size];
+
+    const rechargeShield = () => {
+        const {shield, shieldRecharge} = calculateShipStats(definition, ship);
+        const distributed: DirectionalValue = applyDistribution(shield, distributions[ship.shieldDistribution]);
+        const rechargedShield: DirectionalValue = {...ship.currentShield};
+
+        Object.keys(distributed).forEach(d => {
+            const key = d as keyof DirectionalValue
+            const max = distributed[key];
+            rechargedShield[key] = Math.min(max, rechargedShield[key] + Math.ceil(max * shieldRecharge));
+        })
+
+        changeShip('currentShield', rechargedShield)
+    }
 
     const performAction = useCallback((action: CombatAction, weapon: ShipWeapon | null = null) => {
         const spendAp = useCombat.getState().spendAp;
@@ -138,7 +153,7 @@ export default function ShipPage({onRoll}: ShipPageProps) {
                 changeMalfunctions={changeMalfunctions} />
 
             <Grid item>
-                <Initiative>
+                <Initiative onRound={rechargeShield}>
                     <Grid item container spacing={2}>
                         <Grid item xs={6}>
                             <Btn fullWidth onClick={joinCombat}>Join Combat</Btn>
