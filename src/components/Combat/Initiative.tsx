@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 import {Combatant} from "../../types/combat";
 import {Grid, Paper} from "@mui/material";
 import {Btn} from "../Form";
@@ -32,20 +32,26 @@ const Fighter = React.memo(({onChange, ...props}: FighterProps) => {
 
 interface InitiativeProps {
     children?: React.ReactNode;
+    onRound?: () => void;
 }
 
-export default function Initiative({ children}: InitiativeProps) {
+export default function Initiative({children, onRound}: InitiativeProps) {
     const {combatants, update, reset, round} = useCombat();
 
     const ini = Object.values(combatants);
     ini.sort((a, b) => b.currentAp - a.currentAp);
+
+    const endRound = useCallback(() => {
+        if(onRound) onRound();
+        round()
+    }, [onRound])
 
     return <Grid container direction={"column"} spacing={2}>
         {ini.map(c => <Fighter {...c} onChange={update} key={c.id}/>)}
 
         <Grid item container spacing={2}>
             <Grid item xs={4}><Btn fullWidth color="error" onClick={reset}>Reset</Btn></Grid>
-            <Grid item xs={8}><Btn fullWidth onClick={round}>New Round</Btn></Grid>
+            <Grid item xs={8}><Btn fullWidth onClick={endRound}>New Round</Btn></Grid>
         </Grid>
 
         {children}

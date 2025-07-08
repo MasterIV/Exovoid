@@ -133,8 +133,7 @@ export default function ShipPage({onRoll}: ShipPageProps) {
 
             <Malfunctions
                 id={"ship-malfunctions-"+ship.id}
-                malfunctions={ship.malfunctions||[]}
-                hull={ship.currentHull|0}
+                ship={ship}
                 changeHull={changeHull}
                 changeMalfunctions={changeMalfunctions} />
 

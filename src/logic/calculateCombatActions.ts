@@ -114,7 +114,7 @@ export function calculateCombatActions(stats: CharacterType) {
     return actions;
 }
 
-export function calculateShipActions(stats: CharacterType, shipSize: number, stations: Record<string, boolean>) {
+export function calculateShipActions(stats: CharacterType, shipSize: number, stations: Record<string, boolean>, systems: string[] = []) {
     const actions: Record<string, CombatAction> = {
         switch: {id: "switch", name: "Switch Station", ap: 4},
         prepare: {id: "prepare", name: "Prepare", ap: 2},
@@ -169,11 +169,12 @@ export function calculateShipActions(stats: CharacterType, shipSize: number, sta
     }
 
     if(stations.sensors) {
-        actions.path = {id: "path", name: "Calculate Flightpath", ap: 6, skill: "Sensors"};
-        actions.weakspots = {id: "weakspots", name: "Scan For Weakspots", ap: 6, skill: "Sensors"};
-        actions.interior = {id: "interior", name: "Scan Interior", ap: 3, skill: "Sensors"};
-        actions.jam = {id: "jam", name: "Jam Signal", ap: 4, skill: "Sensors"};
-        actions.signature = {id: "signature", name: "Scan FTL Signature", ap: 6, skill: "Sensors"};
+        const apReduction = systems.includes("Advanced Sensor Array") ? 1 : 0;
+        actions.path = {id: "path", name: "Calculate Flightpath", ap: 6 - apReduction, skill: "Sensors"};
+        actions.weakspots = {id: "weakspots", name: "Scan For Weakspots", ap: 6 - apReduction, skill: "Sensors"};
+        actions.interior = {id: "interior", name: "Scan Interior", ap: 3 - apReduction, skill: "Sensors"};
+        actions.jam = {id: "jam", name: "Jam Signal", ap: 4 - apReduction, skill: "Sensors"};
+        actions.signature = {id: "signature", name: "Scan FTL Signature", ap: 6 - apReduction, skill: "Sensors"};
     }
 
     if(stations.computer) {

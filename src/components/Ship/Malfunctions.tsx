@@ -8,6 +8,7 @@ import socket from "../../socket";
 import {DiceResultType} from "../../types/dice";
 import {summarize} from "../RollResults";
 import * as uuid from 'uuid';
+import {ShipType} from "../../types/ship";
 
 const malfunctionMap: Record<string, MalfunctionType> = {};
 const malfunctionBuckets: Record<number, MalfunctionType[]> = {};
@@ -46,15 +47,17 @@ interface MalfunctionRoll {
 
 interface MalfunctionsProps {
     id: string;
-    malfunctions: string[];
-    hull: number;
+    ship: ShipType;
     changeHull: (hull: number) => void;
     changeMalfunctions: (malfunctions: string[]) => void;
 }
 
 const rollDefaults: MalfunctionRoll = {show: false, damage: 1, modifier: 0, malfunction: allMalfunctions[0].name};
 
-export default function Malfunctions({id, malfunctions, hull, changeHull, changeMalfunctions}: MalfunctionsProps) {
+export default function Malfunctions({id, ship, changeHull, changeMalfunctions}: MalfunctionsProps) {
+    const hull = ship.currentHull || 0;
+    const malfunctions = ship.malfunctions || [];
+
     const [roll, setRoll] = useState<MalfunctionRoll>(rollDefaults);
     const resetRoll = useCallback(() => setRoll(rollDefaults), []);
     const changeRoll = (k: string, v: any) => setRoll({...roll, [k]: v});
@@ -64,7 +67,13 @@ export default function Malfunctions({id, malfunctions, hull, changeHull, change
 
     const rollId = uuid.v4();
     const mapped = malfunctions.map((i: string, k: number) => ({...malfunctionMap[i], id: i+k}));
-    const diceCount = (damage-Math.max(hull,0)) + modifier + mapped.reduce((v, i) => v + i.modifier, 0);
+
+    let malfunctionModifier = mapped.reduce((v, i) => v + i.modifier, 0)
+    if(ship.systems.find(s => s.type === "Redundancy Systems"))
+        malfunctionModifier = Math.round(malfunctionModifier / 2);
+    if(ship.state == "used")
+        malfunctionModifier += 2;
+    const diceCount = (damage-Math.max(hull,0)) + modifier + malfunctionModifier;
 
     const rollCallback = (result: DiceResultType, metadata: any) => {
         if (metadata.id !== rollId) return;

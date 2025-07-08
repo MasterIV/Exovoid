@@ -88,7 +88,7 @@ export default function ShipDetails({ship, onChange, onAction}: ShipDetailsProps
     const format = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 })
 
     const [stations, setStations] = useState(Object.fromEntries(Object.keys(availableStations).map(k => [k, false])));
-    const actions = calculateShipActions(stats, definition.size, stations);
+    const actions = calculateShipActions(stats, definition.size, stations, ship.systems.map(s => s.type));
     const [data,setData] = useState({action: 'switch'})
 
     const changeData = useCallback((k: string, v: any) => setData(old => ({...old, [k]: v})), []);
