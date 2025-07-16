@@ -42,7 +42,7 @@ function CyberWare({onChange, onRemove, name, enabled, ...data}: CyberWareProps)
         <TableRow>
             <TableCell>
                 <Stack spacing={1} direction="column">
-                    <b>{name}</b>
+                    <b>{name} ({details.type} - {details.tier})</b>
                     <div>{details.description}</div>
                 </Stack>
             </TableCell>
@@ -94,6 +94,7 @@ export default React.memo(function CyberWarePage({} : CyberWarePageProps) {
                 size="small"
                 value={data}
                 options={cyberWares.map((i) => i.name)}
+                getOptionLabel={(o) => `${o} (${cyberMap[o].type} - ${cyberMap[o].tier})`}
                 onChange={(e, v) => setData(v||cyberWares[0].name)}
                 renderInput={(params) => <TextField {...params} label="Cyberware" />}/></Grid>
             <Grid item xs={2}><Btn fullWidth onClick={() => data && changeCyberWare([...cyberware, {...defaults, id: uuid.v4(), name: data}])}>Add Cyberware</Btn></Grid>
