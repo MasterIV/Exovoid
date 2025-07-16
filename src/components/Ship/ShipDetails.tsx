@@ -28,7 +28,7 @@ shipTypes.forEach(t => shipTypeMap[t.class] = t);
 const shipStates = [
     {id: "normal", name: "normal"},
     {id: "used", name: "used"},
-    {id: "modern", name: "state od the art"}
+    {id: "modern", name: "state of the art"}
 ];
 
 interface ShipDetailsProps {
