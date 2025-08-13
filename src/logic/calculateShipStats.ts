@@ -87,7 +87,7 @@ export default function calculateShipStats(definition: ShipDefinition, ship: Shi
         result.cost *= .75;
     } else if(ship.state === "modern") {
         result.capacity += definition.capacity * .25;
-        result.cost += definition.capacity;
+        result.cost += definition.capacity * .25;
     }
 
     return result;
