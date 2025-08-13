@@ -220,30 +220,30 @@
     "name": "Aegies Defense Grid",
     "capacity": "Max / 15 + 5",
     "power": "Cap",
-    "description": "Shield Points = Base Hull / 2\nRegeneration = 25% per round (round up)",
+    "description": "Shield Points = Base Hull * 0.75\nRegeneration = 25% per round (round up)",
     "cost": "Cap / 1.33",
     "rarity": 5,
-    "modifier": {"shield": "Hull / 2", "shieldRecharge": 0.25}
+    "modifier": {"shield": "Hull * 0.75", "shieldRecharge": 0.25}
   },
   {
     "type": "Shield Systems",
     "name": "Vanguard Shield System",
     "capacity": "Max / 10 + 10",
     "power": "Cap * 2",
-    "description": "Shield Points = Base Hull\nRegeneration = 15% per round (round up)",
+    "description": "Shield Points = Base Hull * 1.25\nRegeneration = 15% per round (round up)",
     "cost": "Cap",
     "rarity": 6,
-    "modifier": {"shield": "Hull", "shieldRecharge": 0.15}
+    "modifier": {"shield": "Hull * 1.25", "shieldRecharge": 0.15}
   },
   {
     "type": "Shield Systems",
     "name": "Paladin Barrier Network",
     "capacity": "Max / 10 + 10",
     "power": "Cap * 4",
-    "description": "Shield Points = Base Hull * 2\nRegeneration = 10% per round (round up)",
+    "description": "Shield Points = Base Hull * 2.5\nRegeneration = 10% per round (round up)",
     "cost": "Cap * 3",
     "rarity": 7,
-    "modifier": {"shield": "Hull * 2", "shieldRecharge": 0.1}
+    "modifier": {"shield": "Hull * 2.5", "shieldRecharge": 0.1}
   },
   {
     "type": "Sensors",
