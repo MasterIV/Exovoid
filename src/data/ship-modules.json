@@ -448,7 +448,7 @@
     "name": "Small Ammunitions Depot",
     "capacity": 1,
     "power": 0,
-    "description": "Can safely store a total of 4 full reloads for a given mounted weapon of capacity size 1 or less (e.g. vulcan cannon, unguided rockets etc.).",
+    "description": "Can safely store a total of 4 full reloads for a given mounted weapon of capacity size 1 or less (e.g. vulcan cannon, unguided rockets etc.), effectively halving the reload time.",
     "cost": 0,
     "rarity": 3
   },
@@ -457,7 +457,7 @@
     "name": "Medium Ammunitions Depot",
     "capacity": 2,
     "power": 0,
-    "description": "Can safely store a total of 4 full reloads for a given mounted weapon of capacity size 2-4.",
+    "description": "Can safely store a total of 4 full reloads for a given mounted weapon of capacity size 2-4, effectively halving the reload time.",
     "cost": 0,
     "rarity": 3
   },
@@ -466,7 +466,7 @@
     "name": "Large Ammunitions Depot",
     "capacity": 4,
     "power": 0,
-    "description": "Can safely store a total of 4 full reloads for a given mounted weapon of capacity size 5+.",
+    "description": "Can safely store a total of 4 full reloads for a given mounted weapon of capacity size 5+, effectively halving the reload time.",
     "cost": 0,
     "rarity": 3
   },
@@ -619,7 +619,7 @@
     "name": "FTL Radiation Scrambler",
     "capacity": 2,
     "power": 0,
-    "description": "Charges: 3. Releases a device that disrupts the FTL signature your ship leaves behind, making the radiation decays after 1 hour per step (instead of 12 hours). Refilling one device charge costs 500 Credits.",
+    "description": "Charges: 3. Releases a device that disrupts the FTL signature your ship leaves behind, making the radiation decay after 1 hour per step (instead of 12 hours). Refilling one device charge costs 500 Credits.",
     "cost": 4,
     "rarity": 4
   },
@@ -658,5 +658,15 @@
     "description": "The inside of the ship is especially comfortable and pleasing to be in. Crew members who spend considerable time on this ship to travel around or live gain +2 maximum edge.",
     "cost": "Cap / 2",
     "rarity": 4
+  },
+  {
+    "type": "Misc",
+    "name": "Hull Extension",
+    "capacity": "-Max / 5",
+    "power": 0,
+    "description": "Extends the hull of the ship to become bigger and consequently gaining capacity for other modules. This can only be installed once, and it permanently reduces the maneuverability of the ship by 1.",
+    "cost": "Cap / 2",
+    "rarity": 3
+	"modifier": {"maneuverability":  -1}
   }
 ]
