@@ -666,7 +666,7 @@
     "power": 0,
     "description": "Extends the hull of the ship to become bigger and consequently gaining capacity for other modules. This can only be installed once, and it permanently reduces the maneuverability of the ship by 1.",
     "cost": "Cap / 2",
-    "rarity": 3
+    "rarity": 3,
 	"modifier": {"maneuverability":  -1}
   }
 ]
