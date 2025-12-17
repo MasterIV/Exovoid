@@ -33,6 +33,8 @@ export const distributions: Record<string, DirectionalValue> = {
     "low-sides": {front: .35, left: .15, right: .15, back: .35},
     "low-bow": {front: .10, left: .30, right: .30, back: .30},
     "low-rear": {front: .30, left: .30, right: .30, back: .10},
+    "starboard": {front: .20, left: .10, right: .50, back: .20},
+    "port": {front: .20, left: .50, right: .10, back: .20},
 }
 
 export interface ShipType {

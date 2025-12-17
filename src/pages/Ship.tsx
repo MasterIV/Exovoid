@@ -58,7 +58,7 @@ export default function ShipPage({onRoll}: ShipPageProps) {
     const ship = ships[selected];
     const changeShip = useCallback((k: string, v: any) => onChangeShip(ship.id, k, v), [ship.id, onChangeShip]);
 
-    const addShip = () => onChange('ships',[...ships, {...shipDefaults}]);
+    const addShip = () => onChange('ships',[...ships, {...shipDefaults, id: uuid.v4()}]);
     const removeShip = () => {
         onChange('ships',ships.filter(s => s.id !== ship.id));
         setSelected(0);
