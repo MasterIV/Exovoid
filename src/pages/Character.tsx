@@ -20,6 +20,8 @@ import useCharacter from "../state/character";
 interface CharacterPageProps {
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
     locked?: boolean;
+    flow?: boolean;
+    toggleFlow?: () => void;
 }
 
 const derivedStyles: React.CSSProperties = {
@@ -30,7 +32,7 @@ const derivedStyles: React.CSSProperties = {
     padding: 5,
 };
 
-export default React.memo(function CharacterPage({onRoll, locked=false}: CharacterPageProps) {
+export default React.memo(function CharacterPage({onRoll, locked=false, flow=false, toggleFlow}: CharacterPageProps) {
     const stats = useCharacter();
     const onChange = useCharacter(state => state.update);
 
@@ -99,6 +101,14 @@ export default React.memo(function CharacterPage({onRoll, locked=false}: Charact
                     <Btn fullWidth className='roll-btn' onClick={() => onRoll(vigilance, 0, 0, {skill: "Vigilance"})}>
                         Vigilance
                         <DicePool {...vigilancePool} />
+                    </Btn>
+                </Grid>
+                <Grid item>
+                    <Btn fullWidth className='roll-btn'
+                         color={flow ? "success" : "primary"}
+                         variant={flow ? "contained" : "outlined"}
+                         onClick={toggleFlow}>
+                        {flow ? "Flow active" : "Flow"}
                     </Btn>
                 </Grid>
             </Grid>
