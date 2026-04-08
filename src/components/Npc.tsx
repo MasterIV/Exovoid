@@ -82,7 +82,7 @@ export default function Npc({onChange, onRemove, onRoll, onDuplicate, ...props} 
     return  <Accordion  expanded={Boolean(props.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography variant="h6" marginRight={2}>{props.name}</Typography>
-            <Btn size="small" onClick={(e: React.MouseEvent) => { e.stopPropagation(); onDuplicate(props); }}>Copy</Btn>
+            <Btn size="small" sx={{mr: 1}} onClick={(e: React.MouseEvent) => { e.stopPropagation(); onDuplicate(props); }}>Copy</Btn>
             <RmBtn size="small" onRemove={onRemove} label="NPC" />
         </AccordionSummary>
 
