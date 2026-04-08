@@ -33,6 +33,8 @@ const derivedStyles: React.CSSProperties = {
 export default React.memo(function CharacterPage({onRoll, locked=false}: CharacterPageProps) {
     const stats = useCharacter();
     const onChange = useCharacter(state => state.update);
+    const flow = useCharacter(state => state.flow) || false;
+    const toggleFlow = () => onChange('flow', !flow);
 
     const {
         attributes,
@@ -99,6 +101,14 @@ export default React.memo(function CharacterPage({onRoll, locked=false}: Charact
                     <Btn fullWidth className='roll-btn' onClick={() => onRoll(vigilance, 0, 0, {skill: "Vigilance"})}>
                         Vigilance
                         <DicePool {...vigilancePool} />
+                    </Btn>
+                </Grid>
+                <Grid item>
+                    <Btn fullWidth className='roll-btn'
+                         color={flow ? "success" : "primary"}
+                         variant={flow ? "contained" : "outlined"}
+                         onClick={toggleFlow}>
+                        {flow ? "Flow active" : "Flow"}
                     </Btn>
                 </Grid>
             </Grid>

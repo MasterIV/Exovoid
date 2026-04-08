@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {Alert, Box, Checkbox, Container, FormControlLabel, Grid, Modal, Paper, Stack, Tab, Tabs} from "@mui/material";
+import {Alert, Box, Checkbox, Container, FormControlLabel, Grid, Modal, Paper, Stack, Tab, Tabs, Typography} from "@mui/material";
 import CharacterPage from "./pages/Character";
 import LorePage from "./pages/Lore";
 import CombatPage from "./pages/Combat";
@@ -50,6 +50,7 @@ function Game({error}: GameProps) {
     });
 
     const [tab, setTab] = React.useState(0);
+    const flow = useCharacter(state => state.flow) || false;
     const changeTab = useCallback((event: React.SyntheticEvent, newValue: number) => {
         setTab(newValue);
     }, []);
@@ -68,13 +69,20 @@ function Game({error}: GameProps) {
 
     const onChange = useCharacter(state => state.update);
 
+    // Flow only applies to rolls from Character (tab 0) and Combat (tab 1), not NPC or other pages
+    const flowApplies = flow && (tab === 0 || tab === 1);
+    const flowBonus = flowApplies ? 1 : 0;
+
     const onRoll = () => {
         const weapons = useCharacter.getState().weapons;
         const ship = useTable.getState().ships.find(s => s.id === roll.metadata?.ship);
         const onChangeShip = useTable.getState().updateShip;
+        const mod = roll.modifier + flowBonus;
 
-        if(roll.support) socket.emit("roll", {aptitude: roll.attribute+roll.modifier}, roll.metadata);
-        else socket.emit("roll", calculatePool(roll.attribute, roll.skill, roll.modifier), roll.metadata);
+        if(roll.support) socket.emit("roll", {aptitude: roll.attribute+mod}, roll.metadata);
+        else socket.emit("roll", calculatePool(roll.attribute, roll.skill, mod), roll.metadata);
+
+        if(flowApplies) onChange('flow', false);
 
         if(roll.metadata?.id && roll.metadata?.ap)
             spendAp(roll.metadata.id, roll.metadata.ap);
@@ -107,8 +115,8 @@ function Game({error}: GameProps) {
     ];
 
     const pool = roll.support
-        ? {aptitude: roll.attribute+roll.modifier}
-        : calculatePool(roll.attribute, roll.skill, roll.modifier);
+        ? {aptitude: roll.attribute+roll.modifier+flowBonus}
+        : calculatePool(roll.attribute, roll.skill, roll.modifier+flowBonus);
 
     return (<Container maxWidth="xl">
         {(error) && <Alert severity="error">{error}</Alert>}
@@ -121,6 +129,7 @@ function Game({error}: GameProps) {
                     <TextInput label="Modifier" type="number" name="modifier" values={roll}
                                onChange={(k, v) => setRoll({...roll, [k]: Number(v)})}/>
                     <DicePool {...pool} large/>
+                    {flowApplies && <Typography variant="body2" color="text.secondary">Flow: +1 pool bonus</Typography>}
                     <Btn disabled={emptyPool(pool)} onClick={onRoll}>Roll!</Btn>
                 </Stack>
             </Paper>
