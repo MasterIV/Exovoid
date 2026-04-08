@@ -50,7 +50,7 @@ function Game({error}: GameProps) {
     });
 
     const [tab, setTab] = React.useState(0);
-    const [flow, setFlow] = useState(false);
+    const flow = useCharacter(state => state.flow) || false;
     const changeTab = useCallback((event: React.SyntheticEvent, newValue: number) => {
         setTab(newValue);
     }, []);
@@ -82,7 +82,7 @@ function Game({error}: GameProps) {
         if(roll.support) socket.emit("roll", {aptitude: roll.attribute+mod}, roll.metadata);
         else socket.emit("roll", calculatePool(roll.attribute, roll.skill, mod), roll.metadata);
 
-        if(flowApplies) setFlow(false);
+        if(flowApplies) onChange('flow', false);
 
         if(roll.metadata?.id && roll.metadata?.ap)
             spendAp(roll.metadata.id, roll.metadata.ap);
@@ -102,7 +102,7 @@ function Game({error}: GameProps) {
     }
 
     const tabs = [
-        {name: "Character", content: () => <CharacterPage locked={locked} onRoll={changeRoll} flow={flow} toggleFlow={() => setFlow(f => !f)}/>},
+        {name: "Character", content: () => <CharacterPage locked={locked} onRoll={changeRoll} flow={flow} toggleFlow={() => onChange('flow', !flow)}/>},
         {name: "Combat", content: () => <CombatPage onRoll={changeRoll}/>},
         {name: "Talents", content: () => <TalentPage />},
         {name: "Cyberware", content: () => <CyberWarePage />},
