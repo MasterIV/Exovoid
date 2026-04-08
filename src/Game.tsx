@@ -102,8 +102,8 @@ function Game({error}: GameProps) {
     }
 
     const tabs = [
-        {name: "Character", content: () => <CharacterPage locked={locked} onRoll={changeRoll} flow={flow} toggleFlow={() => onChange('flow', !flow)}/>},
-        {name: "Combat", content: () => <CombatPage onRoll={changeRoll} flow={flow} toggleFlow={() => onChange('flow', !flow)}/>},
+        {name: "Character", content: () => <CharacterPage locked={locked} onRoll={changeRoll}/>},
+        {name: "Combat", content: () => <CombatPage onRoll={changeRoll}/>},
         {name: "Talents", content: () => <TalentPage />},
         {name: "Cyberware", content: () => <CyberWarePage />},
         {name: "Inventory", content: () => <InventoryPage />},

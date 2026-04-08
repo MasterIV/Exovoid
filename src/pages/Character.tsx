@@ -20,8 +20,6 @@ import useCharacter from "../state/character";
 interface CharacterPageProps {
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
     locked?: boolean;
-    flow?: boolean;
-    toggleFlow?: () => void;
 }
 
 const derivedStyles: React.CSSProperties = {
@@ -32,9 +30,11 @@ const derivedStyles: React.CSSProperties = {
     padding: 5,
 };
 
-export default React.memo(function CharacterPage({onRoll, locked=false, flow=false, toggleFlow}: CharacterPageProps) {
+export default React.memo(function CharacterPage({onRoll, locked=false}: CharacterPageProps) {
     const stats = useCharacter();
     const onChange = useCharacter(state => state.update);
+    const flow = useCharacter(state => state.flow) || false;
+    const toggleFlow = () => onChange('flow', !flow);
 
     const {
         attributes,

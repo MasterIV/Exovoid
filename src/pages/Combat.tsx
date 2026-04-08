@@ -30,14 +30,14 @@ armors.forEach(a => armorMap[a.armor] = a);
 
 interface CombatPageProps {
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
-    flow?: boolean;
-    toggleFlow?: () => void;
 }
 
-export default function CombatPage({onRoll, flow=false, toggleFlow} : CombatPageProps) {
+export default function CombatPage({onRoll} : CombatPageProps) {
     const locked = useLock();
     const stats = useCharacter();
     const onChange = useCharacter(state => stats.update);
+    const flow = useCharacter(state => state.flow) || false;
+    const toggleFlow = () => onChange('flow', !flow);
 
     const actions = calculateCombatActions(stats);
     const [data,setData] = useState({
