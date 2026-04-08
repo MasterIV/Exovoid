@@ -32,6 +32,12 @@ export default React.memo( function NpcPage({onRoll, locked} : NpcPageProps) {
     const npcs = useCharacter(state => state.npcs) || [];
     const changeNpc = React.useCallback((npcs: object[]) => onChange('npcs', npcs), [onChange]);
     const addNpc = () => changeNpc([...npcs, {...defaults, id: uuid.v4()}]);
+    const duplicateNpc = (npc: NpcType) => changeNpc([...npcs, {
+        ...npc,
+        id: uuid.v4(),
+        actions: npc.actions.map(a => ({...a, id: uuid.v4()})),
+        expanded: false,
+    }]);
 
     return (
         <Grid container direction="row" spacing={2}>
@@ -41,7 +47,7 @@ export default React.memo( function NpcPage({onRoll, locked} : NpcPageProps) {
             </Grid>
             <Grid item md={9} xs={12}>
                 <h2>Known NPCs</h2>
-                <Collection id="npcs" locked={locked} values={npcs} onChange={changeNpc} component={Npc} onRoll={onRoll}/>
+                <Collection id="npcs" locked={locked} values={npcs} onChange={changeNpc} component={Npc} onRoll={onRoll} onDuplicate={duplicateNpc}/>
                 <Box display="flex" justifyContent="end" marginTop={2}><Btn onClick={addNpc}>Add Npc</Btn></Box>
             </Grid>
         </Grid>

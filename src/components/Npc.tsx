@@ -58,9 +58,10 @@ function NpcAction({onChange, onRemove, onRoll, id, npc, ...props}: NpcActionPro
 
 interface NpcProps extends NpcType, CollectionItemPros {
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
+    onDuplicate: (npc: NpcType) => void;
 }
 
-export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
+export default function Npc({onChange, onRemove, onRoll, onDuplicate, ...props} : NpcProps) {
     const joinCombat = () => socket.emit("combatant", npcToCombatant(props));
     const leaveCombat = () => socket.emit("remove", props.id);
 
@@ -81,6 +82,7 @@ export default function Npc({onChange, onRemove, onRoll, ...props} : NpcProps) {
     return  <Accordion  expanded={Boolean(props.expanded)} onChange={(x, e) => onChange('expanded', e)}>
         <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography variant="h6" marginRight={2}>{props.name}</Typography>
+            <Btn size="small" sx={{mr: 1}} onClick={(e: React.MouseEvent) => { e.stopPropagation(); onDuplicate(props); }}>Copy</Btn>
             <RmBtn size="small" onRemove={onRemove} label="NPC" />
         </AccordionSummary>
 
