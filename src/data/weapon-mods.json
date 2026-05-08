@@ -346,7 +346,7 @@
     "name": "Dual Scope Mount (Red Dot)",
     "effects": "Provides Handling (+1) when shooting at optimal range, but -1 within maximum range. Switching scopes costs 1 AP.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
-    "cost": 80,
+    "cost": 230,
     "rarity": 2,
 	"showEffect": true
   },
@@ -355,7 +355,7 @@
     "name": "Dual Scope Mount (Thermal Imaging)",
     "effects": "Provides Handling (+2) when shooting at living creatures, but Handling (-4) against anything else. Additionally, all injury rolls that you cause have 2 less dice. Switching scopes costs 1 AP.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
-    "cost": 80,
+    "cost": 380,
     "rarity": 2,
 	"showEffect": true
   },
@@ -364,7 +364,7 @@
     "name": "Dual Scope Mount (Night Vision)",
     "effects": "Turns the difficulty increase during darkness into a mere -1 pool modifier, but adds +1 difficulty when using the scope in bright environments. Switching scopes costs 1 AP.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
-    "cost": 80,
+    "cost": 330,
     "rarity": 2,
 	"showEffect": true
   },
@@ -373,7 +373,7 @@
     "name": "Dual Scope Mount (ACOG 4x)",
     "effects": "Increases all ranges by 50%, but you suffer Handling (-1) when shooting within optimal range or under. Switching scopes costs 1 AP.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
-    "cost": 80,
+    "cost": 280,
     "rarity": 2,
 	"showEffect": true
   },
@@ -382,7 +382,7 @@
     "name": "Dual Scope Mount (Marksman)",
     "effects": "Increases all ranges by 100%, but also increases the lower end of the \"optimal range\" by 20 squares. If the new minimum range is equal to or higher than the upper end of the \"optimal range\", then the upper end simply becomes 10 squares higher than the new minimum. Switching scopes costs 1 AP.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
-    "cost": 80,
+    "cost": 330,
     "rarity": 2,
 	"showEffect": true
   },
@@ -391,7 +391,7 @@
     "name": "Dual Scope Mount (Smart Targeting)",
     "effects": "Adds a -2 pool penalty to any attempts to actively dodge your attacks. Switching scopes costs 1 AP.",
     "compatible": ["Pistol", "MP", "Laser Pistol", "Rifle", "Laser Rifle", "Plasma Rifle", "Heavy Weapon", "Plasma Heavy Weapon"],
-    "cost": 80,
+    "cost": 430,
     "rarity": 2,
 	"showEffect": true
   },
