@@ -10,9 +10,9 @@ import {RollResult} from "./components/RollResults";
 import socket from "./socket";
 import {DicePool} from "./components/Roll";
 import calculatePool from "./logic/calculatePool";
+import {emptyPool} from "./logic/dicePool";
 import {Btn, TextInput} from "./components/Form";
 import NpcPage from "./pages/Npc";
-import {DicePoolType} from "./types/dice";
 import NotesPage from "./pages/Notes";
 import useCharacter from "./state/character";
 import {setLock, useLock} from "./state/lock";
@@ -32,13 +32,6 @@ interface RollConfig {
     modifier: number;
     metadata?: Record<string, any>;
     support: boolean;
-}
-
-function emptyPool(pool: DicePoolType) {
-    return (pool.default ?? 0) < 1 &&
-        (pool.aptitude ?? 0) < 1 &&
-        (pool.expertise ?? 0) < 1 &&
-        (pool.injury ?? 0) < 1;
 }
 
 function Game({error}: GameProps) {
@@ -140,7 +133,13 @@ function Game({error}: GameProps) {
                 {tabs.map(tab => (<Tab key={tab.name} label={tab.name}/>))}
             </Tabs></Grid>
 
-            <Grid xs="auto" display="flex" alignItems="center" justifyContent="end" item>
+            <Grid xs="auto" display="flex" alignItems="center" justifyContent="end" item gap={1}>
+                <Btn size="small"
+                     color={flow ? "success" : "primary"}
+                     variant={flow ? "contained" : "outlined"}
+                     onClick={() => onChange('flow', !flow)}>
+                    {flow ? "Flow active" : "Flow"}
+                </Btn>
                 <FormControlLabel control={<Checkbox  checked={locked} onChange={e => setLocked(e.target.checked)} />} label="Lock" />
                 <Btn size="small" variant="outlined" color="secondary" disabled>Logout</Btn>
             </Grid>

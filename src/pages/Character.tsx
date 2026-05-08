@@ -5,6 +5,7 @@ import {Btn, TextInput} from "../components/Form";
 import Skills from "../components/Skills";
 import Value from "../components/Value";
 import {DicePool} from "../components/Roll";
+import {ManualRoll} from "../components/ManualRoll";
 import CharacterType from "../types/character";
 import {DicePoolType} from "../types/dice";
 import {
@@ -33,8 +34,6 @@ const derivedStyles: React.CSSProperties = {
 export default React.memo(function CharacterPage({onRoll, locked=false}: CharacterPageProps) {
     const stats = useCharacter();
     const onChange = useCharacter(state => state.update);
-    const flow = useCharacter(state => state.flow) || false;
-    const toggleFlow = () => onChange('flow', !flow);
 
     const {
         attributes,
@@ -104,12 +103,7 @@ export default React.memo(function CharacterPage({onRoll, locked=false}: Charact
                     </Btn>
                 </Grid>
                 <Grid item>
-                    <Btn fullWidth className='roll-btn'
-                         color={flow ? "success" : "primary"}
-                         variant={flow ? "contained" : "outlined"}
-                         onClick={toggleFlow}>
-                        {flow ? "Flow active" : "Flow"}
-                    </Btn>
+                    <ManualRoll />
                 </Grid>
             </Grid>
         </Grid>

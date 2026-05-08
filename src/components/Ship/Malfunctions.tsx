@@ -5,7 +5,7 @@ import React, {useCallback, useState} from "react";
 import allMalfunctions from '../../data/malfunctions.json';
 import {DicePool} from "../Roll";
 import socket from "../../socket";
-import {DiceResultType} from "../../types/dice";
+import {PersistentRollEntry} from "../../types/dice";
 import {summarize} from "../RollResults";
 import * as uuid from 'uuid';
 import {ShipType} from "../../types/ship";
@@ -75,9 +75,9 @@ export default function Malfunctions({id, ship, changeHull, changeMalfunctions}:
         malfunctionModifier += 2;
     const diceCount = (damage-Math.max(hull,0)) + modifier + malfunctionModifier;
 
-    const rollCallback = (result: DiceResultType, metadata: any) => {
-        if (metadata.id !== rollId) return;
-        const summary = summarize(result);
+    const rollCallback = (entry: PersistentRollEntry) => {
+        if (entry.metadata.id !== rollId) return;
+        const summary = summarize(entry.result);
         const wounds = summary.wound|0;
         const severity = Math.min(wounds, 7);
 

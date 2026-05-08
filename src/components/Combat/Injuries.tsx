@@ -5,7 +5,7 @@ import React, {useCallback, useState} from "react";
 import allInjuries from '../../data/injuries.json';
 import {DicePool} from "../Roll";
 import socket from "../../socket";
-import {DiceResultType} from "../../types/dice";
+import {PersistentRollEntry} from "../../types/dice";
 import {summarize} from "../RollResults";
 import * as uuid from 'uuid';
 
@@ -69,9 +69,9 @@ export default function Injuries({id, injuries, health, changeHealth, changeInju
     const mapped = injuries.map((i: string, k: number) => ({...injuryMap[i], id: i+k}));
     const diceCount = (damage-Math.max(health,0)) + modifier + mapped.reduce((v, i) => v + i.modifier, 0);
 
-    const rollCallback = (result: DiceResultType, metadata: any) => {
-        if (metadata.id !== rollId) return;
-        const summary = summarize(result);
+    const rollCallback = (entry: PersistentRollEntry) => {
+        if (entry.metadata.id !== rollId) return;
+        const summary = summarize(entry.result);
         const wounds = minion ? (summary.wound|0) + (summary.minion|0) : (summary.wound|0)
         const severity = Math.min(wounds, 7);
 

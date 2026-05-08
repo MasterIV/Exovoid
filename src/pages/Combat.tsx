@@ -36,8 +36,6 @@ export default function CombatPage({onRoll} : CombatPageProps) {
     const locked = useLock();
     const stats = useCharacter();
     const onChange = useCharacter(state => stats.update);
-    const flow = useCharacter(state => state.flow) || false;
-    const toggleFlow = () => onChange('flow', !flow);
 
     const actions = calculateCombatActions(stats);
     const [data,setData] = useState({
@@ -128,15 +126,6 @@ export default function CombatPage({onRoll} : CombatPageProps) {
 
                 <Grid item>
                     <Btn fullWidth onClick={() => performAction(actions[data.action])}>Execute</Btn>
-                </Grid>
-
-                <Grid item>
-                    <Btn fullWidth
-                         color={flow ? "success" : "primary"}
-                         variant={flow ? "contained" : "outlined"}
-                         onClick={toggleFlow}>
-                        {flow ? "Flow active" : "Flow"}
-                    </Btn>
                 </Grid>
             </Initiative>
         </Grid>

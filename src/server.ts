@@ -10,7 +10,7 @@ import StateManager from "./server/StateManager";
 const app = express();
 const server = http.createServer(app);
 const io = new Server<ClientEvents, ServerEvents, DefaultEventsMap, SocketData>(server);
-const manager = new StateManager();
+const manager = new StateManager(io);
 const port = 3080;
 
 console.log('Server started...');
@@ -19,6 +19,7 @@ touch( 'data');
 touch( 'data/accounts');
 touch( 'data/chars');
 touch('data/tables');
+touch('data/rolls');
 
 app.use(express.static(path.join(__dirname, '..', 'build')));
 app.use(express.json());
