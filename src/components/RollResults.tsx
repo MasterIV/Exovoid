@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {DiceResultType} from "../types/dice";
-import * as uuid from 'uuid';
+import {DiceResultType, PersistentRollEntry} from "../types/dice";
 import {Modal, Paper, Typography} from "@mui/material";
 import socket from "../socket";
 import {DiceSymbol} from "./Roll";
@@ -30,19 +29,27 @@ export function summarize(result: DiceResultType): Record<string, number> {
     return summary;
 }
 
+function toRollEntry(entry: PersistentRollEntry): RollEntry {
+    return {
+        id: entry.id,
+        result: entry.result,
+        summary: summarize(entry.result),
+        metadata: entry.metadata || {},
+    };
+}
+
 export function RollResult({onRoll}: RollResultProps) {
     const [rolls, setRolls] = useState<RollEntry[]>([]);
     const [details, setDetails] = useState<RollEntry|null>(null);
 
     useEffect(() => {
         socket.removeAllListeners("roll");
-        socket.on("roll", (result, metadata) => {
-            setRolls(old => [{
-                id: uuid.v4(),
-                summary: summarize(result),
-                result,
-                metadata: metadata || {},
-            }, ...old])
+        socket.removeAllListeners("rollHistory");
+        socket.on("rollHistory", history => {
+            setRolls(history.slice().reverse().map(toRollEntry));
+        });
+        socket.on("roll", entry => {
+            setRolls(old => [toRollEntry(entry), ...old]);
         });
     }, []);
 

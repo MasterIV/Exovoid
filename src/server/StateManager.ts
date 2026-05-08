@@ -1,25 +1,37 @@
-import {ClientEvents, ClientSocket, ServerEvents} from "../types/server";
+import {ClientEvents, ClientSocket, ServerEvents, SocketData} from "../types/server";
 import AccountService from "./AccountService";
 import CharacterService from "./CharacterService";
 import TableService from "./TableService";
 import CharacterType from "../types/character";
 import GameService from "./GameService";
-import {EventNames} from "socket.io/dist/typed-events";
+import RollService from "./RollService";
+import {DefaultEventsMap, EventNames} from "socket.io/dist/typed-events";
+import {Server} from "socket.io";
 import {TableType} from "../types/table";
+import {PersistentRollEntry} from "../types/dice";
+import * as uuid from 'uuid';
 
-type OverlappingEvents = Extract<EventNames<ServerEvents>, EventNames<ClientEvents>>;
+type OverlappingEvents = Exclude<
+    Extract<EventNames<ServerEvents>, EventNames<ClientEvents>>,
+    "roll"
+>;
+type IoServer = Server<ClientEvents, ServerEvents, DefaultEventsMap, SocketData>;
 
 export default class StateManager {
+    private io: IoServer;
     private accountService: AccountService;
     private characterService: CharacterService;
     private tableService: TableService;
     private gameService: GameService;
+    private rollService: RollService;
 
-    constructor() {
+    constructor(io: IoServer) {
+        this.io = io;
         this.accountService = new AccountService();
         this.characterService = new CharacterService();
         this.tableService = new TableService();
         this.gameService = new GameService();
+        this.rollService = new RollService();
     }
 
     private wrapHandler<Args extends any[]>(
@@ -87,13 +99,15 @@ export default class StateManager {
         socket.join(character.table);
         this.registerGameHandlers(socket);
         socket.emit("character", character);
-        socket.emit("table", this.tableService.load(character.table))
+        socket.emit("table", this.tableService.load(character.table));
+        socket.emit("rollHistory", this.rollService.load(character.table));
     }
 
     private passThrough(socket: ClientSocket, event: OverlappingEvents) {
         // @ts-ignore Fuck Type Gymnastics!
         socket.on(event, this.wrapHandler(socket, (data) => {
             if (!socket.data.character) throw new Error("Invalid character!");
+            // @ts-ignore Fuck Type Gymnastics!
             socket.to(socket.data.character.table).emit(event, data);
         }));
     }
@@ -105,8 +119,14 @@ export default class StateManager {
             if (!socket.data.character) throw new Error("Character required!");
             console.log("Rolling:", socket.data.character.name, pool);
             metadata['player'] = socket.data.character.name;
-            const result = this.gameService.roll(pool);
-            socket.to(socket.data.character.table).emit("roll", result, metadata);
+            const entry: PersistentRollEntry = {
+                id: uuid.v4(),
+                timestamp: Date.now(),
+                result: this.gameService.roll(pool),
+                metadata,
+            };
+            this.rollService.append(socket.data.character.table, entry);
+            this.io.to(socket.data.character.table).emit("roll", entry);
         }));
 
         socket.on("save", this.wrapHandler(socket, (data) => {
