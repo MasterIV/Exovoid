@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {DiceResultType} from "../types/dice";
-import * as uuid from 'uuid';
+import {DiceResultType, PersistentRollEntry} from "../types/dice";
 import {Modal, Paper, Typography} from "@mui/material";
 import socket from "../socket";
 import {DiceSymbol} from "./Roll";
 import {Btn} from "./Form";
+import {relativeTime} from "../utils/relativeTime";
 
 interface RollResultProps {
     onRoll: (skill: number, attribute: number, modifier?: number, metadata?: Record<string, any>) => void;
@@ -12,9 +12,37 @@ interface RollResultProps {
 
 interface RollEntry {
     id: string;
+    timestamp: number;
     result: DiceResultType,
     summary: Record<string, number>;
     metadata: Record<string, any>;
+}
+
+function useNow(intervalMs = 30000): number {
+    const [now, setNow] = useState(Date.now());
+    useEffect(() => {
+        const id = setInterval(() => setNow(Date.now()), intervalMs);
+        return () => clearInterval(id);
+    }, [intervalMs]);
+    return now;
+}
+
+function capitalize(s: string): string {
+    return s.length === 0 ? s : s[0].toUpperCase() + s.slice(1);
+}
+
+const SYMBOL_ORDER = [
+    'botch', 'success', 'complication', 'trigger',
+    'wound', 'minion', 'cyberware', 'adrenaline',
+    'xp',
+];
+
+function orderSymbols(summary: Record<string, number>): string[] {
+    return Object.keys(summary).sort((a, b) => {
+        const ia = SYMBOL_ORDER.indexOf(a);
+        const ib = SYMBOL_ORDER.indexOf(b);
+        return (ia === -1 ? SYMBOL_ORDER.length : ia) - (ib === -1 ? SYMBOL_ORDER.length : ib);
+    });
 }
 
 export function summarize(result: DiceResultType): Record<string, number> {
@@ -30,19 +58,29 @@ export function summarize(result: DiceResultType): Record<string, number> {
     return summary;
 }
 
+function toRollEntry(entry: PersistentRollEntry): RollEntry {
+    return {
+        id: entry.id,
+        timestamp: entry.timestamp,
+        result: entry.result,
+        summary: summarize(entry.result),
+        metadata: entry.metadata || {},
+    };
+}
+
 export function RollResult({onRoll}: RollResultProps) {
     const [rolls, setRolls] = useState<RollEntry[]>([]);
     const [details, setDetails] = useState<RollEntry|null>(null);
+    const now = useNow();
 
     useEffect(() => {
         socket.removeAllListeners("roll");
-        socket.on("roll", (result, metadata) => {
-            setRolls(old => [{
-                id: uuid.v4(),
-                summary: summarize(result),
-                result,
-                metadata: metadata || {},
-            }, ...old])
+        socket.removeAllListeners("rollHistory");
+        socket.on("rollHistory", history => {
+            setRolls(history.slice().reverse().map(toRollEntry));
+        });
+        socket.on("roll", entry => {
+            setRolls(old => [toRollEntry(entry), ...old]);
         });
     }, []);
 
@@ -55,8 +93,17 @@ export function RollResult({onRoll}: RollResultProps) {
 
     return <div className="resultArea">
         {rolls.map(roll => <Paper key={roll.id} className="rollResult" onClick={() => setDetails(roll)}>
-            <strong>{roll.metadata['npc'] || roll.metadata['player']}: {roll.metadata['skill']}</strong>
-            {Object.keys(roll.summary).map(((s) => <div key={roll.id+"-"+s}>{s}: {roll.summary[s]}</div>))}
+            <strong>{roll.metadata['npc'] || roll.metadata['player']} · {roll.metadata['skill']}</strong>
+            <span className="rollResultTime" title={new Date(roll.timestamp).toLocaleString()}>
+                {relativeTime(roll.timestamp, now)}
+            </span>
+            {Object.keys(roll.summary).length === 0
+                ? <div className="rollResultEmpty">No symbols</div>
+                : orderSymbols(roll.summary).map(s => <div key={roll.id+"-"+s} className="rollResultSymbol">
+                    <img src={`/img/symbols/${s}.png`} alt={s} width={16} height={16} />
+                    <span className="symbolName">{capitalize(s)}</span>
+                    <span className="symbolCount">×{roll.summary[s]}</span>
+                </div>)}
         </Paper>)}
 
         <Modal open={details !== null} onClose={() => setDetails(null)}>

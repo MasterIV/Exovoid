@@ -10,3 +10,10 @@ export type DiceResultType = {
     symbols: string[];
     exploded?: boolean;
 }[];
+
+export interface PersistentRollEntry {
+    id: string;
+    timestamp: number;
+    result: DiceResultType;
+    metadata: Record<string, any>;
+}

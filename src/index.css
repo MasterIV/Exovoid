@@ -66,11 +66,45 @@ code {
 }
 
 .rollResult {
-  padding: 6px;
-  width: 200px;
-  margin: 5px;
+  padding: 8px;
+  width: 160px;
   display: inline-block;
   flex: none;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.rollResultTime {
+  display: block;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.rollResultSymbol {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.rollResultSymbol:first-of-type {
+  margin-top: 6px;
+}
+
+.rollResultEmpty {
+  margin-top: 6px;
+  font-size: 0.85em;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.rollResultSymbol .symbolName {
+  flex: 1;
+}
+
+.rollResultSymbol .symbolCount {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
 }
 
 .rollDetails {
@@ -108,6 +142,8 @@ code {
   align-items: stretch;
   width: 100%;
   overflow: auto;
+  gap: 10px;
+  margin: 10px 0;
 }
 
 .paperSmall, .paperLarge {

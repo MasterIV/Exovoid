@@ -3,7 +3,7 @@ import CharacterType from "./character";
 import {Socket as ServerSideSocket} from "socket.io";
 import {Socket as ClientSideSocket} from "socket.io-client";
 import {DefaultEventsMap} from "socket.io/dist/typed-events";
-import {DicePoolType, DiceResultType} from "./dice";
+import {DicePoolType, DiceResultType, PersistentRollEntry} from "./dice";
 import {Combatant} from "./combat";
 import {ShipType} from "./ship";
 import {TableType} from "./table";
@@ -35,7 +35,8 @@ export interface ClientEvents extends PassThroughEvents {
 export interface ServerEvents extends PassThroughEvents {
     account: (data: AccountType) => void;
     character: (data: CharacterType) => void;
-    roll: (result: DiceResultType, metadata?: Metadata) => void;
+    roll: (entry: PersistentRollEntry) => void;
+    rollHistory: (entries: PersistentRollEntry[]) => void;
     error: (message: string) => void;
 }
 
